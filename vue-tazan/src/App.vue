@@ -1,25 +1,27 @@
 <template>
-  <TourList/>
-</template>
+  <div>
+    <Main />
 
-<script>
-import TourList from './components/list/TourList.vue'
-export default {
+  </div>
   
+</template>
+<script>
+// import TourList from './components/list/TourList.vue'
+import Main from './components/main/main.vue'
+export default {
   name: 'App',
   components: {
-    TourList
+    Main
   }
 }
 </script>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2C3E50;
   margin-top: 60px;
 }
 </style>
