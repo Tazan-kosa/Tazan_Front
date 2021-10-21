@@ -1,0 +1,48 @@
+<template>
+  <!-- <Header></Header> -->
+
+  <header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder">Shop in style</h1>
+        <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+      </div>
+    </div>
+  </header>
+  <!--main page-->
+  <section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+      </div>
+    </div>
+  </section>
+
+  <Footer></Footer>
+</template>
+<script>
+  //importing bootstrap 5 Modules
+  import "bootstrap/dist/css/bootstrap.min.css";
+  import "bootstrap/dist/js/bootstrap.min.js";
+  import Box from './box.vue'
+  // import Header from './Header'
+  // import Footer from './Footer'
+  export default {
+    name: 'TourList',
+
+    components: {
+      // Header,
+      // Footer,
+      Box
+    }
+
+  }
+</script>
+
+<style>
+
+</style>
