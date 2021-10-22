@@ -1,4 +1,4 @@
-# vue-tazan
+# vue-tazan 잉
 
 ## Project setup
 ```
