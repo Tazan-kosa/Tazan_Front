@@ -1,14 +1,20 @@
 <template>
-  <TourList/>
+  <div id="app">
+    <Header/>
+    <Footer/>
+  </div>
 </template>
 
 <script>
-import TourList from './components/list/TourList.vue'
+import Header from "./components/common/Header";
+import Footer from "./components/common/Footer";
 export default {
   
   name: 'App',
   components: {
-    TourList
+    Footer,
+    Header,
+
   }
 }
 </script>
@@ -20,6 +26,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
 }
 </style>
