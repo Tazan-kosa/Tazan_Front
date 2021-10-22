@@ -2,6 +2,7 @@
 
   <div id="app">
     <Header/>
+    <Main/>
     <Footer/>
   </div>
 
@@ -13,8 +14,8 @@ import Footer from "./components/common/Footer";
 
 // import TourList from './components/list/TourList.vue'
 import Main from './components/main/main.vue'
-// import Header from './components/main/header.vue'
-// import Footer from './components/main/footer.vue'
+// import Header from './components/common/header.vue'
+// import Footer from './components/common/footer.vue'
 
 export default {
   name: 'App',
