@@ -1,4 +1,5 @@
 <template>
+<div>
   <!-- <Header></Header> -->
 
   <header class="bg-dark py-5">
@@ -22,7 +23,9 @@
     </div>
   </section>
 
-  <Footer></Footer>
+  <Footer>
+  </Footer>
+  </div>
 </template>
 <script>
   //importing bootstrap 5 Modules
