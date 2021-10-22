@@ -29,4 +29,5 @@ export default {
   color: #2C3E50;
   margin-top: 60px;
 }
+
 </style>
