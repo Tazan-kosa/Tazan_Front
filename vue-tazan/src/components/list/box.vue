@@ -19,7 +19,7 @@
                   <div class="bi-star-fill"></div>
                 </div>
                 <!-- Product price-->
-                {{item.content!}}
+                {{item.content}}
               </div>
             </div>
             <!-- Product actions-->
