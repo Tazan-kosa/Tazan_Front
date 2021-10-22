@@ -1,4 +1,5 @@
 <template>
+<div>
   <!-- <Header></Header> -->
 
   <header class="bg-dark py-5">
@@ -6,6 +7,15 @@
       <div class="text-center text-white">
         <h1 class="display-4 fw-bolder">여행지 리스트</h1>
         <p class="lead fw-normal text-white-50 mb-0">무언가 있어보이는 부제목</p>
+        <div class="input-group rounded">
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+            aria-describedby="search-addon" />
+          <button class="button2">
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="bi bi-search"></i>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -22,7 +32,9 @@
     </div>
   </section>
 
-  <Footer></Footer>
+  <Footer>
+  </Footer>
+  </div>
 </template>
 <script>
   //importing bootstrap 5 Modules
@@ -44,5 +56,5 @@
 </script>
 
 <style>
-
+.button2 {border-radius: 4px;}
 </style>
