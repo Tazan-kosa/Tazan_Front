@@ -1,20 +1,22 @@
 <template>
   <div>
     <Header />
-    <Main />
+    <!-- <Main /> -->
+    <TourList/>
     <Footer />
   </div>
   
 </template>
 <script>
-// import TourList from './components/list/TourList.vue'
-import Main from './components/main/main.vue'
+import TourList from './components/list/TourList.vue'
+// import Main from './components/main/main.vue'
 import Header from './components/main/header.vue'
 import Footer from './components/main/footer.vue'
 export default {
   name: 'App',
   components: {
-    Main,
+    // Main,
+    TourList,
     Header,
     Footer
   }
