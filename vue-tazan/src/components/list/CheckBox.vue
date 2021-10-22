@@ -1,25 +1,28 @@
 <template>
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Default checkbox
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    Checked checkbox
-  </label>
-</div>
-
+  <div class="checkbox">
+    <div v-for="(tag ,i) in tagname" :key="i">
+      <input class="form-check-input" type="checkbox" value="" :id="tag">
+      <label class="form-check-label" :for="tag">{{ tag }}</label>
+    </div>
+    <button type="button" class="btn btn-outline-success">선택</button>
+  </div>
 </template>
 
 <script>
 export default {
-
+  name:'CheckBox',
+  props:{
+    tagname:Array
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+.checkbox div{
+  width: 120px;
+}
+button{
+  padding-top: 0;
+  padding-bottom: ;: 0;
+}
 </style>
