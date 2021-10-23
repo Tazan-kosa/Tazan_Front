@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Tazan_Front.iml" filepath="$PROJECT_DIR$/.idea/Tazan_Front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tazan_Front.iml" filepath="$PROJECT_DIR$/.idea/tazan_Front.iml" />
     </modules>
   </component>
 </project>
