@@ -20,17 +20,17 @@
     <!--main page-->
     <section class="py-0">
       <div class="container px-4 px-lg-5 mt-3">
-        <CheckBox :tagname="Tagnames"/>
+        <CheckBox :tagname="Tagnames" @checkedtag="checkedtaglist"/>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
           <!-- <Select/> -->
-          <Box :items="TourItemList" />
+          <Box :items="TourItemList" :tagname="checkedtag" />
         </div>
       </div>
     </section>
   </div>
 </template>
 <script>
-//importing bootstrap 5 Modules
+
 import TourItemList from './sample'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -43,13 +43,21 @@ export default {
   data() {
     return {
       TourItemList: TourItemList,
-      Tagnames: Tagnames
+      Tagnames: Tagnames,
+      checkedtag:['관광지','문화시설','축제공연행사','여행코스','레포츠','숙박','쇼핑', '음식점']
     }
   },
   components: {
     Box,
     // Select
     CheckBox,
+
+  },
+  methods:{
+    checkedtaglist(tags){
+      this.checkedtag=tags
+      console.log(this.checkedtag)
+    },
 
   }
 
