@@ -1,7 +1,7 @@
 <template>
 <!--  <div class="box">-->
-    <div class="col mb-5" v-for="(item,i)  in items" :key="i">
-      <div class="card h-100">
+    <div class="col mb-5" v-for="(item,i)  in items" :key="i" >
+      <div class="card h-100" v-if="tagname.filter(n => item.tag.indexOf(n)).length>0">
         <!-- Product image-->
         <img class="card-img-top" :src="item.img" alt="...">
         <!-- Product details-->
@@ -36,9 +36,11 @@
 <script>
 export default {
   name: 'box',
+
   props: {
-    items: Array
-  }
+    items: Array,
+    tagname:Array
+  },
 
 }
 </script>

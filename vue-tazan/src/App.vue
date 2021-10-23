@@ -3,6 +3,7 @@
   <div id="app">
     <Header/>
     <Main/>
+    <TourList/>
     <Footer/>
   </div>
 
