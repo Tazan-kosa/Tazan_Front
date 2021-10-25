@@ -1,6 +1,7 @@
 <template>
   <div class="travel-container">
-      <TravelItem :item="item" v-for="item in items" :key="item"/>
+<!--      <TravelItem :item="item" v-for="item in items" :key="item"/>-->
+      <TravelItem :item="item" v-for="(item, i) in items" :key="i"/>
   </div>
 </template>
 
