@@ -13,4 +13,4 @@ https://velog.io/@cindy-choi/Vue3-%EC%97%90-vue-route-%EC%B6%94%EA%B0%80%ED%95%9
 
 ## 한번에 깃 커밋과 푸시
 
-## test  lim
+## test  lim2
