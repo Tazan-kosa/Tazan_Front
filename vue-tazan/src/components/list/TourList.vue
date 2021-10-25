@@ -23,7 +23,7 @@
         <CheckBox :tagname="Tagnames" @checkedtag="checkedtaglist"/>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
           <!-- <Select/> -->
-          <Box :items="TourItemList" :tagname="checkedtag" />
+          <Box v-for="(item, i) in TourItemList" :key="i" :item="item" :tagname="checkedtag" />
         </div>
       </div>
     </section>
