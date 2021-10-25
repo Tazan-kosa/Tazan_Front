@@ -64,5 +64,12 @@ export default {
 </script>
 
 <style>
+nav{
+  /*position:-webkit-sticky;*/
+  margin-top: -60px;
+  position:sticky;
+  top:0;
+  background-color:yellow;
+}
 
 </style>
