@@ -27,10 +27,11 @@
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행후기</a>-->
-                <router-link to="/detail">여행후기</router-link>
+                <router-link to="/TEST#TE">여행후기</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">TEST</a>
+<!--                <a class="nav-link" href="#">여행후기</a>-->
+                <router-link to="/review">TEST(Review)</router-link>
               </li>
             </ul>
           </div>
