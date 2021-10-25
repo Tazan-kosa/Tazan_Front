@@ -1,7 +1,7 @@
 <template>
 <!--  <div class="box">-->
-    <div class="col mb-5" v-for="(item,i)  in items" :key="i" >
-      <div class="card h-100" v-if="tagname.filter(n => item.tag.indexOf(n)).length>0">
+    <div class="col mb-5" v-if="tagname.filter(n => item.tag.includes(n)).length > 0">
+      <div class="card h-100" >
         <!-- Product image-->
         <img class="card-img-top" :src="item.img" alt="...">
         <!-- Product details-->
@@ -21,6 +21,8 @@
             </div>
             <!-- Product price-->
             {{ item.content }}
+            <br>
+            {{item.tag}}
           </div>
         </div>
         <!-- Product actions-->
@@ -38,10 +40,9 @@ export default {
   name: 'box',
 
   props: {
-    items: Array,
+    item: Object,
     tagname:Array
   },
-
 }
 </script>
 
