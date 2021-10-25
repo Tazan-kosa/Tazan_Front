@@ -2,8 +2,8 @@
 
   <div id="app">
     <Header/>
-    <Main/>
-    <TourList/>
+<!--    <Main/>-->
+<!--    <TourList/>-->
     <Footer/>
   </div>
 
@@ -15,7 +15,7 @@ import Footer from "./components/common/Footer";
 
 // import TourList from './components/list/TourList.vue'
 
-import Main from './components/main/main.vue'
+// import Main from './components/main/main.vue'
 
 
 
@@ -23,6 +23,7 @@ export default {
   name: 'App',
   components: {
     // Main,
+    // TourList,
     Header,
     Footer
 
