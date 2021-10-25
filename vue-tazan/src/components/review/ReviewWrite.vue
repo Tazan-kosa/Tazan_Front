@@ -1,12 +1,6 @@
 <template>
   <div>
-    <button @click="api">버튼</button>
-<!--    <div v-for="item in festival" :key="item">-->
-<!--      {{ item.title }}-->
-<!--    </div>-->
-    <div v-for="item in thema" :key="item">
-      {{item.thema}}
-    </div>
+    
   </div>
 </template>
 
