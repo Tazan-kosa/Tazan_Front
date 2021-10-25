@@ -33,26 +33,26 @@
 </template>
 <script>
 
-import TourItemList from './sample.js'
+// import TourItemList from './sample.js'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import CheckBox from "@/components/list/CheckBox";
 import Tagname from "@/components/list/tagnames";
 import Box from './Box.vue'
 import axios from 'axios'
-// import Select from './Select.vue'
+
 export default {
   name: 'TourList',
   data() {
     return {
-      TourItemList: TourItemList,
+      // TourItemList: TourItemList,
+      TourItemList: [],
       Tagnames: Tagname,
       checkedtag: ['관광지','문화시설','축제공연행사','여행코스','레포츠','숙박','쇼핑', '음식점']
     }
   },
   components: {
     Box,
-    // Select
     CheckBox,
 
   },
@@ -63,9 +63,9 @@ export default {
     // }
   },
   created() {
-    axios.get('http://localhost:5000/test')
+    axios.get('http://210.178.22.18:3000/test')
         .then(result => {
-          this.TourItemList.target = result.data
+          this.TourItemList = result.data.sample
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
