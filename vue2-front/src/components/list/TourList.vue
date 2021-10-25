@@ -34,9 +34,12 @@
 import TourItemList from './sample'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import CheckBox from "@/components/list/CheckBox";
-import Tagnames from "@/components/list/tagnames";
-import Box from './Box.vue'
+// import CheckBox from "@/components/list/CheckBox";
+import CheckBox from "./CheckBox";
+// import Tagnames from "@/components/list/tagnames";
+import Tagnames from "./tagnames";
+import Box from './box.vue'
+
 // import Select from './Select.vue'
 export default {
   name: 'TourList',

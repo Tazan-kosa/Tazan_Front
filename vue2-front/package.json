@@ -1,5 +1,5 @@
 {
-  "name": "vue-tazan",
+  "name": "vue2-front",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,20 +10,24 @@
   "dependencies": {
     "@popperjs/core": "^2.10.2",
     "axios": "^0.23.0",
+    "vue-router": "^4.0.12",
     "bootstrap": "^5.0.0-beta3",
     "core-js": "^3.6.5",
-    "vue": "^3.2.20",
-    "vue-router": "^4.0.12"
+    "vue": "^2.6.11",
+    "vuetify": "^2.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "vue-cli-plugin-vuetify": "~2.4.3"
+    "eslint-plugin-vue": "^6.2.2",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.4.3",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
   },
   "eslintConfig": {
     "root": true,
@@ -31,7 +35,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/vue3-essential",
+      "plugin:vue/essential",
       "eslint:recommended"
     ],
     "parserOptions": {
