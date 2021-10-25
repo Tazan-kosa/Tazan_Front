@@ -13,9 +13,9 @@
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
-// import TourList from './components/list/TourList.vue'
+import TourList from './components/list/TourList.vue'
 
-import Main from './components/main/main.vue'
+//import Main from './components/main/main.vue'
 
 
 
@@ -24,7 +24,8 @@ export default {
   components: {
     // Main,
     Header,
-    Footer
+    Footer,
+    TourList
 
   }
 }
