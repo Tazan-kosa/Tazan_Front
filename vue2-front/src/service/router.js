@@ -5,9 +5,10 @@ import VueRouter from 'vue-router'
 
 import Detail from "../components/pages/Detail";
 // import List from "../components/pages/List";
-import Review from "../components/pages/Review";
+// import Review from "../components/pages/Review";
 import Main from "../components/main/main.vue"
 import TourList from "../components/list/TourList";
+import Review from "../components/review/ReviewDetail"
 
 Vue.use(VueRouter)
 
@@ -19,10 +20,11 @@ const route= [
     },
     {
         path: '/list',
+        name: 'List',
         component: TourList
     },
     {
-        path: '/Review',
+        path: '/review',
         component: Review
     },
     {
