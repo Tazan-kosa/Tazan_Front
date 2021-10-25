@@ -55,6 +55,7 @@
       <div class="carousel-inner">
 
         <div class="carousel-item active">
+          <!-- 메인페이지 영상 -->
           <div class="videowrapper">
             <iframe width=100% height=1005px
               src="https://www.youtube.com/embed/fjDjXaTwTAE?autoplay=1&mute=1&controls=0&cc_load_policy=1&loop=1"
