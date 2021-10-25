@@ -4,7 +4,7 @@ const tourlist=[{
     content:'test content0',
     img:'https://t1.daumcdn.net/cfile/tistory/241EF33F57D7E1BE35',
     url:'https://www.naver.com/',
-    tag:['관광지','음식점']
+    tag:['관광지','음식점',]
 },{
     id:1,
     title:'test title1',
