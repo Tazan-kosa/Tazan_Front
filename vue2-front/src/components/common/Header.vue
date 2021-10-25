@@ -2,9 +2,11 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light shadow">
       <div class="container d-flex justify-content-between align-items-center">
-        <img src="../../assets/yacht_tazan_logo.png" height="100" width="100"/>
-        <a class="navbar-brand text-success logo h1 align-self-center" href="main.vue">  <!-- 로고 -->
-          Tazan
+        <a class="navbar-brand text-success logo h1 align-self-center">  <!-- 로고 -->
+          <router-link to="/">
+            <img src="../../assets/yacht_tazan_logo.png" height="100" width="100"/>
+            Tazan
+          </router-link>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -16,13 +18,16 @@
           <div class="flex-fill">
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">여행계획</a>
+<!--                <a class="nav-link" href="#">여행계획</a>-->
+                <router-link to="/detail">여행계획</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">여행지</a>
+<!--                <a class="nav-link" href="#">여행지</a>-->
+                <router-link to="/list">여행지</router-link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">여행후기</a>
+<!--                <a class="nav-link" href="#">여행후기</a>-->
+                <router-link to="/detail">여행후기</router-link>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">TEST</a>
