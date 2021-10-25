@@ -1,51 +1,49 @@
 <template>
-<!--  <div class="box">-->
-    <div class="col mb-5" v-if="checkedtag.filter(n => item.tag.includes(n)).length > 0">
-      <div class="card h-100" >
-        <!-- Product image-->
-        <img class="card-img-top" :src="item.img" alt="...">
-        <!-- Product details-->
-        <div class="card-body p-4">
-          <div class="text-center">
-            <!-- Product name-->
-            <a href="#">
-              <h5 class="fw-bolder">{{ item.title }}</h5>
-            </a>
-            <!-- Product reviews-->
-            <div class="d-flex justify-content-center small text-warning mb-2">
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-              <div class="bi-star-fill"></div>
-            </div>
-            <!-- Product price-->
-            {{ item.content }}
-            <br>
-            {{item.tag}}
-          </div>
-        </div>
-        <!-- Product actions-->
-        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-          <div class="text-center"><a class="btn btn-outline-dark mt-auto" :href="item.url" target="_blank">바로가기</a>
-          </div>
-        </div>
-      </div>
+
+    <div class="col mb-2" v-if="checkedtag.filter(n => item.tag.includes(n)).length > 0" @click="viewURL(item.url)">
+      <TravelItem :item="item" />
     </div>
-<!--  </div>-->
+
 </template>
 
 <script>
+import TravelItem from '../review/TravelItem'
 export default {
-  name: 'box',
-
+  name: 'Box',
+  components:{
+    TravelItem,
+  },
   props: {
     item: Object,
     checkedtag:Array
   },
+  methods:{
+    viewURL(link){
+      window.open(link)
+    }
+  }
 }
 </script>
 
 <style scoped>
-
+div.col{
+  width: 270px;
+  margin: 0;
+  padding: 0;
+}
+div.col{
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+div.col:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
 </style>

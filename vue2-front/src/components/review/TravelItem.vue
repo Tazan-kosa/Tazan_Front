@@ -16,7 +16,8 @@
 export default {
     name: 'TravelItem',
     props: {
-        item: JSON,
+        // item: JSON,
+        item: Object,
     }
 }
 </script>
