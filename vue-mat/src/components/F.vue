@@ -1,13 +1,13 @@
 <template>
-  test
+$END$
 </template>
 
 <script>
 export default {
-
+name: "F"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
