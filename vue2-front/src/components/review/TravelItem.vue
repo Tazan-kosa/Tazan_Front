@@ -2,7 +2,8 @@
 <div>
   <div class="mycard" :style="{backgroundImage : `url( ${item.img} )`}">
       <div class="mycard-foreground">
-          <h5 class="mycard-region">서울</h5>
+<!--          <h5 class="mycard-region">서울</h5>-->
+          <h5 class="mycard-region">{{item.region}}</h5>
           <h6 class="mycard-title">{{item.title}}</h6>
           <div class="mycard-hashtags">
               <span class="mycard-hashtag" v-for="tag in item.tag" :key="tag">#{{tag}}&nbsp;&nbsp;</span>
