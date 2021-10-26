@@ -8,7 +8,7 @@ import Detail from "../components/pages/Detail";
 // import Review from "../components/pages/Review";
 import Main from "../components/main/main.vue"
 import TourList from "../components/list/TourList";
-import Review from "../components/review/ReviewDetail"
+import Review from "../components/review/ReviewWrite"
 
 Vue.use(VueRouter)
 
