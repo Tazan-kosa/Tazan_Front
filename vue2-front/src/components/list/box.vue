@@ -40,6 +40,7 @@ div.col{
   transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
 }
 div.col:hover {
+  cursor: pointer;
   background: #845EC2;
   border-radius: 10px;
   transform: scale(1.1);
