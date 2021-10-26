@@ -27,8 +27,8 @@ export default {
 
 <style scoped>
 div.col{
-  width: 270px;
-  margin: 0;
+  width: 265px;
+  margin: 5px;
   padding: 0;
 }
 div.col{
@@ -40,6 +40,8 @@ div.col{
   transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
 }
 div.col:hover {
+  background: #845EC2;
+  border-radius: 10px;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
