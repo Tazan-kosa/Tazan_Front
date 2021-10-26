@@ -23,11 +23,11 @@
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행지</a>-->
-                <router-link to="/list">여행지</router-link>
+                <router-link to="/tourlist">여행지</router-link>
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행후기</a>-->
-                <router-link to="/TEST#TE">여행후기</router-link>
+                <router-link to="/reviewList">여행후기</router-link>
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행후기</a>-->
