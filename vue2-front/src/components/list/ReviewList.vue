@@ -3,8 +3,8 @@
     <header class="py-5">
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">여행지 리스트</h1>
-          <p class="lead fw-normal text-white-50 mb-0">여행의 키워드를 입력해주세요! / 여행가고싶은 지역을 입력해주세요!</p>
+          <h1 class="display-4 fw-bolder">후기 리스트</h1>
+          <p class="lead fw-normal text-white-50 mb-0">후기 검색 키워드를 입력해주세요!</p>
             <div class="input-group mb-3">
               <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="관광지/문화시설 | 경기/서울">
               <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i> Search</button>

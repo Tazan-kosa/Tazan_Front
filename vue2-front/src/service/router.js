@@ -8,6 +8,7 @@ import Detail from "../components/pages/Detail";
 // import Review from "../components/pages/Review";
 import Main from "../components/main/main.vue"
 import TourList from "../components/list/TourList";
+import ReviewList from "@/components/list/ReviewList";
 import Review from "../components/review/ReviewWrite"
 
 Vue.use(VueRouter)
@@ -19,9 +20,14 @@ const route= [
         component: Detail
     },
     {
-        path: '/list',
-        name: 'List',
+        path: '/tourlist',
+        name: 'TourList',
         component: TourList
+    },
+    {
+        path: '/reviewList',
+        name: 'ReviewList',
+        component: ReviewList
     },
     {
         path: '/review',

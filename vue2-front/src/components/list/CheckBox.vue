@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 .checkbox div{
-  width: 120px;
+  width: 200px;
 }
 button{
   padding-top: 0;
