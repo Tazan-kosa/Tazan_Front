@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
       <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand text-success logo h1 align-self-center">  <!-- 로고 -->
-          <router-link to="/">
+          <router-link id="logo" to="/">
             <img src="../../assets/yacht_tazan_logo.png" height="100" width="100"/>
-            Tazan
+            <img src="../../assets/tazan_title-rmb.png" height="30" width="120"/>
           </router-link>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
@@ -19,19 +19,19 @@
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행계획</a>-->
-                <router-link to="/detail">여행계획</router-link>
+                <router-link to="/detail"><span>여행계획</span></router-link>
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행지</a>-->
-                <router-link to="/tourlist">여행지</router-link>
+                <router-link to="/tourlist"><span>여행지</span></router-link>
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행후기</a>-->
-                <router-link to="/reviewList">여행후기</router-link>
+                <router-link to="/reviewList"><span>여행후기</span></router-link>
               </li>
               <li class="nav-item">
 <!--                <a class="nav-link" href="#">여행후기</a>-->
-                <router-link to="/review">TEST(Review)</router-link>
+                <router-link to="/review"><span>TEST(Review)</span></router-link>
               </li>
             </ul>
           </div>
@@ -47,22 +47,15 @@
             <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
               <i class="fa fa-fw fa-search text-dark mr-2"></i>
             </a>
-            <!-- <a class="nav-icon position-relative text-decoration-none" href="#">
-              <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-              <span
-                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-            </a> -->
-            <!-- <a class="nav-icon position-relative text-decoration-none" href="#">
-              <i class="fa fa-fw fa-user text-dark mr-3"></i>
-              <span
-                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">+99</span>
-            </a> -->
+
+            <div>
+              로그인
+            </div>
+
           </div>
         </div>
       </div>
     </nav>
-
-
   </div>
 </template>
 
@@ -72,12 +65,33 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 nav{
-  /*position:-webkit-sticky;*/
   position:sticky;
   top:0;
-  background-color:yellow;
+  background-color:white;
 }
+
+/*nav underline 없앰*/
+a{
+  text-decoration: none;
+}
+
+span{
+  font-size: x-large;
+  font-weight: bolder;
+  color: gray;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+span:hover{
+  border-bottom: 3px solid royalblue;
+}
+
+
+/*.logo:hover{*/
+/*  background-color: gray;*/
+/*}*/
 
 </style>

@@ -106,7 +106,7 @@
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-          <h1 class="h1">Categories of The Month</h1>
+          <h1 class="h1">여행지 리스트</h1>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -141,7 +141,7 @@
       <div class="container py-5">
         <div class="row text-center py-3">
           <div class="col-lg-6 m-auto">
-            <h1 class="h1">Featured Product</h1>
+            <h1 class="h1">여행후기 리스트</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
