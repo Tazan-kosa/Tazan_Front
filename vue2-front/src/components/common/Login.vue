@@ -72,7 +72,8 @@ export default {
 
       try {
         this.$axios
-            .post(HOST + "/signin", JSON.stringify(saveData), {
+            // .post(HOST + "/signin", JSON.stringify(saveData), {
+            .post("/signin", JSON.stringify(saveData), {
               headers: {
                 "Content-Type": `application/json`,
               },
@@ -82,9 +83,10 @@ export default {
                 // 로그인 성공시 처리해줘야할 부분
               }
             });
+
       } catch (error) {
         console.error(error);
-     d }
+      }
     },
   },
 };
