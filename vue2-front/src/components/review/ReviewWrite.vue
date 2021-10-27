@@ -20,9 +20,13 @@
       </div>
       <div class="container-bottom">
         <div class="review">
-          <p id="text">나의 여행 일기</p>
-          <div class="review-content">
-            <div class="review-text" contenteditable="true"></div>
+          <span id="text">나의 여행 일기</span>
+          <span>
+            <input @change="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
+            <label for="file" class="input-plus">사진</label>
+          </span>
+          <div class="review-content" contenteditable="true">
+            <p class="review-text" ></p>
           </div>
         </div>
       </div>
@@ -43,16 +47,32 @@ export default {
   },
   methods: {
     api() {
-      // axios.get('http://api.kcisa.kr/openapi/service/rest/meta4/getKCPG0504', {
+      // axios.get('http://api.data.go.kr/openapi/tn_pubr_public_trrsrt_api', {
       //   params: { serviceKey : 'a24c37fd-b4cf-47e0-b053-f0ddae93184e'}
       // }).then(res=> {
       //   this.festival = res.data.response.body.items.item
       //   console.log(this.festival)
       // })
+    },
+    appendImg(e) {
+      let file = e.target.files;
+      console.log(file[0]);
+
+      let url = URL.createObjectURL(file[0])
+      console.log(url)
+
+      var div = document.createElement("div");
+      let p = document.createElement("p");
+      div.innerHTML = "<img src=`${url}`/>";
+      p.innerHTML = "<p class=\"review-text\" ></p>"
+      var par = document.getElementsByClassName("review-content")[0];
+      par.appendChild(div);
+      par.append(p);
     }
   },
   components: {
-    TravelList
+    TravelList,
+
   }
 }
 </script>
@@ -74,6 +94,7 @@ export default {
 .review-title {
   padding: 20px;
   text-align: left;
+  outline: none;
 }
 
 .review-title:empty:before {
@@ -81,7 +102,7 @@ export default {
   cursor: text;
   color: #ccc;
   opacity: 0.6;
-  display: block
+  outline: none;
 }
 
 .container-middle {
@@ -108,7 +129,15 @@ export default {
 #text {
   text-align: left;
   padding: 5px;
-  margin: 30px 0px 0px 10px;
+  margin: 30px 0 0 10px;
+}
+
+.input-img{
+  display: none;
+}
+
+.input-plus {
+  cursor: pointer;
 }
 
 .review-content {
@@ -117,8 +146,10 @@ export default {
   min-height: 500px;
 }
 
-.review-text {
+.review-content {
   padding: 10px;
+  outline: none;
+  min-height: 300px;
 }
 
 .review-text:empty:before {
@@ -126,8 +157,7 @@ export default {
   cursor: text;
   color: #ccc;
   opacity: 0.6;
-  display: block;
-  min-height: 300px;
+  outline: none;
 }
 
 </style>
