@@ -7,6 +7,7 @@
           <h6 class="mycard-title">{{item.title}}</h6>
           <div class="mycard-hashtags">
               <span class="mycard-hashtag" v-for="tag in item.tag" :key="tag">#{{tag}}&nbsp;&nbsp;</span>
+<!--            <span class="mycard-hashtag" >#{{item.tag}}&nbsp;&nbsp;</span>-->
           </div>
       </div>
   </div>
