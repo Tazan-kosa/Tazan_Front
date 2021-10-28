@@ -12,7 +12,8 @@
       <hr/>
       <div class="container-middle">
         <div class="mylist">
-          <p id="mylist-btn">내 계획 불러오기</p>
+
+          <MyPlanModal/>
           <div class="mylist-data">
             <TravelList :items="TourItemData"/>
           </div>
@@ -37,12 +38,14 @@
 <script>
 import TravelList from "./TravelList";
 import TourItemData from "../list/sample";
+import MyPlanModal from "./MyPlanModal";
 
 export default {
   name: 'reviewwrite',
   data() {
     return {
       TourItemData: TourItemData,
+      isModalOpen: false,
     }
   },
   methods: {
@@ -63,16 +66,20 @@ export default {
 
       var div = document.createElement("div");
       let p = document.createElement("p");
-      div.innerHTML = "<img src=`${url}`/>";
-      p.innerHTML = "<p class=\"review-text\" ></p>"
+      div.innerHTML = `<img src="${url}"/>`;
+      p.innerHTML = "<br>"
+      p.className += "review-text"
       var par = document.getElementsByClassName("review-content")[0];
       par.appendChild(div);
       par.append(p);
+    },
+    openModal() {
+      this.isModalOpen = true;
     }
   },
   components: {
     TravelList,
-
+    MyPlanModal
   }
 }
 </script>
@@ -150,6 +157,10 @@ export default {
   padding: 10px;
   outline: none;
   min-height: 300px;
+}
+
+p.review-text{
+  margin-bottom: 0px;
 }
 
 .review-text:empty:before {
