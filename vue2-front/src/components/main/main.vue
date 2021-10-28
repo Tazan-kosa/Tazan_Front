@@ -1,23 +1,5 @@
 <template>
   <div>
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
-      aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="w-100 pt-1 mb-5 text-right">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <form action="" method="get" class="modal-content modal-body border-0 p-0">
-          <div class="input-group mb-2">
-            <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-            <button type="submit" class="input-group-text bg-success text-light">
-              <i class="fa fa-fw fa-search text-white"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <!-- Start Banner Hero -->
     <div id="template-mo-jassa-hero-carousel" class="carousel slide" data-bs-ride="carousel">
       <ol class="carousel-indicators">
@@ -28,24 +10,25 @@
       <div class="carousel-inner">
 
         <div class="carousel-item active">
-          <!-- 메인페이지 영상 -->
-          <div class="videowrapper">
-            <iframe width=100% height=1005px
-              src="https://www.youtube.com/embed/fjDjXaTwTAE?autoplay=1&mute=1&controls=0&cc_load_policy=1&loop=1"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe> </div>
+          <!-- 메인페이지 영상 youtube.ver-->
+<!--          <div class="videowrapper">-->
+<!--            <iframe width=100% height=1005px-->
+<!--              src="https://www.youtube.com/embed/fjDjXaTwTAE?autoplay=1&mute=1&controls=0&cc_load_policy=1&loop=1"-->
+<!--              title="YouTube video player" frameborder="0"-->
+<!--              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+<!--              allowfullscreen></iframe> -->
+<!--          </div>-->
+          <!-- 메인페이지 영상 mp4.ver - page1 -->
+          <div>
+            <video class="main-video" muted autoplay loop>
+              <source src="../../assets/bg_v_jeonju_1080.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
+
         <div class="container">
           <div class="row p-5">
             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-
-              <!-- <div class="col-lg-6 mb-0 d-flex align-items-center">
-                <div class="text-align-left align-self-center">
-                  <h1 class="h1 text-success"><b>Banner</b> eCommerce</h1>
-                  <h3 class="h2">Lorem Ipsum Lorem Ipsum</h3>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -107,11 +90,8 @@
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
           <h1 class="h1">여행지 리스트</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-          </p>
+          <!-- 여행지 리스트 추가 -->
+
         </div>
       </div>
       <div class="row">
@@ -229,18 +209,26 @@
       </div>
     </section>
     <!-- End Featured Product -->
-    <!-- Start Footer -->
-
-    <!-- End Footer -->
   </div>
 </template>
 
 <script>
+  // import TravelItem from "../review/TravelItem.vue"
+
   //importing bootstrap 5 Modules
   import "bootstrap/dist/css/bootstrap.min.css";
   import "bootstrap/dist/js/bootstrap.min.js";
   import "./main.css";
+
   export default {
-    name: 'Main'
+    name: 'Main',
+
   }
 </script>
+
+<style>
+.travel-container {
+  overflow-x: scroll;
+  display: flex;
+}
+</style>

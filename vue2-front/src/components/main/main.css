@@ -101,6 +101,12 @@ div {
   margin-right: 20px;
 }
 
+/* main video */
+.main-video {
+  width: 80%;
+  overflow: hidden;
+}
+
 /* Hero Carousel */
 #template-mo-jassa-hero-carousel {
   background: #efefef !important;
@@ -256,6 +262,8 @@ div {
 #templatemo_footer .border-light {
   border-color: #2d343f !important;
 }
+
+
 
 /*
   // Extra small devices (portrait phones, less than 576px)

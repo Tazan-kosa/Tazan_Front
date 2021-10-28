@@ -69,7 +69,7 @@ export default {
 
 <style scoped>
 
-nav{
+.nav-content {
   position:sticky;
   top:0;
   background-color:white;
@@ -81,7 +81,7 @@ a{
 }
 
 span{
-  font-size: x-large;
+  font-size: large;
   font-weight: bolder;
   color: gray;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
@@ -91,10 +91,11 @@ span:hover{
   border-bottom: 3px solid royalblue;
 }
 
-#header-full {
-  background-image:
-  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");
-}
+/*header 배경이미지*/
+/*#header-full {*/
+/*  background-image:*/
+/*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");*/
+/*}*/
 
 #login {
   background-color: white;
