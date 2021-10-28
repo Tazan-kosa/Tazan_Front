@@ -12,8 +12,8 @@
                 <v-col>
                   <v-form style="width: 400px; height: 300px">
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">person</v-icon>
-                      userId
+                      <v-icon color="black" size="30px">userId</v-icon>
+
                       <div class="mx-1">
                         <v-text-field
                             placeholder="userId"
@@ -23,8 +23,8 @@
                       </div>
                     </div>
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">lock</v-icon>
-                      userPassword
+                      <v-icon color="black" size="30px">userPassword</v-icon>
+
                       <div class="mx-1">
                         <v-text-field
                             placeholder="userPassword"
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -71,16 +73,15 @@ export default {
       saveData.userPassword = this.userPassword;
 
       try {
-        this.$axios
+        axios
             // .post(HOST + "/signin", JSON.stringify(saveData), {
-            .post("/signin", JSON.stringify(saveData), {
+            .post("http://210.178.22.18:3000/signin", JSON.stringify(saveData),{
               headers: {
-                "Content-Type": `application/json`,
-              },
-            })
+                'Content-Type': 'application/json; charset=utf-8',
+              }})
             .then((res) => {
               if (res.status === 200) {
-                // 로그인 성공시 처리해줘야할 부분
+                console.log(res.data)
               }
             });
 
