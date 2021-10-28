@@ -99,9 +99,9 @@ export default {
     }
     this.startdate=year + '-' + month + '-' + day
     this.enddate=year + '-' + month + '-' + day
-    axios.get('http://210.178.22.18:3000/test')
+    axios.get('http://210.178.22.18:3000/testdb')
         .then(result => {
-          this.TourItemList = result.data.sample
+          this.TourItemList = result.data
         })
         .catch(function (err) {
           console.log("에러발생: " + err)

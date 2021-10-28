@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div id="header-full">
     <nav class="navbar navbar-expand-lg navbar-light shadow">
       <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand text-success logo h1 align-self-center">  <!-- 로고 -->
+        <a class="navbar-brand text-success logo h1 align-self-center">
+          <!-- 로고 -->
           <router-link id="logo" to="/">
             <img src="../../assets/yacht_tazan_logo.png" height="100" width="100"/>
             <img src="../../assets/tazan_title-rmb.png" height="30" width="120"/>
           </router-link>
+
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -15,26 +17,25 @@
         </button>
         <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
              id="templatemo_main_nav">
+
+          <!--Nav바-->
           <div class="flex-fill">
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
               <li class="nav-item">
-<!--                <a class="nav-link" href="#">여행계획</a>-->
                 <router-link to="/detail"><span>여행계획</span></router-link>
               </li>
               <li class="nav-item">
-<!--                <a class="nav-link" href="#">여행지</a>-->
                 <router-link to="/tourlist"><span>여행지</span></router-link>
               </li>
               <li class="nav-item">
-<!--                <a class="nav-link" href="#">여행후기</a>-->
                 <router-link to="/reviewList"><span>여행후기</span></router-link>
               </li>
               <li class="nav-item">
-<!--                <a class="nav-link" href="#">여행후기</a>-->
                 <router-link to="/review"><span>TEST(Review)</span></router-link>
               </li>
             </ul>
           </div>
+
           <div class="navbar align-self-center d-flex">
             <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
               <div class="input-group">
@@ -48,8 +49,9 @@
               <i class="fa fa-fw fa-search text-dark mr-2"></i>
             </a>
 
-            <div>
-              로그인
+            <!--로그인-->
+            <div id="login">
+                <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
 
           </div>
@@ -67,7 +69,7 @@ export default {
 
 <style scoped>
 
-nav{
+.nav-content {
   position:sticky;
   top:0;
   background-color:white;
@@ -79,7 +81,7 @@ a{
 }
 
 span{
-  font-size: x-large;
+  font-size: large;
   font-weight: bolder;
   color: gray;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
@@ -89,6 +91,21 @@ span:hover{
   border-bottom: 3px solid royalblue;
 }
 
+/*header 배경이미지*/
+/*#header-full {*/
+/*  background-image:*/
+/*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");*/
+/*}*/
+
+#login {
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#login:hover{
+  background-color: darkgray;
+}
 
 /*.logo:hover{*/
 /*  background-color: gray;*/
