@@ -32,6 +32,7 @@ div.col{
   margin: 5px;
   padding: 0;
 }
+
 div.col{
   transform: scale(1);
   -webkit-transform: scale(1);
@@ -40,6 +41,7 @@ div.col{
   -o-transform: scale(1);
   transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
 }
+
 div.col:hover {
   cursor: pointer;
   background: #845EC2;
