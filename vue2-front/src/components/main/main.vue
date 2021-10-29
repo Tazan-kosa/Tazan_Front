@@ -7,109 +7,71 @@
         <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="1"></li>
         <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="2"></li>
       </ol>
-      <div class="carousel-inner">
 
+      <div class="carousel-inner">
         <div class="carousel-item active">
-          <!-- 메인페이지 영상 youtube.ver-->
-<!--          <div class="videowrapper">-->
-<!--            <iframe width=100% height=1005px-->
-<!--              src="https://www.youtube.com/embed/fjDjXaTwTAE?autoplay=1&mute=1&controls=0&cc_load_policy=1&loop=1"-->
-<!--              title="YouTube video player" frameborder="0"-->
-<!--              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
-<!--              allowfullscreen></iframe> -->
-<!--          </div>-->
-          <!-- 메인페이지 영상 mp4.ver - page1 -->
-          <div>
+          <div class="container">
+            <!-- main-video page 1 -->
             <video class="main-video" muted autoplay loop>
               <source src="../../assets/bg_v_jeonju_1080.mp4" type="video/mp4">
             </video>
           </div>
         </div>
 
-        <div class="container">
-          <div class="row p-5">
-            <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-            </div>
-          </div>
-        </div>
         <div class="carousel-item">
           <div class="container">
-            <div class="row p-5">
-              <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                <img class="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/05/banner_img_02.jpg"
-                  alt="">
-              </div>
-              <div class="col-lg-6 mb-0 d-flex align-items-center">
-                <div class="text-align-left">
-                  <h1 class="h1">Lorem Ipsum</h1>
-                  <h3 class="h2">Lorem Ipsum Lorem Ipsum</h3>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <!-- main-video page 2 -->
+            <video class="main-video" muted autoplay loop>
+              <source src="../../assets/bg_v_seoul_2_1080.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
+
         <div class="carousel-item">
           <div class="container">
-            <div class="row p-5">
-              <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                <img class="img-fluid" src="https://therichpost.com/wp-content/uploads/2021/05/banner_img_03.jpg"
-                  alt="">
-              </div>
-              <div class="col-lg-6 mb-0 d-flex align-items-center">
-                <div class="text-align-left">
-                  <h1 class="h1">Lorem Ipsum</h1>
-                  <h3 class="h2">Lorem Ipsum Lorem Ipsum </h3>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <!-- main-video page 3 -->
+            <video class="main-video" muted autoplay loop>
+              <source src="../../assets/bg_v_Incheon_3_1080.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
       <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-jassa-hero-carousel"
-        role="button" data-bs-slide="prev">
+         role="button" data-bs-slide="prev">
         <i class="fas fa-chevron-left"></i>
       </a>
       <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-jassa-hero-carousel"
-        role="button" data-bs-slide="next">
+         role="button" data-bs-slide="next">
         <i class="fas fa-chevron-right"></i>
       </a>
     </div>
     <!-- End Banner Hero -->
+
     <!-- Start Categories of The Month -->
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
           <h1 class="h1">여행지 리스트</h1>
-          <!-- 여행지 리스트 추가 -->
+          <!-- add travel list -->
 
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-md-4 p-5 mt-3">
           <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_01.jpg"
-              class="rounded-circle img-fluid border"></a>
+                           class="rounded-circle img-fluid border"></a>
           <h5 class="text-center mt-3 mb-3">Watches</h5>
           <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
         </div>
         <div class="col-12 col-md-4 p-5 mt-3">
           <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_02.jpg"
-              class="rounded-circle img-fluid border"></a>
+                           class="rounded-circle img-fluid border"></a>
           <h2 class="h5 text-center mt-3 mb-3">Shoes</h2>
           <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
         </div>
         <div class="col-12 col-md-4 p-5 mt-3">
           <a href="#"><img src="https://therichpost.com/wp-content/uploads/2021/05/category_img_03.jpg"
-              class="rounded-circle img-fluid border"></a>
+                           class="rounded-circle img-fluid border"></a>
           <h2 class="h5 text-center mt-3 mb-3">Accessories</h2>
           <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
         </div>
@@ -123,9 +85,7 @@
           <div class="col-lg-6 m-auto">
             <h1 class="h1">여행후기 리스트</h1>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
             </p>
           </div>
         </div>
@@ -134,7 +94,7 @@
             <div class="card h-100">
               <a href="#">
                 <img src="https://therichpost.com/wp-content/uploads/2021/05/feature_prod_01.jpg" class="card-img-top"
-                  alt="...">
+                     alt="...">
               </a>
               <div class="card-body">
                 <ul class="list-unstyled d-flex justify-content-between">
@@ -159,7 +119,7 @@
             <div class="card h-100">
               <a href="#">
                 <img src="https://therichpost.com/wp-content/uploads/2021/05/feature_prod_02.jpg" class="card-img-top"
-                  alt="...">
+                     alt="...">
               </a>
               <div class="card-body">
                 <ul class="list-unstyled d-flex justify-content-between">
@@ -184,7 +144,7 @@
             <div class="card h-100">
               <a href="#">
                 <img src="https://therichpost.com/wp-content/uploads/2021/05/feature_prod_03.jpg" class="card-img-top"
-                  alt="...">
+                     alt="...">
               </a>
               <div class="card-body">
                 <ul class="list-unstyled d-flex justify-content-between">
@@ -213,17 +173,17 @@
 </template>
 
 <script>
-  // import TravelItem from "../review/TravelItem.vue"
+// import TravelItem from "../review/TravelItem.vue"
 
-  //importing bootstrap 5 Modules
-  import "bootstrap/dist/css/bootstrap.min.css";
-  import "bootstrap/dist/js/bootstrap.min.js";
-  import "./main.css";
+//importing bootstrap 5 Modules
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "./main.css";
 
-  export default {
-    name: 'Main',
+export default {
+  name: 'Main',
 
-  }
+}
 </script>
 
 <style>
@@ -231,4 +191,9 @@
   overflow-x: scroll;
   display: flex;
 }
+
+.main-video {
+  width: 100%;
+}
+
 </style>
