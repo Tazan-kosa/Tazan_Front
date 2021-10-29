@@ -6,7 +6,7 @@
           <h1 class="display-4 fw-bolder">여행지 리스트</h1>
           <p class="lead fw-normal text-white-50 mb-0">여행가고싶은 지역을 입력해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
             <div class="input-group mb-3">
-              <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="예시) 경기/강남/제주/해운대">
+              <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="예시) 경기/강남/제주/해운대" @keyup.enter="searchTourList">
               <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i> Search</button>
             </div>
         </div>
@@ -15,7 +15,7 @@
     <!--main page-->
     <section class="py-0">
       <div class="container px-4 px-lg-5 mt-3">
-        <Select @selectedDate="selectedDate" :datevalue="startdate"/>
+        <Select @selectedDate="selectedDate" :enddate="enddate" :startdate="startdate"/>
         <p class="datewarning" v-if="startdate>enddate"><b>날짜입력 오류입니다. 다시 확인해주세요.</b></p>
         <!--        <CheckBox :tagname="Tagnames" :checkedtag="checkedtag" @checkedtag="checkedtaglist" />-->
         <CheckBox :tagname="Tagnames" :checkedtag="checkedtag"/>
@@ -76,7 +76,7 @@ export default {
       if(start<=end){
         axios.get(`http://210.178.22.18:3000/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
-              console.log(result.data)
+              this.TourItemList=result.data
             })
             .catch(function (err) {
               console.log("에러발생: " + err)
@@ -121,6 +121,10 @@ export default {
 .checkbox {
   display: flex;
   margin-bottom: 5px;
+}
+
+.datewarning{
+  color: red;
 }
 
 header {
