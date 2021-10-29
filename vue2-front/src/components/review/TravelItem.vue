@@ -1,5 +1,4 @@
 <template>
-<div>
   <div class="mycard" :style="{backgroundImage : `url( ${item.img} )`}">
       <div class="mycard-foreground">
 <!--          <h5 class="mycard-region">서울</h5>-->
@@ -11,7 +10,6 @@
           </div>
       </div>
   </div>
-</div>
 </template>
 
 <script>
