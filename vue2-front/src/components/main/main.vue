@@ -1,84 +1,83 @@
 <template>
   <div>
-    <!-- Start Banner Hero -->
-    <div id="template-mo-jassa-hero-carousel" class="carousel slide" data-bs-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="1"></li>
-        <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="2"></li>
-      </ol>
+    <div>
+      <!-- Start Banner Hero -->
+      <div id="template-mo-jassa-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="1"></li>
+          <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
 
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="container">
-            <!-- main-video page 1 -->
-            <video class="main-video" muted autoplay loop>
-              <source src="../../assets/bg_v_jeonju_1080.mp4" type="video/mp4">
-            </video>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <!-- main-video page 1 -->
+              <video class="main-video" muted autoplay loop>
+                <source src="../../assets/bg_v_jeonju_1080.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <!-- main-video page 2 -->
+              <video class="main-video" muted autoplay loop>
+                <source src="../../assets/bg_v_seoul_2_1080.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <!-- main-video page 3 -->
+              <video class="main-video" muted autoplay loop>
+                <source src="../../assets/bg_v_Incheon_3_1080.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
-
-        <div class="carousel-item">
-          <div class="container">
-            <!-- main-video page 2 -->
-            <video class="main-video" muted autoplay loop>
-              <source src="../../assets/bg_v_seoul_2_1080.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="container">
-            <!-- main-video page 3 -->
-            <video class="main-video" muted autoplay loop>
-              <source src="../../assets/bg_v_Incheon_3_1080.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-jassa-hero-carousel"
+           role="button" data-bs-slide="prev">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-jassa-hero-carousel"
+           role="button" data-bs-slide="next">
+          <i class="fas fa-chevron-right"></i>
+        </a>
       </div>
-      <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-jassa-hero-carousel"
-         role="button" data-bs-slide="prev">
-        <i class="fas fa-chevron-left"></i>
-      </a>
-      <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-jassa-hero-carousel"
-         role="button" data-bs-slide="next">
-        <i class="fas fa-chevron-right"></i>
-      </a>
     </div>
-    <!-- End Banner Hero -->
-
-    <!-- Start Categories of The Month -->
+    <!-- 여행지 리스트 -->
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
           <h1 class="h1">여행지 리스트</h1>
         </div>
-
       </div>
-      <!-- 여행지리스트 -->
       <div class="row">
-        <Box v-for="(item, i) in TourItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
-      </div>
-
-    </section>
-    <!-- End Categories of The Month -->
-    <!-- Start Featured Product -->
-    <section class="bg-light">
-      <div class="container py-5">
-        <div class="row text-center py-3">
-          <div class="col-lg-6 m-auto">
-            <h1 class="h1">여행후기 리스트</h1>
-          </div>
-
-          <!-- 여행지리스트 -->
-          <div class="row">
-            <Box v-for="(item, i) in TourItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
-          </div>
-
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <Box id="listbox" v-for="(item, i) in TourItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
         </div>
       </div>
     </section>
-    <!-- End Featured Product -->
+    <!-- 여행지 리스트 끝-->
+
+    <!-- 여행후기 리스트 -->
+    <section class="container py-5">
+      <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+          <h1 class="h1">여행후기 리스트</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <Box id="listbox" v-for="(item, i) in TourItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
+        </div>
+      </div>
+    </section>
+    <!-- 여행후기 리스트 끝-->
+
+
   </div>
 </template>
 
@@ -100,8 +99,8 @@ export default {
       TourItemList: [],
       Tagnames: Tagname,
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
-      startdate:'',
-      enddate:'',
+      startdate: '',
+      enddate: '',
     }
   },
   components: {
@@ -119,10 +118,10 @@ export default {
             console.log("에러발생: " + err)
           })
     },
-    selectedDate({start,end}){
-      this.startdate=start
-      this.enddate=end
-      if(start<=end){
+    selectedDate({start, end}) {
+      this.startdate = start
+      this.enddate = end
+      if (start <= end) {
         axios.get(`http://210.178.22.18:3000/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
               console.log(result.data)
@@ -134,19 +133,19 @@ export default {
     }
   },
   created() {
-    var temp =new Date()
+    var temp = new Date()
     var year = temp.getFullYear();
     var month = temp.getMonth() + 1;
     var day = temp.getDate();
 
-    if(month < 10){
+    if (month < 10) {
       month = '0' + month;
     }
-    if(day < 10){
+    if (day < 10) {
       day = '0' + day;
     }
-    this.startdate=year + '-' + month + '-' + day
-    this.enddate=year + '-' + month + '-' + day
+    this.startdate = year + '-' + month + '-' + day
+    this.enddate = year + '-' + month + '-' + day
     axios.get('http://210.178.22.18:3000/testdbTopFour')
         .then(result => {
           this.TourItemList = result.data
@@ -155,17 +154,32 @@ export default {
           console.log("에러발생: " + err)
         })
   }
-
 }
 </script>
 
-
-
-<style>
+<style scoped>
 .travel-container {
   overflow-x: scroll;
   display: flex;
 }
+
+.mainlist{
+  left: 50%;
+
+  /*margin: 0 auto;*/
+  /*text-align: center;*/
+  /*float: left;*/
+}
+
+#listbox {
+  float: left;
+  /*margin: 0 auto;*/
+  text-align: center;
+}
+
+/*.main-listpage{*/
+/*  position: relative;*/
+/*}*/
 
 .main-video {
   width: 100%;
