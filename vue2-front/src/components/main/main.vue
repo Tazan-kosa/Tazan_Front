@@ -163,23 +163,10 @@ export default {
   display: flex;
 }
 
-.mainlist{
-  left: 50%;
-
-  /*margin: 0 auto;*/
-  /*text-align: center;*/
-  /*float: left;*/
-}
-
 #listbox {
   float: left;
-  /*margin: 0 auto;*/
   text-align: center;
 }
-
-/*.main-listpage{*/
-/*  position: relative;*/
-/*}*/
 
 .main-video {
   width: 100%;
