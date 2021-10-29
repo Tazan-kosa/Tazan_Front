@@ -2,12 +2,12 @@
     <div class="mb-3 row">
             <div class="col-5">
                 <div class="input-group-icon">
-                    <input class="form-control" id="startdate" type="date" :value="datevalue"/>
+                    <input class="form-control" id="startdate" type="date" :value="startdate"/>
                 </div>
             </div>
             <div class="col-5">
                 <div class="input-group-icon">
-                    <input class="form-control" id="enddate" type="date" :value="datevalue"/>
+                    <input class="form-control" id="enddate" type="date" :value="enddate"/>
                 </div>
             </div>
             <div class="col-2">
@@ -21,14 +21,14 @@
       name:'Select',
       methods:{
         selectDate(){
-          console.log()
           var start = document.querySelector("#startdate").value
           var end = document.querySelector("#enddate").value
           this.$emit("selectedDate",{start:start,end:end})
         }
       },
       props:{
-        datevalue:String
+        startdate:String,
+        enddate:String
       }
     }
 </script>
