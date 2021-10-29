@@ -3,7 +3,7 @@
     <div class="container">
       <div class="container-top">
         <div class="head">
-          윤현조님의 여행 후기
+          <span id="userName">윤현조</span>님의 여행 후기
         </div>
         <div>
           <h1 class="review-title" contenteditable="true"></h1>
@@ -12,8 +12,7 @@
       <hr/>
       <div class="container-middle">
         <div class="mylist">
-
-          <MyPlanModal/>
+          <MyPlanModal  @selectedPlan="selectedPlan"/>
           <div class="mylist-data">
             <TravelList :items="TourItemData"/>
           </div>
@@ -73,8 +72,8 @@ export default {
       par.appendChild(div);
       par.append(p);
     },
-    openModal() {
-      this.isModalOpen = true;
+    selectedPlan(id) {
+      console.log(id);
     }
   },
   components: {
@@ -102,6 +101,7 @@ export default {
   padding: 20px;
   text-align: left;
   outline: none;
+  white-space:nowrap;
 }
 
 .review-title:empty:before {
