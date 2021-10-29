@@ -4,9 +4,9 @@
       <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">여행지 리스트</h1>
-          <p class="lead fw-normal text-white-50 mb-0">여행의 키워드를 입력해주세요! / 여행가고싶은 지역을 입력해주세요!</p>
+          <p class="lead fw-normal text-white-50 mb-0">여행가고싶은 지역을 입력해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
             <div class="input-group mb-3">
-              <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="관광지/문화시설 | 경기/서울">
+              <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="예시) 경기/강남/제주/해운대">
               <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i> Search</button>
             </div>
         </div>
@@ -64,8 +64,7 @@ export default {
       const value = document.getElementById("searchbar").value
       axios.get(`http://210.178.22.18:3000/search/${value}`)
           .then(result => {
-            console.log(result.data)
-
+            this.TourItemList=result.data
           })
           .catch(function (err) {
             console.log("에러발생: " + err)
@@ -112,6 +111,9 @@ export default {
 </script>
 
 <style scoped>
+#searchbar{
+  text-align: center;
+}
 .button2 {
   border-radius: 4px;
 }
@@ -123,5 +125,20 @@ export default {
 
 header {
   background: #008E9B;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
 }
 </style>
