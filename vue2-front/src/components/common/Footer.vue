@@ -32,7 +32,8 @@
               <hr>
               회사 주소
               <hr>
-              3500 Deer Creek Road Palo Alto, CA 94304
+              <i class="fas fa-map-marker-alt"></i>
+              서울특별시 강남구 테헤란로10길 15
               <hr>
             </ul>
           </div>
@@ -45,7 +46,7 @@
           <div class="w-100 bg-black py-3">
             <div class="container">
               <div class="row pt-2">
-                <div class="col-12">
+                <div id="footer-copyright" class="col-12">
                   <a href="https://github.com/Tazan-kosa/Tazan_Front"><img src="../../assets/GitHub-Mark-Footer.png"
                                                                            height="64" width="64"/></a>
                   <p class="text-left text-light">
@@ -63,9 +64,16 @@
 </template>
 
 <script>
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+
+
 export default {}
 </script>
 
 <style scoped>
 
+#footer-copyright{
+  text-align: center;
+}
 </style>

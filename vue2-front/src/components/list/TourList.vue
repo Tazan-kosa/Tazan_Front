@@ -62,7 +62,7 @@ export default {
     // }
     searchTourList() {
       const value = document.getElementById("searchbar").value
-      axios.get(`http://210.178.22.18:3000/search/${value}`)
+      axios.get(`http://kosa3.iptime.org:50201/search/${value}`)
           .then(result => {
             this.TourItemList=result.data
           })
@@ -74,7 +74,7 @@ export default {
       this.startdate=start
       this.enddate=end
       if(start<=end){
-        axios.get(`http://210.178.22.18:3000/selectdate/${this.startdate}/${this.enddate}`)
+        axios.get(`http://kosa3.iptime.org:50201/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
               this.TourItemList=result.data
             })
@@ -98,7 +98,7 @@ export default {
     }
     this.startdate=year + '-' + month + '-' + day
     this.enddate=year + '-' + month + '-' + day
-    axios.get('http://210.178.22.18:3000/testdb')
+    axios.get('http://kosa3.iptime.org:50201/testdb')
         .then(result => {
           this.TourItemList = result.data
         })

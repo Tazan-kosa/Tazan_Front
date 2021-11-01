@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <!-- Start Banner Hero -->
-      <div id="template-mo-jassa-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- 메인페이지 시작 -->
+      <div id="tour-main" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="0" class="active"></li>
-          <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="1"></li>
-          <li data-bs-target="#template-mo-jassa-hero-carousel" data-bs-slide-to="2"></li>
+          <li data-bs-target="#tour-main" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#tour-main" data-bs-slide-to="1"></li>
+          <li data-bs-target="#tour-main" data-bs-slide-to="2"></li>
         </ol>
 
         <div class="carousel-inner">
@@ -37,12 +37,14 @@
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-jassa-hero-carousel"
-           role="button" data-bs-slide="prev">
+        <!-- 동영상 이동-->
+        <a class="carousel-control-prev text-decoration-none w-10 ps-3" href="#tour-main"
+           role="button" data-bs-slide="prev" id="video-move-icon-1">
           <i class="fas fa-chevron-left"></i>
         </a>
-        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-jassa-hero-carousel"
-           role="button" data-bs-slide="next">
+
+        <a class="carousel-control-next text-decoration-none w-10 pe-3" href="#tour-main"
+           role="button" data-bs-slide="next" id="video-move-icon-2">
           <i class="fas fa-chevron-right"></i>
         </a>
       </div>
@@ -76,9 +78,9 @@
       </div>
     </section>
     <!-- 여행후기 리스트 끝-->
-
-
+    <!-- 메인페이지 끝-->
   </div>
+
 </template>
 
 <script>
@@ -158,10 +160,10 @@ export default {
 </script>
 
 <style scoped>
-.travel-container {
-  overflow-x: scroll;
-  display: flex;
-}
+/*.travel-container {*/
+/*  overflow-x: scroll;*/
+/*  display: flex;*/
+/*}*/
 
 #listbox {
   float: left;
@@ -170,6 +172,14 @@ export default {
 
 .main-video {
   width: 100%;
+}
+
+#video-move-icon-1:hover {
+  background-color: #E2E2E2;
+}
+
+#video-move-icon-2:hover {
+  background-color: #E2E2E2;
 }
 
 </style>
