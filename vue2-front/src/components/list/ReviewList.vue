@@ -55,7 +55,7 @@ export default {
   methods: {
     searchTourList() {
       const value = document.getElementById("searchbar").value
-      axios.get(`http://kosa3.iptime.org:50219/search/${value}`)
+      axios.get(`http://kosa3.iptime.org:50201/search/${value}`)
           .then(result => {
             console.log(result.data)
 
@@ -68,7 +68,7 @@ export default {
       this.startdate=start
       this.enddate=end
       if(start<=end){
-        axios.get(`http://kosa3.iptime.org:50219/selectdate/${this.startdate}/${this.enddate}`)
+        axios.get(`http://kosa3.iptime.org:50201/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
               console.log(result.data)
             })
@@ -92,7 +92,7 @@ export default {
     }
     this.startdate=year + '-' + month + '-' + day
     this.enddate=year + '-' + month + '-' + day
-    axios.get('http://kosa3.iptime.org:50219/test')
+    axios.get('http://kosa3.iptime.org:50201/test')
         .then(result => {
           this.TourItemList = result.data.sample
         })
