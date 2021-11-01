@@ -6,9 +6,11 @@ import VueRouter from 'vue-router'
 import Detail from "../components/pages/Detail";
 // import List from "../components/pages/List";
 // import Review from "../components/pages/Review";
-import Main from "../components/main/main.vue"
+import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
-import Review from "../components/review/ReviewDetail"
+import ReviewList from "@/components/list/ReviewList";
+import Review from "../components/review/ReviewDetail";
+import Login from "../components/common/Login";
 
 Vue.use(VueRouter)
 
@@ -19,9 +21,14 @@ const route= [
         component: Detail
     },
     {
-        path: '/list',
-        name: 'List',
+        path: '/tourlist',
+        name: 'TourList',
         component: TourList
+    },
+    {
+        path: '/reviewList',
+        name: 'ReviewList',
+        component: ReviewList
     },
     {
         path: '/review',
@@ -30,7 +37,11 @@ const route= [
     {
         path: '/',
         component: Main
-    }
+    },
+    {
+        path: '/login',
+        component: Login
+    },
 ]
 
 const router = new VueRouter({

@@ -1,0 +1,348 @@
+{,…}
+originalSchedule: [{weekDay: 5, startTime: "1000", endTime: "2200", whatDay: 0, complete: false, oneSpotDay: false,…},…]
+0: {weekDay: 5, startTime: "1000", endTime: "2200", whatDay: 0, complete: false, oneSpotDay: false,…}
+complete: false
+endTime: "2200"
+oneSpotDay: false
+spendingMinute: 720
+startTime: "1000"
+weekDay: 5
+whatDay: 0
+1: {weekDay: 6, startTime: "1000", endTime: "2200", whatDay: 1, complete: false, oneSpotDay: false,…}
+complete: false
+endTime: "2200"
+oneSpotDay: false
+spendingMinute: 720
+startTime: "1000"
+weekDay: 6
+whatDay: 1
+2: {weekDay: 0, startTime: "1000", endTime: "2200", whatDay: 2, complete: false, oneSpotDay: false,…}
+complete: false
+endTime: "2200"
+oneSpotDay: false
+spendingMinute: 720
+startTime: "1000"
+weekDay: 0
+whatDay: 2
+spotsByDay: [[{no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}],…]
+0: [{no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}]
+0: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 0
+1: [{no: 1039, type: "subway_station,transit_station,point_of_interest,establishment", isSpot: 1,…},…]
+0: {no: 1039, type: "subway_station,transit_station,point_of_interest,establishment", isSpot: 1,…}
+address: "초량동"
+googleSearchedName: "부산역"
+isSpot: 1
+lat: 35.1145
+lng: 129.039
+memo: ""
+no: 1039
+openTime: []
+photo_reference: "CmRaAAAADH6HmqM1kjpiYfNo8yuvkYZW_ZLIdwjNULi8NzrJyUKhe4s88BK4-L2-zhuSE01lZjqkzIkcrh8JZ4-ZE5c6CpYLZ-GsD-vXACEMIK1rrlGcL1MVPP7ebX_6PlemSWaVEhCc1j6pPFGI1fExhgWFCznhGhQsY8HOTbhBmXv-5ocGHAuB5JpzXQ"
+place_id: "ChIJVZuLL33paDUR9rDfjolmUXI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: ""
+searchingKname: "부산 지하철"
+selectedCnt: 5
+showingName: "부산역"
+type: "subway_station,transit_station,point_of_interest,establishment"
+whatDay: 1
+1: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 1
+2: {no: 1044, isSpot: 1, showingName: "송도 해상 케이블카", googleSearchedName: "송도 해상 케이블카", lat: 35.0764,…}
+address: "서구 암남동 송도해변로 171"
+firstOpenTimes: 540
+googleSearchedName: "송도 해상 케이블카"
+isSpot: 1
+lastEndTimes: 1380
+lat: 35.0764
+lng: 129.024
+memo: ""
+no: 1044
+openTime: [{o: [0, "0900"], c: [0, "2200"]}, {o: [1, "0900"], c: [1, "2200"]}, {o: [2, "0900"], c: [2, "2200"]},…]
+realStaySec: 7200
+recommendedStaySec: 7200
+selectedCnt: 1524
+showingName: "송도 해상 케이블카"
+whatDay: 1
+3: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 1
+2: [{no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…},…]
+0: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 2
+1: {no: 1091, isSpot: 1, showingName: "더베이101 요트투어", googleSearchedName: "더베이101요트투어", lat: 35.1567,…}
+address: "해운대구 우동 동백로 52 더베이101요트"
+firstOpenTimes: 0
+googleSearchedName: "더베이101요트투어"
+isSpot: 1
+lastEndTimes: 1440
+lat: 35.1567
+lng: 129.152
+memo: ""
+no: 1091
+openTime: []
+realStaySec: 7200
+recommendedStaySec: 7200
+selectedCnt: 1589
+showingName: "더베이101 요트투어"
+whatDay: 2
+2: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 2
+3: [{no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…},…]
+0: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 3
+1: {no: 1145, isSpot: 1, showingName: "부평깡통시장/야시장", googleSearchedName: "부평깡통시장/야시장", lat: 35.1013,…}
+address: "중구 부평동 부평1길 39"
+firstOpenTimes: 540
+googleSearchedName: "부평깡통시장/야시장"
+isSpot: 1
+lastEndTimes: 1200
+lat: 35.1013
+lng: 129.026
+memo: ""
+no: 1145
+openTime: [{o: [0, "0900"], c: [0, "2000"]}, {o: [1, "0900"], c: [1, "2000"]}, {o: [2, "0900"], c: [2, "2000"]},…]
+0: {o: [0, "0900"], c: [0, "2000"]}
+c: [0, "2000"]
+0: 0
+1: "2000"
+o: [0, "0900"]
+0: 0
+1: "0900"
+1: {o: [1, "0900"], c: [1, "2000"]}
+c: [1, "2000"]
+0: 1
+1: "2000"
+o: [1, "0900"]
+0: 1
+1: "0900"
+2: {o: [2, "0900"], c: [2, "2000"]}
+c: [2, "2000"]
+0: 2
+1: "2000"
+o: [2, "0900"]
+0: 2
+1: "0900"
+3: {o: [3, "0900"], c: [3, "2000"]}
+c: [3, "2000"]
+0: 3
+1: "2000"
+o: [3, "0900"]
+0: 3
+1: "0900"
+4: {o: [4, "0900"], c: [4, "2000"]}
+c: [4, "2000"]
+0: 4
+1: "2000"
+o: [4, "0900"]
+0: 4
+1: "0900"
+5: {o: [5, "0900"], c: [5, "2000"]}
+c: [5, "2000"]
+0: 5
+1: "2000"
+o: [5, "0900"]
+0: 5
+1: "0900"
+6: {o: [6, "0900"], c: [6, "2000"]}
+c: [6, "2000"]
+0: 6
+1: "2000"
+o: [6, "0900"]
+0: 6
+1: "0900"
+realStaySec: 7200
+recommendedStaySec: 7200
+selectedCnt: 1846
+showingName: "부평깡통시장/야시장"
+whatDay: 3
+2: {no: 3189, type: "train_station,transit_station,point_of_interest,establishment", isSpot: 2,…}
+address: "동구 초량3동 중앙대로"
+googleSearchedName: "부산역"
+isSpot: 2
+lat: 35.1152
+lng: 129.042
+memo: ""
+no: 3189
+openTime: []
+photo_reference: "CmRaAAAA1kubNsUUjiPdcxVlZkZ0C8t7-HCUXUWdUsPWEpJ6qDLnbjW-ccb38Wl_LDDhiPymEYXttaeH_jyb7zeg7_iGHXoxz-HLmB3oUqkwQNmwxF0cdfvP4R4lQrkZAbyBMnUTEhALyLHnSEnem6cZlIFwZSUsGhScIsRG8rFDbRMB7odnw_9uh8uKVg"
+place_id: "ChIJqxrVY9jraDURTqBi-qe-mAI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: "ktxsrt  327 탑승 10:50 ~13:27도착"
+searchingKname: ""
+selectedCnt: 124
+showingName: "부산역"
+type: "train_station,transit_station,point_of_interest,establishment"
+whatDay: 3
+3: {no: 1039, type: "subway_station,transit_station,point_of_interest,establishment", isSpot: 1,…}
+address: "초량동"
+googleSearchedName: "부산역"
+isSpot: 1
+lat: 35.1145
+lng: 129.039
+memo: ""
+no: 1039
+openTime: []
+photo_reference: "CmRaAAAADH6HmqM1kjpiYfNo8yuvkYZW_ZLIdwjNULi8NzrJyUKhe4s88BK4-L2-zhuSE01lZjqkzIkcrh8JZ4-ZE5c6CpYLZ-GsD-vXACEMIK1rrlGcL1MVPP7ebX_6PlemSWaVEhCc1j6pPFGI1fExhgWFCznhGhQsY8HOTbhBmXv-5ocGHAuB5JpzXQ"
+place_id: "ChIJVZuLL33paDUR9rDfjolmUXI"
+realStaySec: 0
+recommendedStaySec: 7200
+searchingEname: ""
+searchingKname: "부산 지하철"
+selectedCnt: 5
+showingName: "부산역"
+type: "subway_station,transit_station,point_of_interest,establishment"
+whatDay: 3
+stayingInfos: [[], [{start: 1177, finish: 1177, fromPrevious: 0}, {start: 1182, finish: 1182, fromPrevious: 5},…],…]
+0: []
+1: [{start: 1177, finish: 1177, fromPrevious: 0}, {start: 1182, finish: 1182, fromPrevious: 5},…]
+0: {start: 1177, finish: 1177, fromPrevious: 0}
+finish: 1177
+fromPrevious: 0
+start: 1177
+1: {start: 1182, finish: 1182, fromPrevious: 5}
+finish: 1182
+fromPrevious: 5
+start: 1182
+2: {start: 1200, finish: 1320, fromPrevious: 18}
+finish: 1320
+fromPrevious: 18
+start: 1200
+3: {start: 1341, finish: 1341, fromPrevious: 21}
+finish: 1341
+fromPrevious: 21
+start: 1341
+2: [{start: 1160, finish: 1160, fromPrevious: 0}, {start: 1200, finish: 1320, fromPrevious: 40},…]
+0: {start: 1160, finish: 1160, fromPrevious: 0}
+finish: 1160
+fromPrevious: 0
+start: 1160
+1: {start: 1200, finish: 1320, fromPrevious: 40}
+finish: 1320
+fromPrevious: 40
+start: 1200
+2: {start: 1361, finish: 1361, fromPrevious: 41}
+finish: 1361
+fromPrevious: 41
+start: 1361
+3: [{start: 1065, finish: 1065, fromPrevious: 0}, {start: 1080, finish: 1200, fromPrevious: 15},…]
+0: {start: 1065, finish: 1065, fromPrevious: 0}
+finish: 1065
+fromPrevious: 0
+start: 1065
+1: {start: 1080, finish: 1200, fromPrevious: 15}
+finish: 1200
+fromPrevious: 15
+start: 1080
+2: {start: 1226, finish: 1226, fromPrevious: 26}
+finish: 1226
+fromPrevious: 26
+start: 1226
+3: {start: 1235, finish: 1235, fromPrevious: 9}
+finish: 1235
+fromPrevious: 9
+start: 1235
