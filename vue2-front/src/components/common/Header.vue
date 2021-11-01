@@ -50,6 +50,7 @@
             </a>
 
             <!--로그인-->
+            <!-- modal창으로 하세요.-->
             <div id="login">
                 <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
@@ -63,6 +64,7 @@
 
 <script>
 export default {
+// login data 처리 getelementbyid..
 
 }
 </script>

@@ -64,6 +64,7 @@ export default {
     return {
       userId: null,
       userPassword: null,
+      dummyid: null,
     };
   },
   methods: {
@@ -81,7 +82,8 @@ export default {
               }})
             .then((res) => {
               if (res.status === 200) {
-                console.log(res.data)
+                console.log(res.data) // 이게 현재 재혁
+                this.dummyid=res.data
               }
             });
 
