@@ -12,22 +12,22 @@
                 <v-col>
                   <v-form style="width: 400px; height: 300px">
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">userId</v-icon>
+                      <v-icon color="black" size="30px">아이디</v-icon>
 
                       <div class="mx-1">
                         <v-text-field
-                            placeholder="userId"
+                            placeholder="아이디"
                             v-model="userId"
                             required
                         ></v-text-field>
                       </div>
                     </div>
                     <div class="mx-3">
-                      <v-icon color="black" size="30px">userPassword</v-icon>
+                      <v-icon color="black" size="30px">비밀번호</v-icon>
 
                       <div class="mx-1">
                         <v-text-field
-                            placeholder="userPassword"
+                            placeholder="비밀번호"
                             type="password"
                             v-model="userPassword"
                             required
@@ -60,6 +60,7 @@
 import axios from 'axios'
 
 export default {
+  name: 'login',
   data() {
     return {
       userId: null,
@@ -76,7 +77,7 @@ export default {
       try {
         axios
             // .post(HOST + "/signin", JSON.stringify(saveData), {
-            .post("http://210.178.22.18:3000/signin", JSON.stringify(saveData),{
+            .post("http://kosa3.iptime.org:50201/signin", JSON.stringify(saveData),{
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
               }})

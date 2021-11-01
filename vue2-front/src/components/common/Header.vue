@@ -49,8 +49,8 @@
               <i class="fa fa-fw fa-search text-dark mr-2"></i>
             </a>
 
-            <!--로그인-->
-            <!-- modal창으로 하세요.-->
+            <!-- 로그인 -->
+            <!-- modal로 변환하기 -->
             <div id="login">
                 <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
@@ -63,7 +63,9 @@
 </template>
 
 <script>
+
 export default {
+  name: "Header",
 // login data 처리 getelementbyid..
 
 }
@@ -77,7 +79,7 @@ export default {
   background-color:white;
 }
 
-/*nav underline 없앰*/
+/*nav underline 제거*/
 a{
   text-decoration: none;
 }

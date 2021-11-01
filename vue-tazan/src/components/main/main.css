@@ -102,7 +102,7 @@ div {
 }
 
 /* Hero Carousel */
-#template-mo-jassa-hero-carousel {
+#tour-main {
   background: #efefef !important;
 }
 
@@ -183,13 +183,13 @@ div {
 }
 
 /* Carousel Hero */
-#template-mo-jassa-hero-carousel .carousel-indicators li {
+#tour-main .carousel-indicators li {
   margin-top: -50px;
   background-color: #59ab6e;
 }
 
-#template-mo-jassa-hero-carousel .carousel-control-next i,
-#template-mo-jassa-hero-carousel .carousel-control-prev i {
+#tour-main .carousel-control-next i,
+#tour-main .carousel-control-prev i {
   color: #59ab6e !important;
   font-size: 2.8em !important;
 }
@@ -293,7 +293,7 @@ div {
     max-width: 550px;
   }
 
-  #template-mo-jassa-hero-carousel .carousel-item {
+  #tour-main .carousel-item {
     min-height: 30rem !important;
   }
 
