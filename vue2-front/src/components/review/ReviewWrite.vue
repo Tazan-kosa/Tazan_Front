@@ -2,9 +2,9 @@
   <div>
     <div class="container">
       <div class="container-top">
-        <div class="head">
-          <span id="userName">윤현조</span>님의 여행 후기
-        </div>
+        <h1 class="head">
+          <span id="userName">윤현조</span>님의 여행 후기✈️
+        </h1>
         <div>
           <h1 class="review-title" contenteditable="true"></h1>
         </div>
@@ -14,20 +14,26 @@
         <div class="mylist">
           <MyPlanModal  @selectedPlan="selectedPlan"/>
           <div class="mylist-data">
-            <TravelList :items="TourItemData"/>
+            <div class="before" v-if="!flag" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <p>계획을 불러와주세요!</p>
+            </div>
+            <TravelList :items="TourItemData" v-if="flag"/>
           </div>
         </div>
       </div>
       <div class="container-bottom">
         <div class="review">
-          <span id="text">나의 여행 일기</span>
+          <span id="text">📗나의 여행 일기</span>
           <span>
             <input @change="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
             <label for="file" class="input-plus">사진</label>
           </span>
           <div class="review-content" contenteditable="true">
-            <p class="review-text" ></p>
+            <p class="review-text"></p>
           </div>
+        </div>
+        <div class="save">
+          <button class="savebtn">저장하기</button>
         </div>
       </div>
     </div>
@@ -36,7 +42,7 @@
 
 <script>
 import TravelList from "./TravelList";
-import TourItemData from "../list/sample";
+import TourItemData from "./myplan.js";
 import MyPlanModal from "./MyPlanModal";
 
 export default {
@@ -44,7 +50,7 @@ export default {
   data() {
     return {
       TourItemData: TourItemData,
-      isModalOpen: false,
+      flag: false,
     }
   },
   methods: {
@@ -66,13 +72,16 @@ export default {
       var div = document.createElement("div");
       let p = document.createElement("p");
       div.innerHTML = `<img src="${url}"/>`;
+      div.className += "reviewImg"
       p.innerHTML = "<br>"
       p.className += "review-text"
+    
       var par = document.getElementsByClassName("review-content")[0];
       par.appendChild(div);
       par.append(p);
     },
     selectedPlan(id) {
+      this.flag = true;
       console.log(id);
     }
   },
@@ -83,7 +92,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+
 .container {
   width: 100%;
 }
@@ -95,6 +105,7 @@ export default {
 .head {
   padding: 50px;
   text-align: center;
+  font-size: 40sp;
 }
 
 .review-title {
@@ -116,8 +127,6 @@ export default {
   position: relative;
 }
 
-.mylist {}
-
 #mylist-btn {
   width:fit-content;
   height: fit-content;
@@ -125,12 +134,20 @@ export default {
   margin-left: 10px;
 }
 
-.container-bottom{
-
+.before{
+  width: 100%;
+  height: 350px;
+  text-align: center;
+  background-color: #e2e2e2;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .review {
-
+  margin-top: 30px;
 }
 
 #text {
@@ -159,16 +176,31 @@ export default {
   min-height: 300px;
 }
 
-p.review-text{
-  margin-bottom: 0px;
-}
-
 .review-text:empty:before {
   content: '여행 일기를 작성해주세요.';
   cursor: text;
   color: #ccc;
   opacity: 0.6;
   outline: none;
+  text-align: left;
+}
+
+.review-text{
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.reviewImg {
+  text-align: center;
+
+}
+
+.save{
+  text-align: right;
+}
+
+.savebtn {
+  padding: 10px;
 }
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <!-- Scrollable modal -->
   <div>
-    <p id="mylist-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">내 계획 불러오기</p>
+    <h5 id="mylist-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">🖋️ 내 계획 불러오기</h5>
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -11,9 +11,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div v-for="(item, i) in myplans" :key="i" class="container">
+            <div v-for="(item, i) in myplanList" :key="i" class="container">
               <label class="radio-input">
-                <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.id)">
+                <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.myplanId)">
                   <div class="myplan">
                     <span class="myplan-region">{{ item.region }}</span>
                     <span class="myplan-date">{{ item.date }}</span>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import myplanList from './myplanList.js'
+
 export default {
   name: 'MyPlanModal',
   methods: {
@@ -45,33 +47,7 @@ export default {
   data() {
     return {
       myPlanId: 0,
-      myplan :[],
-      myplans: [
-        {
-          'id' : 2,
-          'region': "서울",
-          'title': "서울 궁궐투어",
-          'date': "2021.10.10 - 2021.10.12"
-        },
-        {
-          'id' : 3,
-          'region': "부산",
-          'title': "부산 맛집 투어",
-          'date': "2021.10.10 - 2021.10.12"
-        },
-        {
-          'id' : 4,
-          'region': "대전",
-          'title': "대전 축제 즐기기",
-          'date': "2021.10.10 - 2021.10.12"
-        },
-        {
-          'id' : 5,
-          'region': "강릉",
-          'title': "강릉 바다 뽀개기",
-          'date': "2021.10.10 - 2021.10.12"
-        },
-      ]
+      myplanList :myplanList,
     }
   }
 
