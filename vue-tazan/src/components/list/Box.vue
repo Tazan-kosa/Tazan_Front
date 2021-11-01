@@ -1,6 +1,6 @@
 <template>
 <!--  <div class="box">-->
-    <div class="col mb-5" v-if="tagname.filter(n => item.tag.includes(n)).length > 0">
+    <div class="col mb-5" v-if="checkedtag.filter(n => item.tag.includes(n)).length > 0">
       <div class="card h-100" >
         <!-- Product image-->
         <img class="card-img-top" :src="item.img" alt="...">
@@ -41,7 +41,7 @@ export default {
 
   props: {
     item: Object,
-    tagname:Array
+    checkedtag:Array
   },
 }
 </script>

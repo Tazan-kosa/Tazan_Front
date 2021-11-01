@@ -4,7 +4,7 @@
       <input class="form-check-input" type="checkbox" value="" :id="tag" checked @click="checking(tag)">
       <label class="form-check-label" :for="tag">{{ tag }}</label>
     </div>
-    <button type="button" class="btn btn-outline-success" @click="sendcheckedtag()">선택</button>
+<!--    <button type="button" class="btn btn-outline-success" @click="sendcheckedtag()">선택</button>-->
   </div>
 </template>
 
@@ -13,29 +13,27 @@
 export default {
   name:'CheckBox',
   props:{
-    tagname:Array
+    tagname:Array,
+    checkedtag:Array
   },
   data(){
     return{
-      checkedtag:['관광지','문화시설','축제공연행사','여행코스','레포츠','숙박','쇼핑', '음식점']
+      returntag:[]
     }
   },
-
   methods:{
     checking(tag){
-
+      this.returntag=this.checkedtag
       if(this.checkedtag.includes(tag)){
 
-        this.checkedtag.splice(this.checkedtag.indexOf(tag),1)
+        this.returntag.splice(this.returntag.indexOf(tag),1)
       }
       else{
-
-        this.checkedtag.push(tag)
+        this.returntag.push(tag)
       }
     },
     sendcheckedtag(){
-      this.$emit("checkedtag",this.checkedtag)
-
+      // this.$emit("checkedtag",this.returntag)
     }
   }
 }
@@ -43,7 +41,7 @@ export default {
 
 <style scoped>
 .checkbox div{
-  width: 120px;
+  width: 200px;
 }
 button{
   padding-top: 0;
