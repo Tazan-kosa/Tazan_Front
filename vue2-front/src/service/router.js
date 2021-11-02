@@ -64,8 +64,6 @@ const route= [
         path: '/login',
         component: Login
     },
-<<<<<<< Updated upstream
-=======
     {
         path: '/testC',
         name: 'TestCreate',
@@ -92,7 +90,6 @@ const route= [
         component: TestDetail
     }
 
->>>>>>> Stashed changes
 ]
 
 const router = new VueRouter({
