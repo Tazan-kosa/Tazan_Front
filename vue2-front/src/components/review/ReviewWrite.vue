@@ -23,7 +23,7 @@
       </div>
       <div class="container-bottom">
         <div class="review">
-          <span id="text">📗나의 여행 일기</span>
+          <h5 id="text">📗나의 여행 일기</h5>
           <span>
             <input @change="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
             <label for="file" class="input-plus">사진</label>
@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="save">
-          <button class="savebtn">저장하기</button>
+          <button class="savebtn" @click="save">저장하기</button>
         </div>
       </div>
     </div>
@@ -83,6 +83,17 @@ export default {
     selectedPlan(id) {
       this.flag = true;
       console.log(id);
+    },
+    save() {
+      var content = document.getElementsByClassName("review-content");
+      // console.log(content.item(0).textContent);
+      for (var i = 0; i < content.length; i++){
+        console.log(content.item(i).textContent)
+        // if(content.item(i) === document.body.){
+        //   console.log(1111111111111111);
+        // }
+      }
+
     }
   },
   components: {
@@ -105,7 +116,6 @@ export default {
 .head {
   padding: 50px;
   text-align: center;
-  font-size: 40sp;
 }
 
 .review-title {

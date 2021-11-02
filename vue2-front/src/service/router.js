@@ -9,7 +9,7 @@ import Detail from "../components/pages/Detail";
 import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
 import ReviewList from "@/components/list/ReviewList";
-import Review from "../components/review/ReviewDetail";
+import Review from "../components/review/ReviewWrite";
 import Login from "../components/common/Login";
 
 Vue.use(VueRouter)
