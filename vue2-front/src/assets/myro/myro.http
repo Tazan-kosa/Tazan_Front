@@ -1,0 +1,41 @@
+GET https://www.myro.co.kr/getSavedRoutesByUserEmail?currentPageDataFirst=0&dataPerPage=5
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/deleteUserSavedRoute
+Accept: application/json
+
+###
+GET https://www.earthtory.com/ko/mypage/earthtory?type=plan_sub&gdb_srl=46991
+Accept: application/json
+
+###
+GET https://www.earthtory.com/ko/mypage/earthtory?type=plan_sub&gdb_srl=46999
+Accept: application/x-json
+
+###
+GET https://www.earthtory.com/ko/area/republic-of-korea
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/ref/timepicki.js
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/build/myro2_lang_javascript.js
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/build/myPage.js
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/getSavedRoutesByUserEmail?currentPageDataFirst=0&dataPerPage=5
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/getCityListForFirstPage
+Accept: application/json
+
+###
+

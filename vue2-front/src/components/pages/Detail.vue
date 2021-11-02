@@ -1,10 +1,22 @@
 <template>
-  <h1>여행후기 상세 페이지입니다..</h1>
+  <div>
+    <DetailPage/>
+<!--    <DetailSelecDome/>-->
+    <DetailSelection/>
+  </div>
 </template>
 
 <script>
+import DetailPage from "../detail/DetailPage";
+import DetailSelection from "../detail/DetailSelection";
+// import DetailSelecDome from "../detail/DetailSelecDome";
 export default {
-  name: "Detail"
+  name: "Detail",
+  components: {
+    // DetailSelecDome,
+    DetailSelection,
+    DetailPage
+  }
 }
 </script>
 
