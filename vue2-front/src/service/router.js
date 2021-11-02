@@ -9,8 +9,13 @@ import Detail from "../components/pages/Detail";
 import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
 import ReviewList from "@/components/list/ReviewList";
-import Review from "../components/review/ReviewDetail";
+import Review from "../components/review/ReviewWrite";
 import Login from "../components/common/Login";
+import Create from "../components/pages/Create";
+import MyPage from "../components/mypage/MyPage";
+import TestCreate from "../components/create/TestCreate";
+import TestRead from "../components/create/TestRead";
+import TestDetail from "../components/create/TestDetail";
 
 Vue.use(VueRouter)
 
@@ -18,7 +23,24 @@ const route= [
     {
         path: '/detail',
         name: 'Datail',
-        component: Detail
+        component: Detail,
+        // children: [
+        //     {
+        //         path: "create",
+        //         component: Create,
+        //         name: "create"
+        //     }
+        // ]
+    },
+    {
+        path: '/create',
+        name: 'Create',
+        component: Create
+    },
+    {
+        path: '/mypage',
+        name: 'MyPage',
+        component: MyPage
     },
     {
         path: '/tourlist',
@@ -42,6 +64,32 @@ const route= [
         path: '/login',
         component: Login
     },
+    {
+        path: '/testC',
+        name: 'TestCreate',
+        component: TestCreate
+    },
+    {
+        path: '/testR',
+        name: 'TestRead',
+        component: TestRead
+    },
+    {
+        path: '/testD',
+        name: 'TestRead',
+        component: TestDetail
+    },
+    {
+        path: '/testC/:contentId?',
+        name: 'TestCreate',
+        component: TestCreate
+    },
+    {
+        path: '/testD/:contentId',
+        name: 'TestDetail',
+        component: TestDetail
+    }
+
 ]
 
 const router = new VueRouter({
