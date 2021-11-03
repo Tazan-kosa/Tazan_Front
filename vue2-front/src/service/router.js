@@ -16,6 +16,7 @@ import MyPage from "../components/mypage/MyPage";
 import TestCreate from "../components/create/TestCreate";
 import TestRead from "../components/create/TestRead";
 import TestDetail from "../components/create/TestDetail";
+import Register from "../components/common/Register";
 
 Vue.use(VueRouter)
 
@@ -65,6 +66,10 @@ const route= [
         component: Login
     },
     {
+        path: '/register',
+        component: Register
+    },
+    {
         path: '/testC',
         name: 'TestCreate',
         component: TestCreate
@@ -88,8 +93,7 @@ const route= [
         path: '/testD/:contentId',
         name: 'TestDetail',
         component: TestDetail
-    }
-
+    },
 ]
 
 const router = new VueRouter({

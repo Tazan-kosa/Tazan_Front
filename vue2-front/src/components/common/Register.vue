@@ -1,149 +1,161 @@
 <template>
-  <div class="col-md-12">
-    <div class="card card-container">
-      <img
-          id="profile-img"
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          class="profile-img-card"
-      />
-      <form name="form" @submit.prevent="handleRegister">
-        <div v-if="!successful">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input
-                type="text"
-                class="form-control"
-                name="username"
-                v-model="user.username"
-                v-validate="'required|min:3|max:20'"
-            />
-            <div
-                class="alert-danger"
-                v-if="submitted && errors.has('username')"
-            >{{errors.first('username')}}</div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-                type="email"
-                class="form-control"
-                name="email"
-                v-model="user.email"
-                v-validate="'required|email|max:50'"
-            />
-            <div
-                class="alert-danger"
-                v-if="submitted && errors.has('email')"
-            >{{errors.first('email')}}</div>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-                type="password"
-                class="form-control"
-                name="password"
-                v-model="user.password"
-                v-validate="'required|min:6|max:40'"
-            />
-            <div
-                class="alert-danger"
-                v-if="submitted && errors.has('password')"
-            >{{errors.first('password')}}</div>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-block">Sign Up</button>
-          </div>
-        </div>
-      </form>
+  <v-app id="app">
+    <v-main>
+      <v-container
+          style="position: relative; top: 20%; margin-left: 20%"
+          class="text-xs-center"
+      >
+        <v-layout row wrap class="text-xs-center">
+          <v-flex>
+            <v-card flat class="mx-auto" max-width="800">
+              <v-row style="margin-top: 60px">
+                <v-col>
+                  <v-form style="width: 400px; height: 300px">
 
-      <div
-          class="alert"
-          :class="successful ? 'alert-success' : 'alert-danger'"
-          v-if="message"
-      >{{message}}</div>
-    </div>
-  </div>
+                    <!-- 이메일 -->
+                    <div class="mx-3">
+                      <v-icon color="black" size="30px">이메일</v-icon>
+                      <div class="mx-1">
+                        <v-text-field
+                            placeholder="이메일"
+                            v-model="email"
+                            required
+                            :rules="emailRules"
+                        ></v-text-field>
+                      </div>
+                    </div>
+
+                    <!-- 비밀번호 -->
+                    <div class="mx-3">
+                      <v-icon color="black" size="30px">비밀번호</v-icon>
+                      <div class="mx-1">
+                        <v-text-field
+                            placeholder="비밀번호"
+                            type="password"
+                            v-model="passWord"
+                            required
+                        ></v-text-field>
+                      </div>
+                    </div>
+
+                    <!-- 비밀번호 확인 -->
+                    <div class="mx-3">
+                      <div class="mx-1">
+                        <v-text-field
+                            placeholder="비밀번호 확인"
+                            type="password"
+                            v-model="passWord"
+                            required
+                        ></v-text-field>
+                      </div>
+                    </div>
+
+                    <!-- 닉네임 -->
+                    <div class="mx-3">
+                      <v-icon color="black" size="30px">닉네임</v-icon>
+                      <div class="mx-1">
+                        <v-text-field
+                            placeholder="닉네임"
+                            v-model="nickName"
+                            required
+                        >닉네임</v-text-field>
+                      </div>
+                    </div>
+
+                    <!-- 닉네임 -->
+                    <div class="mx-3">
+                      <v-icon color="black" size="30px">이름</v-icon>
+                      <div class="mx-1">
+                        <v-text-field
+                            placeholder="이름"
+                            v-model="name"
+                            required
+                        >이름</v-text-field>
+                      </div>
+                    </div>
+
+                    <!-- 핸드폰 -->
+                    <div class="mx-3">
+                      <v-icon color="black" size="30px">핸드폰</v-icon>
+                      <div class="mx-1">
+                        <v-text-field
+                            placeholder="핸드폰"
+                            v-model="phoneNumber"
+                            required
+                        >핸드폰</v-text-field>
+                      </div>
+                    </div>
+
+                    <!-- 가입하기 버튼 -->
+                    <v-card-actions>
+                      <v-btn
+                          color="#2c4f91"
+                          dark
+                          large
+                          block
+                          @click="register"
+                      >가입하기</v-btn>
+                    </v-card-actions>
+
+                  </v-form>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
+<!-- register db
+Email VARCHAR(30), 이메일 email
+PassWord VARCHAR(100), 비밀번호, 비밀번호 확인 passWord
+NickName VARCHAR(20), 닉네임  nickName
+Name VARCHAR(45), 이름 Name
+PhoneNumber VARCHAR(15), 휴대폰 phoneNumber
+-->
+
 <script>
-import User from '../models/user'
+import axios from "axios";
 
 export default {
-  name: 'register',
-  computed: {
-    loggedIn() {
-      return this.$store.state.auth.status.loggedIn
-    }
-  },
-  data() {
-    return {
-      user: new User('', '', ''),
-      submitted: false,
-      successful: false,
-      message: ''
-    }
-  },
-  mounted() {
-    if (this.loggedIn) {
-      this.$router.push('/')
-    }
-  },
+  name: 'Register',
+  data: () => ({
+
+
+    email: '',
+    emailRules: [
+      v => !!v || '이메일을 입력해 주세요.',
+      v => /.+@.+/.test(v) || '이메일이 유효해야 합니다.',
+    ],
+  }),
+
   methods: {
-    handleRegister() {
-      this.message = ''
-      this.submitted = true
-      this.$validator.validate().then(valid => {
-        if (valid) {
-          this.$store.dispatch('auth/register', this.user).then(
-              data => {
-                this.message = data.message
-                this.successful = true
-              },
-              error => {
-                this.message = error.message
-                this.successful = false
+    register() {
+      let saveData = {};
+      saveData.email = this.email;
+      saveData.passWord = this.passWord;
+      saveData.nickName = this.nickName;
+      saveData.name = this.name;
+      saveData.phoneNumber = this.phoneNumber;
+
+      try {
+        axios
+            .post("http://kosa3.iptime.org:50201/userJoin", JSON.stringify(saveData),{
+              headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+              }})
+            .then((res) => {
+              if (res.status === 201) { // 성공코드 : 201
+                console.log(res.data)
               }
-          ).then(
-              this.$router.push('/')
-          )
-        }
-      })
-    }
-  }
-}
+            });
+
+      } catch (error) {
+         console.error(error);
+      }
+    },
+  },
+};
 </script>
-
-<style scoped>
-label {
-  display: block;
-  margin-top: 10px;
-}
-
-.card-container.card {
-  max-width: 350px !important;
-  padding: 40px 40px;
-}
-
-.card {
-  background-color: #f7f7f7;
-  padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
-</style>
