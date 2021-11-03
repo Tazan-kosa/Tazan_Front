@@ -16,6 +16,9 @@ import MyPage from "../components/mypage/MyPage";
 import TestCreate from "../components/create/TestCreate";
 import TestRead from "../components/create/TestRead";
 import TestDetail from "../components/create/TestDetail";
+import MyPageModi from "../components/mypage/MyPageModi";
+import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
+import MyPageVue from "../components/mypage/MyPageVue";
 
 Vue.use(VueRouter)
 
@@ -38,9 +41,19 @@ const route= [
         component: Create
     },
     {
+        path: '/detailplan',
+        name: 'DetailPlanPage',
+        component: DetailPlanPage
+    },
+    {
         path: '/mypage',
         name: 'MyPage',
         component: MyPage
+    },
+    {
+        path: '/mypageV',
+        name: 'MyPage',
+        component: MyPageVue
     },
     {
         path: '/tourlist',
@@ -63,6 +76,15 @@ const route= [
     {
         path: '/login',
         component: Login
+    },
+    // 테스트 - 김제민
+    {
+        path: '/mypage',
+        component: MyPage
+    },
+    {
+        path: '/mypagemodi',
+        component: MyPageModi
     },
     {
         path: '/testC',
