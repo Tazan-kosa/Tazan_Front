@@ -55,6 +55,11 @@
                 <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
 
+            <!-- 회원가입-->
+            <div id="Register">
+              <router-link to="/Register"><a><span>회원가입</span></a></router-link>
+            </div>
+
           </div>
         </div>
       </div>

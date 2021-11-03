@@ -56,10 +56,6 @@ export default {
     Select
   },
   methods: {
-    // checkedtaglist(tags) {
-    //   this.checkedtag = tags
-    //   console.log(this.checkedtag)
-    // }
     searchTourList() {
       const value = document.getElementById("searchbar").value
       axios.get(`http://kosa3.iptime.org:50201/search/${value}`)
