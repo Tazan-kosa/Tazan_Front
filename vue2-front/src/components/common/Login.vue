@@ -17,7 +17,7 @@
                       <div class="mx-1">
                         <v-text-field
                             placeholder="아이디"
-                            v-model="userId"
+                            v-model="email"
                             required
                         ></v-text-field>
                       </div>
@@ -29,7 +29,7 @@
                         <v-text-field
                             placeholder="비밀번호"
                             type="password"
-                            v-model="userPassword"
+                            v-model="passWord"
                             required
                         ></v-text-field>
                       </div>
@@ -65,26 +65,25 @@ export default {
     return {
       userId: null,
       userPassword: null,
-      dummyid: null,
     };
   },
+
   methods: {
     loginSubmit() {
       let saveData = {};
-      saveData.userId = this.userId;
-      saveData.userPassword = this.userPassword;
+      saveData.email = this.email;
+      saveData.passWord = this.passWord;
 
       try {
         axios
             // .post(HOST + "/signin", JSON.stringify(saveData), {
-            .post("http://kosa3.iptime.org:50201/signin", JSON.stringify(saveData),{
+            .post("http://kosa3.iptime.org:50201/login", JSON.stringify(saveData),{
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
               }})
             .then((res) => {
-              if (res.status === 200) {
-                console.log(res.data) // 이게 현재 재혁
-                this.dummyid=res.data
+              if (res.status === 200) { // 로그인 성공코드 : 200
+                console.log(res.data)
               }
             });
 

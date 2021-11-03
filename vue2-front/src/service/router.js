@@ -16,6 +16,7 @@ import MyPage from "../components/mypage/MyPage";
 import TestCreate from "../components/create/TestCreate";
 import TestRead from "../components/create/TestRead";
 import TestDetail from "../components/create/TestDetail";
+import Register from "../components/common/Register";
 import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageVue from "../components/mypage/MyPageVue";
@@ -23,6 +24,7 @@ import MyPageVue from "../components/mypage/MyPageVue";
 Vue.use(VueRouter)
 
 const route= [
+    // 김제민
     {
         path: '/detail',
         name: 'Datail',
@@ -35,21 +37,25 @@ const route= [
         //     }
         // ]
     },
+    // 김제민
     {
         path: '/create',
         name: 'Create',
         component: Create
     },
+    // 김제민
     {
         path: '/detailplan',
         name: 'DetailPlanPage',
         component: DetailPlanPage
     },
+    // 김제민
     {
         path: '/mypage',
         name: 'MyPage',
         component: MyPage
     },
+    // 김제민
     {
         path: '/mypageV',
         name: 'MyPage',
@@ -82,36 +88,46 @@ const route= [
         path: '/mypage',
         component: MyPage
     },
+    // 김제민
     {
         path: '/mypagemodi',
         component: MyPageModi
     },
+    // 임재혁
+    {
+        path: '/register',
+        component: Register
+    },
+    // 김제민
     {
         path: '/testC',
         name: 'TestCreate',
         component: TestCreate
     },
+    // 김제민
     {
         path: '/testR',
         name: 'TestRead',
         component: TestRead
     },
+    // 김제민
     {
         path: '/testD',
         name: 'TestRead',
         component: TestDetail
     },
+    // 김제민
     {
         path: '/testC/:contentId?',
         name: 'TestCreate',
         component: TestCreate
     },
+    // 김제민
     {
         path: '/testD/:contentId',
         name: 'TestDetail',
         component: TestDetail
-    }
-
+    },
 ]
 
 const router = new VueRouter({
