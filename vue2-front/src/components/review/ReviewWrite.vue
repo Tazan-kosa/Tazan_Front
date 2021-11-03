@@ -25,7 +25,7 @@
         <div class="review">
           <h5 id="text">📗나의 여행 일기</h5>
           <span>
-            <input @change="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
+            <input @input="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
             <label for="file" class="input-plus">사진</label>
           </span>
           <div class="review-content" contenteditable="true">
@@ -86,12 +86,11 @@ export default {
     },
     save() {
       var content = document.getElementsByClassName("review-content");
-      // console.log(content.item(0).textContent);
-      for (var i = 0; i < content.length; i++){
-        console.log(content.item(i).textContent)
-        // if(content.item(i) === document.body.){
-        //   console.log(1111111111111111);
-        // }
+      // console.log(content.item(0).children);
+      for (var i = 0; i < content.item(0).children.length; i++){
+        if(content.item(0).children.item(i).tagName === "DIV"){
+          console.log("img")
+        }
       }
 
     }
@@ -104,7 +103,6 @@ export default {
 </script>
 
 <style>
-
 .container {
   width: 100%;
 }
