@@ -26,7 +26,7 @@
           <div v-sticky=true class="sticky">
           <h5 id="text">📗나의 여행 일기</h5>
           <span>
-            <input ref="imageUploader" @input="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
+            <input ref="imageUploader" @change="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
             <label for="file" class="input-plus">사진 추가</label>
           </span>
           </div>
@@ -47,6 +47,7 @@ import TravelList from "./TravelList";
 import TourItemData from "./myplan.js";
 import MyPlanModal from "./MyPlanModal";
 import Sticky from "vue-sticky-directive";
+// import axios from "axios"
 
 export default {
   name: 'reviewwrite',
@@ -54,28 +55,21 @@ export default {
     return {
       TourItemData: TourItemData,
       flag: false,
+      img:'',
     }
   },
   directives: { Sticky },
   methods: {
-    api() {
-      // axios.get('http://api.data.go.kr/openapi/tn_pubr_public_trrsrt_api', {
-      //   params: { serviceKey : 'a24c37fd-b4cf-47e0-b053-f0ddae93184e'}
-      // }).then(res=> {
-      //   this.festival = res.data.response.body.items.item
-      //   console.log(this.festival)
-      // })
-    },
     appendImg(e) {
       let file = e.target.files;
-      console.log(file[0]);
-
+      this.img = file
       let url = URL.createObjectURL(file[0])
-
+      console.log(url)
       var div = document.createElement("div");
       let p = document.createElement("p");
       div.innerHTML = `<img src="${url}"/>`;
       div.className += "reviewImg"
+      div.contentEditable = false;
       p.innerHTML = "<br>"
       p.className += "review-text"
     
@@ -92,12 +86,47 @@ export default {
     save() {
       var content = document.getElementsByClassName("review-content");
       // console.log(content.item(0).children);
+      // var reviewVO={}
+      // var ReviewContent = [];
+      var ReviewContent = new FormData();
+      let img;
       for (var i = 0; i < content.item(0).children.length; i++){
+        // const formdata = new FormData();
         if(content.item(0).children.item(i).tagName === "DIV"){
-          console.log("img")
+          var url = content.item(0).children.item(i).children.item(0).getAttribute("src");
+          var myFile = new File([url], "review-image.jpg", {type:"image/jpg"});
+          console.log(myFile)
+          img = URL.createObjectURL(myFile)
+          
+          // ReviewContent.push(formdata);
+          // console.log("di" + formdata);
         }
+        
+        // else {
+        //   ReviewContent.push(content.item(0).children.item(i).textContent);
+        //   // formdata.append("content", );
+        // }
       }
-
+      var div = document.createElement("div");
+          div.innerHTML = `<img src="${img}"/>`;
+          div.className += "reviewImg"
+          div.contentEditable = false;
+    
+          var par = document.getElementsByClassName("review-content")[0];
+          par.appendChild(div);
+          // formdata.append("img", myFile);
+          console.log(myFile);
+          ReviewContent.append("img", myFile);
+      console.log(ReviewContent)
+      // reviewVO.reviewContent=ReviewContent;
+      // console.log(reviewVO);
+      // axios.post('http://kosa3.iptime.org:50201/review/upload',ReviewContent,{
+      //   headers: { 
+      //     'Content-Type' : 'multipart/form-data',
+      //   },
+      // }).then(res=> {
+      //   console.log(res)
+      // })
     }
   },
   components: {
