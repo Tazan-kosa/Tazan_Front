@@ -23,6 +23,13 @@ import MyPageVue from "../components/mypage/MyPageVue";
 
 Vue.use(VueRouter)
 
+// 인증
+// const requireAuth = () => (from, to, next) => {
+//     const isAuthenticated = false
+//     if (isAuthenticated) return next()
+//     next('/login?returnPath=mypage')
+// }
+
 const route= [
     // 김제민
     {
@@ -53,7 +60,7 @@ const route= [
     {
         path: '/mypage',
         name: 'MyPage',
-        component: MyPage
+        component: MyPage,
     },
     // 김제민
     {
@@ -96,6 +103,7 @@ const route= [
     // 임재혁
     {
         path: '/register',
+        name: 'Register',
         component: Register
     },
     // 김제민
