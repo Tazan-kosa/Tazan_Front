@@ -20,6 +20,8 @@ import Register from "../components/common/Register";
 import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageVue from "../components/mypage/MyPageVue";
+import PlaceAndDate from "../components/detail/CreatePage/PlaceAndDate";
+import MyPageList from "../components/mypage/MyPageList";
 
 Vue.use(VueRouter)
 
@@ -93,6 +95,11 @@ const route= [
         path: '/mypagemodi',
         component: MyPageModi
     },
+    // 김제민
+    {
+        path: '/mypagelist',
+        component: MyPageList
+    },
     // 임재혁
     {
         path: '/register',
@@ -128,6 +135,11 @@ const route= [
         name: 'TestDetail',
         component: TestDetail
     },
+    {
+        path: '/test23',
+        name: 'PlaceAndDate',
+        component: PlaceAndDate
+    }
 ]
 
 const router = new VueRouter({
