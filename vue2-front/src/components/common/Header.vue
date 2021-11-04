@@ -62,8 +62,8 @@
 
             <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
             <!-- 마이페이지-->
-            <div id="mypage" v-if="Authorization">
-              <router-link to="/mypage"><a><span>마이페이지</span></a></router-link>
+            <div id="mypagelist" v-if="Authorization">
+              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>
             </div>
 
             <!-- 로그아웃-->
@@ -134,13 +134,13 @@ span:hover{
 /*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");*/
 /*}*/
 
-#login, #logout, #mypage {
+#login, #logout {
   background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
 
-/*#login:hover, #logout:hover, #mypage:hover{*/
+/*#login:hover, #logout:hover /
 /*  background-color: darkgray;*/
 /*}*/
 
