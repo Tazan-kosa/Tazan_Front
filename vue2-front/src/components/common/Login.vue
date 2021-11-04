@@ -2,7 +2,7 @@
   <v-app id="app">
     <v-main>
       <v-container
-          style="position: relative; top: 20%; margin-left: 20%"
+          style="position: relative; top: 10%; margin-left: 25%"
           class="text-xs-center"
       >
         <v-layout row wrap class="text-xs-center">
@@ -58,35 +58,58 @@
 
 <script>
 import axios from 'axios'
+import jwt from 'jsonwebtoken'
 
 export default {
   name: 'login',
-  data() {
-    return {
-      userId: null,
-      userPassword: null,
-    };
-  },
 
-  methods: {
-    loginSubmit() {
-      let saveData = {};
-      saveData.email = this.email;
-      saveData.passWord = this.passWord;
+  data() {
+      return {
+        email: null,
+        passWord: null,
+      };
+    },
+
+    methods: {
+      loginSubmit() {
+        let saveData = {};
+        saveData.email = this.email;
+        saveData.passWord = this.passWord;
 
       try {
         axios
-            // .post(HOST + "/signin", JSON.stringify(saveData), {
             .post("http://kosa3.iptime.org:50201/login", JSON.stringify(saveData),{
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
               }})
             .then((res) => {
               if (res.status === 200) { // 로그인 성공코드 : 200
-                console.log(res.data)
-              }
-            });
+                alert('로그인성공!');
 
+                console.log(res.data)
+
+                // jwt
+                localStorage.setItem('Authorization', res.data.Authorization);
+
+                var decodedToken = jwt.decode(
+                    res.data.Authorization.replace('Bearer ', ''), {
+                      complete: true
+                    },
+                );
+
+                localStorage.setItem('exp', decodedToken.payload.exp * 1000);
+                localStorage.setItem('nickname', decodedToken.payload.nickname);
+                axios.defaults.headers.common['Authorization'] = res.data.Authorization;
+
+                // 로그인 성공시 홈페이지로 리다이렉트
+                this.$router.push('/')
+                location.reload();
+
+              } else {
+                alert('로그인실패!');
+              }
+
+            });
       } catch (error) {
         console.error(error);
       }
