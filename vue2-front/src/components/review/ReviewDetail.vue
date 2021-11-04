@@ -63,9 +63,6 @@ div {
   text-align: left;
 }
 
-.review-region{
-
-}
 .review-title {
   margin-top: 10px;
 }
@@ -93,10 +90,6 @@ div {
   height: fit-content;
   text-align: center;
   padding: 10px;
-}
-
-.review-text {
-
 }
 
 </style>
