@@ -15,6 +15,7 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.14",
     "vue-router": "^3.5.2",
+    "vue-sticky-directive": "0.0.10",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
