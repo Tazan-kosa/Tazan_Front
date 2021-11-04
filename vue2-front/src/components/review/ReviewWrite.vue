@@ -22,12 +22,14 @@
         </div>
       </div>
       <div class="container-bottom">
-        <div class="review">
+        <div sticky-container class="review">
+          <div v-sticky=true class="sticky">
           <h5 id="text">📗나의 여행 일기</h5>
           <span>
-            <input @input="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
-            <label for="file" class="input-plus">사진</label>
+            <input ref="imageUploader" @input="appendImg" multiple accept="image/*" type="file" id="file" class="input-img" title="이미지"/>
+            <label for="file" class="input-plus">사진 추가</label>
           </span>
+          </div>
           <div class="review-content" contenteditable="true">
             <p class="review-text"></p>
           </div>
@@ -44,6 +46,7 @@
 import TravelList from "./TravelList";
 import TourItemData from "./myplan.js";
 import MyPlanModal from "./MyPlanModal";
+import Sticky from "vue-sticky-directive";
 
 export default {
   name: 'reviewwrite',
@@ -53,6 +56,7 @@ export default {
       flag: false,
     }
   },
+  directives: { Sticky },
   methods: {
     api() {
       // axios.get('http://api.data.go.kr/openapi/tn_pubr_public_trrsrt_api', {
@@ -67,7 +71,6 @@ export default {
       console.log(file[0]);
 
       let url = URL.createObjectURL(file[0])
-      console.log(url)
 
       var div = document.createElement("div");
       let p = document.createElement("p");
@@ -79,6 +82,8 @@ export default {
       var par = document.getElementsByClassName("review-content")[0];
       par.appendChild(div);
       par.append(p);
+
+      this.$refs.imageUploader.value = '';    // input 동일 파일 연속 선택 시 발생하는 문제 해결
     },
     selectedPlan(id) {
       this.flag = true;
@@ -157,6 +162,10 @@ export default {
 .review {
   margin-top: 30px;
 }
+.sticky {
+  display: flex;
+  background-color: white;
+}
 
 #text {
   text-align: left;
@@ -170,6 +179,9 @@ export default {
 
 .input-plus {
   cursor: pointer;
+  left: 0;
+  padding: 5px;
+  margin: 30px 0 0 10px;
 }
 
 .review-content {
@@ -200,7 +212,7 @@ export default {
 
 .reviewImg {
   text-align: center;
-
+  padding: 10px;
 }
 
 .save{
