@@ -8,43 +8,59 @@
           <div>제목을 정하라우
           </div>
         </div>
-<!--        <h4> 20xx.xx.xx - 20xx.xx.xx</h4>-->
+        <!--        <h4> 20xx.xx.xx - 20xx.xx.xx</h4>-->
         <div class="daycount-main2">
           <input type="hidden" value="3" id="travelDay">
           <!-- blur()는 모바일 input포커스가 될때 키보드가 뜨는 것을 안뜨게 해줌 -->
           <input type="text" id="calander" name="daterange" class="center" value="" onfocus="blur()">
         </div>
       </div>
+      <div class="save_plan">
+        <div class="sub_main">
+          <div class="left">
+            <div>여행 장소</div>
+            <div>여행일자</div>
+            <div class="datePicker">
+              <b-form-datepicker></b-form-datepicker>
+              <!--            <b-form-datepicker v-model="value" :min="min" :max="max"></b-form-datepicker>-->
+              <!--            <p>Value: '{{ value }}'</p>-->
+            </div>
+          </div>
 
-      <div class="sub_main">
-        <div class="left">
-          <div>여행 장소</div>
-          <div>여행일자</div>
-          <div class="datePicker">
-            <b-form-datepicker></b-form-datepicker>
-<!--            <b-form-datepicker v-model="value" :min="min" :max="max"></b-form-datepicker>-->
-<!--            <p>Value: '{{ value }}'</p>-->
-          </div>
-        </div>
+          <!--        <div class="thr_main_sub">-->
 
-        <!--        <div class="thr_main_sub">-->
-
-        <div class="thr_main">
-          <div>
-            <div>1일차</div>
-            <div>메인 계획 일정표</div>
+          <div class="thr_main">
+            <div class="thr_main_sub">
+              <div>1일차</div>
+<!--              <div>메인 계획 일정표</div>-->
+              <RecomPlaceSave/>
+              <div style="display:flex;padding:8px;width:100%">
+                <div>
+                  <img src="https://www.myro.co.kr/getSpotImage/gyeongju?no=1189" alt="Image" loading="lazy" style="width: 45px; height: 45px;">
+                </div>
+                <div class="addcartdpottextdiv">
+                  <h7 class="placelistnd" title="불국사">불국사</h7>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button type="submit">일정추가</button>
+            </div>
+            <!--          <div>
+                        <div>1일차</div>
+                        <div>메인 계획 일정표</div>
+                      </div>
+                      <div>
+                        <div>1일차</div>
+                        <div>메인 계획 일정표</div>
+                      </div>
+                      <div>
+                        <div>1일차</div>
+                        <div>메인 계획 일정표</div>
+                      </div>-->
           </div>
-          <div>
-            <div>1일차</div>
-            <div>메인 계획 일정표</div>
-          </div>
-          <div>
-            <div>1일차</div>
-            <div>메인 계획 일정표</div>
-          </div>
-          <div>
-            <div>1일차</div>
-            <div>메인 계획 일정표</div>
+          <div class="save_plan_button">
+            <b-button variant="primary">Save</b-button>
           </div>
         </div>
 
@@ -52,7 +68,8 @@
         <div class="right">
           <div>추천 장소</div>
           <div>
-            <UnkownList/>
+<!--            <UnkownList/>-->
+            <RecomPlace/>
           </div>
         </div>
 
@@ -65,6 +82,8 @@
 <script>
 // import UnkownList from "./UnkownList";
 
+import RecomPlace from "./RecomPlace";
+import RecomPlaceSave from "./RecomPlaceSave";
 export default {
   name: "Unkown",
   data() {
@@ -75,6 +94,8 @@ export default {
     };
   },
   components: {
+    RecomPlaceSave,
+    RecomPlace
     // UnkownList
   }
 }
@@ -123,11 +144,17 @@ div {
   height: 100%;
 }
 
-thr_main_sub {
+.thr_main_sub {
   display: flex;
   width: 100%;
-  display: flex;
 }
+.save_plan {
+  display: flex;
+  width: 100%;
+}
+/*.save_plan_button {
+  flex-direction: column;
+}*/
 
 .right {
   width: 300px;
