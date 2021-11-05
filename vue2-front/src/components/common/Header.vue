@@ -38,12 +38,7 @@
 
           <div class="navbar align-self-center d-flex">
             <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-              <div class="input-group">
-                <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                <div class="input-group-text">
-                  <i class="fa fa-fw fa-search"></i>
-                </div>
-              </div>
+
             </div>
             <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
               <i class="fa fa-fw fa-search text-dark mr-2"></i>
@@ -68,13 +63,8 @@
 
             <!-- 로그아웃-->
             <div id="logout" v-if="Authorization">
-              <v-btn @click="logout"><a><span>로그아웃</span></a></v-btn>
-<!--              <router-link to="/login"><a><span>로그아웃</span></a></router-link>-->
+              <button @click="logout"><a><span>로그아웃</span></a></button>
             </div>
-
-<!--            <div id="logout" v-if="!Authorization">-->
-<!--              <router-link type="button"><a><span>로그아웃</span></a></router-link>-->
-<!--            </div>-->
 
           </div>
         </div>
@@ -96,12 +86,13 @@ export default {
   methods: {
     logout() {
       localStorage.removeItem('Authorization');
-      location.reload();
       alert('로그아웃 성공!');
       this.$router.push('/')
+      location.reload();
     },
   },
 }
+
 </script>
 
 <style scoped>
