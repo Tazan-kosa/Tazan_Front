@@ -1,15 +1,21 @@
 <template>
   <div>
-    <header class="py-5">
-      <div class="container px-4 px-lg-5 my-5">
+    <header class="py-5" id="headerstyle">
+      <div class="container px-4 px-lg-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">여행지 리스트</h1>
-          <p class="lead fw-normal text-white-50 mb-0">여행가고싶은 지역을 입력해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
-            <div class="input-group mb-3">
-              <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="예시) 경기/강남/제주/해운대" @keyup.enter="searchTourList">
-              <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i> Search</button>
-            </div>
+          <p class="lead fw-normal text-white-100 mb-0">여행가고싶은 지역을 입력해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
+          <div class="input-group mb-3">
+            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="예시) 경기/강남/제주/해운대"
+                   @keyup.enter="searchTourList">
+            <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
+              Search
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="text-center text-white">
+        <p>검색 결과: {{ TourListCnt }}개</p>
       </div>
     </header>
     <!--main page-->
@@ -46,8 +52,9 @@ export default {
       TourItemList: [],
       Tagnames: Tagname,
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
-      startdate:'',
-      enddate:'',
+      startdate: '',
+      enddate: '',
+      TourListCnt: 0
     }
   },
   components: {
@@ -60,19 +67,19 @@ export default {
       const value = document.getElementById("searchbar").value
       axios.get(`http://kosa3.iptime.org:50201/search/${value}`)
           .then(result => {
-            this.TourItemList=result.data
+            this.TourItemList = result.data
           })
           .catch(function (err) {
             console.log("에러발생: " + err)
           })
     },
-    selectedDate({start,end}){
-      this.startdate=start
-      this.enddate=end
-      if(start<=end){
+    selectedDate({start, end}) {
+      this.startdate = start
+      this.enddate = end
+      if (start <= end) {
         axios.get(`http://kosa3.iptime.org:50201/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
-              this.TourItemList=result.data
+              this.TourItemList = result.data
             })
             .catch(function (err) {
               console.log("에러발생: " + err)
@@ -81,22 +88,23 @@ export default {
     }
   },
   created() {
-    var temp =new Date()
+    var temp = new Date()
     var year = temp.getFullYear();
     var month = temp.getMonth() + 1;
     var day = temp.getDate();
 
-    if(month < 10){
+    if (month < 10) {
       month = '0' + month;
     }
-    if(day < 10){
+    if (day < 10) {
       day = '0' + day;
     }
-    this.startdate=year + '-' + month + '-' + day
-    this.enddate=year + '-' + month + '-' + day
+    this.startdate = year + '-' + month + '-' + day
+    this.enddate = year + '-' + month + '-' + day
     axios.get('http://kosa3.iptime.org:50201/testdb')
         .then(result => {
           this.TourItemList = result.data
+          this.TourListCnt = this.TourItemList.length
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
@@ -107,9 +115,23 @@ export default {
 </script>
 
 <style scoped>
-#searchbar{
+
+#headerstyle {
+  background-image: url('https://cdn.pixabay.com/photo/2019/08/12/06/13/republic-of-korea-4400510_960_720.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+#searchbar {
   text-align: center;
 }
+
 .button2 {
   border-radius: 4px;
 }
@@ -119,13 +141,14 @@ export default {
   margin-bottom: 5px;
 }
 
-.datewarning{
+.datewarning {
   color: red;
 }
 
 header {
   background: #008E9B;
 }
+
 ::-webkit-input-placeholder {
   text-align: center;
 }
@@ -134,7 +157,7 @@ header {
   text-align: center;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder { /* Firefox 19+ */
   text-align: center;
 }
 
