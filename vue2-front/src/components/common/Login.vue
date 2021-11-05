@@ -99,6 +99,8 @@ export default {
 
                 localStorage.setItem('exp', decodedToken.payload.exp * 1000);
                 localStorage.setItem('nickname', decodedToken.payload.nickname);
+                localStorage.setItem('id', decodedToken.payload.id);
+
                 axios.defaults.headers.common['Authorization'] = res.data.Authorization;
 
                 // 로그인 성공시 홈페이지로 리다이렉트
