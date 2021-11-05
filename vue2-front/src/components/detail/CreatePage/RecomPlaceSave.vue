@@ -1,45 +1,55 @@
 <template>
-  <v-card
+  <v-sheet
       class="mx-auto"
-      max-width="500"
+      elevation="8"
+      max-width="900"
   >
-<!--    <v-container fluid>-->
-      <v-row dense>
-        <v-col
-            v-for="card in cards"
-            :key="card.title"
-            :cols="card.flex"
-        >
-          <v-card>
-            <v-img
-                :src="card.src"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="200px"
-            >
+    <v-slide-group
+        v-model="model"
+        class="pa-4"
+        show-arrows
+    >
+      <v-slide-item
+          v-for="n in 10"
+          :key="n"
+      >
+        <v-col>
+          <v-row
+              v-for="card in cards"
+              :key="card.title"
+              :cols="card.flex"
+          >
+            <v-card>
+              <v-img
+                  :src="card.src"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  height="200px"
+                  width="200px"
+              >
+              </v-img>
 
-            </v-img>
+              <v-card-actions>
+                <v-spacer><v-card-title v-text="card.title"></v-card-title></v-spacer>
 
-            <v-card-actions>
-              <v-spacer><v-card-title v-text="card.title"></v-card-title></v-spacer>
+                <v-btn icon>
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
 
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
+                <v-btn icon>
+                  <v-icon>mdi-bookmark</v-icon>
+                </v-btn>
 
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
+                <v-btn icon>
+                  <v-icon>mdi-share-variant</v-icon>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-row>
         </v-col>
-      </v-row>
-<!--    </v-container>-->
-  </v-card>
+      </v-slide-item>
+    </v-slide-group>
+  </v-sheet>
+
 </template>
 
 <script>
@@ -47,7 +57,7 @@ export default {
   name: "RecomPlaceSave",
   data: () => ({
     cards: [
-      { title: '불국사', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
+      {title: '불국사', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6},
     ]
   })
 }
