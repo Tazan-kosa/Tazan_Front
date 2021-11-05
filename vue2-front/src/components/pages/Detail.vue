@@ -3,22 +3,26 @@
     <DetailPage/>
 <!--    <DetailSelecDome/>-->
 <!--    <DetailSelection/>-->
-    <Box/>
+<!--    <Box/>-->
+    <CityList/>
   </div>
 </template>
 
 <script>
 import DetailPage from "../detail/DetailPage";
-import Box from '../list/Box'
+import CityList from "../detail/CityList";
+// import Box from '../list/Box'
 // import DetailSelection from "../detail/DetailSelection";
 // import DetailSelecDome from "../detail/DetailSelecDome";
+
 export default {
   name: "Detail",
   components: {
+    CityList,
     // DetailSelecDome,
     // DetailSelection,
     DetailPage,
-    Box
+    // Box
   }
 }
 </script>

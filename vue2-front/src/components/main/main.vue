@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <div>
       <!-- 메인페이지 시작 -->

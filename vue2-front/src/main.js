@@ -15,9 +15,9 @@ Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 
 // register modal component
-Vue.component('modal', {
-  template: '#modal-template'
-})
+// Vue.component('modal', {
+//   template: '#modal-template'
+// })
 
 new Vue({
   vuetify,

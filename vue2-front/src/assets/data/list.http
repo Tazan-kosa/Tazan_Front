@@ -1,4 +1,12 @@
-GET https://www.myro.co.kr/searchMostSelectedSpots?cityName=namwon
+GET https://www.earthtory.com/api/city/get_ko_state
+Accept: application/json
+
+###
+GET https://www.earthtory.com/api/city/get_city_list
+Accept: application/json
+
+###
+GET https://www.myro.co.kr/searchMostSelectedSpots?cityName=gyeongju
 Content-Type: multipart/form-data; boundary=WebAppBoundary
 
 --WebAppBoundary
