@@ -20,8 +20,17 @@ import Register from "../components/common/Register";
 import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageVue from "../components/mypage/MyPageVue";
+import PlaceAndDate from "../components/detail/CreatePage/PlaceAndDate";
+import MyPageList from "../components/mypage/MyPageList";
 
 Vue.use(VueRouter)
+
+// 인증
+// const requireAuth = () => (from, to, next) => {
+//     const isAuthenticated = false
+//     if (isAuthenticated) return next()
+//     next('/login?returnPath=mypage')
+// }
 
 const route= [
     // 김제민
@@ -53,7 +62,7 @@ const route= [
     {
         path: '/mypage',
         name: 'MyPage',
-        component: MyPage
+        component: MyPage,
     },
     // 김제민
     {
@@ -93,9 +102,15 @@ const route= [
         path: '/mypagemodi',
         component: MyPageModi
     },
+    // 김제민
+    {
+        path: '/mypagelist',
+        component: MyPageList
+    },
     // 임재혁
     {
         path: '/register',
+        name: 'Register',
         component: Register
     },
     // 김제민
@@ -128,6 +143,11 @@ const route= [
         name: 'TestDetail',
         component: TestDetail
     },
+    {
+        path: '/test23',
+        name: 'PlaceAndDate',
+        component: PlaceAndDate
+    }
 ]
 
 const router = new VueRouter({

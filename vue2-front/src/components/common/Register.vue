@@ -2,7 +2,7 @@
   <v-app id="app">
     <v-main>
       <v-container
-          style="position: relative; top: 20%; margin-left: 20%"
+          style="position: relative; top: 10%; margin-left: 25%"
           class="text-xs-center"
       >
         <v-layout row wrap class="text-xs-center">
@@ -34,6 +34,7 @@
                             type="password"
                             v-model="passWord"
                             required
+                            :rules="passWordRules"
                         ></v-text-field>
                       </div>
                     </div>
@@ -46,6 +47,7 @@
                             type="password"
                             v-model="passWord"
                             required
+                            :rules="passWordRules"
                         ></v-text-field>
                       </div>
                     </div>
@@ -58,6 +60,7 @@
                             placeholder="닉네임"
                             v-model="nickName"
                             required
+                            :rules="nickNameRules"
                         >닉네임</v-text-field>
                       </div>
                     </div>
@@ -70,6 +73,7 @@
                             placeholder="이름"
                             v-model="name"
                             required
+                            :rules="nameRules"
                         >이름</v-text-field>
                       </div>
                     </div>
@@ -82,6 +86,7 @@
                             placeholder="핸드폰"
                             v-model="phoneNumber"
                             required
+                            :rules="phoneNumberRules"
                         >핸드폰</v-text-field>
                       </div>
                     </div>
@@ -128,6 +133,24 @@ export default {
     emailRules: [
       v => !!v || '이메일을 입력해 주세요.',
       v => /.+@.+/.test(v) || '이메일이 유효해야 합니다.',
+    ],
+    phoneNumber: '',
+    phoneNumberRules: [
+      v => !!v || '핸드폰 번호를 입력해 주세요.',
+    ],
+    name: '',
+    nameRules: [
+      v => !!v || '이름을 입력해 주세요.',
+      v => (v && v.length <= 10) || '이름은 10글자 이하로 입력해야 합니다.',
+    ],
+    nickName: '',
+    nickNameRules: [
+      v => !!v || '닉네임을 입력해 주세요.',
+      v => (v && v.length <= 10) || '닉네임은 10글자 이하로 입력해야 합니다.',
+    ],
+    passWord: '',
+    passWordRules: [
+      v => !!v || '비밀번호를 입력해 주세요.',
     ],
   }),
 

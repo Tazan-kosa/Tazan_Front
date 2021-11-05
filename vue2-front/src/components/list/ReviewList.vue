@@ -1,15 +1,20 @@
 <template>
   <div>
-    <header class="py-5">
-      <div class="container px-4 px-lg-5 my-5">
+    <header class="py-5" id="headerstyle">
+      <div class="container px-4 px-lg-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">후기 리스트</h1>
           <p class="lead fw-normal text-white-50 mb-0">후기 검색 키워드를 입력해주세요!</p>
-            <div class="input-group mb-3">
-              <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="관광지/문화시설 | 경기/서울">
-              <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i> Search</button>
-            </div>
+          <div class="input-group mb-3">
+            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="관광지/문화시설 | 경기/서울">
+            <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
+              Search
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="text-center text-white">
+        <p>검색 결과: {{ TourListCnt }}개</p>
       </div>
     </header>
 
@@ -42,8 +47,9 @@ export default {
       TourItemList: [],
       Tagnames: Tagname,
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
-      startdate:'',
-      enddate:'',
+      startdate: '',
+      enddate: '',
+      TourListCnt: 0
     }
   },
   components: {
@@ -64,10 +70,10 @@ export default {
             console.log("에러발생: " + err)
           })
     },
-    selectedDate({start,end}){
-      this.startdate=start
-      this.enddate=end
-      if(start<=end){
+    selectedDate({start, end}) {
+      this.startdate = start
+      this.enddate = end
+      if (start <= end) {
         axios.get(`http://kosa3.iptime.org:50201/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
               console.log(result.data)
@@ -79,22 +85,23 @@ export default {
     }
   },
   created() {
-    var temp =new Date()
+    var temp = new Date()
     var year = temp.getFullYear();
     var month = temp.getMonth() + 1;
     var day = temp.getDate();
 
-    if(month < 10){
+    if (month < 10) {
       month = '0' + month;
     }
-    if(day < 10){
+    if (day < 10) {
       day = '0' + day;
     }
-    this.startdate=year + '-' + month + '-' + day
-    this.enddate=year + '-' + month + '-' + day
+    this.startdate = year + '-' + month + '-' + day
+    this.enddate = year + '-' + month + '-' + day
     axios.get('http://kosa3.iptime.org:50201/testdb')
         .then(result => {
-          this.TourItemList = result.data.sample
+          this.TourItemList = result.data
+          this.TourListCnt = this.TourItemList.length
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
@@ -105,6 +112,16 @@ export default {
 </script>
 
 <style scoped>
+#headerstyle {
+  background-image: url('https://cdn.pixabay.com/photo/2017/06/05/11/01/airport-2373727_960_720.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+p{
+  margin-bottom: 0px;
+}
 .button2 {
   border-radius: 4px;
 }
@@ -118,10 +135,11 @@ header {
   background: #00BF72;
 }
 
-.datewarning{
+.datewarning {
   color: red;
 }
-.datewarning b{
+
+.datewarning b {
   font-size: 15px;
 }
 </style>

@@ -49,16 +49,32 @@
               <i class="fa fa-fw fa-search text-dark mr-2"></i>
             </a>
 
+            <!-- 로그인시 사라지는곳-->
             <!-- 로그인 -->
-            <!-- modal로 변환하기 -->
-            <div id="login">
+            <div id="login" v-if="!Authorization">
                 <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
 
             <!-- 회원가입-->
-            <div id="Register">
+            <div id="Register" v-if="!Authorization">
               <router-link to="/Register"><a><span>회원가입</span></a></router-link>
             </div>
+
+            <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
+            <!-- 마이페이지-->
+            <div id="mypage" v-if="Authorization">
+              <router-link to="/mypage"><a><span>마이페이지</span></a></router-link>
+            </div>
+
+            <!-- 로그아웃-->
+            <div id="logout" v-if="Authorization">
+              <v-btn @click="logout"><a><span>로그아웃</span></a></v-btn>
+<!--              <router-link to="/login"><a><span>로그아웃</span></a></router-link>-->
+            </div>
+
+<!--            <div id="logout" v-if="!Authorization">-->
+<!--              <router-link type="button"><a><span>로그아웃</span></a></router-link>-->
+<!--            </div>-->
 
           </div>
         </div>
@@ -68,11 +84,23 @@
 </template>
 
 <script>
-
 export default {
   name: "Header",
-// login data 처리 getelementbyid..
 
+  data() {
+    return {
+      Authorization: localStorage.getItem("Authorization"),
+    };
+  },
+
+  methods: {
+    logout() {
+      localStorage.removeItem('Authorization');
+      location.reload();
+      alert('로그아웃 성공!');
+      this.$router.push('/')
+    },
+  },
 }
 </script>
 
@@ -106,15 +134,15 @@ span:hover{
 /*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");*/
 /*}*/
 
-#login {
+#login, #logout, #mypage {
   background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
 
-#login:hover{
-  background-color: darkgray;
-}
+/*#login:hover, #logout:hover, #mypage:hover{*/
+/*  background-color: darkgray;*/
+/*}*/
 
 /*.logo:hover{*/
 /*  background-color: gray;*/
