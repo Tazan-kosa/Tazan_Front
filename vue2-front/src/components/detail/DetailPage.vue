@@ -24,7 +24,7 @@
                 variant="success"
                 href=""
               >
-                <b-link to="mypage">내 일정 보기</b-link>
+                <b-link to="mypagelist">내 일정 보기</b-link>
               </b-button>
           </div>
         </div>
