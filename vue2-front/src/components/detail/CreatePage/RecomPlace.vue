@@ -1,5 +1,48 @@
 <template>
   <ul class="ul-style">
+<!--    -->
+    <li class="spot-card" id="appendDiv1230">
+      <div>
+        <div>
+          <div class="centered">
+            <img
+                src="https://www.myro.co.kr/getSpotImage/gyeongju?no=1230"
+                alt="Image"
+                id="cartImgNo1230"
+                loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="placelistndwrap">
+        <span class="placelistnd2" title="황리단길">
+          <h7>황리단길</h7>
+        </span>
+      </div>
+      <div class="spotBtnWrap">
+        <div
+            title="선택목록 장소에 추가"
+            class="btn spotbtncss"
+            onclick="addSpotToSelectedSpots(1230)"
+        >
+          <i class="material-icons">add</i>
+        </div>
+      </div>
+    </li>
+<!--    -->
+    <li class="spot-card" id="appendDiv1230">
+      <div>
+        <div>
+          <div class="centered"><img src="https://www.myro.co.kr/getSpotImage/gyeongju?no=1230" alt="Image"
+                                     id="cartImgNo1230" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="placelistndwrap"><span class="placelistnd2" title="황리단길"><h7>황리단길</h7></span></div>
+      <div class="spotBtnWrap">
+        <div title="선택목록 장소에 추가" class="btn spotbtncss" onclick="addSpotToSelectedSpots(1230)"><i
+            class="material-icons">add</i>
+        </div>
+      </div>
+    </li>
     <li class="spot-card" id="appendDiv1230">
       <div>
         <div>
@@ -15,6 +58,7 @@
       </div>
     </li>
   </ul>
+
 </template>
 
 <script>
