@@ -21,9 +21,10 @@
           <div class="col-md-4 pt-1">
             <h2 class="h2 text-light border-bottom pb-3 border-light">사이트맵</h2>
             <ul class="list-unstyled text-light footer-link-list">
-              <li><a class="text-decoration-none" href="#">여행계획</a></li>
-              <li><a class="text-decoration-none" href="#">여행지</a></li>
-              <li><a class="text-decoration-none" href="#">여행후기</a></li>
+              <a class="text-decoration-none" href="#">홈페이지</a><br>
+              <router-link to="/detail"><span>여행계획</span></router-link><br>
+              <router-link to="/tourlist"><span>여행지</span></router-link><br>
+              <router-link to="/reviewList"><span>여행후기</span></router-link>
             </ul>
           </div>
 
@@ -31,8 +32,6 @@
           <div class="col-md-4 pt-1">
             <h2 class="h2 text-light border-bottom pb-3 border-light">정보</h2>
             <ul class="list-unstyled text-light footer-link-list">
-              <a class="text-decoration-none" href="#">Home</a>
-              <hr>
               서울특별시 강남구 테헤란로10길 15
             </ul>
           </div>
@@ -51,7 +50,7 @@
                     Copyright &copy; 2021 TAZAN | Designed by <a rel="sponsored" href="#" target="_blank">TAZAN</a>
                   </p>
                 </div>
-              </div>z
+              </div>
             </div>
           </div>
         </div>
@@ -71,5 +70,9 @@ export default {}
 
 #footer-copyright{
   text-align: center;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
