@@ -39,15 +39,17 @@
                   rounded
                   text
               >
-                마이페이지
+                <router-link style="text-decoration: none; color: inherit;"
+                              to="/mypagelist"><span id="profile-mypage">마이페이지</span></router-link>
               </v-btn>
               <v-divider class="my-3"></v-divider>
               <v-btn
                   depressed
                   rounded
                   text
+                  @click.p.prevent="logout"
               >
-                로그아웃
+                <span id="logout-text">로그아웃</span>
               </v-btn>
             </div>
           </v-list-item-content>
@@ -63,16 +65,32 @@ export default {
   data: () => ({
     user: {
       initials: '임',
-      fullName: ' 임재혁',
+      fullName: '임재혁',
       email: 'guest@gmail.com',
     },
   }),
+
+  methods: {
+    logout() {
+      localStorage.removeItem('Authorization');
+      alert('로그아웃 성공!');
+      this.$router.push('/')
+      location.reload();
+    },
+  },
 }
+
 </script>
 
 <style>
-.v-application--wrap {
-  min-height: 0vh !important;
-}
+ .v-application--wrap {
+   min-height: 0vh !important;
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+
 
 </style>

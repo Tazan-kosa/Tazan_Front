@@ -57,17 +57,17 @@
 
             <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
             <!-- Mypage-->
-            <div id="mypagelist" v-if="Authorization">
-              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>
-            </div>
+<!--            <div id="mypagelist" v-if="Authorization">-->
+<!--              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>-->
+<!--            </div>-->
 
-            <!-- Logout-->
-            <div id="logout" v-if="Authorization">
-              <button @click="logout"><a><span>로그아웃</span></a></button>
-            </div>
+<!--            &lt;!&ndash; Logout&ndash;&gt;-->
+<!--            <div id="logout" v-if="Authorization">-->
+<!--              <button @click="logout"><a><span>로그아웃</span></a></button>-->
+<!--            </div>-->
 
             <!-- profile 버튼-->
-              <div v-if="Authorization">
+              <div id="profile" v-if="Authorization">
                 <v-app>
                   <profile></profile>
                 </v-app>
@@ -83,7 +83,6 @@
 <script>
 import profile from "./Profile"
 
-
 export default {
   name: "Header",
   component: profile,
@@ -94,14 +93,7 @@ export default {
     };
   },
 
-  methods: {
-    logout() {
-      localStorage.removeItem('Authorization');
-      alert('로그아웃 성공!');
-      this.$router.push('/')
-      location.reload();
-    },
-  },
+
 }
 
 </script>
@@ -141,6 +133,11 @@ span:hover {
   padding: 10px;
   border-radius: 5px;
 }
+
+/*#profile {*/
+/*  max-height: 60px;*/
+/*  z-index: 1;*/
+/*}*/
 
 /*#login:hover, #logout:hover /
 /*  background-color: darkgray;*/
