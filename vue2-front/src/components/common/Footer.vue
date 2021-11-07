@@ -51,7 +51,7 @@
                     Copyright &copy; 2021 TAZAN | Designed by <a rel="sponsored" href="#" target="_blank">TAZAN</a>
                   </p>
                 </div>
-              </div>
+              </div>z
             </div>
           </div>
         </div>
