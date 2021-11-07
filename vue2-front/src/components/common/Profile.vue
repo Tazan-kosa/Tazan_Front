@@ -40,7 +40,7 @@
                   text
               >
                 <router-link style="text-decoration: none; color: inherit;"
-                              to="/mypagelist"><span id="profile-mypage">마이페이지</span></router-link>
+                              to="/mypagelist"><span id="mypage-text">마이페이지</span></router-link>
               </v-btn>
               <v-divider class="my-3"></v-divider>
               <v-btn
@@ -87,10 +87,8 @@ export default {
    min-height: 0vh !important;
  }
 
- a {
-   text-decoration: none;
- }
-
-
-
+#mypage-text, #logout-text{
+  font-size: medium;
+  font-weight: normal;
+}
 </style>
