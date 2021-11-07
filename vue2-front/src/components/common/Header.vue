@@ -45,26 +45,33 @@
             </a>
 
             <!-- 로그인시 사라지는곳-->
-            <!-- 로그인 -->
+            <!-- Login-->
             <div id="login" v-if="!Authorization">
-                <router-link to="/login"><a><span>로그인</span></a></router-link>
+              <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
 
-            <!-- 회원가입-->
+            <!-- Register-->
             <div id="Register" v-if="!Authorization">
               <router-link to="/Register"><a><span>회원가입</span></a></router-link>
             </div>
 
             <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
-            <!-- 마이페이지-->
+            <!-- Mypage-->
             <div id="mypagelist" v-if="Authorization">
               <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>
             </div>
 
-            <!-- 로그아웃-->
+            <!-- Logout-->
             <div id="logout" v-if="Authorization">
               <button @click="logout"><a><span>로그아웃</span></a></button>
             </div>
+
+            <!-- profile 버튼-->
+              <div v-if="Authorization">
+                <v-app>
+                  <profile></profile>
+                </v-app>
+              </div>
 
           </div>
         </div>
@@ -74,8 +81,12 @@
 </template>
 
 <script>
+import profile from "./Profile"
+
+
 export default {
   name: "Header",
+  component: profile,
 
   data() {
     return {
@@ -98,24 +109,24 @@ export default {
 <style scoped>
 
 .nav-content {
-  position:sticky;
-  top:0;
-  background-color:white;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 /*nav underline 제거*/
-a{
+a {
   text-decoration: none;
 }
 
-span{
+span {
   font-size: large;
   font-weight: bolder;
   color: gray;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
 }
 
-span:hover{
+span:hover {
   border-bottom: 3px solid royalblue;
 }
 

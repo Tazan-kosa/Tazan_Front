@@ -4,15 +4,20 @@ import vuetify from './plugins/vuetify'
 import router from './service/router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-// Import Bootstrap an BootstrapVue CSS files (order is important)
+// import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-// Make BootstrapVue available throughout your project
+// make BootstrapVue available
 Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
+// optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false
+
+
+// profile component화
+import Profile from './components/common/Profile'
+Vue.component(Profile.name, Profile)
 
 // register modal component
 // Vue.component('modal', {
