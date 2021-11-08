@@ -1,4 +1,4 @@
-export default [
+const region =  [
     {
         ci_srl: '310',
         ci_ct: 'as',
@@ -221,3 +221,5 @@ export default [
         link : ''
     }
 ]
+
+export default region;

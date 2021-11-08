@@ -20,7 +20,6 @@ import Register from "../components/common/Register";
 import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageVue from "../components/mypage/MyPageVue";
-import PlaceAndDate from "../components/detail/CreatePage/PlaceAndDate";
 import MyPageList from "../components/mypage/MyPageList";
 
 Vue.use(VueRouter)
@@ -45,6 +44,12 @@ const route= [
         //         name: "create"
         //     }
         // ]
+    },
+    {
+        path: '/create/:region',
+        name: 'regionList',
+        component: Create
+
     },
     // 김제민
     {
@@ -142,11 +147,6 @@ const route= [
         path: '/testD/:contentId',
         name: 'TestDetail',
         component: TestDetail
-    },
-    {
-        path: '/test23',
-        name: 'PlaceAndDate',
-        component: PlaceAndDate
     }
 ]
 
