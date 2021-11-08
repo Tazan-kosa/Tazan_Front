@@ -9,19 +9,23 @@
           </div>
         </div>
         <!--        <h4> 20xx.xx.xx - 20xx.xx.xx</h4>-->
-        <div class="daycount-main2">
+<!--        <div class="daycount-main2">
           <input type="hidden" value="3" id="travelDay">
-          <!-- blur()는 모바일 input포커스가 될때 키보드가 뜨는 것을 안뜨게 해줌 -->
+          &lt;!&ndash; blur()는 모바일 input포커스가 될때 키보드가 뜨는 것을 안뜨게 해줌 &ndash;&gt;
           <input type="text" id="calander" name="daterange" class="center" value="" onfocus="blur()">
-        </div>
+        </div>-->
+<!--        -->
+
+<!--        -->
       </div>
       <div class="save_plan">
         <div class="sub_main">
           <div class="left">
-            <div>여행 장소</div>
+            <div>{{this.region}}</div>
             <div>여행일자</div>
             <div class="datePicker">
-              <b-form-datepicker></b-form-datepicker>
+<!--              <b-form-datepicker></b-form-datepicker>-->
+              <DatePicker/>
               <!--            <b-form-datepicker v-model="value" :min="min" :max="max"></b-form-datepicker>-->
               <!--            <p>Value: '{{ value }}'</p>-->
             </div>
@@ -32,19 +36,23 @@
           <div class="thr_main">
             <div class="thr_main_sub">
               <div>1일차</div>
+              <div>
+                <div>내용</div>
+              </div>
 <!--              <div>메인 계획 일정표</div>-->
-              <RecomPlaceSave/>
-              <div style="display:flex;padding:8px;width:100%">
+<!--              <RecomPlaceSave/>-->
+<!--              내 스스로-->
+<!--              <div style="display:flex;padding:8px;width:100%">
                 <div>
                   <img src="https://www.myro.co.kr/getSpotImage/gyeongju?no=1189" alt="Image" loading="lazy" style="width: 45px; height: 45px;">
                 </div>
                 <div class="addcartdpottextdiv">
                   <h7 class="placelistnd" title="불국사">불국사</h7>
                 </div>
-              </div>
+              </div>-->
             </div>
             <div>
-              <button type="submit">일정추가</button>
+              <b-button variant="outline-primary" type="submit">일정추가</b-button>
             </div>
             <!--          <div>
                         <div>1일차</div>
@@ -69,7 +77,8 @@
           <div>추천 장소</div>
           <div>
 <!--            <UnkownList/>-->
-            <RecomPlace/>
+            <RecomPlace :recomList="recomList"/>
+<!--            <SpotCard/>-->
           </div>
         </div>
 
@@ -83,20 +92,38 @@
 // import UnkownList from "./UnkownList";
 
 import RecomPlace from "./RecomPlace";
-import RecomPlaceSave from "./RecomPlaceSave";
+// import RecomPlaceSave from "./RecomPlaceSave";
+import DatePicker from "../DatePicker";
+import axios from "axios";
+// import SpotCard from "./SpotCard";
 export default {
   name: "Unkown",
-  data() {
-    return {
-      value: "2021-11-04",
-      min: new Date(2021, 11, 4),
-      max: new Date(2021, 11, 31)
-    };
+  data(){
+    return{
+      recomList:[],
+    }
   },
+
   components: {
-    RecomPlaceSave,
+    // SpotCard,
+    DatePicker,
     RecomPlace
+    // RecomPlaceSave,
     // UnkownList
+  },
+  props:{
+    region:String
+  },
+  created() {
+    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
+        .then(res => {
+          console.log(res.data)
+          this.recomList=res.data;
+
+        })
+        .catch(err=>{
+      console.log(err)
+    })
   }
 }
 </script>
