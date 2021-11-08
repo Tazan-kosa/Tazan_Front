@@ -1,3 +1,4 @@
+<script src="../../assets/data/get_ko.js"></script>
 <template>
   <div>
 <!--    <PlaceAndDate/>-->
