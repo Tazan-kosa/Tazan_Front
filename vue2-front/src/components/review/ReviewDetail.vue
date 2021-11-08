@@ -2,39 +2,56 @@
   <div class="review">
     <div class="review-top">
       <div class="container">
-        <h5 class="review-region">{{Review.Region}}</h5>
-        <h1 class="review-title">{{ Review.ReviewTitle }}</h1>
-        <h6 class="review-user">by.{{ Review.NickName }}  &nbsp;&nbsp;&nbsp; {{Review.ReviewDate}}</h6>
+        <h5 class="review-region">{{ Review.region }}</h5>
+        <h1 class="review-title">{{ Review.reviewTitle }}</h1>
+        <h6 class="review-user">by.{{ Review.nickName }} &nbsp;&nbsp;&nbsp; {{ Review.reviewDate }}</h6>
       </div>
     </div>
     <hr>
     <div class="review-middle">
       <div class="mytravel">
-        <div class="mytravel-title"> <span id="username">🚗 {{ Review.NickName }}</span>님의 여행 일정</div>
+        <div class="mytravel-title"><span id="username">🚗 {{ Review.nickName }}</span>님의 여행 일정</div>
         <TravelList :items="TourItemData" class="travellist mb-4"/>
       </div>
-      <div v-for="(item,i) in Review.ReviewContent" :key="i">
-        <div v-if="item.img !== ''">
-          <img class="review-img" :src="`${item.img}`"/>
+      <div class="review-content" v-html="Review.reviewContent">
+      </div>
+      <div class="review-bottom">
+        <div class="review-control">
+          <span class="review-modify rh p-1" v-if="userID !== reviewID">수정</span>
+          <span class="review-delete rh p-1 mr-3" v-if="userID !== reviewID">삭제</span>
         </div>
-        <div class="review-text" v-if="item.content !== ''"> {{item.content}}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Review from './review'
 import TourItemData from "./myplan.js";
 import TravelList from "./TravelList";
+import axios from "axios";
 
 export default {
   name: 'ReviewDetail',
   data() {
     return {
       TourItemData: TourItemData,
-      Review: Review,
+      Review: {},
+      userID: '',
+      reviewID: 28,
     }
+  },
+  created() {
+    this.userID = localStorage.getItem('id')
+    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
+      if (res.status === 200) {
+        this.Review = res.data
+        this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
+      }
+    }).catch(function (err) {
+      console.log("에러발생: " + err)
+      //에러 처리 할 곳
+      alert("에러발생");
+    })
   },
   components: {
     TravelList
@@ -48,16 +65,17 @@ div {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-.review{
+.review {
   margin: 100px 300px;
   text-align: center;
 }
+
 .review-top {
   max-width: 1000px;
   text-align: center;
 }
 
-.container{
+.container {
 
   height: fit-content;
   text-align: left;
@@ -80,16 +98,30 @@ div {
   margin-left: 50px;
 }
 
-.travellist{
+.travellist {
   margin: 10px;
   text-align: left;
 }
 
-.review-img {
-  width: fit-content;
+.review-content {
+  margin-top: 50px;
+}
+
+.review-bottom {
+  width: 100%;
   height: fit-content;
-  text-align: center;
-  padding: 10px;
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.review-control {
+  width: 100%;
+  height: fit-content;
+  text-align: right;
+}
+
+.rh:hover {
+  color: #008F7A;
 }
 
 </style>
