@@ -1,8 +1,8 @@
 <template>
   <div class="travel-container" >
-    <div class="daliy" v-for="(day, i) in items.daliy" :key="i">
+    <div class="daliy" v-for="(day, i) in items" :key="i">
       <div class="day"> 🚄 {{i + 1}} 일차</div>
-      <TravelItem :item="item" v-for="(item, j) in items.daliy[i]" :key="j"/>
+      <TravelItem :item="item" v-for="(item, j) in items[i]" :key="j"/>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ import TravelItem from "./TravelItem.vue"
 export default {
     name: 'TravelList',
     props: {
-        items: Object,
+        items: Array,
     },
     components: {
         TravelItem

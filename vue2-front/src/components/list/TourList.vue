@@ -14,9 +14,6 @@
           </div>
         </div>
       </div>
-      <div class="text-center text-white">
-        <p>검색 결과: {{ TourListCnt }}개</p>
-      </div>
     </header>
     <!--main page-->
     <section class="py-0">
@@ -54,7 +51,6 @@ export default {
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
       startdate: '',
       enddate: '',
-      TourListCnt: 0
     }
   },
   components: {
@@ -101,10 +97,9 @@ export default {
     }
     this.startdate = year + '-' + month + '-' + day
     this.enddate = year + '-' + month + '-' + day
-    axios.get('http://kosa3.iptime.org:50201/testdb')
+    axios.get('http://kosa3.iptime.org:50201/tourList')
         .then(result => {
           this.TourItemList = result.data
-          this.TourListCnt = this.TourItemList.length
         })
         .catch(function (err) {
           console.log("에러발생: " + err)

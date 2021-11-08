@@ -214,54 +214,6 @@ div {
   background: #69bb7e;
 }
 
-/*!* Contact map *!*/
-/*.leaflet-control a,*/
-/*.leaflet-control {*/
-/*  font-size: 10px !important;*/
-/*}*/
-
-/*.form-control {*/
-/*  border: 1px solid #e8e8e8;*/
-/*}*/
-
-/* Footer */
-#templatemo_footer a {
-  color: #dcdde1;
-}
-
-#templatemo_footer a:hover {
-  color: #68bb7d;
-}
-
-#templatemo_footer ul.footer-link-list li {
-  padding-top: 10px;
-}
-
-#templatemo_footer ul.footer-icons li {
-  width: 2.6em;
-  height: 2.6em;
-  line-height: 2.6em;
-}
-
-#templatemo_footer ul.footer-icons li:hover {
-  background-color: #cfd6e1;
-  transition: .5s;
-}
-
-#templatemo_footer ul.footer-icons li:hover i {
-  color: #212934;
-  transition: .5s;
-}
-
-#templatemo_footer .border-light {
-  border-color: #2d343f !important;
-}
-
-/*
-  // Extra small devices (portrait phones, less than 576px)
-  // No media query since this is the default in Bootstrap
-  */
-/* Small devices (landscape phones, 576px and up)*/
 .product-wap .h3,
 .product-wap li,
 .product-wap i,

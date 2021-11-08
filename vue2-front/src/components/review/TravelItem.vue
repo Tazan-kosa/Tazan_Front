@@ -3,13 +3,12 @@
     <div class="mycard-foreground">
       <div class="mycard-text">
       <div>
-        <h5 class="mycard-region">{{ item.region }}</h5>
+        <h5 class="mycard-region tc">{{ item.region }}</h5>
       </div>
       <div>
-        <h6 class="mycard-title">{{ item.title }}</h6>
+        <h6 class="mycard-title tc">{{ item.title }}</h6>
       </div>
-      <div class="mycard-hashtags">
-        <!--              <span class="mycard-hashtag" v-for="tag in item.tag" :key="tag">#{{tag}}&nbsp;&nbsp;</span>-->
+      <div class="mycard-hashtags tc">
         <span class="mycard-hashtag">#{{ item.tag1 }}  #{{ item.tag2 }}&nbsp;&nbsp;</span>
       </div>
       </div>
@@ -58,23 +57,8 @@ export default {
   color: white;
 }
 
-/*.mycard-region {*/
-/*  margin-left: 5%;*/
-/*  margin-top: 90%;*/
-/*  color: white;*/
-/*}*/
+.tc {
+  color: white;
+}
 
-/*.mycard-title {*/
-/*  margin-left: 5%;*/
-/*  margin-top: 100%;*/
-/*  color: white;*/
-/*  text-align: left;*/
-/*}*/
-
-/*.mycard-hashtags {*/
-/*  margin-left: 5%;*/
-/*  margin-top: 110%;*/
-/*  color: white;*/
-/*  text-align: left;*/
-/*}*/
 </style>

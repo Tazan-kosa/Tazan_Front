@@ -1,5 +1,5 @@
 <template>
-  <li class="spot-card" id="appendDiv1000">
+  <li class="spot-card" id="spotcard" v-for="data in datas">
     <div>
       <div>
         <div class="centered">
@@ -14,7 +14,7 @@
     </div>
     <div class="placelistndwrap">
       <span class="placelistnd2" title="광한루원(Gwanghalluwon)">
-        <h7>광한루원<br>
+        <h7>{{ data.title }}<br>
           <div class="spot-eng-small-text">Gwanghalluwon
             <div></div>
             <div class="spotBtnWrap">
@@ -33,14 +33,19 @@
 </template>
 
 <script>
+import data from '../../../assets/test/spot-card'
 export default {
-  name: "UnkownList"
+  name: "UnkownList",
+  el: 'spotcard',
+  data() {
+      datas: data
+  }
 }
 </script>
 
 <style scoped>
 .spot-card {
-  box-shadow: rgb(31 38 135 / 10%) 0px 8px 32px 0px;
+  box-shadow: 0px 8px 32px 0px;
   backdrop-filter: blur(4px);
   background: rgba(255, 255, 255, 0.25);
   border-radius: 4px;

@@ -43,7 +43,7 @@
               <div style="width: 100px; height: 100px">
 <!--                <div class="mobile-d-day-circle">D-6</div>-->
 <!--                <div class="mobile-share-circle" id="sharedLogo_idx_0" style="display: none;">공유</div>-->
-                <img class="width:100%" src="src/assets/image/jeju.jpg" alt="">
+                <img class="width:100%" src="public/image/jeju.jpg" alt="">
               </div>
               <div class="mobile-travel-info-container">
                 <div class="travel-title">JEJU</div>

@@ -38,43 +38,40 @@
 
           <div class="navbar align-self-center d-flex">
             <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
-              <div class="input-group">
-                <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-                <div class="input-group-text">
-                  <i class="fa fa-fw fa-search"></i>
-                </div>
-              </div>
+
             </div>
             <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
               <i class="fa fa-fw fa-search text-dark mr-2"></i>
             </a>
 
             <!-- 로그인시 사라지는곳-->
-            <!-- 로그인 -->
+            <!-- Login-->
             <div id="login" v-if="!Authorization">
-                <router-link to="/login"><a><span>로그인</span></a></router-link>
+              <router-link to="/login"><a><span>로그인</span></a></router-link>
             </div>
 
-            <!-- 회원가입-->
+            <!-- Register-->
             <div id="Register" v-if="!Authorization">
               <router-link to="/Register"><a><span>회원가입</span></a></router-link>
             </div>
 
             <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
-            <!-- 마이페이지-->
-            <div id="mypage" v-if="Authorization">
-              <router-link to="/mypage"><a><span>마이페이지</span></a></router-link>
-            </div>
-
-            <!-- 로그아웃-->
-            <div id="logout" v-if="Authorization">
-              <v-btn @click="logout"><a><span>로그아웃</span></a></v-btn>
-<!--              <router-link to="/login"><a><span>로그아웃</span></a></router-link>-->
-            </div>
-
-<!--            <div id="logout" v-if="!Authorization">-->
-<!--              <router-link type="button"><a><span>로그아웃</span></a></router-link>-->
+            <!-- Mypage-->
+<!--            <div id="mypagelist" v-if="Authorization">-->
+<!--              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>-->
 <!--            </div>-->
+
+<!--            &lt;!&ndash; Logout&ndash;&gt;-->
+<!--            <div id="logout" v-if="Authorization">-->
+<!--              <button @click="logout"><a><span>로그아웃</span></a></button>-->
+<!--            </div>-->
+
+            <!-- profile 버튼-->
+              <div id="profile" v-if="Authorization">
+                <v-app>
+                  <profile></profile>
+                </v-app>
+              </div>
 
           </div>
         </div>
@@ -84,8 +81,11 @@
 </template>
 
 <script>
+import profile from "./Profile"
+
 export default {
   name: "Header",
+  component: profile,
 
   data() {
     return {
@@ -93,38 +93,32 @@ export default {
     };
   },
 
-  methods: {
-    logout() {
-      localStorage.removeItem('Authorization');
-      location.reload();
-      alert('로그아웃 성공!');
-      this.$router.push('/')
-    },
-  },
+
 }
+
 </script>
 
 <style scoped>
 
 .nav-content {
-  position:sticky;
-  top:0;
-  background-color:white;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 /*nav underline 제거*/
-a{
+a {
   text-decoration: none;
 }
 
-span{
+span {
   font-size: large;
   font-weight: bolder;
   color: gray;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
 }
 
-span:hover{
+span:hover {
   border-bottom: 3px solid royalblue;
 }
 
@@ -134,13 +128,18 @@ span:hover{
 /*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");*/
 /*}*/
 
-#login, #logout, #mypage {
+#login, #logout {
   background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
 
-/*#login:hover, #logout:hover, #mypage:hover{*/
+/*#profile {*/
+/*  max-height: 60px;*/
+/*  z-index: 1;*/
+/*}*/
+
+/*#login:hover, #logout:hover /
 /*  background-color: darkgray;*/
 /*}*/
 
