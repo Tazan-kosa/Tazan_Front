@@ -38,7 +38,6 @@
 
 <script>
 import TravelList from "./TravelList";
-import TourItemData from "./myplan.js";
 import MyPlanModal from "./MyPlanModal";
 import Sticky from "vue-sticky-directive";
 import axios from "axios";
@@ -47,9 +46,8 @@ export default {
   name: 'reviewwrite',
   data() {
     return {
-      TourItemData: TourItemData,
+      TourItemData: [],
       flag: false,
-      img: '',
       userName: '',
       userID: '',
     }
@@ -62,6 +60,15 @@ export default {
   methods: {
     selectedPlan(id) {
       this.flag = true;
+      axios.get(`http://kosa3.iptime.org:50201/plan/getPlan/${id}`).then(res => {
+        if(res.status == 200) {
+          this.TourItemData = res.data.planList
+        }
+      }).catch(err => {
+        console.log("에러발생: " + err)
+        //에러 처리 할 곳
+        alert("에러발생");
+      })
       console.log(id);
     },
     save() {
@@ -99,7 +106,7 @@ export default {
       reviewVO.reviewTitle = document.querySelector(".review-title").textContent
       reviewVO.reviewContent = window.$('.reviewsummer').val()
 
-      axios.post('http://localhost:80/review/upload', reviewVO, {
+      axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
         },

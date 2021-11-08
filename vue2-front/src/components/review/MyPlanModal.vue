@@ -13,11 +13,11 @@
           <div class="modal-body">
             <div v-for="(item, i) in myplanList" :key="i" class="container">
               <label class="radio-input">
-                <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.myplanId)">
+                <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.planID)">
                   <div class="myplan">
                     <span class="myplan-region">{{ item.region }}</span>
-                    <span class="myplan-date">{{ item.date }}</span>
-                    <span class="myplan-title">{{ item.title }}</span>
+                    <span class="myplan-date">{{ item.startDate.substr(0,10) }} ~ {{ item.endDate.substr(0,10) }}</span>
+                    <span class="myplan-title">{{ item.planTitle }}</span>
                   </div>
                 </label>
             </div>
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import myplanList from './myplanList.js'
+import axios from "axios";
 
 export default {
   name: 'MyPlanModal',
@@ -44,10 +44,25 @@ export default {
       this.$emit('selectedPlan', this.myplanId)
     }
   },
+  created() {
+    var id = localStorage.getItem('id');
+    id = 1;
+    axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`).then(res => {
+      if (res.status === 200) {
+        console.log(res.data)
+        this.myplanList = res.data;
+      }
+    }).catch(function (err) {
+      console.log("에러발생: " + err)
+      //에러 처리 할 곳
+      alert("에러발생");
+    })
+  },
   data() {
     return {
       myPlanId: 0,
-      myplanList :myplanList,
+      myplanList : [],
+      travelDate: '',
     }
   }
 

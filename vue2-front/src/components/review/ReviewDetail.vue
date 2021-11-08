@@ -26,7 +26,6 @@
 </template>
 
 <script>
-import TourItemData from "./myplan.js";
 import TravelList from "./TravelList";
 import axios from "axios";
 
@@ -34,7 +33,7 @@ export default {
   name: 'ReviewDetail',
   data() {
     return {
-      TourItemData: TourItemData,
+      TourItemData: [],
       Review: {},
       userID: '',
       reviewID: '',
@@ -44,10 +43,19 @@ export default {
     this.userID = localStorage.getItem('id')
     this.reviewID = this.$route.params.reviewId
     console.log(this.reviewID)
-    axios.get(`http://localhost:80/review/${this.reviewID}`).then(res => {
+    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
+        axios.get(`http://kosa3.iptime.org:50201/plan/getPlan/${res.data.planID}`).then(res => {
+          if(res.status == 200) {
+            this.TourItemData = res.data.planList
+          }
+        }).catch(err => {
+          console.log("에러발생: " + err)
+          //에러 처리 할 곳
+          alert("에러발생");
+        })
       }
     }).catch(function (err) {
       console.log("에러발생: " + err)
