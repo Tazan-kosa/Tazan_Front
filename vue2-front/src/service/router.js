@@ -10,6 +10,7 @@ import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
 import ReviewList from "@/components/list/ReviewList";
 import Review from "../components/review/ReviewWrite";
+import ReviewDetail from "../components/review/ReviewDetail";
 import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
 import MyPage from "../components/mypage/MyPage";
@@ -88,6 +89,12 @@ const route= [
     {
         path: '/review',
         component: Review
+    },
+    {
+        path: '/reviewDetail/:reviewId',
+        name: 'ReviewDetail',
+        component: ReviewDetail
+
     },
     {
         path: '/',

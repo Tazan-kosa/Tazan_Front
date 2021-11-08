@@ -3,7 +3,7 @@
     <div class="container">
       <div class="container-top">
         <h1 class="head">
-          <span id="userName">윤현조</span>님의 여행 후기✈️
+          <span id="userName">{{ userName }}</span>님의 여행 후기✈️
         </h1>
         <div>
           <h1 class="review-title" contenteditable="true"></h1>
@@ -23,21 +23,13 @@
       </div>
       <div class="container-bottom">
         <div sticky-container class="review">
-          <div v-sticky=true class="sticky">
+          <div v-sticky=true class="sticky mb-2">
             <h5 id="text">📗나의 여행 일기</h5>
-            <!--            <span>-->
-            <!--            <input ref="imageUploader" @change="appendImg" multiple accept="image/*" type="file" id="file"-->
-            <!--                   class="input-img" title="이미지"/>-->
-            <!--            <label for="file" class="input-plus">사진 추가</label>-->
-            <!--          </span>-->
           </div>
           <textarea class="form-control summernote reviewsummer" rows="5"></textarea>
-          <!--          <div class="review-content" contenteditable="true">-->
-          <!--            <p class="review-text"></p>-->
-          <!--          </div>-->
         </div>
         <div class="save">
-          <button class="savebtn" @click="save2">저장하기</button>
+          <button class="savebtn" @click="save">저장하기</button>
         </div>
       </div>
     </div>
@@ -46,7 +38,6 @@
 
 <script>
 import TravelList from "./TravelList";
-import TourItemData from "./myplan.js";
 import MyPlanModal from "./MyPlanModal";
 import Sticky from "vue-sticky-directive";
 import axios from "axios";
@@ -55,36 +46,32 @@ export default {
   name: 'reviewwrite',
   data() {
     return {
-      TourItemData: TourItemData,
+      TourItemData: [],
       flag: false,
-      img: '',
+      userName: '',
+      userID: '',
     }
+  },
+  created() {
+    this.userName = localStorage.getItem('nickname')
+    this.userID = localStorage.getItem('id')
   },
   directives: {Sticky},
   methods: {
-    appendImg(e) {
-      let file = e.target.files;
-      this.img = file
-      let url = URL.createObjectURL(file[0])
-      console.log(url)
-      var div = document.createElement("div");
-      let p = document.createElement("p");
-      div.innerHTML = `<img src="${url}"/>`;
-      div.className += "reviewImg"
-      div.contentEditable = false;
-      p.innerHTML = "<br>"
-      p.className += "review-text"
-
-      var par = document.getElementsByClassName("review-content")[0];
-      par.appendChild(div);
-      par.append(p);
-      this.$refs.imageUploader.value = '';    // input 동일 파일 연속 선택 시 발생하는 문제 해결
-    },
     selectedPlan(id) {
       this.flag = true;
+      axios.get(`http://kosa3.iptime.org:50201/plan/getPlan/${id}`).then(res => {
+        if(res.status == 200) {
+          this.TourItemData = res.data.planList
+        }
+      }).catch(err => {
+        console.log("에러발생: " + err)
+        //에러 처리 할 곳
+        alert("에러발생");
+      })
       console.log(id);
     },
-    save2() {
+    save() {
       //오늘 날짜 입력을 위한 부분
       var temp = new Date()
       var year = temp.getFullYear();
@@ -125,7 +112,8 @@ export default {
         },
       }).then(res => {
         if (res.status === 200) {
-          //성공시 list page 리다이렉트? 그런거 처리하면 될듯
+          console.log(res.data)
+          this.$router.push(`/reviewDetail/${res.data}`)
         }
       }).catch(function (err) {
         console.log("에러발생: " + err)
@@ -133,52 +121,6 @@ export default {
         alert("에러발생");
       })
     },
-    save() {
-      var content = document.getElementsByClassName("review-content");
-      // console.log(content.item(0).children);
-      // var reviewVO={}
-      // var ReviewContent = [];
-      var ReviewContent = new FormData();
-      let img;
-      for (var i = 0; i < content.item(0).children.length; i++) {
-        // const formdata = new FormData();
-        //이미지인 경우
-        if (content.item(0).children.item(i).tagName === "DIV") {
-          var url = content.item(0).children.item(i).children.item(0).getAttribute("src");
-          var myFile = new File([url], "review-image.jpg", {type: "image/jpg"});
-          console.log(myFile)
-          img = URL.createObjectURL(myFile)
-
-          // ReviewContent.push(formdata);
-          // console.log("di" + formdata);
-        }
-        //글인 경우
-        // else {
-        //   ReviewContent.push(content.item(0).children.item(i).textContent);
-        //   // formdata.append("content", );
-        // }
-      }
-      var div = document.createElement("div");
-      div.innerHTML = `<img src="${img}"/>`;
-      div.className += "reviewImg"
-      div.contentEditable = false;
-
-      var par = document.getElementsByClassName("review-content")[0];
-      par.appendChild(div);
-      // formdata.append("img", myFile);
-      console.log(myFile);
-      ReviewContent.append("img", myFile);
-      console.log(ReviewContent)
-      // reviewVO.reviewContent=ReviewContent;
-      // console.log(reviewVO);
-      // axios.post('http://kosa3.iptime.org:50201/review/upload',ReviewContent,{
-      //   headers: {
-      //     'Content-Type' : 'multipart/form-data',
-      //   },
-      // }).then(res=> {
-      //   console.log(res)
-      // })
-    }
   },
   components: {
     TravelList,
@@ -260,48 +202,6 @@ export default {
   text-align: left;
   padding: 5px;
   margin: 30px 0 0 10px;
-}
-
-.input-img {
-  display: none;
-}
-
-.input-plus {
-  cursor: pointer;
-  left: 0;
-  padding: 5px;
-  margin: 30px 0 0 10px;
-}
-
-.review-content {
-  text-align: left;
-  padding: 15px;
-  min-height: 500px;
-}
-
-.review-content {
-  padding: 10px;
-  outline: none;
-  min-height: 300px;
-}
-
-.review-text:empty:before {
-  content: '여행 일기를 작성해주세요.';
-  cursor: text;
-  color: #ccc;
-  opacity: 0.6;
-  outline: none;
-  text-align: left;
-}
-
-.review-text {
-  margin-bottom: 0px;
-  text-align: center;
-}
-
-.reviewImg {
-  text-align: center;
-  padding: 10px;
 }
 
 .save {
