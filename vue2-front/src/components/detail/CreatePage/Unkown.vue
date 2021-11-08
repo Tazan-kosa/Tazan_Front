@@ -21,7 +21,7 @@
       <div class="save_plan">
         <div class="sub_main">
           <div class="left">
-            <div>여행 장소</div>
+            <div>{{this.region}}</div>
             <div>여행일자</div>
             <div class="datePicker">
 <!--              <b-form-datepicker></b-form-datepicker>-->
@@ -77,7 +77,8 @@
           <div>추천 장소</div>
           <div>
 <!--            <UnkownList/>-->
-            <RecomPlace/>
+            <RecomPlace :recomList="recomList"/>
+<!--            <SpotCard/>-->
           </div>
         </div>
 
@@ -93,14 +94,36 @@
 import RecomPlace from "./RecomPlace";
 // import RecomPlaceSave from "./RecomPlaceSave";
 import DatePicker from "../DatePicker";
+import axios from "axios";
+// import SpotCard from "./SpotCard";
 export default {
   name: "Unkown",
+  data(){
+    return{
+      recomList:[],
+    }
+  },
 
   components: {
+    // SpotCard,
     DatePicker,
-    // RecomPlaceSave,
     RecomPlace
+    // RecomPlaceSave,
     // UnkownList
+  },
+  props:{
+    region:String
+  },
+  created() {
+    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
+        .then(res => {
+          console.log(res.data)
+          this.recomList=res.data;
+
+        })
+        .catch(err=>{
+      console.log(err)
+    })
   }
 }
 </script>
