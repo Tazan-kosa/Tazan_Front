@@ -99,13 +99,14 @@ export default {
       reviewVO.reviewTitle = document.querySelector(".review-title").textContent
       reviewVO.reviewContent = window.$('.reviewsummer').val()
 
-      axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
+      axios.post('http://localhost:80/review/upload', reviewVO, {
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
         },
       }).then(res => {
         if (res.status === 200) {
-          //성공시 list page 리다이렉트? 그런거 처리하면 될듯
+          console.log(res.data)
+          this.$router.push(`/reviewDetail/${res.data}`)
         }
       }).catch(function (err) {
         console.log("에러발생: " + err)

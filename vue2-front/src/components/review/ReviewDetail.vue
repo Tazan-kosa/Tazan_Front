@@ -37,11 +37,13 @@ export default {
       TourItemData: TourItemData,
       Review: {},
       userID: '',
-      reviewID: 24,
+      reviewID: '',
     }
   },
   created() {
     this.userID = localStorage.getItem('id')
+    this.reviewID = this.$route.params.reviewId
+    console.log(this.reviewID)
     axios.get(`http://localhost:80/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
