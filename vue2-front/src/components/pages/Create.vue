@@ -2,7 +2,7 @@
   <div>
 <!--    <PlaceAndDate/>-->
 <!--    <Plann/>-->
-    <Unkown/>
+    <Unkown :region="this.$route.params.region"/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     Unkown
     // Plann,
     // PlaceAndDate
-  }
+  },
 }
 </script>
 
