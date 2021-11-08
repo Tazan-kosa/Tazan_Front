@@ -17,8 +17,8 @@
       </div>
       <div class="review-bottom">
         <div class="review-control">
-          <span class="review-modify rh p-1" v-if="userID !== reviewID">수정</span>
-          <span class="review-delete rh p-1 mr-3" v-if="userID !== reviewID">삭제</span>
+          <span class="review-modify rh p-1" v-if="userID === reviewID">수정</span>
+          <span class="review-delete rh p-1 mr-3" v-if="userID === reviewID">삭제</span>
         </div>
       </div>
     </div>
@@ -37,12 +37,12 @@ export default {
       TourItemData: TourItemData,
       Review: {},
       userID: '',
-      reviewID: 28,
+      reviewID: 24,
     }
   },
   created() {
     this.userID = localStorage.getItem('id')
-    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
+    axios.get(`http://localhost:80/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
