@@ -40,7 +40,11 @@
                   text
               >
                 <router-link style="text-decoration: none; color: inherit;"
-                              to="/mypagelist"><span id="mypage-text">마이페이지</span></router-link>
+                              to="/mypagelist" v-if="auth=='ROLE_USER'"><span id="mypage-text">마이페이지</span></router-link>
+
+                <router-link style="text-decoration: none; color: inherit;"
+                             to="/adminpage" v-if="auth=='ROLE_ADMIN'"><span id="admin-text" @click="adminCheck()">관리페이지</span></router-link>
+
               </v-btn>
               <v-divider class="my-3"></v-divider>
               <v-btn
@@ -65,12 +69,15 @@ export default {
   data: () => ({
     user: {
       userData: [],
-      // initials: '임',
-      // username: '임재혁',
-      // userId:'guest@gmail.com',
+      admin_check: '',
     },
   }),
   methods: {
+    adminCheck() {
+      console.log(this.admin_check);
+      this.admin_check = true;
+    },
+
     // 로그아웃
     logout() {
       localStorage.clear();
@@ -80,9 +87,10 @@ export default {
     },
   },
   props:{
-    email:String,
-    username:String,
-    initial: String
+    email: String,
+    username: String,
+    initial: String,
+    auth: String, // guest : ROLE_USER, admin : ROLE_ADMIN
   }
 }
 
@@ -92,7 +100,7 @@ export default {
  .v-application--wrap {
    min-height: 0vh !important;
  }
-#mypage-text, #logout-text{
+#mypage-text, #logout-text, #admin-text{
   font-size: medium;
   font-weight: normal;
 }

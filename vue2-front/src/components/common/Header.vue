@@ -69,7 +69,7 @@
             <!-- profile 버튼-->
             <div id="profile" v-if="profile_check()">
               <v-app>
-                <profile :username="username" :email="email" :initial="initial"/>
+                <profile :username="username" :email="email" :initial="initial" :auth="auth"/>
               </v-app>
             </div>
           </div>
@@ -92,17 +92,18 @@ export default {
       username: '',
       userID: '',
       initial: '',
+      auth: '',
     };
   },
   methods: {
     profile_check() {
-      //
       if (!this.Authorization) {
         return false
       } else {
         this.username = localStorage.getItem('nickname')
         this.email = localStorage.getItem('email')
         this.initial = this.username.charAt(0).toUpperCase() // 맨 앞 글자 대문자로.
+        this.auth = localStorage.getItem('auth')
         // console.log(localStorage.getItem('id'))
         // console.log(localStorage.getItem('email'))
         // console.log(localStorage.getItem('auth')) // ROLE_USER, ROLE_ADMIN
@@ -116,7 +117,6 @@ export default {
 </script>
 
 <style scoped>
-
 .nav-content {
   position: sticky;
   top: 0;
@@ -142,7 +142,7 @@ span:hover {
 /*header 배경이미지*/
 /*#header-full {*/
 /*  background-image:*/
-/*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-1594909.jpg");*/
+/*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-194909.jpg");*/
 /*}*/
 
 #login, #logout {

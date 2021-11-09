@@ -2,15 +2,19 @@
   <v-app id="app">
     <v-main>
       <v-container
-          style="position: relative; top: 10%; margin-left: 25%"
+          justify-center
           class="text-xs-center"
       >
         <v-layout row wrap class="text-xs-center">
           <v-flex>
             <v-card flat class="mx-auto" max-width="800">
               <v-row style="margin-top: 60px">
-                <v-col>
-                  <v-form style="width: 400px; height: 300px">
+                <v-col
+
+                >
+                  <v-form
+                      class="mx-auto"
+                      style="width: 400px; height: 700px">
 
                     <!-- 이메일 -->
                     <div class="mx-3">
