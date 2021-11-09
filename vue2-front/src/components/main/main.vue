@@ -73,7 +73,7 @@
       </div>
       <div class="row">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-          <Box id="listbox" v-for="(item, i) in TourItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
+          <ReviewBox id="listbox" v-for="(item, i) in ReviewItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
         </div>
       </div>
     </section>
@@ -91,22 +91,21 @@ import "./main.css";
 import Tagname from "@/components/list/tagnames";
 import Box from '../list/Box'
 import axios from 'axios'
+import ReviewBox from "../list/ReviewBox";
 
 export default {
   name: 'Main',
 
   data() {
     return {
-      // TourItemList: TourItemList,
       TourItemList: [],
+      ReviewItemList:[],
       Tagnames: Tagname,
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
-      startdate: '',
-      enddate: '',
     }
   },
   components: {
-    Box,
+    Box,ReviewBox
   },
   methods: {
     searchTourList() {
@@ -135,22 +134,16 @@ export default {
     }
   },
   created() {
-    var temp = new Date()
-    var year = temp.getFullYear();
-    var month = temp.getMonth() + 1;
-    var day = temp.getDate();
-
-    if (month < 10) {
-      month = '0' + month;
-    }
-    if (day < 10) {
-      day = '0' + day;
-    }
-    this.startdate = year + '-' + month + '-' + day
-    this.enddate = year + '-' + month + '-' + day
     axios.get('http://kosa3.iptime.org:50201/testdbTopFour')
         .then(result => {
           this.TourItemList = result.data
+        })
+        .catch(function (err) {
+          console.log("에러발생: " + err)
+        })
+    axios.get('http://kosa3.iptime.org:50201/review/recent')
+        .then(result => {
+          this.ReviewItemList = result.data
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
