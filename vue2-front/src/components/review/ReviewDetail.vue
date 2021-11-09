@@ -71,7 +71,7 @@ export default {
       axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}`).then(res => {
         if(res.status == 200) {
           alert("후기를 삭제했습니다.");
-          this.$router.push(`/tourlist`)
+          this.$router.push('/reviewList')
         }
       }).catch(err => {
         console.log(err)
