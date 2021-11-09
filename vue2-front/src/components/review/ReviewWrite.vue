@@ -55,6 +55,8 @@ export default {
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
+    let d = new Date()
+    console.log(d)
   },
   directives: {Sticky},
   methods: {
