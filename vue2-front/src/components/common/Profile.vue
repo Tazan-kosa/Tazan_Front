@@ -17,7 +17,7 @@
                 color="brown"
                 size="48"
             >
-              <span class="white--text text-h5">{{ user.initials }}</span>
+              <span class="white--text text-h6">{{ initial }}</span>
             </v-avatar>
           </v-btn>
         </template>
@@ -27,11 +27,11 @@
               <v-avatar
                   color="brown"
               >
-                <span class="white--text text-h5">{{ user.initials }}</span>
+                <span class="white--text text-h6">{{ initial }}</span>
               </v-avatar>
-              <h3>{{ user.fullName }}</h3>
+              <h3>{{ username }}</h3>
               <p class="text-caption mt-1">
-                {{ user.email }}
+                {{ email }}
               </p>
               <v-divider class="my-3"></v-divider>
               <v-btn
@@ -64,20 +64,26 @@ export default {
   name: 'profile',
   data: () => ({
     user: {
-      initials: '임',
-      fullName: '임재혁',
-      email: 'guest@gmail.com',
+      userData: [],
+      // initials: '임',
+      // username: '임재혁',
+      // userId:'guest@gmail.com',
     },
   }),
-
   methods: {
+    // 로그아웃
     logout() {
-      localStorage.removeItem('Authorization');
+      localStorage.clear();
       alert('로그아웃 성공!');
       this.$router.push('/')
       location.reload();
     },
   },
+  props:{
+    email:String,
+    username:String,
+    initial: String
+  }
 }
 
 </script>
@@ -86,7 +92,6 @@ export default {
  .v-application--wrap {
    min-height: 0vh !important;
  }
-
 #mypage-text, #logout-text{
   font-size: medium;
   font-weight: normal;
