@@ -27,15 +27,17 @@
               confirm
               format="YYYY-MM-DD"
               placeholder="Select date range"
-              :shortcuts="shortcuts"
           >
 
             여행일자
           </date-picker>
           <div>
             {{ mydate }}
+<!--            {{ mydate[0] }}-->
+<!--            {{ mydate[1] }}-->
             {{ result }}
           </div>
+          <button @click="save">save</button>
 
           <!--          <DatePicker/>-->
         </div>
@@ -112,18 +114,11 @@ export default {
       // value1: [new Date(2019, 9, 8), new Date(2019, 9, 19)],
       // value2: [],
       mydate: '',
+      utc: '',
       datetime: '',
       date: '',
       range: '',
-      shortcuts: [
-        {
-          text: 'Today',
-          onClick: () => {
-            // this.range = [ new startdate(), new enddate() ]
-            this.range = [ new Date(), new Date() ]
-          }
-        }
-      ],
+
       result: {
         year: '',
         month: '',
@@ -134,7 +129,7 @@ export default {
   },
   methods: {
     planList_add(result) {
-      this.totalPlan[this.cnt].push(result)
+      this.totalPlan[this.cnt].push(result) // object
       this.totalPlan_tour[this.cnt].push(result.tourId)
     },
     dayList_add() {
@@ -143,11 +138,8 @@ export default {
       this.totalPlan_tour.push([])
     },
     save() {
-      this.result.year = this.mydate.getFullYear();
-      this.result.month = this.mydate.getMonth();
-      this.result.day = this.mydate.getDay();
-      // console.log(DDD);
-    }
+      console.log(this.mydate[0])
+    },
   },
   components: {
     // DatePicker,
@@ -161,6 +153,13 @@ export default {
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
+
+    let m1 = this.mydate[0];
+    let curr = new Date(m1);
+    let timeString_KR = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
+    console.log(timeString_KR)
+    // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
         .then(res => {
           console.log(res.data)
@@ -170,6 +169,7 @@ export default {
         .catch(err => {
           console.log(err)
         })
+
   },
 }
 </script>
@@ -211,7 +211,7 @@ div {
 }
 
 .datepicpick {
-  width: 230px;
+  width: 400px;
   height: 100%;
 }
 
