@@ -57,22 +57,21 @@
 
             <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
             <!-- Mypage-->
-<!--            <div id="mypagelist" v-if="Authorization">-->
-<!--              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>-->
-<!--            </div>-->
+            <!--            <div id="mypagelist" v-if="Authorization">-->
+            <!--              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>-->
+            <!--            </div>-->
 
-<!--            &lt;!&ndash; Logout&ndash;&gt;-->
-<!--            <div id="logout" v-if="Authorization">-->
-<!--              <button @click="logout"><a><span>로그아웃</span></a></button>-->
-<!--            </div>-->
+            <!--            &lt;!&ndash; Logout&ndash;&gt;-->
+            <!--            <div id="logout" v-if="Authorization">-->
+            <!--              <button @click="logout"><a><span>로그아웃</span></a></button>-->
+            <!--            </div>-->
 
             <!-- profile 버튼-->
-              <div id="profile" v-if="Authorization">
-                <v-app>
-                  <profile></profile>
-                </v-app>
-              </div>
-
+            <div id="profile" v-if="profile_check()">
+              <v-app>
+                <profile :username="username" :email="email" :initial="initial"/>
+              </v-app>
+            </div>
           </div>
         </div>
       </div>
@@ -90,10 +89,28 @@ export default {
   data() {
     return {
       Authorization: localStorage.getItem("Authorization"),
+      username: '',
+      userID: '',
+      initial: '',
     };
   },
+  methods: {
+    profile_check() {
+      //
+      if (!this.Authorization) {
+        return false
+      } else {
+        this.username = localStorage.getItem('nickname')
+        this.email = localStorage.getItem('email')
+        this.initial = this.username.charAt(0).toUpperCase() // 맨 앞 글자 대문자로.
+        // console.log(localStorage.getItem('id'))
+        // console.log(localStorage.getItem('email'))
+        // console.log(localStorage.getItem('auth')) // ROLE_USER, ROLE_ADMIN
 
-
+        return true
+      }
+    }
+  }
 }
 
 </script>
