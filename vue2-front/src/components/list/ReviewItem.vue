@@ -3,12 +3,12 @@
     <div class="mycard-foreground">
       <div class="mycard-text">
       <div>
-        <h5 class="mycard-region">{{ item.region }}</h5>
+        <h5 class="mycard-region tc">{{ item.region }}</h5>
       </div>
       <div>
-        <h6 class="mycard-title">{{ item.reviewTitle }}</h6>
+        <h6 class="mycard-title tc">{{ item.reviewTitle }}</h6>
       </div>
-      <div class="mycard-hashtags">
+      <div class="mycard-hashtags tc">
         <!--              <span class="mycard-hashtag" v-for="tag in item.tag" :key="tag">#{{tag}}&nbsp;&nbsp;</span>-->
         <span class="mycard-hashtag">{{ item.startDate.slice(0,10) }} ~ {{ item.endDate.slice(0,10) }}&nbsp;&nbsp;</span>
       </div>
@@ -67,5 +67,7 @@ export default {
   bottom: 30px;
   color: white;
 }
-
+.tc {
+  color: white;
+}
 </style>
