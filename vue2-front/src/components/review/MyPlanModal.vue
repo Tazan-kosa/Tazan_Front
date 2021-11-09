@@ -46,7 +46,6 @@ export default {
   },
   created() {
     var id = localStorage.getItem('id');
-    id = 1;
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`).then(res => {
       if (res.status === 200) {
         console.log(res.data)

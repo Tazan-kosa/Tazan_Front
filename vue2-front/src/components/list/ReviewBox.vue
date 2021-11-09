@@ -1,6 +1,6 @@
 <template>
   <!--  <div class="itembox mb-2" v-if="checkedtag.includes(item.tag1) || checkedtag.includes(item.tag2)" @click="viewURL(item.url)">-->
-  <div class="itembox mb-2" @click="viewURL(item.url)">
+  <div class="itembox mb-2" @click="viewURL(item.reviewID)">
     <ReviewItem :item="item"/>
   </div>
 </template>
@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     viewURL(link) {
-      window.open(link)
+      this.$router.push(`/reviewDetail/${link}`)
     }
   }
 }

@@ -3,7 +3,7 @@
     <v-app id="app">
       <v-main>
         <v-container
-            style="position: relative; top: 10%; margin-left: 25%; min-height: 10vh"
+            justify-center
             class="text-xs-center"
         >
           <v-layout row wrap class="text-xs-center">
@@ -11,10 +11,11 @@
               <v-card flat class="mx-auto" max-width="800">
                 <v-row align="center" style="margin-top: 60px">
                   <v-col>
-                    <v-form style="width: 400px; height: 300px">
+                    <v-form
+                        class="mx-auto"
+                        style="width: 400px; height: 300px">
                       <div class="mx-3">
                         <v-icon color="black" size="30px">아이디</v-icon>
-
                         <div class="mx-1">
                           <v-text-field
                               placeholder="아이디"
@@ -35,7 +36,6 @@
                           ></v-text-field>
                         </div>
                       </div>
-
                       <v-card-actions>
                         <v-btn
                             color="#2c4f91"
@@ -44,8 +44,7 @@
                             block
                             @click="loginSubmit"
                         >Login
-                        </v-btn
-                        >
+                        </v-btn>
                       </v-card-actions>
                     </v-form>
                   </v-col>
@@ -101,9 +100,12 @@ export default {
                     },
                 );
 
+                // ID값 가져오기.
                 localStorage.setItem('exp', decodedToken.payload.exp * 1000);
                 localStorage.setItem('nickname', decodedToken.payload.nickname);
                 localStorage.setItem('id', decodedToken.payload.id);
+                localStorage.setItem('email', decodedToken.payload.email);
+                localStorage.setItem('auth', decodedToken.payload.auth);
 
                 axios.defaults.headers.common['Authorization'] = res.data.Authorization;
 
@@ -114,7 +116,6 @@ export default {
               } else {
                 alert('로그인실패!');
               }
-
             });
       } catch (error) {
         console.error(error);

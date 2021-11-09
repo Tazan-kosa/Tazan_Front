@@ -2,88 +2,80 @@
   <div>
     <div class="main">
       <div>
-        <h1>테스트님의 여행 계획표</h1>
+        <h1>
+          <span id="userName">{{ userName }}</span>님의 여행 계획표
+        </h1>
         <div class="sub_title">
-          <div>여행 제목</div>
-          <div>제목을 정하라우
-          </div>
+          <b-form-input
+              v-model="text"
+              placeholder="여행 제목을 적어 주세요."
+          ></b-form-input>
         </div>
-        <!--        <h4> 20xx.xx.xx - 20xx.xx.xx</h4>-->
-<!--        <div class="daycount-main2">
-          <input type="hidden" value="3" id="travelDay">
-          &lt;!&ndash; blur()는 모바일 input포커스가 될때 키보드가 뜨는 것을 안뜨게 해줌 &ndash;&gt;
-          <input type="text" id="calander" name="daterange" class="center" value="" onfocus="blur()">
-        </div>-->
-<!--        -->
-
-<!--        -->
       </div>
-      <div class="save_plan">
-        <div class="sub_main">
-          <div class="left">
-            <div>{{this.region}}</div>
-            <div>여행일자</div>
-            <div class="datePicker">
-<!--              <b-form-datepicker></b-form-datepicker>-->
-              <DatePicker/>
-              <!--            <b-form-datepicker v-model="value" :min="min" :max="max"></b-form-datepicker>-->
-              <!--            <p>Value: '{{ value }}'</p>-->
-            </div>
-          </div>
+      <!--      <div class="save_plan">-->
+      <div class="sub_main">
+        <div class="left">
+          <div>{{ this.region }}</div>
+          <!--        <div>여행일자</div>-->
 
-          <!--        <div class="thr_main_sub">-->
+          <date-picker
+              class="datepicpick"
+              v-model="mydate"
+              type="date"
+              :lang="lang"
+              range
+              confirm
+              format="YYYY-MM-DD"
+              placeholder="Select date range"
+          >
 
-          <div class="thr_main">
-            <div class="thr_main_sub">
-              <div>1일차</div>
-              <div>
-                <div>내용</div>
-              </div>
-<!--              <div>메인 계획 일정표</div>-->
-<!--              <RecomPlaceSave/>-->
-<!--              내 스스로-->
-<!--              <div style="display:flex;padding:8px;width:100%">
-                <div>
-                  <img src="https://www.myro.co.kr/getSpotImage/gyeongju?no=1189" alt="Image" loading="lazy" style="width: 45px; height: 45px;">
-                </div>
-                <div class="addcartdpottextdiv">
-                  <h7 class="placelistnd" title="불국사">불국사</h7>
-                </div>
-              </div>-->
-            </div>
-            <div>
-              <b-button variant="outline-primary" type="submit">일정추가</b-button>
-            </div>
-            <!--          <div>
-                        <div>1일차</div>
-                        <div>메인 계획 일정표</div>
-                      </div>
-                      <div>
-                        <div>1일차</div>
-                        <div>메인 계획 일정표</div>
-                      </div>
-                      <div>
-                        <div>1일차</div>
-                        <div>메인 계획 일정표</div>
-                      </div>-->
-          </div>
-          <div class="save_plan_button">
-            <b-button variant="primary">Save</b-button>
-          </div>
-        </div>
-
-
-        <div class="right">
-          <div>추천 장소</div>
+            여행일자
+          </date-picker>
           <div>
-<!--            <UnkownList/>-->
-            <RecomPlace :recomList="recomList"/>
-<!--            <SpotCard/>-->
+            {{ mydate }}
+<!--            {{ mydate[0] }}-->
+<!--            {{ mydate[1] }}-->
+            {{ result }}
+          </div>
+          <button @click="save">save</button>
+
+          <!--          <DatePicker/>-->
+        </div>
+
+
+        <div class="thr_main">
+          <!--          <div class="thr_main_sub" v-for="(date, index) in DateAdd" :key="index">-->
+          <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
+            <div>
+              {{ i + 1 }} 일차
+            </div>
+
+            <!--            <div>{{ cnt + 1 }}일차</div>-->
+            <DayList :daylist="plan" class="thr_main_sub">
+            </DayList>
+          </div>
+          <div>
+            <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
           </div>
         </div>
 
       </div>
+    </div>
 
+
+    <div class="right">
+      <div>추천 장소</div>
+      <div>
+        <RecomPlace :recomList="recomList" @recived="planList_add"/>
+      </div>
+    </div>
+
+    <!--    </div>-->
+
+    <!--    </div>-->
+    <div class="save_plan_button">
+      <b-button variant="primary">Save</b-button>
+<!--      @click="SavePlan"-->
     </div>
   </div>
 </template>
@@ -93,38 +85,92 @@
 
 import RecomPlace from "./RecomPlace";
 // import RecomPlaceSave from "./RecomPlaceSave";
-import DatePicker from "../DatePicker";
+// import DatePicker from "../DatePicker";
 import axios from "axios";
-// import SpotCard from "./SpotCard";
+import DayList from "./DayList";
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
+import 'vue2-datepicker/locale/ko';
+
 export default {
   name: "Unkown",
-  data(){
-    return{
-      recomList:[],
+  data() {
+    return {
+      lang: {
+        formatLocale: {
+          firstDayOfWeek: 1,
+        },
+        monthBeforeYear: false,
+      },
+      recomList: [],
+      totalPlan: [[]],
+      totalPlan_tour: [[]],
+      cnt: 0, //index
+
+      //
+      userName: '',
+      userID: '',
+
+      // value1: [new Date(2019, 9, 8), new Date(2019, 9, 19)],
+      // value2: [],
+      mydate: '',
+      utc: '',
+      datetime: '',
+      date: '',
+      range: '',
+
+      result: {
+        year: '',
+        month: '',
+        day: ''
+      }
+
     }
   },
-
-  components: {
-    // SpotCard,
-    DatePicker,
-    RecomPlace
-    // RecomPlaceSave,
-    // UnkownList
+  methods: {
+    planList_add(result) {
+      this.totalPlan[this.cnt].push(result) // object
+      this.totalPlan_tour[this.cnt].push(result.tourId)
+    },
+    dayList_add() {
+      this.cnt += 1
+      this.totalPlan.push([])
+      this.totalPlan_tour.push([])
+    },
+    save() {
+      console.log(this.mydate[0])
+    },
   },
-  props:{
-    region:String
+  components: {
+    // DatePicker,
+    DayList,
+    RecomPlace,
+    DatePicker
+  },
+  props: {
+    region: String,
   },
   created() {
+    this.userName = localStorage.getItem('nickname')
+    this.userID = localStorage.getItem('id')
+
+    let m1 = this.mydate[0];
+    let curr = new Date(m1);
+    let timeString_KR = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
+    console.log(timeString_KR)
+    // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
         .then(res => {
           console.log(res.data)
-          this.recomList=res.data;
+          this.recomList = res.data;
 
         })
-        .catch(err=>{
-      console.log(err)
-    })
-  }
+        .catch(err => {
+          console.log(err)
+        })
+
+  },
 }
 </script>
 
@@ -160,6 +206,11 @@ div {
 }
 
 .left {
+  width: 250px;
+  height: 100%;
+}
+
+.datepicpick {
   width: 400px;
   height: 100%;
 }
@@ -173,12 +224,14 @@ div {
 
 .thr_main_sub {
   display: flex;
-  width: 100%;
+  /*width: 100%;*/
 }
+
 .save_plan {
-  display: flex;
-  width: 100%;
+  /*display: flex;*/
+  width: 1000px;
 }
+
 /*.save_plan_button {
   flex-direction: column;
 }*/
