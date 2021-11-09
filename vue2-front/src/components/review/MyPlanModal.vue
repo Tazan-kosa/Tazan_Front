@@ -11,7 +11,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div v-for="(item, i) in myplanList" :key="i" class="container">
+            <div v-for="(item, i) in myplanList" :key="i" class="container"> ZXcm,./
               <label class="radio-input">
                 <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.planID)">
                   <div class="myplan">
