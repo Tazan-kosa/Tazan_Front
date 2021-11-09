@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="container-bottom">
+      <div class="container-bottom mt-16">
         <div sticky-container class="review">
           <div v-sticky=true class="sticky mb-2">
             <h5 id="text">📗나의 여행 일기</h5>
@@ -152,7 +152,6 @@ export default {
 }
 
 .review-title {
-  padding: 20px;
   text-align: left;
   outline: none;
   white-space: nowrap;
@@ -168,13 +167,6 @@ export default {
 
 .container-middle {
   position: relative;
-}
-
-#mylist-btn {
-  width: fit-content;
-  height: fit-content;
-  padding: 5px;
-  margin-left: 10px;
 }
 
 .before {

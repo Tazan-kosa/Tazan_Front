@@ -10,9 +10,13 @@ import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
 import ReviewList from "@/components/list/ReviewList";
 import Review from "../components/review/ReviewWrite";
+import ReviewDetail from "../components/review/ReviewDetail";
 import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
 import MyPage from "../components/mypage/MyPage";
+import TestCreate from "../components/create/TestCreate";
+import TestRead from "../components/create/TestRead";
+import TestDetail from "../components/create/TestDetail";
 import Register from "../components/common/Register";
 import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
@@ -34,10 +38,16 @@ const route= [
         path: '/detail',
         name: 'Datail',
         component: Detail,
-
+        // children: [
+        //     {
+        //         path: "create",
+        //         component: Create,
+        //         name: "create"
+        //     }
+        // ]
     },
     {
-        path: '/create/region/:region',
+        path: '/create/:region',
         name: 'regionList',
         component: Create
 
@@ -81,6 +91,12 @@ const route= [
         component: Review
     },
     {
+        path: '/reviewDetail/:reviewId',
+        name: 'ReviewDetail',
+        component: ReviewDetail
+
+    },
+    {
         path: '/',
         component: Main
     },
@@ -109,7 +125,36 @@ const route= [
         name: 'Register',
         component: Register
     },
-
+    // 김제민
+    {
+        path: '/testC',
+        name: 'TestCreate',
+        component: TestCreate
+    },
+    // 김제민
+    {
+        path: '/testR',
+        name: 'TestRead',
+        component: TestRead
+    },
+    // 김제민
+    {
+        path: '/testD',
+        name: 'TestRead',
+        component: TestDetail
+    },
+    // 김제민
+    {
+        path: '/testC/:contentId?',
+        name: 'TestCreate',
+        component: TestCreate
+    },
+    // 김제민
+    {
+        path: '/testD/:contentId',
+        name: 'TestDetail',
+        component: TestDetail
+    }
 ]
 
 const router = new VueRouter({

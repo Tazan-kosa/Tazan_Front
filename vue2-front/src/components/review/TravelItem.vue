@@ -20,7 +20,6 @@
 export default {
   name: 'TravelItem',
   props: {
-    // item: JSON,
     item: Object,
   }
 }
@@ -37,7 +36,6 @@ export default {
   background-image: url("https://www.royalpalace.go.kr/images/sub/gbg.jpg");
   background-size: cover;
   display: block;
-
   margin: 8px;
 }
 
