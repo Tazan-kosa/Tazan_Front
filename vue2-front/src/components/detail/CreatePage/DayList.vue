@@ -1,17 +1,46 @@
 <template>
   <div>
-    <div class="date">
-
-    </div>
     <div class="thr_main_sub" v-for="(day, i) in daylist" :key="i">
+      <v-card
+          class="pa-30 ma-30"
+          max-width="200"
+      >
+        <v-img
+            :src=day.img
+            height="150px"
+        ></v-img>
 
-      <div>
-        <div>{{ day.tourId }}</div>
-        <div>{{ day.tourId }}</div>
-      </div>
+        <v-card-title>
+          {{ day.title }}
+        </v-card-title>
+
+        <v-card-subtitle>
+          {{ day.tag1 + " , " + day.tag2}}
+        </v-card-subtitle>
+
+
+          <v-btn
+              icon
+              @click="day.url"
+          >
+            <v-btn
+                class="mx-2"
+                fab
+                dark
+                small
+                color="primary"
+            >
+              <v-icon dark>
+                mdi-minus
+              </v-icon>
+            </v-btn>
+          </v-btn>
+      </v-card>
+
+
     </div>
-
   </div>
+
 </template>
 
 <script>
