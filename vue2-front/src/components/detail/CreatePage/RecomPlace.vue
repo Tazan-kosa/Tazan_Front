@@ -1,8 +1,8 @@
 <template>
   <div>
-    <li class="ul-style" v-for="(spot, i) in recomList" :key="i">
-      <SpotCard :spot="spot"/>
-    </li>
+    <div class="ul-style" v-for="(spot, i) in recomList" :key="i">
+      <SpotCard :spot="spot" @PutList="PutLists"/>
+    </div>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   },
   props: {
     recomList: Array,
+  },
+  methods:{
+    PutLists(reciv){
+      this.$emit('recived', reciv)
+    }
   }
 }
 </script>

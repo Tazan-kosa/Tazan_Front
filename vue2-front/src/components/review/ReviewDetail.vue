@@ -76,12 +76,13 @@ div {
 }
 
 .review {
+  min-width: 1000px;
   margin: 100px 300px;
   text-align: center;
 }
 
 .review-top {
-  max-width: 1000px;
+  max-width: 1300px;
   text-align: center;
 }
 
@@ -89,10 +90,6 @@ div {
 
   height: fit-content;
   text-align: left;
-}
-
-.review-title {
-  margin-top: 10px;
 }
 
 .review-user {
