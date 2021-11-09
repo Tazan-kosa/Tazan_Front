@@ -127,8 +127,6 @@ import axios from "axios";
 export default {
   name: 'Register',
   data: () => ({
-
-
     email: '',
     emailRules: [
       v => !!v || '이메일을 입력해 주세요.',
