@@ -6,7 +6,7 @@
           <span id="userName">{{ userName }}</span>님의 여행 후기✈️
         </h1>
         <div>
-          <h1 class="review-title" contenteditable="true"></h1>
+          <h1 class="review-title" contenteditable="true">{{title}}</h1>
         </div>
       </div>
       <hr/>
@@ -26,7 +26,7 @@
           <div v-sticky=true class="sticky mb-2">
             <h5 id="text">📗나의 여행 일기</h5>
           </div>
-          <textarea class="form-control summernote reviewsummer" rows="5"></textarea>
+          <textarea class="form-control summernote reviewsummer" id="sm" rows="5"></textarea>
         </div>
         <div class="save">
           <button class="savebtn" @click="save">저장하기</button>
@@ -47,22 +47,33 @@ export default {
   data() {
     return {
       TourItemData: [],
+      ReviewData: {},
       flag: false,
       userName: '',
       userID: '',
+      title: '',
+      reviewContent: '',
+      editFlag: false,
     }
   },
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
-    let d = new Date()
-    console.log(d)
+    if(this.$route.params.reviewData){
+      this.TourItemData = this.$route.params.planData;
+      this.flag = true;
+      this.ReviewData = this.$route.params.reviewData;
+      this.title = this.ReviewData.reviewTitle
+      this.reviewContent = this.ReviewData.reviewContent
+      // window.$(".note-editable").text('fjsdakfjasdklfjasdkl');
+      this.editFlag = true
+    }
   },
   directives: {Sticky},
   methods: {
     selectedPlan(id) {
       this.flag = true;
-      axios.get(`http://kosa3.iptime.org:50201/plan/getPlan/${id}`).then(res => {
+      axios.get(`http://kosa3.iptime.org:50201/planDetail/${id}`).then(res => {
         if(res.status == 200) {
           this.TourItemData = res.data.planList
         }
@@ -107,21 +118,37 @@ export default {
       //제목, 글 내용 가져와서 삽입
       reviewVO.reviewTitle = document.querySelector(".review-title").textContent
       reviewVO.reviewContent = window.$('.reviewsummer').val()
-
-      axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
-        headers: {
-          'Content-Type': 'application/json; charset=utf-8',
-        },
-      }).then(res => {
-        if (res.status === 200) {
-          console.log(res.data)
-          this.$router.push(`/reviewDetail/${res.data}`)
-        }
-      }).catch(function (err) {
-        console.log("에러발생: " + err)
-        //에러 처리 할 곳
-        alert("에러발생");
-      })
+      if(this.editFlag){
+        reviewVO.reviewID = this.ReviewData.reviewID
+        axios.put(`http://kosa3.iptime.org:50201/review/update`, reviewVO, {
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }).then(res => {
+          if (res.status === 200) {
+            console.log(res.data)
+            this.$router.push(`/reviewDetail/${res.data}`)
+          }
+        }).catch (err => {
+          alert(err);
+        })
+      }
+      else{
+        axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }).then(res => {
+          if (res.status === 200) {
+            console.log(res.data)
+            this.$router.push(`/reviewDetail/${res.data}`)
+          }
+        }).catch(function (err) {
+          console.log("에러발생: " + err)
+          //에러 처리 할 곳
+          alert("에러발생");
+        })
+      }
     },
   },
   components: {
@@ -134,6 +161,9 @@ export default {
           height: 300
         }
     );
+    if(this.editFlag){
+      window.$('.summernote').summernote('code',this.reviewContent);
+    }
   }
 }
 </script>

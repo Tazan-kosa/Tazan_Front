@@ -17,7 +17,7 @@
       </div>
       <div class="review-bottom">
         <div class="review-control">
-          <span class="review-modify rh p-1" v-if="userID == reviewUserID">수정</span>
+          <span class="review-modify rh p-1" v-if="userID == reviewUserID" @click="modifyReview">수정</span>
           <span class="review-delete rh p-1 mr-3" v-if="userID == reviewUserID" @click="deleteReview">삭제</span>
         </div>
       </div>
@@ -48,7 +48,7 @@ export default {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
-        axios.get(`http://kosa3.iptime.org:50201/plan/getPlan/${res.data.planID}`).then(res => {
+        axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
           if(res.status == 200) {
             this.TourItemData = res.data.planList;
             this.reviewUserID = res.data.userID;
@@ -76,6 +76,9 @@ export default {
       }).catch(err => {
         console.log(err)
       })
+    },
+    modifyReview(){
+      this.$router.push({name : 'Review', params: {reviewData: this.Review, planData: this.TourItemData}})
     }
   },
   components: {
