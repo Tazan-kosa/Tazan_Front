@@ -49,6 +49,14 @@ const route= [
         component: Create
 
     },
+    
+    // DB 넘어오는 디테일 페이지 확인
+    {
+        path: '/planDetail/:region',
+        name: 'regionList',
+        component: Create
+
+    },
     // 김제민
     {
         path: '/create',

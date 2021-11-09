@@ -12,70 +12,70 @@
           ></b-form-input>
         </div>
       </div>
-      <!--      <div class="save_plan">-->
-      <div class="sub_main">
-        <div class="left">
-          <div>{{ this.region }}</div>
-          <!--        <div>여행일자</div>-->
+      <div class="save_plan">
+        <div class="sub_main">
+          <div class="left">
+            <div>{{ this.region }}</div>
+            <!--        <div>여행일자</div>-->
 
-          <date-picker
-              class="datepicpick"
-              v-model="mydate"
-              type="date"
-              :lang="lang"
-              range
-              confirm
-              format="YYYY-MM-DD"
-              placeholder="Select date range"
-          >
+            <date-picker
+                class="datepicpick"
+                v-model="mydate"
+                type="date"
+                :lang="lang"
+                range
+                confirm
+                format="YYYY-MM-DD"
+                placeholder="Select date range"
+            >
 
-            여행일자
-          </date-picker>
-          <div>
-            {{ mydate }}
-<!--            {{ mydate[0] }}-->
-<!--            {{ mydate[1] }}-->
-            {{ result }}
-          </div>
-          <button @click="save">save</button>
-
-          <!--          <DatePicker/>-->
-        </div>
-
-
-        <div class="thr_main">
-          <!--          <div class="thr_main_sub" v-for="(date, index) in DateAdd" :key="index">-->
-          <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
+              여행일자
+            </date-picker>
             <div>
-              {{ i + 1 }} 일차
+              {{ test }}
+              <!--            {{ mydate[0] }}-->
+              <!--            {{ mydate[1] }}-->
             </div>
+            <!--          <button @click="save">save</button>-->
 
-            <!--            <div>{{ cnt + 1 }}일차</div>-->
-            <DayList :daylist="plan" class="thr_main_sub">
-            </DayList>
+            <!--          <DatePicker/>-->
           </div>
+
+
+          <div class="thr_main">
+            <!--          <div class="thr_main_sub" v-for="(date, index) in DateAdd" :key="index">-->
+            <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
+              <div>
+                {{ i + 1 }} 일차
+              </div>
+
+              <!--            <div>{{ cnt + 1 }}일차</div>-->
+              <DayList :daylist="plan" class="thr_main_sub">
+              </DayList>
+            </div>
+            <div>
+              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
+            </div>
+          </div>
+
+        </div>
+        <div class="right">
+          <div>추천 장소</div>
           <div>
-            <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
+            <RecomPlace :recomList="recomList" @recived="planList_add"/>
           </div>
         </div>
-
       </div>
-    </div>
 
 
-    <div class="right">
-      <div>추천 장소</div>
-      <div>
-        <RecomPlace :recomList="recomList" @recived="planList_add"/>
+
+
+      <!--    </div>-->
+
+      <!--    </div>-->
+      <div class="save_plan_button">
+        <b-button variant="primary" @click="SavePlan">Save</b-button>
       </div>
-    </div>
-
-    <!--    </div>-->
-
-    <!--    </div>-->
-    <div class="save_plan_button">
-      <b-button variant="primary">Save</b-button>
-<!--      @click="SavePlan"-->
     </div>
   </div>
 </template>
@@ -118,12 +118,8 @@ export default {
       datetime: '',
       date: '',
       range: '',
+      text: '',
 
-      result: {
-        year: '',
-        month: '',
-        day: ''
-      }
 
     }
   },
@@ -133,12 +129,49 @@ export default {
       this.totalPlan_tour[this.cnt].push(result.tourId)
     },
     dayList_add() {
-      this.cnt += 1
-      this.totalPlan.push([])
-      this.totalPlan_tour.push([])
+      var test = new Date(this.mydate[0])
+      test.setDate((test.getDate() + (this.cnt) + 1))
+      if (test > this.mydate[1]) {
+        alert('일정 길이를 초과합니다!')
+      } else {
+        this.cnt += 1
+        this.totalPlan.push([])
+        this.totalPlan_tour.push([])
+      }
     },
-    save() {
-      console.log(this.mydate[0])
+    SavePlan() {
+      let planVO = {};
+
+
+      planVO.userID = localStorage.getItem("id");
+      // reviewVO.userID = 1//localStorage.getItem("id")
+      planVO.region = this.region;
+      planVO.startDate = this.mydate[0];
+      planVO.endDate = this.mydate[1];
+      // PlanVO.date =;
+
+      // planVO.planDate = plandate;
+
+      planVO.planTitle = this.text;
+      planVO.planList = this.totalPlan_tour;
+
+      console.log(planVO)
+      if (confirm("저장 하시겠습니까?")) {
+        axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }).then(res => {
+          if (res.status === 200) {
+            console.log(res.data)
+            this.$router.push(`/planDetail/${res.data}`)
+          }
+        }).catch(function (err) {
+          console.log("에러발생: " + err)
+          //에러 처리 할 곳
+          alert("에러발생");
+        })
+      }
     },
   },
   components: {
@@ -146,10 +179,12 @@ export default {
     DayList,
     RecomPlace,
     DatePicker
-  },
+  }
+  ,
   props: {
     region: String,
-  },
+  }
+  ,
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
@@ -170,7 +205,8 @@ export default {
           console.log(err)
         })
 
-  },
+  }
+  ,
 }
 </script>
 
@@ -198,7 +234,7 @@ div {
 
 .sub_main {
   display: flex;
-  position: relative;
+  /*position: relative;*/
   /*width: 400px;*/
   /*height: 700px;*/
   height: 100%;
@@ -211,7 +247,7 @@ div {
 }
 
 .datepicpick {
-  width: 400px;
+  width: 230px;
   height: 100%;
 }
 
@@ -224,11 +260,11 @@ div {
 
 .thr_main_sub {
   display: flex;
-  /*width: 100%;*/
+  width: 100%;
 }
 
 .save_plan {
-  /*display: flex;*/
+  display: flex;
   width: 1000px;
 }
 
