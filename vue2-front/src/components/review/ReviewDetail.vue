@@ -17,8 +17,8 @@
       </div>
       <div class="review-bottom">
         <div class="review-control">
-          <span class="review-modify rh p-1" v-if="userID === reviewID">수정</span>
-          <span class="review-delete rh p-1 mr-3" v-if="userID === reviewID">삭제</span>
+          <span class="review-modify rh p-1" v-if="userID === reviewUserID">수정</span>
+          <span class="review-delete rh p-1 mr-3" v-if="userID === reviewUserID">삭제</span>
         </div>
       </div>
     </div>
@@ -37,6 +37,7 @@ export default {
       Review: {},
       userID: '',
       reviewID: '',
+      reviewUserID:'',
     }
   },
   created() {
@@ -49,7 +50,8 @@ export default {
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
         axios.get(`http://kosa3.iptime.org:50201/plan/getPlan/${res.data.planID}`).then(res => {
           if(res.status == 200) {
-            this.TourItemData = res.data.planList
+            this.TourItemData = res.data.planList;
+            this.reviewUserID = res.data.userID;
           }
         }).catch(err => {
           console.log("에러발생: " + err)

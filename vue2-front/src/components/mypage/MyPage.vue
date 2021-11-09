@@ -42,7 +42,7 @@
             <div class="mobile-travel-flex-top">
               <div style="width: 100px; height: 100px">
 <!--                <div class="mobile-d-day-circle">D-6</div>-->
-<!--                <div class="mobile-share-circle" id="sharedLogo_idx_0" style="display: none;">공유</div>-->
+                <!--                <div class="mobile-share-circle" id="sharedLogo_idx_0" style="display: none;">공유</div>-->
                 <img class="width:100%" src="public/image/jeju.jpg" alt="">
               </div>
               <div class="mobile-travel-info-container">
@@ -67,7 +67,8 @@
                   </ul>
               </div>
             </div>
-              <div class="mobile-travel-button" uk-toggle="target:#modal-center_idx_0" onclick="modalCenterBtn(0)" tabindex="0" aria-expanded="false">일정공유</div>
+              <div class="mobile-travel-button" uk-toggle="target:#modal-center_idx_0" onclick="modalCenterBtn(0)"
+                   tabindex="0" aria-expanded="false">일정공유</div>
               <div class="mobile-travel-button" id="deleteSavedBtn_0" onclick="deleteSavedRoute(0)">삭제</div>
             </div>
           </div>
