@@ -4,9 +4,9 @@
       <div class="container px-4 px-lg-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">여행지 리스트</h1>
-          <p class="lead fw-normal text-white-100 mb-0">여행가고싶은 지역을 입력해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
+          <p class="lead fw-normal text-white-100 mb-0">검색 키워드를 입력 해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
           <div class="input-group mb-3">
-            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="예시) 경기/강남/제주/해운대"
+            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="행사 지역/행사 이름 등"
                    @keyup.enter="searchTourList">
             <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
               Search

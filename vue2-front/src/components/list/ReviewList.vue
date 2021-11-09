@@ -4,9 +4,9 @@
       <div class="container px-4 px-lg-5">
         <div class="text-center text-white">
           <h1 class="display-4 fw-bolder">후기 리스트</h1>
-          <p class="lead fw-normal text-white-50 mb-0">후기 검색 키워드를 입력해주세요!</p>
+          <p class="lead fw-normal text-white-50 mb-0">검색 키워드를 입력 해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
           <div class="input-group mb-3">
-            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="관광지/문화시설 | 경기/서울">
+            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="후기 제목/지역 이름 등" @keyup.enter="searchTourList">
             <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
               Search
             </button>
@@ -116,6 +116,9 @@ export default {
 }
 p{
   margin-bottom: 0px;
+}
+#searchbar {
+  text-align: center;
 }
 .button2 {
   border-radius: 4px;
