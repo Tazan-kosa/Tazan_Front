@@ -19,11 +19,6 @@ Vue.config.productionTip = false
 import Profile from './components/common/Profile'
 Vue.component(Profile.name, Profile)
 
-// register modal component
-// Vue.component('modal', {
-//   template: '#modal-template'
-// })
-
 new Vue({
   vuetify,
   router,

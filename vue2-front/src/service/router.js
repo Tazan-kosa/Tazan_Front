@@ -19,6 +19,7 @@ import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageVue from "../components/mypage/MyPageVue";
 import MyPageList from "../components/mypage/MyPageList";
+import AdminPage from "../components/common/admin/AdminPage";
 
 Vue.use(VueRouter)
 
@@ -100,7 +101,6 @@ const route= [
         path: '/reviewDetail/:reviewId',
         name: 'ReviewDetail',
         component: ReviewDetail
-
     },
     {
         path: '/',
@@ -125,12 +125,16 @@ const route= [
         path: '/mypagelist',
         component: MyPageList
     },
-    // 임재혁
     {
         path: '/register',
         name: 'Register',
         component: Register
-    }
+    },
+    {
+        path: '/adminpage',
+        name: 'AdminPage',
+        component: AdminPage
+    },
 ]
 
 const router = new VueRouter({
