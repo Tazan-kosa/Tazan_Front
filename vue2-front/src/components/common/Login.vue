@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+
 import jwt from 'jsonwebtoken'
 
 export default {
@@ -74,12 +74,13 @@ export default {
 
   methods: {
     loginSubmit() {
+
       let saveData = {};
       saveData.email = this.email;
       saveData.passWord = this.passWord;
 
       try {
-        axios
+        this.$axios
             .post("http://kosa3.iptime.org:50201/login", JSON.stringify(saveData), {
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
@@ -106,12 +107,20 @@ export default {
                 localStorage.setItem('id', decodedToken.payload.id);
                 localStorage.setItem('email', decodedToken.payload.email);
                 localStorage.setItem('auth', decodedToken.payload.auth);
+                this.$axios.defaults.headers.common['Authorization'] = res.data.Authorization;
 
-                axios.defaults.headers.common['Authorization'] = res.data.Authorization;
+                this.auth = localStorage.getItem('auth');
 
-                // 로그인 성공시 홈페이지로 리다이렉트
-                this.$router.push('/')
-                location.reload();
+                if(this.auth === "ROLE_ADMIN"){
+                  this.$router.push('/adminpage')
+                  location.reload();
+                }
+
+                else if (this.auth === "ROLE_USER"){
+                  // 로그인 성공시 홈페이지로 리다이렉트
+                  this.$router.push('/')
+                  location.reload();
+                }
 
               } else {
                 alert('로그인실패!');
@@ -126,7 +135,6 @@ export default {
 </script>
 
 <style>
-
 #loginpage {
   min-height: 500px;
   align-content: center;

@@ -1,5 +1,5 @@
 <template>
-  <div class="mycard" :style="{backgroundImage : `url( ${item.img} )`}">
+  <div class="mycard" :style="{backgroundImage : `url( ${item.reviewThumbnail} )`}">
     <div class="mycard-foreground">
       <div class="mycard-text">
       <div>
@@ -30,9 +30,10 @@ export default {
     // item: JSON,
     item: Object,
   },
-  created(){
-    // console.log(this.item.startDate)
-
+  updated() {
+    if(this.item.reviewThumbnail == '') {
+      this.item.reviewThumbnail = "https://user-images.githubusercontent.com/37900920/141242967-16a7888c-76ba-4a7b-b9e7-7fceb9a727aa.png"
+    }
   }
 }
 </script>
@@ -45,10 +46,8 @@ export default {
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("https://www.royalpalace.go.kr/images/sub/gbg.jpg");
   background-size: cover;
   display: block;
-
   margin: 8px;
 }
 

@@ -33,8 +33,6 @@
             </date-picker>
             <div>
               {{ test }}
-              <!--            {{ mydate[0] }}-->
-              <!--            {{ mydate[1] }}-->
             </div>
             <!--          <button @click="save">save</button>-->
 
@@ -161,10 +159,10 @@ export default {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
-        }).then(res => {
-          if (res.status === 200) {
-            console.log(res.data)
-            this.$router.push(`/planDetail/${res.data}`)
+        }).then(request => {
+          if (request.status === 200) {
+            console.log(request.data)
+            this.$router.push(`/planDetail/${request.data}`)
           }
         }).catch(function (err) {
           console.log("에러발생: " + err)
@@ -189,16 +187,13 @@ export default {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
 
-    let m1 = this.mydate[0];
-    let curr = new Date(m1);
-    let timeString_KR = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
-    console.log(timeString_KR)
+
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
 
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
-        .then(res => {
-          console.log(res.data)
-          this.recomList = res.data;
+        .then(response => {
+          console.log(response.data)
+          this.recomList = response.data;
 
         })
         .catch(err => {
@@ -265,7 +260,7 @@ div {
 
 .save_plan {
   display: flex;
-  width: 1000px;
+  /*width: 1000px;*/
 }
 
 /*.save_plan_button {
