@@ -158,41 +158,27 @@ export default {
   },
   created() {
     this.userName = localStorage.getItem('nickname')
-    // this.userId = this.$route.params.planId;
     var id = localStorage.getItem('id');
-    // axios.get(`http://kosa3.iptime.org:50201/TT/${this.userId}`)
-    axios.get(`http://kosa3.iptime.org:50201/plan/${id}`)
+    axios.get(`http://kosa3.iptime.org:50201/TT/${id}`)
         .then(res => {
           if (res.status == 200) {
             console.log(res)
             this.plan = res.data
-            // this.Plan.PlanDate = this.Plan.planDate.substr(0, 10)
-            // axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
-            /*axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
-              if(res.status == 200) {
-                this.planItemData = res.data.plan;
-                this.planUserID = res.data.userID;
-                console.log("planid : " + this.planUserID)
-              }
-            }).catch(err => {
-              console.log("에러발생: " + err)
-              //에러 처리 할 곳
-              alert("에러발생");
-            })
-          }*/
           }
         }).catch(err => {
       console.log("에러발생: " + err)
       //에러 처리 할 곳
       alert("에러발생");
     })
-    let m1 = this.plan.startDate;
-    console.log(m1)
+  },
+  components: {
 
   },
-  components: {},
   props: {
     plan: Object
+  },
+  methods: {
+
   }
 }
 </script>
