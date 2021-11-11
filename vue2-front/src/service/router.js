@@ -114,6 +114,17 @@ const route = [
         name: 'Register',
         component: Register
     },
+    //mypage 테스트
+    {
+        path: '/TT',
+        name: 'TT',
+        component: MyPageListTest
+    },
+    {
+        path: '/adminpage',
+        name: 'AdminPage',
+        component: AdminPage
+    },
 ]
 
 const router = new VueRouter({
