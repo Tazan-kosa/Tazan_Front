@@ -14,11 +14,11 @@ import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageList from "../components/mypage/MyPageList";
+// import AdminPage from "../components/common/admin/AdminPage";
+// import Menus from "../components/common/admin/menus";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
 import MyPageListTest from "../components/mypage/MyPageListTest";
-
-import AdminPage from "../components/common/admin/AdminPage";
 
 
 Vue.use(VueRouter)
@@ -50,19 +50,12 @@ const route = [
         component: Create
 
     },
-    // // DB 넘어오는 디테일 페이지 확인
-    // {
-    //     path: '/planDetail/:planId',
-    //     name: 'regionList',
-    //     component: UnkownDetail
-    //
-    // },
+
     // DB 넘어오는 디테일 페이지 확인
     {
-        path: '/planDetail/:planId',
-        name: 'plandetail',
-        component: UnkownPlanDetail
-
+        path: '/planDetail/:region',
+        name: 'regionList',
+        component: Create
     },
     // // DB 넘어오는 디테일 페이지 확인
     // {
@@ -121,23 +114,10 @@ const route = [
         name: 'Register',
         component: Register
     },
-
-    //mypage 테스트
-    {
-        path: '/TT',
-        name: 'TT',
-        component: MyPageListTest
-    }
-
-    {
-        path: '/adminpage',
-        name: 'AdminPage',
-        component: AdminPage
-    },
 ]
 
 const router = new VueRouter({
-    mode:'history',
+    mode: 'history',
     routes: route
 })
 
