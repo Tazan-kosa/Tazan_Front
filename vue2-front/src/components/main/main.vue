@@ -90,7 +90,6 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "./main.css";
 import Tagname from "@/components/list/tagnames";
 import Box from '../list/Box'
-import axios from 'axios'
 import ReviewBox from "../list/ReviewBox";
 
 export default {
@@ -108,39 +107,17 @@ export default {
     Box, ReviewBox
   },
   methods: {
-    searchTourList() {
-      const value = document.getElementById("searchbar").value
-      axios.get(`http://kosa3.iptime.org:50201/search/${value}`)
-          .then(result => {
-            console.log(result.data)
-          })
-          .catch(function (err) {
-            console.log("에러발생: " + err)
-          })
-    },
-    selectedDate({start, end}) {
-      this.startdate = start
-      this.enddate = end
-      if (start <= end) {
-        axios.get(`http://kosa3.iptime.org:50201/selectdate/${this.startdate}/${this.enddate}`)
-            .then(result => {
-              console.log(result.data)
-            })
-            .catch(function (err) {
-              console.log("에러발생: " + err)
-            })
-      }
-    }
+
   },
   created() {
-    axios.get('http://kosa3.iptime.org:50201/testdbTopFour')
+    this.$axios.get('http://kosa3.iptime.org:50201/testdbTopFour')
         .then(result => {
           this.TourItemList = result.data
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
         })
-    axios.get('http://kosa3.iptime.org:50201/review/recent')
+    this.$axios.get('http://kosa3.iptime.org:50201/review/recent')
         .then(result => {
           this.ReviewItemList = result.data
         })

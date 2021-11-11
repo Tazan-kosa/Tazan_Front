@@ -1,24 +1,26 @@
 <template>
-  <div class="review">
-    <div class="review-top">
-      <div class="container">
-        <h5 class="review-region">{{ Review.region }}</h5>
-        <h1 class="review-title">{{ Review.reviewTitle }}</h1>
-        <h6 class="review-user">by.{{ Review.nickName }} &nbsp;&nbsp;&nbsp; {{ Review.reviewDate }}</h6>
+  <div class="all">
+    <div class="review">
+      <div class="review-top">
+        <div class="container">
+          <h5 class="review-region">{{ Review.region }}</h5>
+          <h1 class="review-title">{{ Review.reviewTitle }}</h1>
+          <h6 class="review-user">by.{{ Review.nickName }} &nbsp;&nbsp;&nbsp; {{ Review.reviewDate }}</h6>
+        </div>
       </div>
-    </div>
-    <hr>
-    <div class="review-middle">
-      <div class="mytravel">
-        <div class="mytravel-title"><span id="username">🚗 {{ Review.nickName }}</span>님의 여행 일정</div>
-        <TravelList :items="TourItemData" class="travellist mb-4"/>
-      </div>
-      <div class="review-content" v-html="Review.reviewContent">
-      </div>
-      <div class="review-bottom">
-        <div class="review-control">
-          <span class="review-modify rh p-1" v-if="userID == reviewUserID" @click="modifyReview">수정</span>
-          <span class="review-delete rh p-1 mr-3" v-if="userID == reviewUserID" @click="deleteReview">삭제</span>
+      <hr>
+      <div class="review-middle">
+        <div class="mytravel">
+          <div class="mytravel-title"><span id="username">🚗 {{ Review.nickName }}</span>님의 여행 일정</div>
+          <TravelList :items="TourItemData" class="travellist mb-4"/>
+        </div>
+        <div class="review-content" v-html="Review.reviewContent">
+        </div>
+        <div class="review-bottom">
+          <div class="review-control">
+            <span class="review-modify rh p-1" v-if="userID == reviewUserID" @click="modifyReview">수정</span>
+            <span class="review-delete rh p-1 mr-3" v-if="userID == reviewUserID" @click="deleteReview">삭제</span>
+          </div>
         </div>
       </div>
     </div>
@@ -37,7 +39,7 @@ export default {
       Review: {},
       userID: '',
       reviewID: '',
-      reviewUserID:'',
+      reviewUserID: '',
     }
   },
   created() {
@@ -49,7 +51,7 @@ export default {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
         axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
-          if(res.status == 200) {
+          if (res.status == 200) {
             this.TourItemData = res.data.planList;
             this.reviewUserID = res.data.userID;
             console.log("reviewid : " + this.reviewUserID)
@@ -67,18 +69,21 @@ export default {
     })
   },
   methods: {
-    deleteReview(){
+    deleteReview() {
       axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}`).then(res => {
-        if(res.status == 200) {
+        if (res.status == 200) {
           alert("후기를 삭제했습니다.");
-          this.$router.push('/reviewList')
+          this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
         }
       }).catch(err => {
         console.log(err)
       })
     },
-    modifyReview(){
-      this.$router.push({name : 'Review', params: {reviewData: this.Review, planData: this.TourItemData}})
+    modifyReview() {
+      this.$router.push({
+        name: 'Review',
+        params: {reviewData: this.Review, planData: this.TourItemData}
+      }).then((() => window.scrollTo(0, 0)))
     }
   },
   components: {
@@ -89,23 +94,23 @@ export default {
 
 <style scoped>
 
-div {
-  font-family: 'Noto Sans KR', sans-serif;
-}
 
+.all {
+  width: 100%;
+  height: 100%;
+  min-width: 800px;
+}
 .review {
-  min-width: 1000px;
-  margin: 100px 300px;
+  max-width: 1100px;
+  margin: 100px auto;
   text-align: center;
 }
 
 .review-top {
-  max-width: 1300px;
   text-align: center;
 }
 
 .container {
-
   height: fit-content;
   text-align: left;
 }
