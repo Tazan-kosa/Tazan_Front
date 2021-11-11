@@ -14,8 +14,12 @@ import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageList from "../components/mypage/MyPageList";
+
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
 import MyPageListTest from "../components/mypage/MyPageListTest";
+
+import AdminPage from "../components/common/admin/AdminPage";
+
 
 Vue.use(VueRouter)
 
@@ -91,13 +95,13 @@ const route = [
     },
     {
         path: '/review',
+        name: 'Review',
         component: Review
     },
     {
         path: '/reviewDetail/:reviewId',
         name: 'ReviewDetail',
         component: ReviewDetail
-
     },
     {
         path: '/',
@@ -112,18 +116,24 @@ const route = [
         path: '/mypagelist',
         component: MyPageList
     },
-    // 임재혁
     {
         path: '/register',
         name: 'Register',
         component: Register
     },
+
     //mypage 테스트
     {
         path: '/TT',
         name: 'TT',
         component: MyPageListTest
     }
+
+    {
+        path: '/adminpage',
+        name: 'AdminPage',
+        component: AdminPage
+    },
 ]
 
 const router = new VueRouter({
