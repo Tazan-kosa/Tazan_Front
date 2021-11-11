@@ -14,7 +14,6 @@ import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
 import MyPageList from "../components/mypage/MyPageList";
 import AdminPage from "../components/common/admin/AdminPage";
-// import Menus from "../components/common/admin/menus";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
 import MyPageListTest from "../components/mypage/MyPageListTest";
@@ -33,7 +32,6 @@ const route = [
         path: '/create/:region',
         name: 'regionList',
         component: Create
-
     },
 
     // DB 넘어오는 디테일 페이지 확인
@@ -54,7 +52,6 @@ const route = [
         path: '/planDetail/:planId',
         name: 'plandetail',
         component: UnkownPlanDetail
-
     },
     {
         path: '/tourlist',
