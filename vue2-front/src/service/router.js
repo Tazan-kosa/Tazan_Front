@@ -12,8 +12,9 @@ import ReviewDetail from "../components/review/ReviewDetail";
 import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
+import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageList from "../components/mypage/MyPageList";
- import AdminPage from "../components/common/admin/AdminPage";
+import AdminPage from "../components/common/admin/AdminPage";
 // import Menus from "../components/common/admin/menus";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
@@ -28,6 +29,13 @@ const route = [
         path: '/detail',
         name: 'Datail',
         component: Detail,
+        // children: [
+        //     {
+        //         path: "create",
+        //         component: Create,
+        //         name: "create"
+        //     }
+        // ]
     },
     {
         path: '/create/:region',
@@ -38,23 +46,21 @@ const route = [
 
     // DB 넘어오는 디테일 페이지 확인
     {
-        path: '/planDetail/:region',
-        name: 'regionList',
+        path: '/plan/:region',
+        name: 'regionCreate',
         component: Create
     },
     // 김제민
-    {
-        path: '/create',
-        name: 'Create',
-        component: Create
-    },
-    // 김제민
-    // DB 넘어오는 디테일 페이지 확인
     {
         path: '/planDetail/:planId',
         name: 'plandetail',
         component: UnkownPlanDetail
+    },
 
+    {
+        path: '/create',
+        name: 'Create',
+        component: Create
     },
     {
         path: '/tourlist',
