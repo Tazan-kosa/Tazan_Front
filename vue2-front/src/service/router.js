@@ -12,9 +12,8 @@ import ReviewDetail from "../components/review/ReviewDetail";
 import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
-import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageList from "../components/mypage/MyPageList";
-// import AdminPage from "../components/common/admin/AdminPage";
+ import AdminPage from "../components/common/admin/AdminPage";
 // import Menus from "../components/common/admin/menus";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
@@ -23,26 +22,12 @@ import MyPageListTest from "../components/mypage/MyPageListTest";
 
 Vue.use(VueRouter)
 
-// 인증
-// const requireAuth = () => (from, to, next) => {
-//     const isAuthenticated = false
-//     if (isAuthenticated) return next()
-//     next('/login?returnPath=mypage')
-// }
-
 const route = [
     // 김제민
     {
         path: '/detail',
         name: 'Datail',
         component: Detail,
-        // children: [
-        //     {
-        //         path: "create",
-        //         component: Create,
-        //         name: "create"
-        //     }
-        // ]
     },
     {
         path: '/create/:region',
@@ -57,13 +42,6 @@ const route = [
         name: 'regionList',
         component: Create
     },
-    // // DB 넘어오는 디테일 페이지 확인
-    // {
-    //     path: '/userdetail/:planId',
-    //     name: 'regionList',
-    //     component: UnkownPlanDetail
-    //
-    // },
     // 김제민
     {
         path: '/create',
@@ -71,10 +49,12 @@ const route = [
         component: Create
     },
     // 김제민
+    // DB 넘어오는 디테일 페이지 확인
     {
-        path: '/detailplan',
-        name: 'DetailPlanPage',
-        component: DetailPlanPage
+        path: '/planDetail/:planId',
+        name: 'plandetail',
+        component: UnkownPlanDetail
+
     },
     {
         path: '/tourlist',
