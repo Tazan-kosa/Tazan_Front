@@ -1,0 +1,4 @@
+GET http://kosa3.iptime.org:50201/planDetail/9
+Accept: application/json
+
+###

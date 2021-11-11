@@ -78,7 +78,15 @@
                                 <div class="small-title">
                                     여행이름
                                     <div class="uk-inline">
-                                        <a class="uk-form-icon uk-form-icon-flip uk-icon" uk-icon="icon: file-edit" onclick="inputTravelName(0)" id="inputTravelNameBtn_idx_0"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path><polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg></a>
+                                        <a class="uk-form-icon uk-form-icon-flip uk-icon" uk-icon="icon: file-edit"
+                                           onclick="inputTravelName(0)" id="inputTravelNameBtn_idx_0"><svg width="20"
+                                                                                                           height="20"
+                                                                                                           viewBox="0 0 20 20"
+                                                                                                           xmlns="http://www.w3.org/2000/svg"><path
+                                            fill="none" stroke="#000"
+                                            d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path><polyline
+                                            fill="none" stroke="#000"
+                                            points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg></a>
 
                                         <input class="
                                                 uk-input
@@ -184,7 +192,8 @@
                                             uk-button
                                             uk-button-large
                                             uk-card-default
-                                        " uk-toggle="target:#modal-center_idx_0" onclick="modalCenterBtn(0)" aria-expanded="false">
+                                        " uk-toggle="target:#modal-center_idx_0" onclick="modalCenterBtn(0)"
+                                            aria-expanded="false">
                                         일정 공유
                                     </button>
                                 </div>
@@ -211,7 +220,17 @@
                     uk-modal-body
                     uk-margin-auto-vertical
                 ">
-                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14"
+                                                                                                       height="14"
+                                                                                                       viewBox="0 0 14 14"
+                                                                                                       xmlns="http://www.w3.org/2000/svg"><line
+                    fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none"
+                                                                                                            stroke="#000"
+                                                                                                            stroke-width="1.1"
+                                                                                                            x1="13"
+                                                                                                            y1="1"
+                                                                                                            x2="1"
+                                                                                                            y2="13"></line></svg></button>
 
                 <div style="
                         display: flex;
@@ -288,7 +307,17 @@
                     uk-modal-body
                     uk-margin-auto-vertical
                 ">
-                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14"
+                                                                                                       height="14"
+                                                                                                       viewBox="0 0 14 14"
+                                                                                                       xmlns="http://www.w3.org/2000/svg"><line
+                    fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none"
+                                                                                                            stroke="#000"
+                                                                                                            stroke-width="1.1"
+                                                                                                            x1="13"
+                                                                                                            y1="1"
+                                                                                                            x2="1"
+                                                                                                            y2="13"></line></svg></button>
 
                 <div style="
                         display: flex;
@@ -338,7 +367,8 @@
                                 </div>
                             </div>
                                 <div class="uk-form-controls" id="sendEmailList_idx_0">
-                                    <input class="uk-input" type="email" placeholder="E-mail 주소 입력" name="emailAddress_idx_0">
+                                    <input class="uk-input" type="email" placeholder="E-mail 주소 입력"
+                                           name="emailAddress_idx_0">
                                 </div>
                         </div>
                     </div>
@@ -358,7 +388,8 @@
                 </div>
             </div>
         </div>
-    </div><div style="margin:16px 0;">
+    </div>
+    <div style="margin:16px 0;">
         <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack" style="padding:16px" uk-grid="">
             <div class="uk-width-1-3@m uk-first-column">
                 <div class="uk-grid" uk-grid="" style="margin: 0; height: 60%">
@@ -401,7 +432,18 @@
                                 <div class="small-title">
                                     여행이름
                                     <div class="uk-inline">
-                                        <a class="uk-form-icon uk-form-icon-flip uk-icon" uk-icon="icon: file-edit" onclick="inputTravelName(1)" id="inputTravelNameBtn_idx_1"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path><polyline fill="none" stroke="#000" points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline></svg></a>
+                                        <a class="uk-form-icon uk-form-icon-flip uk-icon" uk-icon="icon: file-edit"
+                                           onclick="inputTravelName(1)" id="inputTravelNameBtn_idx_1">
+                                          <svg width="20"
+                                                                                                           height="20"
+                                                                                                           viewBox="0 0 20 20"
+                                                                                                           xmlns="http://www.w3.org/2000/svg"><path
+                                            fill="none" stroke="#000"
+                                            d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path><polyline
+                                            fill="none" stroke="#000"
+                                            points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline>
+                                          </svg>
+                                        </a>
 
                                         <input class="
                                                 uk-input
@@ -507,7 +549,8 @@
                                             uk-button
                                             uk-button-large
                                             uk-card-default
-                                        " uk-toggle="target:#modal-center_idx_1" onclick="modalCenterBtn(1)" aria-expanded="false">
+                                        " uk-toggle="target:#modal-center_idx_1" onclick="modalCenterBtn(1)"
+                                            aria-expanded="false">
                                         일정 공유
                                     </button>
                                 </div>
@@ -518,7 +561,7 @@
                                             uk-button
                                             uk-button-large
                                             uk-card-default
-                                        " id="deleteSavedBtn_1" onclick="deleteSavedRoute(1)">
+                                        " id="deleteSavedBtn_1" onclick="">
                                         삭제
                                     </button>
                                 </div>
@@ -534,7 +577,19 @@
                     uk-modal-body
                     uk-margin-auto-vertical
                 ">
-                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close="">
+                  <svg width="14"
+                                                                                                       height="14"
+                                                                                                       viewBox="0 0 14 14"
+                                                                                                       xmlns="http://www.w3.org/2000/svg"><line
+                    fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+                    <line fill="none"
+                                                                                                            stroke="#000"
+                                                                                                            stroke-width="1.1"
+                                                                                                            x1="13"
+                                                                                                            y1="1"
+                                                                                                            x2="1"
+                                                                                                            y2="13"></line></svg></button>
 
                 <div style="
                         display: flex;
@@ -611,7 +666,17 @@
                     uk-modal-body
                     uk-margin-auto-vertical
                 ">
-                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></button>
+                <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close=""><svg width="14"
+                                                                                                       height="14"
+                                                                                                       viewBox="0 0 14 14"
+                                                                                                       xmlns="http://www.w3.org/2000/svg"><line
+                    fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none"
+                                                                                                            stroke="#000"
+                                                                                                            stroke-width="1.1"
+                                                                                                            x1="13"
+                                                                                                            y1="1"
+                                                                                                            x2="1"
+                                                                                                            y2="13"></line></svg></button>
 
                 <div style="
                         display: flex;
@@ -649,12 +714,15 @@
                 </div>
             </div>
         </div>
-    </div></span>
+    </div>
+        </span>
+
         <div id="pageSectionDiv" class="pagination-container">
           <div class="pagination-container">
             <a id="travelListP" href="#" onclick="getTravelListNextPage('p')"><i class="material-icons">chevron_left</i></a>
             <span id="pageList"><a onclick="getTravelListPage(1)" id="pageButton1" class="s-button"> 1 </a></span>
-            <a id="travelListN" href="#" onclick="getTravelListNextPage('n')"><i class="material-icons">chevron_right</i></a>
+            <a id="travelListN" href="#" onclick="getTravelListNextPage('n')"><i
+                class="material-icons">chevron_right</i></a>
           </div>
         </div>
       </div>
@@ -684,12 +752,14 @@ export default {
   outline: none;
   box-sizing: border-box;
 }
+
 body {
   min-height: 100vh;
   width: 100%;
   background: #fff;
   color: #000;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -721,6 +791,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .profilePhoto-text {
   font-size: 1.4rem;
   color: #fff;
@@ -731,6 +802,7 @@ body {
   .wrapper {
     padding: 60px 30px;
   }
+
   .profilePhotoContainer {
     width: 80px;
     height: 80px;
@@ -745,6 +817,7 @@ body {
   /* padding: 40px 0; */
   /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
 }
+
 .section-divider {
   height: 5px;
   background-color: #fafafa;
@@ -778,6 +851,7 @@ body {
   align-items: center;
   padding: 0 !important;
 }
+
 .grid-container {
   display: flex;
   flex-direction: row;
@@ -785,6 +859,7 @@ body {
   align-items: center;
   width: 100%;
 }
+
 .container .text {
   font-family: 'Montserrat';
   font-size: 35px;
@@ -798,6 +873,7 @@ body {
     font-size: 1.4rem;
   }
 }
+
 .small-text {
   font-size: 12px;
   /* text-align: center; */
@@ -805,12 +881,14 @@ body {
   letter-spacing: 1px;
   padding: 8px;
 }
+
 .medium-text {
   font-size: 14px;
   text-align: center;
   color: #616161;
   padding: 8px;
 }
+
 .divider-container {
   position: relative;
   text-align: center;
@@ -825,6 +903,7 @@ body {
   width: 100%;
   background-color: #fafafa;
 }
+
 .socialBtn-container {
   display: flex;
   flex-direction: column;
@@ -832,6 +911,7 @@ body {
   align-items: center;
   width: 100%;
 }
+
 .btn-normal {
   display: block;
   width: 140px;
@@ -845,6 +925,7 @@ body {
   cursor: pointer;
   background-color: #fff;
 }
+
 .index-section {
   margin: 0;
   padding: 0;
@@ -854,6 +935,7 @@ body {
   flex-direction: column;
   /* height: 120px; */
 }
+
 .index-section button {
   box-shadow: none !important;
 }
@@ -864,10 +946,12 @@ body {
     border-radius: unset;
     background-color: #fff;
   }
+
   .index-section .btn-group {
     width: 100%;
     border-radius: unset;
   }
+
   .index-section .btn-danger {
     background-color: #f80c35;
   }
@@ -880,6 +964,7 @@ body {
   overflow-x: auto;
   padding: 16px 8px;
 }
+
 .index-circle {
   height: 120px;
   width: 120px;
@@ -890,28 +975,33 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
 .flex-container-top {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70%;
 }
+
 .flex-container-bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30%;
 }
+
 @media (max-width: 600px) {
   .flex-container-top {
     height: auto;
     padding: 24px 0 8px 0;
   }
+
   .flex-container-bottom {
     height: auto;
     /* padding: 8px 0; */
   }
 }
+
 .section-title {
   font-family: 'Montserrat' !important;
 }
@@ -927,13 +1017,16 @@ body {
   .section-title {
     font-size: 1rem;
   }
+
   .index-section h6 {
     font-size: 0.8rem;
   }
+
   .travel-title {
     font-size: 1.4rem;
   }
 }
+
 .date-section {
   margin: 0;
   padding: 0;
@@ -943,6 +1036,7 @@ body {
   flex-direction: column;
   background-color: #fafafa;
 }
+
 @media (max-width: 600px) {
   .date-section {
     /* display: none; */
@@ -950,6 +1044,7 @@ body {
     top: 10px;
     background-color: transparent;
   }
+
   .date-section .section-title {
     color: #fff;
     font-size: 1rem;
@@ -966,6 +1061,7 @@ body {
   font-weight: 700;
   color: #5dc9dd;
 }
+
 .small-text {
   font-size: 0.9rem;
   color: #000;
@@ -977,6 +1073,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
 }
+
 .info-container-bottom {
   display: flex;
   flex-direction: column;
@@ -987,6 +1084,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .cm-toggle {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
@@ -1005,6 +1103,7 @@ body {
   border-radius: 18px;
   clear: both;
 }
+
 .cm-toggle:before {
   content: '';
   width: 24px;
@@ -1109,30 +1208,36 @@ body {
   padding: 8px;
   height: 120px;
 }
+
 .mobile-travel-flex-bottom {
   display: flex;
   justify-content: space-between;
   padding: 8px;
   height: 60px;
 }
+
 .mobile-travel-info-container {
   display: flex;
   flex-direction: column;
   padding-left: 16px;
 }
+
 .mobile-travel-name-text {
   font-size: 1rem;
 }
+
 .mobile-small-text {
   color: #999;
   font-size: 11px;
 }
+
 .mobile-travel-info-day-text {
   font-size: 1rem;
   font-family: 'Montserrat';
   color: #ffa500;
   margin: 2px 0;
 }
+
 .mobile-travel-button {
   border-radius: 0px;
   backdrop-filter: blur(4px);
@@ -1188,19 +1293,23 @@ body {
     font-size: 12px !important;
     padding: 8px 16px !important;
   }
+
   .share-mobile-view-container {
     padding: 0 !important;
     margin: 8px 0 0 0 !important;
   }
+
   .share-mobile-view-btn {
     padding: 0 !important;
   }
 }
+
 .pagination-container {
   display: flex;
   justify-content: center;
   align-content: center;
 }
+
 .pagination-container a {
   color: #000 !important;
   margin: 0 4px !important;
