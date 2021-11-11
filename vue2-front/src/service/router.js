@@ -47,7 +47,6 @@ const route = [
         path: '/create/:region',
         name: 'regionList',
         component: Create
-
     },
 
     // // DB 넘어오는 디테일 페이지 확인
@@ -64,6 +63,7 @@ const route = [
         component: UnkownPlanDetail
 
     // DB 넘어오는 디테일 페이지 확인
+    },
     {
         path: '/planDetail/:region',
         name: 'regionList',
@@ -127,14 +127,12 @@ const route = [
         name: 'Register',
         component: Register
     },
-
     //mypage 테스트
     {
         path: '/TT',
         name: 'TT',
         component: MyPageListTest
     },
-
     {
         path: '/adminpage',
         name: 'AdminPage',
