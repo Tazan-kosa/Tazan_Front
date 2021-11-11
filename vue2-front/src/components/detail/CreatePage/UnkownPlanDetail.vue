@@ -3,7 +3,8 @@
     <div class="main">
       <div>
         <h1>
-          <span id="userName">{{ plan.userID }}</span>님의 여행 계획표
+<!--          <span id="userName">{{ plan.userID }}</span>님의 여행 계획표-->
+          <span id="userName">{{ this.userId }}</span>님의 여행 계획표
         </h1>
         <div class="sub_title">
           <h1
@@ -63,7 +64,8 @@ export default {
   },
   created() {
 
-    this.planId = this.$route.params.planId;
+    // this.planId = this.$route.params.planId;
+    this.userId = localStorage.getItem('id');
     axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
