@@ -71,8 +71,12 @@
       <!--    </div>-->
 
       <!--    </div>-->
+
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
+      </div>
+      <div class="save_plan_button">
+        <b-button variant="primary" @click="DeletePlan">Delete</b-button>
       </div>
     </div>
   </div>
