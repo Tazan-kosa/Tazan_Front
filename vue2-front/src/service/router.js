@@ -14,7 +14,6 @@ import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
 import MyPageList from "../components/mypage/MyPageList";
 import AdminPage from "../components/common/admin/AdminPage";
-// import Menus from "../components/common/admin/menus";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
 import MyPageListTest from "../components/mypage/MyPageListTest";
@@ -28,20 +27,12 @@ const route = [
         path: '/detail',
         name: 'Datail',
         component: Detail,
-        // children: [
-        //     {
-        //         path: "create",
-        //         component: Create,
-        //         name: "create"
-        //     }
-        // ]
     },
     // 장소 클릭시 여행 계획 짜기 링크
     {
         path: '/create/:region',
         name: 'regionList',
         component: Create
-
     },
 
     // 장소 클릭시 여행 계획 짜기
@@ -62,7 +53,7 @@ const route = [
         name: 'Create',
         component: Create
     },
-    // 
+    //
     {
         path: '/tourlist',
         name: 'TourList',
