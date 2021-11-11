@@ -94,6 +94,7 @@ const route= [
     },
     {
         path: '/review',
+        name: 'Review',
         component: Review
     },
     {
