@@ -104,6 +104,7 @@ export default {
         this.email = localStorage.getItem('email')
         this.initial = this.username.charAt(0).toUpperCase() // 맨 앞 글자 대문자로.
         this.auth = localStorage.getItem('auth')
+
         // console.log(localStorage.getItem('id'))
         // console.log(localStorage.getItem('email'))
         // console.log(localStorage.getItem('auth')) // ROLE_USER, ROLE_ADMIN

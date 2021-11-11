@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <div>
-<!--      <Header v-if="auth=="/>-->
+      <!-- 추후 -->
       <Header></Header>
-      <router-view class="main-page"></router-view>
-<!--      <Footer v-if="auth=='ROLE_ADMIN'"/>-->
+<!--      <Header v-if="auth=='null'"/>-->
+<!--      <Header v-if="auth=='ROLE_USER'"/>-->
+<!--      <Header v-if="auth==!'ROLE_ADMIN'"/>-->
+        <router-view></router-view>
+<!--      <Footer v-if="auth=='null'"/>-->
+<!--      <Footer v-if="auth=='ROLE_USER'"/>-->
+<!--      <Footer v-if="auth==!'ROLE_ADMIN'"/>-->
       <Footer></Footer>
     </div>
   </div>
@@ -15,6 +20,12 @@ import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 
 export default {
+
+  data() {
+    return {
+      auth: localStorage.getItem(('auth')),
+    }
+  },
   name: 'App',
   components: {
     Header,
