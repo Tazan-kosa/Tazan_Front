@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+
 import jwt from 'jsonwebtoken'
 
 export default {
@@ -80,7 +80,7 @@ export default {
       saveData.passWord = this.passWord;
 
       try {
-        axios
+        this.$axios
             .post("http://kosa3.iptime.org:50201/login", JSON.stringify(saveData), {
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
@@ -107,7 +107,7 @@ export default {
                 localStorage.setItem('id', decodedToken.payload.id);
                 localStorage.setItem('email', decodedToken.payload.email);
                 localStorage.setItem('auth', decodedToken.payload.auth);
-                axios.defaults.headers.common['Authorization'] = res.data.Authorization;
+                this.$axios.defaults.headers.common['Authorization'] = res.data.Authorization;
 
                 this.auth = localStorage.getItem('auth');
 

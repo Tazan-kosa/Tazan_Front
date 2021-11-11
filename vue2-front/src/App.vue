@@ -18,9 +18,9 @@
 <script>
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
+import axios from "axios";
 
 export default {
-
   data() {
     return {
       auth: localStorage.getItem(('auth')),
@@ -30,7 +30,8 @@ export default {
   components: {
     Header,
     Footer,
-  }
+  },
+  axios
 }
 </script>
 

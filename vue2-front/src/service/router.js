@@ -19,7 +19,8 @@ import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
 import MyPageVue from "../components/mypage/MyPageVue";
 import MyPageList from "../components/mypage/MyPageList";
-import AdminPage from "../components/common/admin/AdminPage";
+// import AdminPage from "../components/common/admin/AdminPage";
+// import Menus from "../components/common/admin/menus";
 
 Vue.use(VueRouter)
 
@@ -30,7 +31,7 @@ Vue.use(VueRouter)
 //     next('/login?returnPath=mypage')
 // }
 
-const route= [
+const route = [
     // 김제민
     {
         path: '/detail',
@@ -50,13 +51,12 @@ const route= [
         component: Create
 
     },
-    
+
     // DB 넘어오는 디테일 페이지 확인
     {
         path: '/planDetail/:region',
         name: 'regionList',
         component: Create
-
     },
     // 김제민
     {
@@ -130,15 +130,40 @@ const route= [
         name: 'Register',
         component: Register
     },
-    {
-        path: '/adminpage',
-        name: 'AdminPage',
-        component: AdminPage
-    },
+
+    // {
+    //     path: '/adminpage',
+    //     name: 'AdminPage',
+    //     component: {
+    //         adminpage : AdminPage,
+    //         menu: Menus,
+    //     }
+    // },
+    // admin page router
+    // {
+    //     path: '/',
+    //     name: 'Index',
+    //     components: {
+    //         menu: Menus,
+    //         // content: Index,
+    //     },
+    // },
+
+    // {
+    //     path: '/adminpage',
+    //     name: 'adminpage',
+    //     components: {
+    //         menu: Menus,
+    //         content: AdminPage,
+    //         // content: Index,
+    //     },
+    // },
+
+
 ]
 
 const router = new VueRouter({
-    mode:'history',
+    mode: 'history',
     routes: route
 })
 
