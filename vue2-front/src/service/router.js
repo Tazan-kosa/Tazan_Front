@@ -4,8 +4,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Detail from "../components/pages/Detail";
-// import List from "../components/pages/List";
-// import Review from "../components/pages/Review";
 import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
 import ReviewList from "@/components/list/ReviewList";
@@ -13,13 +11,15 @@ import Review from "../components/review/ReviewWrite";
 import ReviewDetail from "../components/review/ReviewDetail";
 import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
-import MyPage from "../components/mypage/MyPage";
 import Register from "../components/common/Register";
-import MyPageModi from "../components/mypage/MyPageModi";
 import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
-import MyPageVue from "../components/mypage/MyPageVue";
 import MyPageList from "../components/mypage/MyPageList";
+
+import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
+import MyPageListTest from "../components/mypage/MyPageListTest";
+
 import AdminPage from "../components/common/admin/AdminPage";
+
 
 Vue.use(VueRouter)
 
@@ -30,7 +30,7 @@ Vue.use(VueRouter)
 //     next('/login?returnPath=mypage')
 // }
 
-const route= [
+const route = [
     // 김제민
     {
         path: '/detail',
@@ -50,14 +50,27 @@ const route= [
         component: Create
 
     },
-    
+    // // DB 넘어오는 디테일 페이지 확인
+    // {
+    //     path: '/planDetail/:planId',
+    //     name: 'regionList',
+    //     component: UnkownDetail
+    //
+    // },
     // DB 넘어오는 디테일 페이지 확인
     {
-        path: '/planDetail/:region',
-        name: 'regionList',
-        component: Create
+        path: '/planDetail/:planId',
+        name: 'plandetail',
+        component: UnkownPlanDetail
 
     },
+    // // DB 넘어오는 디테일 페이지 확인
+    // {
+    //     path: '/userdetail/:planId',
+    //     name: 'regionList',
+    //     component: UnkownPlanDetail
+    //
+    // },
     // 김제민
     {
         path: '/create',
@@ -69,18 +82,6 @@ const route= [
         path: '/detailplan',
         name: 'DetailPlanPage',
         component: DetailPlanPage
-    },
-    // 김제민
-    {
-        path: '/mypage',
-        name: 'MyPage',
-        component: MyPage,
-    },
-    // 김제민
-    {
-        path: '/mypageV',
-        name: 'MyPage',
-        component: MyPageVue
     },
     {
         path: '/tourlist',
@@ -110,16 +111,6 @@ const route= [
         path: '/login',
         component: Login
     },
-    // 테스트 - 김제민
-    {
-        path: '/mypage',
-        component: MyPage
-    },
-    // 김제민
-    {
-        path: '/mypagemodi',
-        component: MyPageModi
-    },
     // 김제민
     {
         path: '/mypagelist',
@@ -130,6 +121,14 @@ const route= [
         name: 'Register',
         component: Register
     },
+
+    //mypage 테스트
+    {
+        path: '/TT',
+        name: 'TT',
+        component: MyPageListTest
+    }
+
     {
         path: '/adminpage',
         name: 'AdminPage',
