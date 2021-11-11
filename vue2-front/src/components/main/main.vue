@@ -1,4 +1,4 @@
- <template>
+<template>
   <div>
     <div>
       <!-- 메인페이지 시작 -->
@@ -99,13 +99,13 @@ export default {
   data() {
     return {
       TourItemList: [],
-      ReviewItemList:[],
+      ReviewItemList: [],
       Tagnames: Tagname,
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
     }
   },
   components: {
-    Box,ReviewBox
+    Box, ReviewBox
   },
   methods: {
     searchTourList() {
@@ -113,7 +113,6 @@ export default {
       axios.get(`http://kosa3.iptime.org:50201/search/${value}`)
           .then(result => {
             console.log(result.data)
-
           })
           .catch(function (err) {
             console.log("에러발생: " + err)
