@@ -4,7 +4,8 @@
       <div>
         <h1>
 <!--          <span id="userName">{{ plan.userID }}</span>님의 여행 계획표-->
-          <span id="userName">{{ this.userId }}</span>님의 여행 계획표
+          <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+
         </h1>
         <div class="sub_title">
           <h1
@@ -20,7 +21,7 @@
             <div
                 placeholder="Select date range"
             >
-              {{ plan.startDate + " - " + plan.endDate }}
+              {{ plan.startDate.slice(0,10) + " - " + plan.endDate.slice(0,10) }}
             </div>
             <div>
             </div>
@@ -59,32 +60,20 @@ export default {
       startDate: '',
       endDate: '',
       text: '',
-      mydate: ''
+      mydate: '',
+      nickname:'',
     }
   },
   created() {
-
-    // this.planId = this.$route.params.planId;
+    this.nickname=localStorage.getItem('nickname')
+    this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
     axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             console.log(res)
             this.plan = res.data
-            // this.Plan.PlanDate = this.Plan.planDate.substr(0, 10)
-            // axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
-            /*axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
-              if(res.status == 200) {
-                this.planItemData = res.data.plan;
-                this.planUserID = res.data.userID;
-                console.log("planid : " + this.planUserID)
-              }
-            }).catch(err => {
-              console.log("에러발생: " + err)
-              //에러 처리 할 곳
-              alert("에러발생");
-            })
-          }*/
+
           }
         }).catch(err => {
       console.log("에러발생: " + err)

@@ -13,7 +13,7 @@ import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
 import Register from "../components/common/Register";
 import MyPageList from "../components/mypage/MyPageList";
- import AdminPage from "../components/common/admin/AdminPage";
+import AdminPage from "../components/common/admin/AdminPage";
 // import Menus from "../components/common/admin/menus";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
@@ -28,7 +28,15 @@ const route = [
         path: '/detail',
         name: 'Datail',
         component: Detail,
+        // children: [
+        //     {
+        //         path: "create",
+        //         component: Create,
+        //         name: "create"
+        //     }
+        // ]
     },
+    // 장소 클릭시 여행 계획 짜기 링크
     {
         path: '/create/:region',
         name: 'regionList',
@@ -36,59 +44,64 @@ const route = [
 
     },
 
-    // DB 넘어오는 디테일 페이지 확인
+    // 장소 클릭시 여행 계획 짜기
     {
-        path: '/planDetail/:region',
-        name: 'regionList',
+        path: '/plan/:region',
+        name: 'regionCreate',
         component: Create
     },
-    // 김제민
+    // 여행 계획 상세 보기
+    {
+        path: '/planDetail/:planId',
+        name: 'plandetail',
+        component: UnkownPlanDetail
+    },
+    // 삭제 요망
     {
         path: '/create',
         name: 'Create',
         component: Create
     },
-    // 김제민
-    // DB 넘어오는 디테일 페이지 확인
-    {
-        path: '/planDetail/:planId',
-        name: 'plandetail',
-        component: UnkownPlanDetail
-
-    },
+    // 
     {
         path: '/tourlist',
         name: 'TourList',
         component: TourList
     },
+    // 리뷰 리스트
     {
         path: '/reviewList',
         name: 'ReviewList',
         component: ReviewList
     },
+    // 리뷰
     {
         path: '/review',
         name: 'Review',
         component: Review
     },
+    // 리뷰 디테일
     {
         path: '/reviewDetail/:reviewId',
         name: 'ReviewDetail',
         component: ReviewDetail
     },
+    // 메인
     {
         path: '/',
         component: Main
     },
+    // 로그인
     {
         path: '/login',
         component: Login
     },
-    // 김제민
+    // 회원 - 마이페이지
     {
         path: '/mypagelist',
         component: MyPageList
     },
+    // 회원 가입
     {
         path: '/register',
         name: 'Register',
@@ -100,6 +113,7 @@ const route = [
         name: 'TT',
         component: MyPageListTest
     },
+    // 어드민
     {
         path: '/adminpage',
         name: 'AdminPage',
