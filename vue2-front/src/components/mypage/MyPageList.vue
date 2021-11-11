@@ -33,7 +33,7 @@
         </div>
         <!-- 페이징 처리중 -->
 
-        <!-- 일정카드 박히는 부분 by 준영 -->
+        <!-- 일정카드 박히는 부분  -->
         <span id="resultArea">
           <div style="margin:16px 0;">
           <div v-for="(mypage, index) in plan" :key="index">
@@ -54,7 +54,6 @@
                       <!--                <div class="uk-text-meta" style="font-size: 12px;margin-top: 8px;">-->
                       <!--                  {{ this.userName }}-->
                       <!--                </div>-->
-
                     </div>
                   </div>
                 </div>
@@ -84,10 +83,6 @@
                                    placeholder="여행이름"
                                    id="inputTravelName_idx_0" value="mypage.planTitle">
                           </div>
-
-                          <!-- <span class="small-text">
-                              9세 조준형의 파리 여행
-                          </span> -->
                         </div>
                       </div>
                       <div class="uk-width-1-2 info-container-top">
@@ -212,10 +207,10 @@ export default {
     var id = localStorage.getItem('id');
     //"/plan/myPlan/{userID}"
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
-        .then(res => {
-          if (res.status == 200) {
-            console.log(res)
-            this.plan = res.data
+        .then(response => {
+          if (response.status == 200) {
+            console.log(response)
+            this.plan = response.data
           }
         }).catch(err => {
       console.log("에러발생: " + err)

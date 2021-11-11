@@ -30,7 +30,10 @@
                 small
                 color="primary"
             >
-              <v-icon dark>
+              <v-icon
+                  dark
+                >
+
                 mdi-minus
               </v-icon>
             </v-btn>

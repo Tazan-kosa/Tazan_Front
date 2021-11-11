@@ -28,26 +28,17 @@
                 format="YYYY-MM-DD"
                 placeholder="Select date range"
             >
-
               여행일자
             </date-picker>
             <div>
               {{ test }}
             </div>
-            <!--          <button @click="save">save</button>-->
-
-            <!--          <DatePicker/>-->
           </div>
-
-
           <div class="thr_main">
-            <!--          <div class="thr_main_sub" v-for="(date, index) in DateAdd" :key="index">-->
             <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
               <div>
                 {{ i + 1 }} 일차
               </div>
-
-              <!--            <div>{{ cnt + 1 }}일차</div>-->
               <DayList :daylist="plan" class="thr_main_sub">
               </DayList>
             </div>
@@ -64,19 +55,8 @@
           </div>
         </div>
       </div>
-
-
-
-
-      <!--    </div>-->
-
-      <!--    </div>-->
-
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
-      </div>
-      <div class="save_plan_button">
-        <b-button variant="primary" @click="DeletePlan">Delete</b-button>
       </div>
     </div>
   </div>
@@ -108,7 +88,7 @@ export default {
       totalPlan: [[]],
       totalPlan_tour: [[]],
       cnt: 0, //index
-
+      test: '',
       //
       userName: '',
       userID: '',
@@ -116,7 +96,6 @@ export default {
       // value1: [new Date(2019, 9, 8), new Date(2019, 9, 19)],
       // value2: [],
       mydate: '',
-      utc: '',
       datetime: '',
       date: '',
       range: '',
@@ -140,6 +119,9 @@ export default {
         this.totalPlan.push([])
         this.totalPlan_tour.push([])
       }
+    },
+    deleteList() {
+
     },
     SavePlan() {
       let planVO = {};
@@ -204,8 +186,10 @@ export default {
           console.log(err)
         })
 
+  },
+  mounted() {
+
   }
-  ,
 }
 </script>
 
