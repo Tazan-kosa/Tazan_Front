@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="thr_main_sub" v-for="(day, i) in daylist" :key="i">
+<!--    -->
+    <div class="thr_main_sub" v-for="(day, index2) in daylist" :key="index2">
       <v-card class="pa-30 ma-30" max-width="200">
         <v-img :src=day.img height="150px"></v-img>
         <v-card-title>
@@ -9,7 +10,7 @@
         <v-card-subtitle>
           {{ day.tag1 + " , " + day.tag2}}
         </v-card-subtitle>
-          <v-btn icon @click="day.url">
+          <v-btn icon @click="tourListDelete(index2)">
             <v-btn class="mx-2" fab dark small color="primary">
               <v-icon dark>
                 mdi-minus
@@ -27,7 +28,12 @@ export default {
   name: "DayList",
   props: {
     daylist: Array,
-    index: Number
+    index1: Number
+  },
+  methods: {
+    tourListDelete (index2) {
+      this.$emit('tourListDelete', {"index1":this.index1,"index2":index2})
+    }
   }
 }
 </script>

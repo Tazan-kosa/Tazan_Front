@@ -43,7 +43,6 @@
                   <div class="uk-grid" uk-grid="" style="margin: 0; height: 60%">
                     <div class="uk-width-1-2 info-container uk-first-column">
                       <img class="width:100%" src="" alt="">
-                      <div class="d-day-circle">D-5</div>
                       <div class="share-circle" id="sharedLogo_idx_0" style="display: none;">공유</div>
                     </div>
                     <div class="uk-width-1-2 info-container">
@@ -66,22 +65,10 @@
                         <div class="small-title">
                           여행이름
                           <div class="uk-inline">
-                            <a class="uk-form-icon uk-form-icon-flip uk-icon" uk-icon="icon: file-edit"
-                               onclick="" id="inputTravelNameBtn_idx_0">
-                              <svg width="20"
-                                   height="20"
-                                   viewBox="0 0 20 20"
-                                   xmlns="http://www.w3.org/2000/svg">
-                                <path fill="none" stroke="#000"
-                                      d="M18.65,1.68 C18.41,1.45 18.109,1.33 17.81,1.33 C17.499,1.33 17.209,1.45 16.98,1.68 L8.92,9.76 L8,12.33 L10.55,11.41 L18.651,3.34 C19.12,2.87 19.12,2.15 18.65,1.68 L18.65,1.68 L18.65,1.68 Z"></path>
-                                <polyline fill="none" stroke="#000"
-                                          points="16.5 8.482 16.5 18.5 3.5 18.5 3.5 1.5 14.211 1.5"></polyline>
-                              </svg>
-                            </a>
-
                             <input class="uk-input uk-form-blank uk-form-width-medium small-text" type="text"
-                                   placeholder="여행이름"
-                                   id="inputTravelName_idx_0" value="mypage.planTitle">
+                                                               placeholder="mypage.planTitle"
+                                                               value=""
+                                                        >
                           </div>
                         </div>
                       </div>
@@ -130,7 +117,8 @@
                       </div>
                       <div class="uk-width-1-4">
                         <div class="uk-inline">
-                          <button class="uk-button uk-button-large uk-card-default" type="button" aria-expanded="false" @click="planDetail(mypage.planID)">
+                          <button class="uk-button uk-button-large uk-card-default" type="button" aria-expanded="false"
+                                  @click="planDetail(mypage.planID)">
                             상세 보기
                           </button>
                         </div>
@@ -162,14 +150,14 @@
           </div>
         </span>
 
-<!--        <div id="pageSectionDiv" class="pagination-container">
-          <div class="pagination-container">
-            <a id="travelListP" href="#" onclick="getTravelListNextPage('p')"><i class="material-icons">chevron_left</i></a>
-            <span id="pageList"><a onclick="getTravelListPage(1)" id="pageButton1" class="s-button"> 1 </a></span>
-            <a id="travelListN" href="#" onclick="getTravelListNextPage('n')"><i
-                class="material-icons">chevron_right</i></a>
-          </div>
-        </div>-->
+        <!--        <div id="pageSectionDiv" class="pagination-container">
+                  <div class="pagination-container">
+                    <a id="travelListP" href="#" onclick="getTravelListNextPage('p')"><i class="material-icons">chevron_left</i></a>
+                    <span id="pageList"><a onclick="getTravelListPage(1)" id="pageButton1" class="s-button"> 1 </a></span>
+                    <a id="travelListN" href="#" onclick="getTravelListNextPage('n')"><i
+                        class="material-icons">chevron_right</i></a>
+                  </div>
+                </div>-->
       </div>
       <div class="info-container p-5">
         <button class="btn-normal" onclick="location.href='/' ">홈으로 가기</button>
@@ -179,8 +167,6 @@
 </template>
 
 <script>
-// import MyPageListTest from "./MyPageListTest";
-
 import axios from "axios";
 
 export default {
@@ -214,12 +200,11 @@ export default {
           }
         }).catch(err => {
       console.log("에러발생: " + err)
-      //에러 처리 할 곳
       alert("에러발생");
     })
   },
   methods: {
-    planDetail(id){
+    planDetail(id) {
       this.$router.push(`/planDetail/${id}`)
     },
     deleteSavedRoute(id) {
@@ -228,7 +213,7 @@ export default {
             if (result.status == 200) {
               alert("여행계획을 삭제했습니다.");
               // this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
-              if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
+              // if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
             }
           }).catch(err => {
         console.log("에러발생: " + err)
