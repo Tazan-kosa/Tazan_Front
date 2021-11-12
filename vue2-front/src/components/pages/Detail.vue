@@ -25,6 +25,7 @@ export default {
     // Box
   }
 }
+
 </script>
 
 <style scoped>
