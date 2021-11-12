@@ -17,7 +17,7 @@
             <div class="before" v-if="!flag" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               <p>계획을 불러와주세요!</p>
             </div>
-            <TravelList :items="TourItemData" v-if="flag"/>
+            <TravelList :items="TourItemData.planList" v-if="flag"/>
           </div>
         </div>
       </div>
@@ -46,7 +46,8 @@ export default {
   name: 'reviewwrite',
   data() {
     return {
-      TourItemData: [],
+      TourItemData: {},
+      PlanData: [],
       ReviewData: {},
       flag: false,
       userName: '',
@@ -75,7 +76,9 @@ export default {
       this.flag = true;
       axios.get(`http://kosa3.iptime.org:50201/planDetail/${id}`).then(res => {
         if(res.status == 200) {
-          this.TourItemData = res.data.planList
+          console.log("플랜데이터 세팅")
+          this.TourItemData = res.data
+          console.log(this.TourItemData)
         }
       }).catch(err => {
         console.log("에러발생: " + err)
@@ -104,14 +107,15 @@ export default {
       let reviewVO = {}
 
       //logoin 연동 되면 localStrage에서 가져올 것임
-      reviewVO.userID = 1//localStorage.getItem("id")
+      reviewVO.userID = localStorage.getItem("id")
 
       //plan에 있는 data 가져올거임
-      reviewVO.planID = 1
-      reviewVO.region = "서울"
-      reviewVO.startDate = "2021-04-12"
-      reviewVO.endDate = "2021-04-14"
-
+      reviewVO.planID = this.TourItemData.planID
+      reviewVO.region = this.TourItemData.region
+      reviewVO.startDate = this.TourItemData.startDate
+      reviewVO.endDate = this.TourItemData.endDate
+      console.log("플랜데이터")
+      console.log(this.TourItemData)
       //생성된 날짜 삽입
       reviewVO.reviewDate = reviewdate
 
@@ -119,6 +123,7 @@ export default {
       reviewVO.reviewTitle = document.querySelector(".review-title").textContent
       reviewVO.reviewContent = window.$('.reviewsummer').val()
       reviewVO.reviewThumbnail = '';
+
       var div = document.createElement("div");
       div.innerHTML = reviewVO.reviewContent
       for (var i = 0; i < div.children.length; i++){
@@ -142,13 +147,13 @@ export default {
         })
       }
       else{
+        console.log(reviewVO)
         axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
         }).then(res => {
           if (res.status === 200) {
-            console.log(res.data)
             this.$router.push(`/reviewDetail/${res.data}`).then((() =>window.scrollTo(0,0) ))
           }
         }).catch(function (err) {

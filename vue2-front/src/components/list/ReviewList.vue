@@ -59,6 +59,7 @@ export default {
       axios.get(`http://kosa3.iptime.org:50201/review/search/${value}`)
           .then(result => {
             this.ReviewItemList=result.data
+            console.log(this.ReviewItemList)
           })
           .catch(function (err) {
             console.log("에러발생: " + err)

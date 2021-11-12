@@ -12,7 +12,7 @@
       <div class="review-middle">
         <div class="mytravel">
           <div class="mytravel-title"><span id="username">🚗 {{ Review.nickName }}</span>님의 여행 일정</div>
-          <TravelList :items="TourItemData" class="travellist mb-4"/>
+          <TravelList :items="TourItemData.planList" class="travellist mb-4"/>
         </div>
         <div class="review-content" v-html="Review.reviewContent">
         </div>
@@ -52,7 +52,7 @@ export default {
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
         axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
           if (res.status == 200) {
-            this.TourItemData = res.data.planList;
+            this.TourItemData = res.data;
             this.reviewUserID = res.data.userID;
             console.log("reviewid : " + this.reviewUserID)
           }

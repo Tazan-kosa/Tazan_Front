@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     viewURL(link) {
-      this.$router.push(`/reviewDetail/${link}`)
+      this.$router.push(`/reviewDetail/${link}`).then((() => window.scrollTo(0, 0)))
     }
   }
 }
