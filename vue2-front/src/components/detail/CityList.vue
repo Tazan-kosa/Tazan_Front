@@ -6,9 +6,9 @@
     <br>
     <section class="py-0">
       <div class="container px-4 px-lg-5 mt-3">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" v-for="(region, i) in regionData" :key="i">
+        <div >
           <Region :region="region"></Region>
-        </div>
+        </div>class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" v-for="(region, i) in regionData" :key="i"
       </div>
     </section>
   </div>

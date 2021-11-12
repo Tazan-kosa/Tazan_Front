@@ -13,34 +13,19 @@
           </div>
         </div>
       </div>-->
-
-    <router-link :to="{name:'regionList',params:{region:this.region.ci_name_ko}}">
-      <div class="itembox mb-2">
-      <div class="mycard" :style="{backgroundImage : `url( ${region.ci_image} )`}">
-        <div class="mycard-foreground">
-          <div class="mycard-text">
-            <div>
-              <h5 class="mycard-region tc">대한민국 {{ this.region.ci_name_ko }}</h5>
-            </div>
-            <div>
-              <h6 class="mycard-title tc">{{ this.region.ci_name_en }}</h6>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </router-link>
-
+  <div class="itembox mb-2">
+    <RegionItem :region="region"/>
+  </div>
 
 </template>
 
 <script>
-// import RegionItem from "../detail/DetailPlan/RegionItem";
+import RegionItem from "../detail/DetailPlan/RegionItem";
 
 export default {
   name: "Region",
   components: {
-    // RegionItem
+    RegionItem
   },
   props: {
     region: Object
