@@ -227,8 +227,8 @@ export default {
           .then(result => {
             if (result.status == 200) {
               alert("여행계획을 삭제했습니다.");
-              this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
-              // if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
+              // this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
+              if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
             }
           }).catch(err => {
         console.log("에러발생: " + err)

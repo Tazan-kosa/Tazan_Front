@@ -216,7 +216,7 @@ div {
 .sub_main {
   display: flex;
   /*position: relative;*/
-  /*width: 400px;*/
+  width: 100%;
   /*height: 700px;*/
   height: 100%;
   /*float: left;*/
@@ -239,6 +239,7 @@ div {
   height: 100%;
 }
 
+/*리스트*/
 .thr_main_sub {
   display: flex;
   width: 100%;
@@ -247,6 +248,7 @@ div {
 .save_plan {
   display: flex;
   /*width: 1000px;*/
+  justify-content: space-between;
 }
 
 /*.save_plan_button {
