@@ -28,28 +28,17 @@
                 format="YYYY-MM-DD"
                 placeholder="Select date range"
             >
-
               여행일자
             </date-picker>
             <div>
               {{ test }}
-              <!--            {{ mydate[0] }}-->
-              <!--            {{ mydate[1] }}-->
             </div>
-            <!--          <button @click="save">save</button>-->
-
-            <!--          <DatePicker/>-->
           </div>
-
-
           <div class="thr_main">
-            <!--          <div class="thr_main_sub" v-for="(date, index) in DateAdd" :key="index">-->
             <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
               <div>
                 {{ i + 1 }} 일차
               </div>
-
-              <!--            <div>{{ cnt + 1 }}일차</div>-->
               <DayList :daylist="plan" class="thr_main_sub">
               </DayList>
             </div>
@@ -66,13 +55,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-      <!--    </div>-->
-
-      <!--    </div>-->
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
       </div>
@@ -106,7 +88,7 @@ export default {
       totalPlan: [[]],
       totalPlan_tour: [[]],
       cnt: 0, //index
-
+      test: '',
       //
       userName: '',
       userID: '',
@@ -114,7 +96,6 @@ export default {
       // value1: [new Date(2019, 9, 8), new Date(2019, 9, 19)],
       // value2: [],
       mydate: '',
-      utc: '',
       datetime: '',
       date: '',
       range: '',
@@ -139,6 +120,9 @@ export default {
         this.totalPlan_tour.push([])
       }
     },
+    deleteList() {
+
+    },
     SavePlan() {
       let planVO = {};
 
@@ -161,10 +145,10 @@ export default {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
-        }).then(res => {
-          if (res.status === 200) {
-            console.log(res.data)
-            this.$router.push(`/planDetail/${res.data}`)
+        }).then(request => {
+          if (request.status === 200) {
+            console.log(request.data)
+            this.$router.push(`/planDetail/${request.data}`)
           }
         }).catch(function (err) {
           console.log("에러발생: " + err)
@@ -189,24 +173,23 @@ export default {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
 
-    let m1 = this.mydate[0];
-    let curr = new Date(m1);
-    let timeString_KR = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
-    console.log(timeString_KR)
+
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
 
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
-        .then(res => {
-          console.log(res.data)
-          this.recomList = res.data;
+        .then(response => {
+          console.log(response.data)
+          this.recomList = response.data;
 
         })
         .catch(err => {
           console.log(err)
         })
 
+  },
+  mounted() {
+
   }
-  ,
 }
 </script>
 
@@ -265,7 +248,7 @@ div {
 
 .save_plan {
   display: flex;
-  width: 1000px;
+  /*width: 1000px;*/
 }
 
 /*.save_plan_button {

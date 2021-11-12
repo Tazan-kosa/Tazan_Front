@@ -4,8 +4,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Detail from "../components/pages/Detail";
-// import List from "../components/pages/List";
-// import Review from "../components/pages/Review";
 import Main from "../components/main/main.vue";
 import TourList from "../components/list/TourList";
 import ReviewList from "@/components/list/ReviewList";
@@ -13,123 +11,100 @@ import Review from "../components/review/ReviewWrite";
 import ReviewDetail from "../components/review/ReviewDetail";
 import Login from "../components/common/Login";
 import Create from "../components/pages/Create";
-import MyPage from "../components/mypage/MyPage";
 import Register from "../components/common/Register";
-import MyPageModi from "../components/mypage/MyPageModi";
-import DetailPlanPage from "../components/detail/DetailPlan/DetailPlanPage";
-import MyPageVue from "../components/mypage/MyPageVue";
 import MyPageList from "../components/mypage/MyPageList";
 import AdminPage from "../components/common/admin/AdminPage";
 
+import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
+import MyPageListTest from "../components/mypage/MyPageListTest";
+
+
 Vue.use(VueRouter)
 
-// 인증
-// const requireAuth = () => (from, to, next) => {
-//     const isAuthenticated = false
-//     if (isAuthenticated) return next()
-//     next('/login?returnPath=mypage')
-// }
-
-const route= [
+const route = [
     // 김제민
     {
         path: '/detail',
         name: 'Datail',
         component: Detail,
-        // children: [
-        //     {
-        //         path: "create",
-        //         component: Create,
-        //         name: "create"
-        //     }
-        // ]
     },
+    // 장소 클릭시 여행 계획 짜기 링크
     {
         path: '/create/:region',
         name: 'regionList',
         component: Create
-
     },
-    
-    // DB 넘어오는 디테일 페이지 확인
+
+    // 장소 클릭시 여행 계획 짜기
     {
-        path: '/planDetail/:region',
-        name: 'regionList',
+        path: '/plan/:region',
+        name: 'regionCreate',
         component: Create
-
     },
-    // 김제민
+    // 여행 계획 상세 보기
+    {
+        path: '/planDetail/:planId',
+        name: 'plandetail',
+        component: UnkownPlanDetail
+    },
+    // 삭제 요망
     {
         path: '/create',
         name: 'Create',
         component: Create
     },
-    // 김제민
-    {
-        path: '/detailplan',
-        name: 'DetailPlanPage',
-        component: DetailPlanPage
-    },
-    // 김제민
-    {
-        path: '/mypage',
-        name: 'MyPage',
-        component: MyPage,
-    },
-    // 김제민
-    {
-        path: '/mypageV',
-        name: 'MyPage',
-        component: MyPageVue
-    },
+    //
     {
         path: '/tourlist',
         name: 'TourList',
         component: TourList
     },
+    // 리뷰 리스트
     {
         path: '/reviewList',
         name: 'ReviewList',
         component: ReviewList
     },
+    // 리뷰
     {
         path: '/review',
         name: 'Review',
         component: Review
     },
+    // 리뷰 디테일
     {
         path: '/reviewDetail/:reviewId',
         name: 'ReviewDetail',
         component: ReviewDetail
     },
+    // 메인
     {
         path: '/',
         component: Main
     },
+    // 로그인
     {
         path: '/login',
         component: Login
     },
-    // 테스트 - 김제민
-    {
-        path: '/mypage',
-        component: MyPage
-    },
-    // 김제민
-    {
-        path: '/mypagemodi',
-        component: MyPageModi
-    },
-    // 김제민
+    // 회원 - 마이페이지
     {
         path: '/mypagelist',
         component: MyPageList
     },
+    // 회원 가입
     {
         path: '/register',
         name: 'Register',
         component: Register
     },
+    //mypage 테스트
+    {
+        path: '/TT',
+        name: 'TT',
+        component: MyPageListTest
+    },
+    // 어드민
     {
         path: '/adminpage',
         name: 'AdminPage',
@@ -138,7 +113,7 @@ const route= [
 ]
 
 const router = new VueRouter({
-    mode:'history',
+    mode: 'history',
     routes: route
 })
 

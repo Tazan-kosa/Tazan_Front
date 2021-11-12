@@ -49,9 +49,10 @@
                         <v-text-field
                             placeholder="비밀번호 확인"
                             type="password"
-                            v-model="passWord"
+                            v-model="passWordCheck"
                             required
                             :rules="passWordRules"
+                            @blur="passwordCheckValid"
                         ></v-text-field>
                       </div>
                     </div>
@@ -65,7 +66,8 @@
                             v-model="nickName"
                             required
                             :rules="nickNameRules"
-                        >닉네임</v-text-field>
+                        >닉네임
+                        </v-text-field>
                       </div>
                     </div>
 
@@ -78,7 +80,8 @@
                             v-model="name"
                             required
                             :rules="nameRules"
-                        >이름</v-text-field>
+                        >이름
+                        </v-text-field>
                       </div>
                     </div>
 
@@ -91,7 +94,8 @@
                             v-model="phoneNumber"
                             required
                             :rules="phoneNumberRules"
-                        >핸드폰</v-text-field>
+                        >핸드폰
+                        </v-text-field>
                       </div>
                     </div>
 
@@ -103,7 +107,8 @@
                           large
                           block
                           @click="register"
-                      >가입하기</v-btn>
+                      >가입하기
+                      </v-btn>
                     </v-card-actions>
 
                   </v-form>
@@ -154,9 +159,14 @@ export default {
     passWordRules: [
       v => !!v || '비밀번호를 입력해 주세요.',
     ],
+    passwordCheck: '',
+    passwordCheckFlag: true,
   }),
 
   methods: {
+    test() {
+    },
+
     register() {
       let saveData = {};
       saveData.email = this.email;
@@ -167,20 +177,29 @@ export default {
 
       try {
         axios
-            .post("http://kosa3.iptime.org:50201/userJoin", JSON.stringify(saveData),{
+            .post("http://kosa3.iptime.org:50201/userJoin", JSON.stringify(saveData), {
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
-              }})
+              }
+            })
             .then((res) => {
               if (res.status === 201) { // 성공코드 : 201
                 console.log(res.data)
               }
             });
-
+        this.$router.push('/')
       } catch (error) {
-         console.error(error);
+        console.error(error);
       }
     },
+
+    // passwordCheckValid() {
+    //   if (this.signup.password === this.passwordCheck) {
+    //     this.passwordCheckFlag = true
+    //   } else {
+    //     this.passwordCheckFlag = false
+    //   },
+  //   },
   },
 };
 </script>

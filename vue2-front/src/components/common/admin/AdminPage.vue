@@ -38,16 +38,16 @@
       <v-app-bar
           dark
           app
-      >
+          >
         (현재 상태)
         <v-col sm="0" offset-sm="10">
-        <v-btn
-            depressed
-            rounded
-            text
-            @click.p.prevent="logout"
-        >로그아웃
-        </v-btn>
+          <v-btn
+              depressed
+              rounded
+              text
+              @click.p.prevent="logout"
+          >로그아웃
+          </v-btn>
 
         </v-col>
       </v-app-bar>
@@ -74,17 +74,17 @@
 
       <v-footer app dark>
         <v-text class="grey--text">TAZAN 관리자 페이지</v-text>
-        </v-footer>
-        </v-app>
-        </v-card>
+      </v-footer>
+    </v-app>
+  </v-card>
 </template>
 
 <script>
-export default{
+export default {
   name: "AdminPage",
 
   data() {
-    return{
+    return {
       items: [
         {title: '대시보드', icon: 'mdi-view-dashboard'},
         {title: '사진', icon: 'mdi-image'},
@@ -92,7 +92,7 @@ export default{
         {title: 'About', icon: 'mdi-help-box'},
       ],
 
-      right:null,
+      right: null,
     }
   },
 
@@ -109,6 +109,8 @@ export default{
 </script>
 
 <style scoped>
-
+/*div {*/
+/*  border: black solid 1px;*/
+/*}*/
 
 </style>

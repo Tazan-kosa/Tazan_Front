@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="container">
+  <div class="container">
+    <div class="reivew">
       <div class="container-top">
         <h1 class="head">
           <span id="userName">{{ userName }}</span>님의 여행 후기✈️
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="container-bottom mt-16">
-        <div sticky-container class="review">
+        <div sticky-container class="review-content">
           <div v-sticky=true class="sticky mb-2">
             <h5 id="text">📗나의 여행 일기</h5>
           </div>
@@ -118,6 +118,15 @@ export default {
       //제목, 글 내용 가져와서 삽입
       reviewVO.reviewTitle = document.querySelector(".review-title").textContent
       reviewVO.reviewContent = window.$('.reviewsummer').val()
+      reviewVO.reviewThumbnail = '';
+      var div = document.createElement("div");
+      div.innerHTML = reviewVO.reviewContent
+      for (var i = 0; i < div.children.length; i++){
+        if(div.children.item(i).children.length > 0){
+          reviewVO.reviewThumbnail = div.children.item(i).children.item(0).getAttribute("src")
+          break
+        }
+      }
       if(this.editFlag){
         reviewVO.reviewID = this.ReviewData.reviewID
         axios.put(`http://kosa3.iptime.org:50201/review/update`, reviewVO, {
@@ -126,8 +135,7 @@ export default {
           },
         }).then(res => {
           if (res.status === 200) {
-            console.log(res.data)
-            this.$router.push(`/reviewDetail/${res.data}`)
+            this.$router.push(`/reviewDetail/${this.ReviewData.reviewID}`).then((() =>window.scrollTo(0,0) ))
           }
         }).catch (err => {
           alert(err);
@@ -141,7 +149,7 @@ export default {
         }).then(res => {
           if (res.status === 200) {
             console.log(res.data)
-            this.$router.push(`/reviewDetail/${res.data}`)
+            this.$router.push(`/reviewDetail/${res.data}`).then((() =>window.scrollTo(0,0) ))
           }
         }).catch(function (err) {
           console.log("에러발생: " + err)
@@ -157,10 +165,18 @@ export default {
   },
   mounted() {
     window.$('.summernote').summernote({
+          placeholder: '여행 일기를 작성해주세요.',
           tabsize: 2,
-          height: 300
-        }
-    );
+          height: 500,
+          toolbar: [
+          // [groupName, [list of button]]
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['insert', ['picture']],
+        ]
+    });
     if(this.editFlag){
       window.$('.summernote').summernote('code',this.reviewContent);
     }
@@ -171,6 +187,12 @@ export default {
 <style>
 .container {
   width: 100%;
+}
+
+.reivew{
+  max-width: 1100px;
+  margin: 100px auto;
+  text-align: center;
 }
 
 .container-top {
@@ -213,7 +235,7 @@ export default {
   cursor: pointer;
 }
 
-.review {
+.review-content {
   margin-top: 30px;
 }
 
