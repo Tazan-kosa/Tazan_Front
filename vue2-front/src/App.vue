@@ -1,16 +1,11 @@
 <template>
   <div id="app">
     <div>
-      <!-- 추후 -->
-      <Header></Header>
-<!--      <Header v-if="auth=='null'"/>-->
-<!--      <Header v-if="auth=='ROLE_USER'"/>-->
-<!--      <Header v-if="auth==!'ROLE_ADMIN'"/>-->
+<!--      <Header></Header>-->
+      <Header v-if="auth==!'ROLE_ADMIN'"/>
         <router-view></router-view>
-<!--      <Footer v-if="auth=='null'"/>-->
-<!--      <Footer v-if="auth=='ROLE_USER'"/>-->
-<!--      <Footer v-if="auth==!'ROLE_ADMIN'"/>-->
-      <Footer></Footer>
+      <Footer v-if="auth==!'ROLE_ADMIN'"/>
+<!--      <Footer></Footer>-->
     </div>
   </div>
 </template>
