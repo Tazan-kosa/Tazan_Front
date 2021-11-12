@@ -17,7 +17,7 @@
 
     <section class="py-0">
       <div class="container px-4 px-lg-5 mt-3">
-        <Select @selectedDate="selectedDate" :enddate="enddate" :startdate="startdate"/>
+        <Select :enddate="enddate" :startdate="startdate"/>
         <p class="datewarning" v-if="startdate>enddate"><b>날짜입력 오류입니다. 다시 확인해주세요.</b></p>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
           <ReviewBox v-for="(item, i) in ReviewItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
@@ -30,7 +30,6 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-
 import Tagname from "@/components/list/tagnames";
 import ReviewBox from './ReviewBox'
 import axios from 'axios'
@@ -55,30 +54,24 @@ export default {
   },
   methods: {
     searchTourList() {
-      const value = document.getElementById("searchbar").value
-      axios.get(`http://kosa3.iptime.org:50201/review/search/${value}`)
-          .then(result => {
-            this.ReviewItemList=result.data
-            console.log(this.ReviewItemList)
-          })
-          .catch(function (err) {
-            console.log("에러발생: " + err)
-          })
-    },
-    selectedDate({start, end}) {
+      var value = document.getElementById("searchbar").value
+      var start = document.querySelector("#startdate").value
+      var end = document.querySelector("#enddate").value
       this.startdate = start
       this.enddate = end
-      if (start <= end) {
-        axios.get(`http://kosa3.iptime.org:50201/review/selectdate/${this.startdate}/${this.enddate}`)
+      if(start<=end) {
+        if(!value){
+          value="noneKeyword"
+        }
+        axios.get(`http://kosa3.iptime.org:50201/review/search/${value}/${this.startdate}/${this.enddate}`)
             .then(result => {
-              console.log(result.data)
               this.ReviewItemList = result.data
             })
             .catch(function (err) {
               console.log("에러발생: " + err)
             })
       }
-    }
+    },
   },
   created() {
     var temp = new Date()
