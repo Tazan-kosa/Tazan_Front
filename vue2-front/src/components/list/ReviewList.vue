@@ -57,9 +57,10 @@ export default {
   methods: {
     searchTourList() {
       const value = document.getElementById("searchbar").value
-      axios.get(`http://kosa3.iptime.org:50201/review/search/${value}`)
+      axios.get(`http://localhost:80/review/search/${value}`)
           .then(result => {
             this.ReviewItemList=result.data
+            console.log(this.ReviewItemList)
           })
           .catch(function (err) {
             console.log("에러발생: " + err)
@@ -69,7 +70,7 @@ export default {
       this.startdate = start
       this.enddate = end
       if (start <= end) {
-        axios.get(`http://kosa3.iptime.org:50201/review/selectdate/${this.startdate}/${this.enddate}`)
+        axios.get(`http://localhost:80/review/selectdate/${this.startdate}/${this.enddate}`)
             .then(result => {
               console.log(result.data)
               this.ReviewItemList = result.data
@@ -94,7 +95,7 @@ export default {
     }
     this.startdate = year + '-' + month + '-' + day
     this.enddate = year + '-' + month + '-' + day
-    axios.get('http://kosa3.iptime.org:50201/review/reviewList')
+    axios.get('http://localhost:80/review/reviewList')
         .then(result => {
           this.ReviewItemList=result.data
         })

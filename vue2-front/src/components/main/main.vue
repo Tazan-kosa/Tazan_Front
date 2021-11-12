@@ -117,7 +117,7 @@ export default {
         .catch(function (err) {
           console.log("에러발생: " + err)
         })
-    this.$axios.get('http://kosa3.iptime.org:50201/review/recent')
+    this.$axios.get('http://localhost:80/review/recent')
         .then(result => {
           this.ReviewItemList = result.data
         })
