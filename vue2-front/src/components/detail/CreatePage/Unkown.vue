@@ -125,8 +125,6 @@ export default {
     },
     SavePlan() {
       let planVO = {};
-
-
       planVO.userID = localStorage.getItem("id");
       // reviewVO.userID = 1//localStorage.getItem("id")
       planVO.region = this.region;

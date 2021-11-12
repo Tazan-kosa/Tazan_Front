@@ -29,6 +29,7 @@ export default {
   width: 250px;
   height: 350px;
   border-radius: 10px;
+  /*display: flex;*/
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,11 +40,12 @@ export default {
 }
 
 .mycard-foreground {
-  width: 100%;
+  /*width: 100%;*/
+  /*display: flex;*/
   height: 100%;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
   border-radius: 10px;
-  position: absolute;
+  /*position: absolute;*/
 }
 
 .mycard-text {

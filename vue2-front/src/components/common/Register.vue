@@ -188,6 +188,7 @@ export default {
               }
             });
         this.$router.push('/')
+        alert('회원가입 되었습니다!')
       } catch (error) {
         console.error(error);
       }
