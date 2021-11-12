@@ -36,10 +36,11 @@
           </div>
           <div class="thr_main">
             <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
-              <div>
+              <div class="thr_main_day">
                 {{ i + 1 }} 일차
               </div>
-              <DayList :daylist="plan" class="thr_main_sub">
+
+              <DayList :daylist="plan" class="thr_main_list">
               </DayList>
             </div>
             <div>
@@ -238,13 +239,24 @@ div {
   width: 100%;
   height: 100%;
 }
-
 /*리스트*/
 .thr_main_sub {
   display: flex;
   width: 100%;
 }
-
+.thr_main_day {
+  display: flex;
+  width: 100px;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.thr_main_list {
+  overflow-x: scroll;
+  /*height: 5px;*/
+  display: flex;
+  width: 100%;
+}
 .save_plan {
   display: flex;
   /*width: 1000px;*/
