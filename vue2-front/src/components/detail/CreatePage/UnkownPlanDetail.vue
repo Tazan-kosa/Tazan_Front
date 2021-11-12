@@ -68,6 +68,7 @@ export default {
     this.nickname=localStorage.getItem('nickname')
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
+    if (confirm("삭제 하시겠습니까?")) {
     axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
@@ -85,6 +86,7 @@ export default {
     let curr = new Date(m1);
     let startDate = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
     console.log(startDate)
+    }
   },
   components: {
     DayList,
