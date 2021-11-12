@@ -1,87 +1,59 @@
 <template>
-  <router-link :to="{name:'regionList',params:{region:this.region.ci_name_ko}}">
-    <div class="region" name="asia">
-      <a style="color:inherit!important;
-      text-decoration: none!important;"
-         uk-toggle=""
-         aria-expanded="false">
-        <div class="card city-card-style hoverable z-depth-2" style="margin:0;">
-          <div class="card-image imgbox">
-            <img :src="region.ci_image" alt="city" loading="lazy">
-          </div>
-          <div class="city-card-contents-div">
-          <span class="city-card-contents-title">
-            <div class="citynamefont">
-              <b>{{this.region.ci_name_en}}</b><br>
-              <h6 class="city-card-contents-subtitle"> 대한민국 {{this.region.ci_name_ko}}</h6>
+
+  <!--    <div class="uk-child-width-1-2@m" uk-grid>
+        <div>
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+              <img :src="region.ci_image" alt="">
             </div>
-          </span>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title"> 대한민국 {{this.region.ci_name_ko}}</h3>
+              <p>{{this.region.ci_name_en}}</p>
+            </div>
           </div>
         </div>
-      </a>
-    </div>
-  </router-link>
+      </div>-->
+  <div class="itembox mb-2">
+    <RegionItem :region="region"/>
+  </div>
+
 </template>
 
 <script>
+import RegionItem from "../detail/DetailPlan/RegionItem";
+
 export default {
   name: "Region",
-  props:{
-    region:Object
+  components: {
+    RegionItem
+  },
+  props: {
+    region: Object
   }
 }
 </script>
 <style scoped>
-.card {
-  position: relative;
-  transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
-}
-.imgbox {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-}
-@media (max-width: 600px) {
-  .imgbox {
-    border-radius: 50% !important;
-    width: 135px !important;
-    height: 135px !important;
-  }
-}
-.img {
-  max-width: 100%;
-  height: auto;
-  box-sizing: border-box;
-}
-@media (max-width: 600px) {
-  .imgbox img {
-    transition: none !important;
-  }
-}
-.card .card-image img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-.city-card-contents-div {
-  padding: 24px;
-  border-radius: 0 0 2px 2px;
-}
-.span {
-  margin: 0;
+div.itembox{
+  width: 265px;
+  margin: 5px;
   padding: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
 }
-
-.city-card-contents-title {
-  font-size: 24px;
-  font-weight: 300;
+div.itembox{
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.3s ease-in-out;   /* 부드러운 모션을 위해 추가*/
+}
+div.itembox:hover {
+  cursor: pointer;
+  background: #845EC2;
+  border-radius: 10px;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 </style>

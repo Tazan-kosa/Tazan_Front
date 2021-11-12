@@ -165,8 +165,6 @@ export default {
 
   methods: {
     test() {
-
-
     },
 
     register() {
@@ -189,7 +187,7 @@ export default {
                 console.log(res.data)
               }
             });
-
+        this.$router.push('/')
       } catch (error) {
         console.error(error);
       }
@@ -203,9 +201,5 @@ export default {
     //   },
   //   },
   },
-
-
-
-
 };
 </script>
