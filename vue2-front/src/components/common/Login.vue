@@ -59,8 +59,8 @@
 </template>
 
 <script>
-
 import jwt from 'jsonwebtoken'
+import axios from 'axios'
 
 export default {
   name: 'login',
@@ -71,24 +71,24 @@ export default {
       passWord: null,
     };
   },
-
   methods: {
     loginSubmit() {
-
       let saveData = {};
       saveData.email = this.email;
       saveData.passWord = this.passWord;
 
       try {
-        this.$axios
+        axios
             .post("http://kosa3.iptime.org:50201/login", JSON.stringify(saveData), {
               headers: {
                 'Content-Type': 'application/json; charset=utf-8',
               }
             })
             .then((res) => {
+              console.log(res.status)
+
               if (res.status === 200) { // 로그인 성공코드 : 200
-                alert('로그인성공!');
+                alert('로그인되었습니다.');
 
                 console.log(res.data)
 
@@ -107,27 +107,30 @@ export default {
                 localStorage.setItem('id', decodedToken.payload.id);
                 localStorage.setItem('email', decodedToken.payload.email);
                 localStorage.setItem('auth', decodedToken.payload.auth);
-                this.$axios.defaults.headers.common['Authorization'] = res.data.Authorization;
+                axios.defaults.headers.common['Authorization'] = res.data.Authorization;
 
                 this.auth = localStorage.getItem('auth');
 
-                if(this.auth === "ROLE_ADMIN"){
+                if (this.auth === "ROLE_ADMIN") {
                   this.$router.push('/adminpage')
                   location.reload();
-                }
-
-                else if (this.auth === "ROLE_USER"){
+                } else if (this.auth === "ROLE_USER") {
                   // 로그인 성공시 홈페이지로 리다이렉트
                   this.$router.push('/')
                   location.reload();
                 }
-
               } else {
-                alert('로그인실패!');
+                alert('error');
               }
-            });
+            }).catch((err) => { // 로그인 실패시
+          console.log(err)
+          alert('아이디 또는 비밀번호가 잘못 입력 되었습니다.\n' +
+              '아이디와 비밀번호를 정확히 입력해 주세요.');
+        })
       } catch (error) {
-        console.error(error);
+        // 로그인 실패시
+        //   alert('아이디, 비밀번호 실패');
+        // console.error(error);
       }
     },
   },

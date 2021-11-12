@@ -1,12 +1,16 @@
 <template>
-  <div class="row" id="cityList">
-    <div>
+  <div id="cityList">
+    <div style="text-align: center">
       <h1>여행지</h1>
     </div>
     <br>
-    <div class="col s12 m6 13" v-for="(region,i) in regionData" :key="i">
-      <Region :region="region"></Region>
-    </div>
+    <section class="py-0">
+      <div class="container px-4 px-lg-5 mt-3">
+        <div >
+          <Region :region="region"></Region>
+        </div>class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" v-for="(region, i) in regionData" :key="i"
+      </div>
+    </section>
   </div>
 </template>
 
@@ -19,76 +23,26 @@ export default {
   name: "CityList",
   data() {
     return {
-      regionList: ['경기', '제주', '강원'],
       regionData: regionData
     }
   },
   components: {
     Region
+  },
+  methods: {
   }
 }
 </script>
 
-<style scoped>
+<style>
+#headerstyle {
+  background-image: url('https://cdn.pixabay.com/photo/2019/08/12/06/13/republic-of-korea-4400510_960_720.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-div {
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
 }
-
-.row {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-.row .col {
-  float: left;
-  box-sizing: border-box;
-  padding: 0 0.75rem;
-  min-height: 1px;
-}
-.row .col.s12 {
-  width: 100%;
-  margin-left: auto;
-  left: auto;
-  right: auto;
-}
-
-.div {
-  margin: 0;
-  border: 0;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-.citynamefont {
-  font-size: 1.4rem;
-  /* font-weight: 600; */
-  font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.b {
-  font-weight: bolder;
-}
-.h6 {
-  line-height: 1.4;
-}
-@media (max-width: 670px) {
-  .article h6 {
-    margin: 3px 0 0 1px !important;
-    font-size: 16px;
-  }
-}
-
-city-card-contents-subtitle {
-  /* font-size: 0.9rem; */
-  margin: 8px 0 !important;
-  /* font-weight: 400; */
-  color: #333;
+p {
+  margin-bottom: 0px;
 }
 </style>

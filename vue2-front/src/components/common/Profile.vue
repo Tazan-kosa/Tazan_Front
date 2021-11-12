@@ -80,7 +80,7 @@ export default {
     // 로그아웃
     logout() {
       localStorage.clear();
-      alert('로그아웃 성공!');
+      alert('로그아웃되었습니다.');
       this.$router.push('/')
       location.reload();
     },
