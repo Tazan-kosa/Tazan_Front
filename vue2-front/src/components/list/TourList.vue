@@ -137,6 +137,7 @@ p {
 }
 
 .datewarning {
+  text-align: center;
   color: red;
 }
 

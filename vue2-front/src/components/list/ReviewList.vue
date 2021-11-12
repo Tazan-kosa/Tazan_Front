@@ -133,10 +133,7 @@ header {
 }
 
 .datewarning {
+  text-align: center;
   color: red;
-}
-
-.datewarning b {
-  font-size: 15px;
 }
 </style>
