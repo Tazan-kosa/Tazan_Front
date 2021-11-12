@@ -59,8 +59,8 @@
         <!-- main -->
         <v-main
             min-height="100%"
-
         >
+
           <v-col>v-col in v-main</v-col>
           <!-- container -->
           <v-container
