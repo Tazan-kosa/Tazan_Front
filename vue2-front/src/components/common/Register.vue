@@ -163,6 +163,14 @@ export default {
     passwordCheckFlag: true,
   }),
 
+  beforeCreate() {
+    console.log("beforeCreate check login")
+    if (localStorage.getItem('auth') !== null) {
+      alert('이미 로그인 되었습니다.')
+      this.$router.push('/')
+    }
+  },
+
   methods: {
     test() {
     },
@@ -188,6 +196,7 @@ export default {
               }
             });
         this.$router.push('/')
+        alert('회원가입 되었습니다!')
       } catch (error) {
         console.error(error);
       }

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <div>
-<!--      <Header></Header>-->
-      <Header v-if="auth==!'ROLE_ADMIN'"/>
+      <Header></Header>
+<!--      <Header v-if="auth==!'ROLE_ADMIN'"/>-->
         <router-view></router-view>
-      <Footer v-if="auth==!'ROLE_ADMIN'"/>
-<!--      <Footer></Footer>-->
+<!--      <Footer v-if="auth==!'ROLE_ADMIN'"/>-->
+      <Footer></Footer>
     </div>
   </div>
 </template>

@@ -28,7 +28,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title @click="movetopage(item.path)">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -59,8 +59,8 @@
         <!-- main -->
         <v-main
             min-height="100%"
-
         >
+
           <v-col>v-col in v-main</v-col>
           <!-- container -->
           <v-container
@@ -86,10 +86,11 @@ export default {
   data() {
     return {
       items: [
-        {title: '대시보드', icon: 'mdi-view-dashboard'},
-        {title: '사진', icon: 'mdi-image'},
-        {title: '계정관리', icon: 'mdi-account'},
-        {title: 'About', icon: 'mdi-help-box'},
+        {title: '여행지관리', icon: 'mdi-view-dashboard', path:'tour'},
+        {title: '계획관리', icon: 'mdi-image', path:'plan'},
+        {title: '후기관리', icon: 'mdi-account', path:'review'},
+        {title: '계정관리', icon: 'mdi-account', path:'user'},
+        {title: 'About', icon: 'mdi-help-box', path:'tour'},
       ],
 
       right: null,
@@ -103,9 +104,13 @@ export default {
       this.$router.push('/')
       location.reload();
     },
+    movetopage(path){
+
+      console.log(path)
+      this.$router.push(`/adminpage/${path}`,()=>{})
+    }
   }
 }
-
 
 </script>
 

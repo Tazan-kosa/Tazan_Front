@@ -10,14 +10,13 @@
               v-model="text"
               placeholder="여행 제목을 적어 주세요."
           ></b-form-input>
+<!--          <div class="mt-2">Value: {{ text }}</div>-->
         </div>
       </div>
       <div class="save_plan">
         <div class="sub_main">
           <div class="left">
             <div>{{ this.region }}</div>
-            <!--        <div>여행일자</div>-->
-
             <date-picker
                 class="datepicpick"
                 v-model="mydate"
@@ -35,15 +34,28 @@
             </div>
           </div>
           <div class="thr_main">
-            <div class="thr_main_sub" v-for="(plan,i) in totalPlan" :key="i">
-              <div>
-                {{ i + 1 }} 일차
+<!--            -->
+            <div
+                class="thr_main_sub"
+                v-for="(plan,index) in totalPlan"
+                :key="index"
+                >
+              <div class="thr_main_day">
+                {{ index + 1 }} 일차
               </div>
-              <DayList :daylist="plan" class="thr_main_sub">
+
+              <DayList
+                  id="scrollDiv"
+                  :daylist="plan"
+                  class="thr_main_list"
+                  :index1="index"
+                  @tourListDelete="DeleteList"
+              >
               </DayList>
             </div>
             <div>
               <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
+              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
             </div>
           </div>
 
@@ -88,20 +100,13 @@ export default {
       totalPlan: [[]],
       totalPlan_tour: [[]],
       cnt: 0, //index
-      test: '',
-      //
       userName: '',
       userID: '',
-
-      // value1: [new Date(2019, 9, 8), new Date(2019, 9, 19)],
-      // value2: [],
       mydate: '',
       datetime: '',
       date: '',
       range: '',
       text: '',
-
-
     }
   },
   methods: {
@@ -111,6 +116,7 @@ export default {
     },
     dayList_add() {
       var test = new Date(this.mydate[0])
+      console.log(test)
       test.setDate((test.getDate() + (this.cnt) + 1))
       if (test > this.mydate[1]) {
         alert('일정 길이를 초과합니다!')
@@ -120,7 +126,25 @@ export default {
         this.totalPlan_tour.push([])
       }
     },
-    deleteList() {
+    dayList_delete() {
+      var test = new Date(this.mydate[0])
+      console.log(test)
+      test.setDate((test.getDate() + (this.cnt) + 1))
+      if (test < this.mydate[1]) {
+        alert('일정은 1일차부터 시작입니다.!')
+      } else {
+        this.cnt -= 1
+        this.totalPlan.pop()
+        // this.totalPlan_tour.push([])
+
+        // this.cnt -= 1
+        // this.totalPlan.splice([0], )
+        // this.totalPlan_tour.pop([])
+      }
+    },
+    DeleteList(listObject) {
+      this.totalPlan[listObject.index1].splice(listObject.index2,1)
+      this.totalPlan_tour[listObject.index1].splice(listObject.index2,1)
 
     },
     SavePlan() {
@@ -216,7 +240,7 @@ div {
 .sub_main {
   display: flex;
   /*position: relative;*/
-  /*width: 400px;*/
+  width: 100%;
   /*height: 700px;*/
   height: 100%;
   /*float: left;*/
@@ -238,15 +262,44 @@ div {
   width: 100%;
   height: 100%;
 }
-
+/*리스트*/
 .thr_main_sub {
   display: flex;
-  width: 100%;
+  width: 963px;
 }
-
+.thr_main_day {
+  display: flex;
+  width: 100px;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.thr_main_list {
+  /*height: 5px;*/
+  overflow-x: auto;
+  /*overflow-x: scroll;*/
+  display: flex;
+  width: 963px;
+  text-align: left;
+  height:inherit;
+}
+.thr_main_list::-webkit-scrollbar {
+  height: 5px;
+}
+.thr_main_list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.thr_main_list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.thr_main_list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .save_plan {
   display: flex;
   /*width: 1000px;*/
+  justify-content: space-between;
 }
 
 /*.save_plan_button {
