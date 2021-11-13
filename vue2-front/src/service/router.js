@@ -17,6 +17,10 @@ import AdminPage from "../components/common/admin/AdminPage";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
 import MyPageListTest from "../components/mypage/MyPageListTest";
+import tourmanage from "../components/common/admin/tour/tourmanage";
+import usermanage from "../components/common/admin/user/usermanage";
+import planmanage from "../components/common/admin/plan/planmanage";
+import reviewmanage from "../components/common/admin/review/reviewmanage";
 
 
 Vue.use(VueRouter)
@@ -108,7 +112,29 @@ const route = [
     {
         path: '/adminpage',
         name: 'AdminPage',
-        component: AdminPage
+        component: AdminPage,
+        children: [
+            {
+                path: 'tour',
+                name:'tourmanage',
+                component:tourmanage
+            },
+            {
+                path: 'plan',
+                name:'planmanage',
+                component:planmanage
+            },
+            {
+                path: 'user',
+                name:'usermanage',
+                component:usermanage
+            },
+            {
+                path: 'review',
+                name:'reviewmanage',
+                component:reviewmanage
+            },
+        ]
     },
 ]
 
