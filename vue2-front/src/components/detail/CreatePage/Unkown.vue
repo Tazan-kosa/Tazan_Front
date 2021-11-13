@@ -45,6 +45,7 @@
               </div>
 
               <DayList
+                  id="scrollDiv"
                   :daylist="plan"
                   class="thr_main_list"
                   :index1="index"
@@ -264,7 +265,7 @@ div {
 /*리스트*/
 .thr_main_sub {
   display: flex;
-  width: 100%;
+  width: 963px;
 }
 .thr_main_day {
   display: flex;
@@ -274,10 +275,26 @@ div {
   justify-content: space-around;
 }
 .thr_main_list {
-  overflow-x: scroll;
   /*height: 5px;*/
+  overflow-x: auto;
+  /*overflow-x: scroll;*/
   display: flex;
-  width: 100%;
+  width: 963px;
+  text-align: left;
+  height:inherit;
+}
+.thr_main_list::-webkit-scrollbar {
+  height: 5px;
+}
+.thr_main_list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.thr_main_list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.thr_main_list::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 .save_plan {
   display: flex;

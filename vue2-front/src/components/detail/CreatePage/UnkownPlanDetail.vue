@@ -33,8 +33,8 @@
               <div>
                 {{ index + 1 }} 일차
               </div>
-              <DayList :daylist="plan" class="thr_main_sub">
-              </DayList>
+              <DayListV2 :daylist="plan" class="thr_main_sub">
+              </DayListV2>
             </div>
           </div>
         </div>
@@ -45,7 +45,7 @@
 
 <script>
 import axios from "axios";
-import DayList from "./DayList";
+import DayListV2 from "./DayListV2";
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
 
@@ -88,7 +88,7 @@ export default {
     console.log(startDate)
   },
   components: {
-    DayList,
+    DayListV2,
   },
   props: {
     plan: Object

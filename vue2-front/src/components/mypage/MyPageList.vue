@@ -208,11 +208,13 @@ export default {
       this.$router.push(`/planDetail/${id}`)
     },
     deleteSavedRoute(id) {
+      if (confirm('정말 삭제하시겠습니까?')) {
       axios.delete(`http://kosa3.iptime.org:50201/planDelete/${id}`)
           .then(result => {
             if (result.status == 200) {
               alert("여행계획을 삭제했습니다.");
               // this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
+              // this.$router.push(`/mypagelist`)
               // if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
             }
           }).catch(err => {
@@ -220,6 +222,7 @@ export default {
         //에러 처리 할 곳
         alert("에러발생");
       })
+      }
     }
   }
 }
