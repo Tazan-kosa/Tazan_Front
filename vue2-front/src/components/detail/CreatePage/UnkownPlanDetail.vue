@@ -3,25 +3,25 @@
     <div class="main">
       <div>
         <h1>
-<!--          <span id="userName">{{ plan.userID }}</span>님의 여행 계획표-->
+          <!--          <span id="userName">{{ plan.userID }}</span>님의 여행 계획표-->
           <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
 
         </h1>
         <div class="sub_title">
           <h1
           >
-            {{ plan.planTitle}}
+            {{ plan.planTitle }}
           </h1>
         </div>
       </div>
       <div class="save_plan">
         <div class="sub_main">
           <div class="left">
-<!--            <div>{{ plan.region }}</div>-->
+            <!--            <div>{{ plan.region }}</div>-->
             <div
                 placeholder="Select date range"
             >
-              {{ plan.startDate.slice(0,10) + " - " + plan.endDate.slice(0,10) }}
+              {{ plan.startDate.slice(0, 10) + " - " + plan.endDate.slice(0, 10) }}
             </div>
             <div>
             </div>
@@ -51,7 +51,7 @@ import 'vue2-datepicker/locale/ko';
 
 export default {
   name: "UnkownPlanDetail",
-  data () {
+  data() {
     return {
       PlanDate: [],
       planList: [],
@@ -61,14 +61,14 @@ export default {
       endDate: '',
       text: '',
       mydate: '',
-      nickname:'',
+      nickname: '',
     }
   },
   created() {
-    this.nickname=localStorage.getItem('nickname')
+    this.nickname = localStorage.getItem('nickname')
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
-    if (confirm("삭제 하시겠습니까?")) {
+
     axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
@@ -86,7 +86,6 @@ export default {
     let curr = new Date(m1);
     let startDate = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
     console.log(startDate)
-    }
   },
   components: {
     DayList,

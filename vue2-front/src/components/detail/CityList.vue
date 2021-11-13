@@ -42,7 +42,8 @@ export default {
   background-size: cover;
 
 }
-p {
+py-0 {
   margin-bottom: 0px;
+  display: flex;
 }
 </style>
