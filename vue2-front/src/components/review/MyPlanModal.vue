@@ -81,7 +81,6 @@ export default {
   width: 100%;
   height : 100px;
   position: relative;
-  /*background-color: aliceblue;*/
   padding: 10px;
   cursor: pointer;
 }

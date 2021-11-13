@@ -10,13 +10,6 @@
         <v-card-subtitle>
           {{ day.tag1 + " , " + day.tag2}}
         </v-card-subtitle>
-          <v-btn icon @click="tourListDelete(index2)">
-            <v-btn class="mx-2" fab dark small color="primary">
-              <v-icon dark>
-                mdi-minus
-              </v-icon>
-            </v-btn>
-          </v-btn>
       </v-card>
     </div>
   </div>
@@ -25,7 +18,7 @@
 
 <script>
 export default {
-  name: "DayList",
+  name: "DayListV2",
   props: {
     daylist: Array,
     index1: Number
@@ -52,20 +45,7 @@ export default {
 
 .thr_main_sub {
   display: flex;
-  width: 100%;
+  /*width: 100%;*/
 }
-/*.thr_main_sub::-webkit-scrollbar {
-  height: 5px;
-}
-.thr_main_sub::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-.thr_main_sub::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
-}
-.thr_main_sub::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}*/
 
 </style>

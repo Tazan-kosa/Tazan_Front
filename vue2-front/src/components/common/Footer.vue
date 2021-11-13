@@ -54,10 +54,10 @@
           <!-- footer copyright-->
           <div class="w-100 bg-black">
             <div id="footer-copyright">
-              <a href="https://github.com/Tazan-kosa/Tazan_Front"><img src="../../assets/GitHub-Mark-Footer.png"
-                                                                       height="64" width="64"/></a>
               <p class="text-center">
-                Copyright &copy; 2021 TAZAN | Designed by <a rel="sponsored" href="#" target="_blank">TAZAN</a>
+                <a href="https://github.com/Tazan-kosa"><img src="../../assets/GitHub-Mark-Footer.png"
+                                                                         height="32" width="32"/>
+                </a> Copyright &copy; 2021 TAZAN | Designed by <a rel="sponsored" href="#" target="_blank">TAZAN</a>
               </p>
             </div>
           </div>
