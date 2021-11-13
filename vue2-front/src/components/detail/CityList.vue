@@ -1,6 +1,8 @@
 <template>
-  <div id="cityList">
+  <div>
     <div style="text-align: center">
+      <br>
+      <br>
       <h1>여행지</h1>
     </div>
     <br>
@@ -34,14 +36,8 @@ export default {
 }
 </script>
 
-<style>
-#headerstyle {
-  background-image: url('https://cdn.pixabay.com/photo/2019/08/12/06/13/republic-of-korea-4400510_960_720.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+<style scoped>
 
-}
 py-0 {
   margin-bottom: 0px;
   display: flex;
