@@ -197,7 +197,6 @@ export default {
 .reivew{
   max-width: 1100px;
   margin: 100px auto;
-  text-align: center;
 }
 
 .container-top {
