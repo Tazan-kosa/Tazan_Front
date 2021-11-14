@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="main">
+<!--      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="region.img" uk-img>-->
       <div>
         <h1>
           <span id="userName">{{ userName }}</span>님의 여행 계획표
@@ -53,19 +54,26 @@
               >
               </DayList>
             </div>
+
             <div>
               <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
               <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
             </div>
           </div>
 
+          <div class="right">
+            <div>추천 장소</div>
+            <div>
+              <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
+            </div>
+          </div>
         </div>
-        <div class="right">
+<!--        <div class="right">
           <div>추천 장소</div>
           <div>
             <RecomPlace :recomList="recomList" @recived="planList_add"/>
           </div>
-        </div>
+        </div>-->
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
@@ -244,10 +252,11 @@ div {
   /*height: 700px;*/
   height: 100%;
   /*float: left;*/
+  /*justify-content: space-between;*/
 }
 
 .left {
-  width: 250px;
+  width: 100%;
   height: 100%;
 }
 
@@ -265,7 +274,7 @@ div {
 /*리스트*/
 .thr_main_sub {
   display: flex;
-  width: 963px;
+  width: 100%;
 }
 .thr_main_day {
   display: flex;
@@ -307,6 +316,10 @@ div {
 }*/
 
 .right {
+  width: 100%;
+  height: 100%;
+}
+.right_list {
   width: 300px;
   height: 100%;
 }

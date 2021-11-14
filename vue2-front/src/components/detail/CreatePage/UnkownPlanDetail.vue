@@ -39,6 +39,9 @@
           </div>
         </div>
       </div>
+      <div class="save_plan_button">
+        <b-button variant="primary" :to="review">Review</b-button>
+      </div>
     </div>
   </div>
 </template>
