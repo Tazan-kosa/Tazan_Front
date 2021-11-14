@@ -244,10 +244,14 @@ div {
 .main {
   text-align: center;
 }
+.datepicpick {
+  width: 95%;
+  height: 100%;
+}
 
 .sub_main {
   display: flex;
-  /*position: relative;*/
+  position: relative;
   width: 100%;
   /*height: 700px;*/
   height: 100%;
@@ -256,21 +260,28 @@ div {
 }
 
 .left {
-  width: 100%;
+  display: flex;
+  width: 20%;
   height: 100%;
+  flex-direction: column;
 }
-
-.datepicpick {
-  width: 230px;
-  height: 100%;
-}
-
 .thr_main {
   display: flex;
   flex-direction: column;
+  width: 60%;
+  height: 100%;
+}
+.right {
+  width: 20%;
+  height: 100%;
+}
+.right_list {
   width: 100%;
   height: 100%;
 }
+
+
+
 /*리스트*/
 .thr_main_sub {
   display: flex;
@@ -315,14 +326,7 @@ div {
   flex-direction: column;
 }*/
 
-.right {
-  width: 100%;
-  height: 100%;
-}
-.right_list {
-  width: 300px;
-  height: 100%;
-}
+
 
 
 </style>
