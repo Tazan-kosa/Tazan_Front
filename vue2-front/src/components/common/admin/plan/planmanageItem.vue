@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>{{this.item.title}}</p>
+    <p>{{this.item.planTitle}}</p>
+    <p>{{this.item.startDate}}</p>
+    <p>{{this.item.endDate}}</p>
   </div>
 </template>
 
@@ -14,5 +16,7 @@ export default {
 </script>
 
 <style scoped>
-
+div{
+  border: 1px solid white;
+}
 </style>
