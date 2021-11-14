@@ -20,7 +20,7 @@
           title="선택목록 장소에 추가"
           onclick=""
       >
-        <i class="material-icons" @click="planList_add">add</i>
+        <button class="material-icons" @click="planList_add">add</button>
       </div>
     </div>
   </div>

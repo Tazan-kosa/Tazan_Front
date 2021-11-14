@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="main">
+<!--      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="region.img" uk-img>-->
       <div>
         <h1>
           <span id="userName">{{ userName }}</span>님의 여행 계획표
@@ -53,19 +54,26 @@
               >
               </DayList>
             </div>
+
             <div>
               <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
               <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
             </div>
           </div>
 
+          <div class="right">
+            <div>추천 장소</div>
+            <div>
+              <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
+            </div>
+          </div>
         </div>
-        <div class="right">
+<!--        <div class="right">
           <div>추천 장소</div>
           <div>
             <RecomPlace :recomList="recomList" @recived="planList_add"/>
           </div>
-        </div>
+        </div>-->
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
@@ -236,36 +244,48 @@ div {
 .main {
   text-align: center;
 }
+.datepicpick {
+  width: 95%;
+  height: 100%;
+}
 
 .sub_main {
   display: flex;
-  /*position: relative;*/
+  position: relative;
   width: 100%;
   /*height: 700px;*/
   height: 100%;
   /*float: left;*/
+  /*justify-content: space-between;*/
 }
 
 .left {
-  width: 250px;
+  display: flex;
+  width: 20%;
   height: 100%;
+  flex-direction: column;
 }
-
-.datepicpick {
-  width: 230px;
-  height: 100%;
-}
-
 .thr_main {
   display: flex;
   flex-direction: column;
+  width: 60%;
+  height: 100%;
+}
+.right {
+  width: 20%;
+  height: 100%;
+}
+.right_list {
   width: 100%;
   height: 100%;
 }
+
+
+
 /*리스트*/
 .thr_main_sub {
   display: flex;
-  width: 963px;
+  width: 100%;
 }
 .thr_main_day {
   display: flex;
@@ -306,10 +326,7 @@ div {
   flex-direction: column;
 }*/
 
-.right {
-  width: 300px;
-  height: 100%;
-}
+
 
 
 </style>

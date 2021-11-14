@@ -1,13 +1,17 @@
 <template>
-  <div id="cityList">
+  <div>
     <div style="text-align: center">
+      <br>
+      <br>
       <h1>여행지</h1>
     </div>
     <br>
     <section class="py-0">
       <div class="container px-4 px-lg-5 mt-3">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" v-for="(region, i) in regionData" :key="i">
-          <Region :region="region"></Region>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div v-for="(region, i) in regionData" :key="i">
+            <Region :region="region"></Region>
+          </div>
         </div>
       </div>
     </section>
@@ -29,21 +33,15 @@ export default {
   components: {
     Region
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
-<style>
-#headerstyle {
-  background-image: url('https://cdn.pixabay.com/photo/2019/08/12/06/13/republic-of-korea-4400510_960_720.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
+<style scoped>
+.container {
 }
-py-0 {
+
+p {
   margin-bottom: 0px;
-  display: flex;
 }
 </style>

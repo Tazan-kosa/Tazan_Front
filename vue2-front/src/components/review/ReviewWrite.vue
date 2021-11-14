@@ -47,7 +47,6 @@ export default {
   data() {
     return {
       TourItemData: {},
-      PlanData: [],
       ReviewData: {},
       flag: false,
       userName: '',
@@ -134,7 +133,7 @@ export default {
       }
       if(this.editFlag){
         reviewVO.reviewID = this.ReviewData.reviewID
-        axios.put(`http://kosa3.iptime.org:50201/review/update`, reviewVO, {
+        axios.put(`http://localhost:80/review/update`, reviewVO, {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
@@ -148,7 +147,7 @@ export default {
       }
       else{
         console.log(reviewVO)
-        axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
+        axios.post('http://localhost:80/review/upload', reviewVO, {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
