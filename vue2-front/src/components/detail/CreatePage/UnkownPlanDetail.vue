@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="save_plan_button">
-        <b-button variant="primary" :to="review">Review</b-button>
+        <b-button variant="primary" @click="reviewWrite">Review</b-button>
       </div>
     </div>
   </div>
@@ -89,6 +89,29 @@ export default {
     let curr = new Date(m1);
     let startDate = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
     console.log(startDate)
+  },
+  methods: {
+    reviewWrite() {
+      axios.get(`http://localhost:80/reviwe/reviewWrite/${3}`).then(res=> {
+        if(res.status == 200){
+          if(res.data == null){
+            this.$router.push('/review').then((() => window.scrollTo(0, 0)))
+          }
+          else {
+            console.log(res.data.reviewTitle)
+            this.$router.push({
+              name: 'Review',
+              params: {
+                reviewData: res.data,
+                planData: this.plan
+              }
+            }).then((() => window.scrollTo(0, 0)))
+          }
+        }
+      }).catch(err=> {
+        console.log("에러 발생: " + err)
+      });
+    }
   },
   components: {
     DayListV2,
