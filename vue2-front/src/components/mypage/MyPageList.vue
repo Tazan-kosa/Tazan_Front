@@ -65,10 +65,12 @@
                         <div class="small-title">
                           여행이름
                           <div class="uk-inline">
-                            <input class="uk-input uk-form-blank uk-form-width-medium small-text" type="text"
-                                                               placeholder="mypage.planTitle"
-                                                               value=""
-                                                        >
+                            <input
+                                class="uk-input uk-form-blank uk-form-width-medium small-text"
+                                type="text"
+                                :placeholder="mypage.planTitle"
+                                value=""
+                            >
                           </div>
                         </div>
                       </div>
@@ -149,15 +151,6 @@
             </div>
           </div>
         </span>
-
-        <!--        <div id="pageSectionDiv" class="pagination-container">
-                  <div class="pagination-container">
-                    <a id="travelListP" href="#" onclick="getTravelListNextPage('p')"><i class="material-icons">chevron_left</i></a>
-                    <span id="pageList"><a onclick="getTravelListPage(1)" id="pageButton1" class="s-button"> 1 </a></span>
-                    <a id="travelListN" href="#" onclick="getTravelListNextPage('n')"><i
-                        class="material-icons">chevron_right</i></a>
-                  </div>
-                </div>-->
       </div>
       <div class="info-container p-5">
         <button class="btn-normal" onclick="location.href='/' ">홈으로 가기</button>
@@ -186,6 +179,12 @@ export default {
   },
   components: {
     // MyPageListTest
+  },
+  beforeCreate() {
+    if(!localStorage.getItem('Authorization')){
+      alert('접근 권한이 없습니다.');
+      this.$router.push('/login')
+    }
   },
   created() {
     this.userName = localStorage.getItem('nickname')
@@ -224,12 +223,6 @@ export default {
         alert("에러발생");
       })
       }
-    }
-  },
-  beforeCreate() {
-    if(!localStorage.getItem('Authorization')){
-      alert('접근 권한이 없습니다.');
-      this.$router.push('/login')
     }
   }
 }
