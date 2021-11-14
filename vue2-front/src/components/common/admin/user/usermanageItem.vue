@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{this.item.title}}</p>
+    <p>{{this.item.nickName}}</p><p>{{this.item.email}}</p><p>{{this.item.auth}}</p>
   </div>
 </template>
 
@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style scoped>
-
+div{
+  border: 1px solid white;
+}
 </style>
