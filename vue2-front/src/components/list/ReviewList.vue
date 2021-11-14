@@ -11,6 +11,10 @@
               Search
             </button>
           </div>
+          <div id="review-write"><button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
+            <router-link to="/review"><span>여행후기작성</span></router-link>
+          </button>
+          </div>
         </div>
       </div>
     </header>
@@ -133,7 +137,9 @@ header {
 
 #review-write{
   align-content: center;
+  align-content: center;
   color: red;
+  text-decoration: none;
 
 }
 </style>
