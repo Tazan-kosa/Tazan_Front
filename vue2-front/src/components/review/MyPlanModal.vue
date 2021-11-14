@@ -13,7 +13,7 @@
           <div class="modal-body">
             <div v-for="(item, i) in myplanList" :key="i" class="container">
               <label class="radio-input">
-                <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.planID)">
+                <input type="radio" id="i" name="item.id" class="radiobtn" @click="clickedRadiobtn(item.planID, item.reviewFlag)">
                   <div class="myplan">
                     <span class="myplan-region">{{ item.region }}</span>
                     <span class="myplan-date">{{ item.startDate.substr(0,10) }} ~ {{ item.endDate.substr(0,10) }}</span>
@@ -37,11 +37,12 @@ import axios from "axios";
 export default {
   name: 'MyPlanModal',
   methods: {
-    clickedRadiobtn(i) {
+    clickedRadiobtn(i,j) {
       this.myplanId = i;
+      this.reviewFlag = j;
     },
     clickedClose(){
-      this.$emit('selectedPlan', this.myplanId)
+      this.$emit('selectedPlan', [this.myplanId, this.reviewFlag])
     }
   },
   created() {
@@ -62,6 +63,7 @@ export default {
       myPlanId: 0,
       myplanList : [],
       travelDate: '',
+      reviewFlag: '',
     }
   }
 
