@@ -18,7 +18,7 @@
                 <b>나의 일정</b>
               </h5>
               <div>
-                <h2 style="line-height: 1" id="myPlan">2</h2>
+                <h2 style="line-height: 1" id="myPlan">{{ plan.length }}</h2>
               </div>
             </div>
           </div>
@@ -213,8 +213,9 @@ export default {
           .then(result => {
             if (result.status == 200) {
               alert("여행계획을 삭제했습니다.");
+              // location.reload();
               // this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
-              // this.$router.push(`/mypagelist`)
+              this.$router.push(`/mypagelist`)
               // if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
             }
           }).catch(err => {
@@ -223,6 +224,12 @@ export default {
         alert("에러발생");
       })
       }
+    }
+  },
+  beforeCreate() {
+    if(!localStorage.getItem('Authorization')){
+      alert('접근 권한이 없습니다.');
+      this.$router.push('/login')
     }
   }
 }
