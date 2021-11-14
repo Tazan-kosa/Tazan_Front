@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     reviewWrite() {
-      axios.get(`http://localhost:80/reviwe/reviewWrite/${3}`).then(res=> {
+      axios.get(`http://kosa3.iptime.org:50201/reviwe/reviewWrite/${3}`).then(res=> {
         if(res.status == 200){
           if(res.data == null){
             this.$router.push('/review').then((() => window.scrollTo(0, 0)))
