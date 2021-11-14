@@ -40,8 +40,7 @@
           app
       >
         <v-text
-          color="red"
-                  > 관리자 페이지 </v-text>
+                  > 관리자 </v-text>
         <v-col sm="0" offset-sm="10">
           <v-btn
               depressed
@@ -55,14 +54,12 @@
       </v-app-bar>
 
       <v-card
-          min-height="100vh"
-          max-height="500"
+          min-height="100%"
           dark>
         <!-- main -->
         <v-main
             min-height="100%"
         >
-          <v-col>v-col in v-main</v-col>
           <!-- container -->
           <v-container
               fluid

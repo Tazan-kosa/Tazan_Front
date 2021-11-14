@@ -3,7 +3,7 @@
     <div>
       <Header v-show="auth!=='ROLE_ADMIN'"/>
       <router-view></router-view>
-      <Footer v-if="auth!=='ROLE_ADMIN'"/>
+      <Footer v-show="auth!=='ROLE_ADMIN'"/>
     </div>
   </div>
 </template>
