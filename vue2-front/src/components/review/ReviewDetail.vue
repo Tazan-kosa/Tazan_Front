@@ -82,7 +82,10 @@ export default {
     modifyReview() {
       this.$router.push({
         name: 'Review',
-        params: {reviewData: this.Review, planData: this.TourItemData}
+        params: {
+          reviewData: this.Review,
+          planData: this.TourItemData
+        }
       }).then((() => window.scrollTo(0, 0)))
     }
   },
