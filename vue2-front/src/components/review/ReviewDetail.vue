@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     deleteReview() {
-      axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}`).then(res => {
+      axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}/${this.Review.planID}`).then(res => {
         if (res.status == 200) {
           alert("후기를 삭제했습니다.");
           this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))

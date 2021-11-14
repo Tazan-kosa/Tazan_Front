@@ -2,15 +2,17 @@
   <header class="py-5" id="headerstyle">
     <div class="container px-4 px-lg-5">
       <div class="text-center text-white">
-        <h1 class="display-4 fw-bolder">여행 어디</h1>
+        <h1 class="display-4 fw-bolder">국내 여행</h1>
         <p class="lead fw-normal text-white-100 mb-0">국내만</p>
-
+        <br>
 
         <div class="wrap">
           <div class="button">
 
               <b-button variant="success" href="">
-                <b-link to="mypagelist">내 일정 보기</b-link>
+                <b-link to="mypagelist">
+                  <span>내 일정 보기</span>
+                </b-link>
               </b-button>
           </div>
         </div>
@@ -22,7 +24,12 @@
 <script>
 export default {
   name: "DetailPage",
+  data () {
+    return {
+    }
+  }
 }
+
 </script>
 
 <style scoped>
