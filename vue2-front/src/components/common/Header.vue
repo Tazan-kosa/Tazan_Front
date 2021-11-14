@@ -82,7 +82,6 @@
 <script>
 import profile from "./Profile"
 
-
 export default {
   name: "Header",
   component: profile,
