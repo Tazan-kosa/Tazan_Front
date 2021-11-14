@@ -38,8 +38,10 @@
       <v-app-bar
           dark
           app
-          >
-        (현재 상태)
+      >
+        <v-text
+          color="red"
+                  > 관리자 페이지 </v-text>
         <v-col sm="0" offset-sm="10">
           <v-btn
               depressed
@@ -60,12 +62,12 @@
         <v-main
             min-height="100%"
         >
-
           <v-col>v-col in v-main</v-col>
           <!-- container -->
           <v-container
-              fluid>
-            v-container
+              fluid
+          >
+            <!-- admin page입니다.-->
             <!-- vue-router -->
             <router-view></router-view>
           </v-container>
@@ -86,11 +88,11 @@ export default {
   data() {
     return {
       items: [
-        {title: '여행지관리', icon: 'mdi-view-dashboard', path:'tour'},
-        {title: '계획관리', icon: 'mdi-image', path:'plan'},
-        {title: '후기관리', icon: 'mdi-account', path:'review'},
-        {title: '계정관리', icon: 'mdi-account', path:'user'},
-        {title: 'About', icon: 'mdi-help-box', path:'tour'},
+        {title: '여행지관리', icon: 'mdi-view-dashboard', path: 'tour'},
+        {title: '계획관리', icon: 'mdi-image', path: 'plan'},
+        {title: '후기관리', icon: 'mdi-pencil', path: 'review'},
+        {title: '계정관리', icon: 'mdi-account', path: 'user'},
+        {title: 'About', icon: 'mdi-help-box', path: 'tour'},
       ],
 
       right: null,
@@ -104,10 +106,11 @@ export default {
       this.$router.push('/')
       location.reload();
     },
-    movetopage(path){
+    movetopage(path) {
 
       console.log(path)
-      this.$router.push(`/adminpage/${path}`,()=>{})
+      this.$router.push(`/adminpage/${path}`, () => {
+      })
     }
   }
 }
