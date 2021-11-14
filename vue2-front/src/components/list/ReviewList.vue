@@ -11,17 +11,16 @@
               Search
             </button>
           </div>
-          <div id="review-write"><button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
-            <router-link to="/review"><span>여행후기작성</span></router-link>
-          </button>
-          </div>
         </div>
       </div>
     </header>
 
     <section class="py-0">
       <div class="container px-4 px-lg-5 mt-3">
-        <Select :enddate="enddate" :startdate="startdate"/>
+        <div class="box">
+          <Select :enddate="enddate" :startdate="startdate"/>
+          <b-button variant="primary" class="reviewBtn p-2" @click="goRiviewWrite">여행 후기 작성</b-button>
+        </div>
         <p class="datewarning" v-if="startdate>enddate"><b>날짜입력 오류입니다. 다시 확인해주세요.</b></p>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
           <ReviewBox v-for="(item, i) in ReviewItemList" :key="i" :item="item" :checkedtag="checkedtag"/>
@@ -48,6 +47,7 @@ export default {
       checkedtag: ['관광지', '문화시설', '축제공연행사', '여행코스', '레포츠', '숙박', '쇼핑', '음식점'],
       startdate: '',
       enddate: '',
+      userID: '',
     }
   },
   components: {
@@ -57,6 +57,16 @@ export default {
 
   },
   methods: {
+    goRiviewWrite() {
+      console.log()
+      if(this.userID == null){
+        alert("로그인 후 이용 부탁드립니다.")
+        this.$router.push('/login').then((() => window.scrollTo(0, 0)))
+      }
+      else {
+        this.$router.push('/review');
+      }
+    },
     searchTourList() {
       var value = document.getElementById("searchbar").value
       var start = document.querySelector("#startdate").value
@@ -78,6 +88,7 @@ export default {
     },
   },
   created() {
+    this.userID = localStorage.getItem('id')
     var temp = new Date()
     var year = temp.getFullYear();
     var month = temp.getMonth() + 1;
@@ -121,11 +132,6 @@ p{
   border-radius: 4px;
 }
 
-.checkbox {
-  display: flex;
-  margin-bottom: 5px;
-}
-
 header {
   background: #00BF72;
 }
@@ -135,11 +141,15 @@ header {
   color: red;
 }
 
-#review-write{
-  align-content: center;
-  align-content: center;
-  color: red;
-  text-decoration: none;
+.box {
+  display: flex;
+}
 
+.reviewBtn {
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 </style>
