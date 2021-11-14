@@ -130,4 +130,10 @@ header {
   text-align: center;
   color: red;
 }
+
+#review-write{
+  align-content: center;
+  color: red;
+
+}
 </style>

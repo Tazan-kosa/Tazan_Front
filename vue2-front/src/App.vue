@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <div>
-      <Header></Header>
-<!--      <Header v-if="auth==!'ROLE_ADMIN'"/>-->
-        <router-view></router-view>
-<!--      <Footer v-if="auth==!'ROLE_ADMIN'"/>-->
-      <Footer></Footer>
+      <Header v-show="auth!=='ROLE_ADMIN'"/>
+      <router-view></router-view>
+      <Footer v-show="auth!=='ROLE_ADMIN'"/>
     </div>
   </div>
 </template>

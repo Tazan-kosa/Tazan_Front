@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>{{this.item.title}}</p>
+    <button type="button" class="btn btn-danger">삭제</button>
   </div>
 </template>
 
@@ -14,5 +15,7 @@ export default {
 </script>
 
 <style scoped>
-
+div{
+  border: 1px solid white;
+}
 </style>

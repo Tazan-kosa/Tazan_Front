@@ -129,7 +129,7 @@
                                   uk-toggle="target:#modal-center_idx_0"
                                   onclick="modalCenterBtn(0)"
                                   aria-expanded="false">
-                            일정 공유
+                            리뷰 쓰기
                           </button>
                         </div>
                       </div>
@@ -369,36 +369,6 @@ body {
   color: #616161;
   letter-spacing: 1px;
   padding: 8px;
-}
-
-.medium-text {
-  font-size: 14px;
-  text-align: center;
-  color: #616161;
-  padding: 8px;
-}
-
-.divider-container {
-  position: relative;
-  text-align: center;
-  margin: 8px;
-}
-
-.divider {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 1px;
-  width: 100%;
-  background-color: #fafafa;
-}
-
-.socialBtn-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
 }
 
 .btn-normal {
@@ -665,118 +635,6 @@ body {
   font-weight: 700;
 }
 
-.email-send-btn {
-  background-color: #26dbe1;
-  color: #fff;
-}
-
-.myro-icon-button {
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 36px;
-  cursor: pointer;
-  margin-left: 8px;
-}
-
-.mobile-travel-container {
-  box-shadow: rgb(31 38 135 / 10%) 0px 8px 32px 0px;
-  /* backdrop-filter: blur(4px); */
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-  border-width: initial !important;
-  border-style: none !important;
-  border-color: initial !important;
-  border-image: initial !important;
-  margin: 16px 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-travel-flex-top {
-  display: flex;
-  padding: 8px;
-  height: 120px;
-}
-
-.mobile-travel-flex-bottom {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
-  height: 60px;
-}
-
-.mobile-travel-info-container {
-  display: flex;
-  flex-direction: column;
-  padding-left: 16px;
-}
-
-.mobile-travel-name-text {
-  font-size: 1rem;
-}
-
-.mobile-small-text {
-  color: #999;
-  font-size: 11px;
-}
-
-.mobile-travel-info-day-text {
-  font-size: 1rem;
-  font-family: 'Montserrat';
-  color: #ffa500;
-  margin: 2px 0;
-}
-
-.mobile-travel-button {
-  border-radius: 0px;
-  backdrop-filter: blur(4px);
-  color: rgb(255, 255, 255);
-  box-shadow: rgb(31 38 135 / 5%) 0px 8px 32px 0px !important;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Montserrat';
-  color: #000;
-  font-size: 12px;
-  width: 60px;
-  padding: 8px 4px;
-}
-
-.mobile-d-day-circle {
-  font-family: 'Montserrat';
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #26dbe1;
-  color: #fff;
-  font-weight: 700;
-  font-size: 10px;
-}
-
-.mobile-share-circle {
-  font-family: 'Montserrat';
-  position: absolute;
-  top: 12px;
-  left: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #ffcb2b;
-  color: #fff;
-  font-weight: 700;
-  font-size: 10px;
-}
-
 @media (max-width: 600px) {
   .mypage-share-button {
     font-size: 12px !important;
@@ -793,11 +651,6 @@ body {
   }
 }
 
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
 
 .pagination-container a {
   color: #000 !important;
