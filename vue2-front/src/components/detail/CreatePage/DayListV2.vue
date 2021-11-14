@@ -3,7 +3,7 @@
 <!--    -->
     <div class="thr_main_sub" v-for="(day, index2) in daylist" :key="index2">
       <v-card class="pa-30 ma-30" max-width="200">
-        <v-img :src=day.img height="150px"></v-img>
+        <v-img :src=day.img height="150px" @click="viewURL(day.url)"></v-img>
         <v-card-title>
           {{ day.title }}
         </v-card-title>
@@ -26,6 +26,9 @@ export default {
   methods: {
     tourListDelete (index2) {
       this.$emit('tourListDelete', {"index1":this.index1,"index2":index2})
+    },
+    viewURL(link){
+      window.open(link)
     }
   }
 }
