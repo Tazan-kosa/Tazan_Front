@@ -1,22 +1,31 @@
 <template>
-  <div>
-    <p>{{this.item.planTitle}}</p>
-    <p>{{this.item.startDate}}</p>
-    <p>{{this.item.endDate}}</p>
-  </div>
+  <pre>
+    {{ this.item.planTitle }}
+    {{ this.item.startDate }}
+    {{ this.item.endDate }}
+    <button type="button" class="btn btn-danger">삭제</button>
+  </pre>
 </template>
 
 <script>
 export default {
   name: "planmanageItem",
-  props:{
-    item:Object
+  props: {
+    item: Object
   }
 }
 </script>
 
 <style scoped>
-div{
+div {
   border: 1px solid white;
+}
+button {
+  position: static;
+  float: right;
+
+}
+pre{
+  background-color: grey;
 }
 </style>

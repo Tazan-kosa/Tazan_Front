@@ -1,6 +1,7 @@
 <template>
   <div>
     <p>{{this.item.title}}</p>
+    <button type="button" class="btn btn-danger">삭제</button>
   </div>
 </template>
 
