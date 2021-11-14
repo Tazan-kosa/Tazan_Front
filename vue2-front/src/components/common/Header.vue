@@ -30,9 +30,6 @@
               <li class="nav-item">
                 <router-link to="/reviewList"><span>여행후기</span></router-link>
               </li>
-              <li class="nav-item">
-                <router-link to="/review"><span>TEST(Review)</span></router-link>
-              </li>
             </ul>
           </div>
 
@@ -54,17 +51,6 @@
             <div id="Register" v-if="!Authorization">
               <router-link to="/Register"><a><span>회원가입</span></a></router-link>
             </div>
-
-            <!-- 로그인시 생성 - 토큰값이 not null이면 로그인상태-->
-            <!-- Mypage-->
-            <!--            <div id="mypagelist" v-if="Authorization">-->
-            <!--              <router-link to="/mypagelist"><a><span>마이페이지</span></a></router-link>-->
-            <!--            </div>-->
-
-            <!--            &lt;!&ndash; Logout&ndash;&gt;-->
-            <!--            <div id="logout" v-if="Authorization">-->
-            <!--              <button @click="logout"><a><span>로그아웃</span></a></button>-->
-            <!--            </div>-->
 
             <!-- profile 버튼-->
             <div id="profile" v-if="profile_check()">
@@ -140,29 +126,10 @@ span:hover {
   border-bottom: 3px solid royalblue;
 }
 
-/*header 배경이미지*/
-/*#header-full {*/
-/*  background-image:*/
-/*  url("https://get.pxhere.com/photo/aircraft-blue-sky-white-clouds-high-altitude-cloud-layer-texture-air-travel-airplane-airline-wing-flight-flap-daytime-aviation-aerospace-engineering-airliner-vehicle-meteorological-phenomenon-airbus-a330-airbus-wide-body-aircraft-narrow-body-aircraft-194909.jpg");*/
-/*}*/
-
 #login, #logout {
   background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
-
-/*#profile {*/
-/*  max-height: 60px;*/
-/*  z-index: 1;*/
-/*}*/
-
-/*#login:hover, #logout:hover /
-/*  background-color: darkgray;*/
-/*}*/
-
-/*.logo:hover{*/
-/*  background-color: gray;*/
-/*}*/
 
 </style>
