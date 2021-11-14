@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div>
-      <Header></Header>
-<!--      <Header v-show="auth!=='ROLE_ADMIN'"/>-->
+<!--      <Header></Header>-->
+      <Header v-show="auth!=='ROLE_ADMIN'"/>
       <router-view></router-view>
       <Footer v-show="auth!=='ROLE_ADMIN'"/>
     </div>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "usermanageItem",
@@ -15,14 +15,14 @@ export default {
   },
   methods:{
     removeItem(){
-      // axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}`).then(res => {
-      //   if (res.status == 200) {
-      //     alert("후기를 삭제했습니다.");
-      //     this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
-      //   }
-      // }).catch(err => {
-      //   console.log(err)
-      // })
+      axios.delete(`http://kosa3.iptime.org:50201/user/deleteUser/${this.item.userID}`).then(res => {
+        if (res.status == 200) {
+          alert("User 삭제."+this.item.userID);
+          location.reload();
+        }
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 }
