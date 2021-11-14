@@ -129,7 +129,7 @@
                                   uk-toggle="target:#modal-center_idx_0"
                                   onclick="modalCenterBtn(0)"
                                   aria-expanded="false">
-                            일정 공유
+                            리뷰 쓰기
                           </button>
                         </div>
                       </div>
