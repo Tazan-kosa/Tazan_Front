@@ -1,6 +1,7 @@
 <template>
   <div>
-    <planmanageItem v-for="(item, i) in planList" :key="i" :item="item"/>
+    <planmanageItem v-for="(item, i) in tourList" :key="i" :item="item"/>
+    <p>tourpage</p>
   </div>
 </template>
 
