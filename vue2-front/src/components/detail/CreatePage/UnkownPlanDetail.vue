@@ -92,12 +92,8 @@ export default {
   },
   methods: {
     reviewWrite() {
-      axios.get(`http://kosa3.iptime.org:50201/reviwe/reviewWrite/${3}`).then(res=> {
+      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res=> {
         if(res.status == 200){
-          if(res.data == null){
-            this.$router.push('/review').then((() => window.scrollTo(0, 0)))
-          }
-          else {
             console.log(res.data.reviewTitle)
             this.$router.push({
               name: 'Review',
@@ -106,7 +102,6 @@ export default {
                 planData: this.plan
               }
             }).then((() => window.scrollTo(0, 0)))
-          }
         }
       }).catch(err=> {
         console.log("에러 발생: " + err)
