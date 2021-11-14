@@ -40,7 +40,7 @@
         </div>
       </div>
       <div class="save_plan_button">
-        <b-button variant="primary" :to="review">Review</b-button>
+        <b-button variant="primary" @click="reviewWrite">Review</b-button>
       </div>
     </div>
   </div>
@@ -90,6 +90,24 @@ export default {
     let startDate = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
     console.log(startDate)
   },
+  methods: {
+    reviewWrite() {
+      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res=> {
+        if(res.status == 200){
+            console.log(res.data.reviewTitle)
+            this.$router.push({
+              name: 'Review',
+              params: {
+                reviewData: res.data,
+                planData: this.plan
+              }
+            }).then((() => window.scrollTo(0, 0)))
+        }
+      }).catch(err=> {
+        console.log("에러 발생: " + err)
+      });
+    }
+  },
   components: {
     DayListV2,
   },
@@ -123,15 +141,15 @@ div {
 
 .sub_main {
   display: flex;
-  /*position: relative;*/
-  /*width: 400px;*/
+  position: relative;
+  width: 100%;
   /*height: 700px;*/
   height: 100%;
   /*float: left;*/
 }
 
 .left {
-  width: 400px;
+  width: 10%;
   height: 100%;
 }
 
@@ -139,15 +157,36 @@ div {
 .thr_main {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   height: 100%;
 }
 
 .thr_main_sub {
-  /*display: flex;*/
+  display: flex;
   width: 100%;
+  text-align: left;
+  height:inherit;
+  overflow-x: auto;
 }
 
+.thr_main_sub::-webkit-scrollbar {
+  height: 5px;
+}
+.thr_main_sub::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.thr_main_sub::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.thr_main_sub::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.save_plan {
+  display: flex;
+  /*width: 1000px;*/
+  justify-content: space-between;
+}
 .save_plan {
   /*display: flex;*/
   /*width: 1000px;*/

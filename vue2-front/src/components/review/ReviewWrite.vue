@@ -47,7 +47,6 @@ export default {
   data() {
     return {
       TourItemData: {},
-      PlanData: [],
       ReviewData: {},
       flag: false,
       userName: '',
@@ -60,32 +59,56 @@ export default {
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
-    if(this.$route.params.reviewData){
+    if(this.$route.params.planData){
       this.TourItemData = this.$route.params.planData;
       this.flag = true;
       this.ReviewData = this.$route.params.reviewData;
       this.title = this.ReviewData.reviewTitle
       this.reviewContent = this.ReviewData.reviewContent
-      // window.$(".note-editable").text('fjsdakfjasdklfjasdkl');
-      this.editFlag = true
+      if(this.$route.params.reviewData){
+        this.editFlag = true
+      }
     }
   },
   directives: {Sticky},
   methods: {
+    summernoteInsert() {
+      window.$('.summernote').summernote('code',this.reviewContent);
+    },
     selectedPlan(id) {
       this.flag = true;
-      axios.get(`http://kosa3.iptime.org:50201/planDetail/${id}`).then(res => {
+      axios.get(`http://kosa3.iptime.org:50201/planDetail/${id[0]}`).then(res => {
         if(res.status == 200) {
           console.log("플랜데이터 세팅")
           this.TourItemData = res.data
-          console.log(this.TourItemData)
+          this.flag = true;
+          this.ReviewData = ''
+          this.title = ''
+          this.reviewContent = ''
+          this.summernoteInsert()
         }
       }).catch(err => {
         console.log("에러발생: " + err)
         //에러 처리 할 곳
         alert("에러발생");
       })
-      console.log(id);
+      if(id[1] == '1'){
+        axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${id[0]}`).then(res=> {
+          if(res.status == 200){
+            console.log(res.data)
+            this.ReviewData = res.data;
+            this.title = res.data.reviewTitle
+            this.reviewContent = res.data.reviewContent
+            this.editFlag = true
+            this.summernoteInsert()
+          }
+        }).catch(err=> {
+          console.log("에러 발생: " + err)
+        });
+      }
+      else {
+        this.editFlag = false
+      }
     },
     save() {
       //오늘 날짜 입력을 위한 부분
@@ -115,7 +138,6 @@ export default {
       reviewVO.startDate = this.TourItemData.startDate
       reviewVO.endDate = this.TourItemData.endDate
       console.log("플랜데이터")
-      console.log(this.TourItemData)
       //생성된 날짜 삽입
       reviewVO.reviewDate = reviewdate
 
@@ -147,7 +169,6 @@ export default {
         })
       }
       else{
-        console.log(reviewVO)
         axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -183,7 +204,7 @@ export default {
         ]
     });
     if(this.editFlag){
-      window.$('.summernote').summernote('code',this.reviewContent);
+      this.summernoteInsert()
     }
   }
 }
