@@ -25,6 +25,13 @@ import reviewmanage from "../components/common/admin/review/reviewmanage";
 
 Vue.use(VueRouter)
 
+/*const requireAuth = () => (to, from, next) => {
+    if (!localStorage.getItem("Authorization")) {
+        return next();
+    }
+    next('/login');
+};*/
+
 const route = [
     // 김제민
     {
@@ -35,6 +42,12 @@ const route = [
     // 장소 클릭시 여행 계획 짜기 링크
     {
         path: '/create/:region',
+        name: 'regionList',
+        component: Create
+
+    },
+    {
+        path: '/modif/:region',
         name: 'regionList',
         component: Create
     },
