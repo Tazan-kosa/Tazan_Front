@@ -12,7 +12,7 @@
     </div>
     <div class="placelistndwrap">
         <span class="placelistnd2" title="">
-          <h7>{{ this.spot.title }}</h7>
+          <h6>{{ this.spot.title }}</h6>
         </span>
     </div>
     <div class="spotBtnWrap">

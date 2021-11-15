@@ -31,7 +31,7 @@
               여행일자
             </date-picker>
             <div>
-              {{ test }}
+<!--              {{ test }}-->
             </div>
           </div>
           <div class="thr_main">
@@ -124,7 +124,7 @@ export default {
     },
     dayList_add() {
       var test = new Date(this.mydate[0])
-      console.log(test)
+
       test.setDate((test.getDate() + (this.cnt) + 1))
       if (test > this.mydate[1]) {
         alert('일정 길이를 초과합니다!')
@@ -136,7 +136,7 @@ export default {
     },
     dayList_delete() {
       var test = new Date(this.mydate[0])
-      console.log(test)
+
       test.setDate((test.getDate() + (this.cnt) + 1))
       if (test < this.mydate[1]) {
         alert('일정은 1일차부터 시작입니다.!')
@@ -169,7 +169,7 @@ export default {
       planVO.planTitle = this.text;
       planVO.planList = this.totalPlan_tour;
 
-      console.log(planVO)
+
       if (confirm("저장 하시겠습니까?")) {
         axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
           headers: {
@@ -177,11 +177,11 @@ export default {
           },
         }).then(request => {
           if (request.status === 200) {
-            console.log(request.data)
+
             this.$router.push(`/planDetail/${request.data}`)
           }
         }).catch(function () {
-          alert("제목 길이는 공백포함 45자 이내로 입력해야 합니다!");
+          alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
         })
       }
     },
@@ -206,7 +206,7 @@ export default {
 
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
         .then(response => {
-          console.log(response.data)
+
           this.recomList = response.data;
 
         })
