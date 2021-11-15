@@ -15,7 +15,7 @@
                         class="mx-auto"
                         style="width: 400px; height: 300px">
                       <div class="mx-3">
-                        <v-icon color="black" size="30px">아이디</v-icon>
+                        <v-icon color="black" size="30px" @keyup.enter="loginSubmit">아이디</v-icon>
                         <div class="mx-1">
                           <v-text-field
                               placeholder="아이디"
@@ -24,7 +24,7 @@
                           ></v-text-field>
                         </div>
                       </div>
-                      <div class="mx-3">
+                      <div class="mx-3" @keyup.enter="loginSubmit">
                         <v-icon color="black" size="30px">비밀번호</v-icon>
 
                         <div class="mx-1">

@@ -5,10 +5,9 @@
         <a class="navbar-brand text-success logo h1 align-self-center">
           <!-- 로고 -->
           <router-link id="logo" to="/">
-            <img src="../../assets/yacht_tazan_logo.png" height="100" width="100"/>
-            <img src="../../assets/tazan_title-rmb.png" height="30" width="120"/>
+            <img src="../../assets/yacht_tazan_logo.png" height="200" width="200"/>
+            <img src="../../assets/tazan_title-rmb.png" height="100" width="200"/>
           </router-link>
-
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -21,6 +20,7 @@
           <!--Nav바-->
           <div class="flex-fill">
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+              <div></div>
               <li class="nav-item">
                 <router-link to="/detail"><span>여행계획</span></router-link>
               </li>
@@ -91,10 +91,6 @@ export default {
         this.initial = this.username.charAt(0).toUpperCase() // 맨 앞 글자 대문자로.
         this.auth = localStorage.getItem('auth')
 
-        // console.log(localStorage.getItem('id'))
-        // console.log(localStorage.getItem('email'))
-        // console.log(localStorage.getItem('auth')) // ROLE_USER, ROLE_ADMIN
-
         return true
       }
     }
@@ -116,7 +112,7 @@ a {
 }
 
 span {
-  font-size: large;
+  font-size: x-large;
   font-weight: bolder;
   color: gray;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
