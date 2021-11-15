@@ -4,7 +4,7 @@
       <div class="top-background-div"></div>
       <div class="top-container">
         <div class="profilePhotoContainer">
-          <div class="profilePhoto-text" id="profilePhote">{{ initial }}</div>
+          <div class="profilePhoto-text" id="profilePhote">{{ this.initial }}</div>
         </div>
 
         <div class="text">{{ this.userName }}</div>
@@ -175,30 +175,28 @@ export default {
       mydate: '',
       userName: '',
       plan: '',
+      initial: '',
     }
   },
   components: {
     // MyPageListTest
   },
   beforeCreate() {
-    if(!localStorage.getItem('Authorization')){
+    if (!localStorage.getItem('Authorization')) {
       alert('접근 권한이 없습니다.');
       this.$router.push('/login')
     }
   },
   created() {
     this.userName = localStorage.getItem('nickname')
-
+    this.initial = localStorage.getItem('nickname').charAt(0).toUpperCase()
     var id = localStorage.getItem('id');
-    //"/plan/myPlan/{userID}"
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
-            console.log(response)
             this.plan = response.data
           }
-        }).catch(err => {
-      console.log("에러발생: " + err)
+        }).catch(() => {
       alert("에러발생");
     })
   },
@@ -208,20 +206,15 @@ export default {
     },
     deleteSavedRoute(id) {
       if (confirm('정말 삭제하시겠습니까?')) {
-      axios.delete(`http://kosa3.iptime.org:50201/planDelete/${id}`)
-          .then(result => {
-            if (result.status == 200) {
-              alert("여행계획을 삭제했습니다.");
-              // location.reload();
-              // this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
-              this.$router.push(`/mypagelist`)
-              // if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
-            }
-          }).catch(err => {
-        console.log("에러발생: " + err)
-        //에러 처리 할 곳
-        alert("에러발생");
-      })
+        axios.delete(`http://kosa3.iptime.org:50201/planDelete/${id}`)
+            .then(result => {
+              if (result.status == 200) {
+                alert("여행계획을 삭제했습니다.");
+                location.reload();
+              }
+            }).catch(() => {
+          alert("삭제에 실패하였습니다.");
+        })
       }
     }
   }

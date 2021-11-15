@@ -23,7 +23,7 @@ const City = [
     {
         ci_name_en: 'Ulsan',
         ci_name_ko: '울산',
-        ci_image: 'https://w.namu.la/s/7f83764cf917ae88d964581593909be58e8189e5ff3b75c605f5e595dbd0ecb4e31bb2172d891776e592cf831ed541bef5c6ddd77f522700f3fca1c738b767aa768c113f145d2c70d4197cf64a5cfea1d678ac91613006bfa4d97ac20b872bf7'
+        ci_image: 'https://news.unist.ac.kr/kor/wp-content/uploads/2019/01/%EC%9A%B8%EC%82%B0%EB%8C%80%EA%B5%90%EC%A0%84%EB%A7%9D%EB%8C%80013_%EC%9A%B8%EC%82%B0%EC%8B%9C%EC%B2%AD-800x534.jpg'
     },
     {
         ci_name_en: 'Incheon',
