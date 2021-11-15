@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button type="button" class="btn btn-light">Light</button>
     <tourmanageItem v-for="(item, i) in tourList" :key="i" :item="item"/>
   </div>
 </template>
