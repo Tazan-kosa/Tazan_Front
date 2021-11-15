@@ -136,7 +136,6 @@ export default {
 
 #listbox {
   float: left;
-  text-align: center;
 }
 
 .main-video {
