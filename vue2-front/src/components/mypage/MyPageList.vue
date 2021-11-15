@@ -97,11 +97,11 @@
                       </div>
                       <div class="uk-width-1-2 info-container-bottom">
                         <div class="small-title">
-                          {{}}
+                          일정 개수
 
                           <span class="small-text">
-                                          {{}}
-                                          </span>
+                            {{mypage.planSize.replace(/\#/g,'').length}}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -121,17 +121,7 @@
                         <div class="uk-inline">
                           <button class="uk-button uk-button-large uk-card-default" type="button" aria-expanded="false"
                                   @click="planDetail(mypage.planID)">
-                            상세 보기
-                          </button>
-                        </div>
-                      </div>
-                      <div class="uk-width-1-4">
-                        <div>
-                          <button class="uk-button uk-button-large uk-card-default"
-                                  uk-toggle="target:#modal-center_idx_0"
-                                  onclick="modalCenterBtn(0)"
-                                  aria-expanded="false">
-                            리뷰 쓰기
+                            상세 보기 및 리뷰 쓰기
                           </button>
                         </div>
                       </div>
@@ -188,9 +178,12 @@ export default {
     }
   },
   created() {
-    this.userName = localStorage.getItem('nickname')
-    this.initial = localStorage.getItem('nickname').charAt(0).toUpperCase()
-    var id = localStorage.getItem('id');
+    if(localStorage.getItem('id')){
+      this.userName = localStorage.getItem('nickname')
+      this.initial = localStorage.getItem('nickname').charAt(0).toUpperCase()
+      var id = localStorage.getItem('id');
+    }
+
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
@@ -216,7 +209,8 @@ export default {
           alert("삭제에 실패하였습니다.");
         })
       }
-    }
+    },
+
   }
 }
 </script>
