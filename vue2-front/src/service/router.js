@@ -147,6 +147,11 @@ const route = [
                 name:'reviewmanage',
                 component:reviewmanage
             },
+            {
+                path: 'tourForm',
+                name:'tourForm',
+                component:reviewmanage
+            },
         ]
     },
 ]
