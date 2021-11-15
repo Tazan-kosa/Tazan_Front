@@ -5,7 +5,7 @@
         <a class="navbar-brand text-success logo h1 align-self-center">
           <!-- 로고 -->
           <router-link id="logo" to="/">
-            <img src="../../assets/yacht_tazan_logo.png" height="200" width="200"/>
+            <img src="../../assets/yacht_tazan_logo.png" height="70" width="70"/>
             <img src="../../assets/tazan_title-rmb.png" height="100" width="200"/>
           </router-link>
         </a>
