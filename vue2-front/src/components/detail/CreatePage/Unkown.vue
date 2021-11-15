@@ -180,10 +180,8 @@ export default {
             console.log(request.data)
             this.$router.push(`/planDetail/${request.data}`)
           }
-        }).catch(function (err) {
-          console.log("에러발생: " + err)
-          //에러 처리 할 곳
-          alert("에러발생");
+        }).catch(function () {
+          alert("제목 길이는 공백포함 45자 이내로 입력해야 합니다!");
         })
       }
     },
