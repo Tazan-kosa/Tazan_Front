@@ -26,14 +26,7 @@ export default {
       })
     },
     tourupdate(){
-      axios.put(`http://kosa3.iptime.org:50201/tour/updateTour/${this.item.tourId}`).then(res => {
-        if (res.status == 200) {
-          this.$router.push('/adminpage/tourForm');
-        }
-      }).catch(err => {
-        console.log(err)
-      })
-
+      this.$router.push(`/adminpage/tourForm/${this.item.tourId}`);
     }
   }
 }
