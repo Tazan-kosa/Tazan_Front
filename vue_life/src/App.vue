@@ -2,7 +2,8 @@
   <div id="app">
     안녕
     <router-view>
-      <router-link :to="test1">/test1</router-link>
+      <router-link to="test1">test1</router-link>
+      <router-link to="test2">test2</router-link>
     </router-view>
   </div>
 </template>

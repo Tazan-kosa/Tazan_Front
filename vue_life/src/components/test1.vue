@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <h1>테스트 1</h1>
     <div class="test" v-for="post in posts" :key="post">
       <h3>{{ post.title }}</h3>
@@ -51,7 +51,7 @@
     <h1>테스트 9</h1>
     <h1>Vue.js - 인스턴스 생성 & Watch</h1>
     <h5>Count : {{ test }}</h5>
-    <button v-on:click="text += 1">Add 1</button>
+    <button v-on:click="test += 1">Add 1</button>
 
   </div>
 </template>

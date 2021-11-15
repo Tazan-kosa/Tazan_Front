@@ -1,25 +1,43 @@
 <template>
   <div>
     <div class="main">
-<!--      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="region.img" uk-img>-->
-      <div>
-        <h1>
-          <span id="userName">{{ userName }}</span>님의 여행 계획표
-        </h1>
-        <div class="sub_title">
-          <b-form-input
-              v-model="text"
-              placeholder="여행 제목을 적어 주세요."
-          ></b-form-input>
-<!--          <div class="mt-2">Value: {{ text }}</div>-->
+      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
+        <div class="container px-4 px-lg-5">
+          <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">
+              <span id="userName">{{ userName }}</span>님의 여행 계획표
+            </h1>
+            <br>
+
+            <div class="wrap">
+              <div class="sub_title">
+                <b-form-input
+                    v-model="text"
+                    placeholder="여행 제목을 적어 주세요."
+                ></b-form-input>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="save_plan">
-        <div class="sub_main">
-          <div class="left">
-            <div>{{ this.region }}</div>
+
+      <h1 class="uk-heading-line"><span></span></h1>
+
+      <div class="save_plan uk-flex">
+        <div class="sub_main uk-margin uk-margin-top">
+
+          <div class="left uk-margin uk-margin-top uk-margin-right">
+            <div class="uk-card uk-card-default uk-card-body"
+            >
+              <h1>{{ this.region }}</h1>
+
+            </div>
             <date-picker
-                class="datepicpick"
+                class="datepicpick uk-card"
                 v-model="mydate"
                 type="date"
                 :lang="lang"
@@ -31,49 +49,54 @@
               여행일자
             </date-picker>
             <div>
-<!--              {{ test }}-->
+              <div>
+
+              </div>
             </div>
           </div>
-          <div class="thr_main">
-<!--            -->
+          <div class="thr_main uk-margin uk-margin-right uk-margin-auto-bottom">
+            <!--            -->
             <div
                 class="thr_main_sub"
                 v-for="(plan,index) in totalPlan"
                 :key="index"
-                >
-              <div class="thr_main_day">
+            >
+              <div class="thr_main_day uk-card-title uk-card-default ">
                 {{ index + 1 }} 일차
               </div>
 
               <DayList
                   id="scrollDiv"
                   :daylist="plan"
-                  class="thr_main_list"
+                  class="thr_main_list uk-flex uk-flex-center"
                   :index1="index"
                   @tourListDelete="DeleteList"
               >
               </DayList>
             </div>
 
-            <div>
-              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
-              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
+            <div class="uk-margin">
+<!--              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>-->
+              <button class="uk-button uk-button-primary" type="submit" @click="dayList_add">일정 추가</button>
+<!--              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>-->
+              &nbsp;
+              <button class="uk-button uk-button-danger" type="submit" @click="dayList_delete">일정 삭제</button>
             </div>
           </div>
 
-          <div class="right">
+          <div class="right uk-margin uk-margin-right">
             <div>추천 장소</div>
             <div>
               <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
             </div>
           </div>
         </div>
-<!--        <div class="right">
-          <div>추천 장소</div>
-          <div>
-            <RecomPlace :recomList="recomList" @recived="planList_add"/>
-          </div>
-        </div>-->
+        <!--        <div class="right">
+                  <div>추천 장소</div>
+                  <div>
+                    <RecomPlace :recomList="recomList" @recived="planList_add"/>
+                  </div>
+                </div>-->
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
@@ -151,8 +174,8 @@ export default {
       }
     },
     DeleteList(listObject) {
-      this.totalPlan[listObject.index1].splice(listObject.index2,1)
-      this.totalPlan_tour[listObject.index1].splice(listObject.index2,1)
+      this.totalPlan[listObject.index1].splice(listObject.index2, 1)
+      this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)
 
     },
     SavePlan() {
@@ -222,7 +245,13 @@ export default {
 </script>
 
 <style scoped>
-div {
+/*div {*/
+/*  border: 1px solid black;*/
+/*  padding: 0.25em;*/
+/*  margin: 0.25em;*/
+/*  border-radius: 0.25em;*/
+/*}*/
+.thr_main .sub_main {
   border: 1px solid black;
   padding: 0.25em;
   margin: 0.25em;
@@ -279,7 +308,6 @@ div {
 }
 
 
-
 /*리스트*/
 .thr_main_sub {
   display: flex;
@@ -299,7 +327,7 @@ div {
   display: flex;
   width: 963px;
   text-align: left;
-  height:inherit;
+  height: inherit;
 }
 .thr_main_list::-webkit-scrollbar {
   height: 5px;

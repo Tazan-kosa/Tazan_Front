@@ -17,7 +17,7 @@
       <div class="save_plan">
         <div class="sub_main">
           <div class="left">
-            <!--            <div>{{ plan.region }}</div>-->
+            <div>{{ plan.region }}</div>
             <div
                 placeholder="Select date range"
             >
@@ -100,7 +100,7 @@ export default {
               }
             }).then((() => window.scrollTo(0, 0)))
         }
-      }).catch(err=> {
+      }).catch(err => {
         console.log("에러 발생: " + err)
       });
     }
@@ -159,7 +159,7 @@ div {
   display: flex;
   width: 100%;
   text-align: left;
-  height:inherit;
+  height: inherit;
   overflow-x: auto;
 }
 

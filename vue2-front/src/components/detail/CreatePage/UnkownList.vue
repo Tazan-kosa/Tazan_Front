@@ -1,36 +1,101 @@
 <template>
-  <li class="spot-card" id="spotcard" v-for="data in datas">
-    <div>
-      <div>
-        <div class="centered">
-          <img
-              src="https://www.myro.co.kr/getSpotImage/namwon?no=1000"
-              alt="Image"
-              id="cartImgNo1000"
-              loading="lazy"
-          >
-        </div>
-      </div>
-    </div>
-    <div class="placelistndwrap">
-      <span class="placelistnd2" title="광한루원(Gwanghalluwon)">
-        <h7>{{ data.title }}<br>
-          <div class="spot-eng-small-text">Gwanghalluwon
-            <div></div>
-            <div class="spotBtnWrap">
-              <div title="장소 정보" class="btn spotbtncss" onclick="spotInfoModal(1000)">
-                <i class="material-icons" style="color:#e0e0e0;">info</i>
-              </div>
-              <div title="선택목록 장소에 추가" class="btn spotbtncss" onclick="addSpotToSelectedSpots(1000)">
-                <i class="material-icons">add</i>
+  <div>
+    <div class="main">
+      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
+        <div class="container px-4 px-lg-5">
+          <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">
+              <span id="userName">{{ userName }}</span>님의 여행 계획표
+            </h1>
+            <br>
+
+            <div class="wrap">
+              <div class="sub_title">
+                <b-form-input
+                    v-model="text"
+                    placeholder="여행 제목을 적어 주세요."
+                ></b-form-input>
+                <div class="mt-2">Value: {{ text }}</div>
               </div>
             </div>
           </div>
-        </h7>
-      </span>
+        </div>
+      </div>
+
+      <div class="save_plan">
+        <div class="sub_main">
+          <div class="left">
+            <div>{{ this.region }}</div>
+            <date-picker
+                class="datepicpick"
+                v-model="mydate"
+                type="date"
+                :lang="lang"
+                range
+                confirm
+                format="YYYY-MM-DD"
+                placeholder="Select date range"
+            >
+              여행일자
+            </date-picker>
+            <div>
+              <div>
+
+              </div>
+            </div>
+          </div>
+          <div class="thr_main">
+            <!--            -->
+            <div
+                class="thr_main_sub"
+                v-for="(plan,index) in totalPlan"
+                :key="index"
+            >
+              <div class="thr_main_day">
+                {{ index + 1 }} 일차
+              </div>
+
+              <DayList
+                  id="scrollDiv"
+                  :daylist="plan"
+                  class="thr_main_list"
+                  :index1="index"
+                  @tourListDelete="DeleteList"
+              >
+              </DayList>
+            </div>
+
+            <div>
+              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
+              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
+            </div>
+          </div>
+
+          <div class="right">
+            <div>추천 장소</div>
+            <div>
+              <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
+            </div>
+          </div>
+        </div>
+        <!--        <div class="right">
+                  <div>추천 장소</div>
+                  <div>
+                    <RecomPlace :recomList="recomList" @recived="planList_add"/>
+                  </div>
+                </div>-->
+      </div>
+      <div class="save_plan_button">
+        <b-button variant="primary" @click="SavePlan">Save</b-button>
+      </div>
     </div>
-  </li>
+  </div>
 </template>
+
 
 <script>
 import data from '../../../assets/test/spot-card'

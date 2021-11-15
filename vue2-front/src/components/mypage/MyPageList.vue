@@ -187,6 +187,7 @@ export default {
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
+            console.log(response)
             this.plan = response.data
           }
         }).catch(() => {

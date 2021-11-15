@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ul-style" v-for="(spot, i) in recomList" :key="i">
+    <div class="" v-for="(spot, i) in recomList" :key="i">
       <SpotCard :spot="spot" @PutList="PutLists"/>
     </div>
   </div>
