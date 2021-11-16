@@ -21,6 +21,13 @@
             <span class="review-modify rh p-1" v-if="userID == reviewUserID" @click="modifyReview">수정</span>
             <span class="review-delete rh p-1 mr-3" v-if="userID == reviewUserID" @click="deleteReview">삭제</span>
           </div>
+          <div class="comment">
+            <div class="comment-box">
+              <div class="comment-content" contenteditable="true"></div>
+              <Button class="comment-btn" @click="commentSave">저장하기</Button>
+            </div>
+            <ReviewComment v-for="(item,i) in CommentsData" :key="i" :comment-data="item"></ReviewComment>
+          </div>
         </div>
       </div>
     </div>
@@ -29,6 +36,7 @@
 
 <script>
 import TravelList from "./TravelList";
+import ReviewComment from "./ReviewComment"
 import axios from "axios";
 
 export default {
@@ -40,21 +48,22 @@ export default {
       userID: '',
       reviewID: '',
       reviewUserID: '',
+      CommentsData:[],
     }
   },
   created() {
     this.userID = localStorage.getItem('id')
     this.reviewID = this.$route.params.reviewId
     console.log("id : " + this.userID)
-    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
+    axios.get(`http://localhost:80/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
+        this.CommentsData = res.data.commentVO
         axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
           if (res.status == 200) {
             this.TourItemData = res.data;
             this.reviewUserID = res.data.userID;
-            console.log("reviewid : " + this.reviewUserID)
           }
         }).catch(err => {
           console.log("에러발생: " + err)
@@ -87,10 +96,44 @@ export default {
           planData: this.TourItemData
         }
       }).then((() => window.scrollTo(0, 0)))
+    },
+    commentSave() {
+      var commentVO = {}
+      commentVO.userID = this.userID;
+      commentVO.reviewID = this.reviewID
+
+      var temp = new Date()
+      var year = temp.getFullYear();
+      var month = temp.getMonth() + 1;
+      var day = temp.getDate();
+
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
+      //yyyy-mm-dd로 오늘날짜 생성
+      var commentDate = year + '-' + month + '-' + day
+      commentVO.commentDate = commentDate
+      console.log(commentVO);
+      commentVO.commentContent = document.getElementsByClassName("comment-content").item(0).textContent
+      axios.post('http://localhost:80/comment/create', commentVO, {
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+      }).then(res=> {
+        if(res.status == 200){
+          console.log("성공")
+          this.CommentsData.push(commentVO)
+          document.getElementsByClassName("comment-content").item(0).textContent = ''
+        }
+      })
     }
   },
   components: {
-    TravelList
+    TravelList,
+    ReviewComment
   }
 }
 </script>
@@ -155,6 +198,20 @@ export default {
 
 .rh:hover {
   color: #008F7A;
+}
+
+.comment-content {
+  text-align: left;
+  outline: none;
+  white-space: nowrap;
+}
+
+.comment-content:empty:before {
+  content: '댓글을 작성해 주세요.';
+  cursor: text;
+  color: #ccc;
+  opacity: 0.6;
+  outline: none;
 }
 
 </style>

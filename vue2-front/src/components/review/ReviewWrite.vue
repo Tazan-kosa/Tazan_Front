@@ -165,7 +165,7 @@ export default {
             this.$router.push(`/reviewDetail/${this.ReviewData.reviewID}`).then((() =>window.scrollTo(0,0) ))
           }
         }).catch (err => {
-          console.log("에러발생(수정): " + err)
+          console.log(err)
           alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
         })
       }
@@ -179,8 +179,7 @@ export default {
             this.$router.push(`/reviewDetail/${res.data}`).then((() =>window.scrollTo(0,0) ))
           }
         }).catch(function (err) {
-          console.log("에러발생(작성): " + err)
-          //에러 처리 할 곳
+          console.log(err)
           alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
         })
       }
