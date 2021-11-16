@@ -1,12 +1,13 @@
 <template>
   <pre>
     <p>{{this.item.title}}</p>
+    <button type="button" class="btn btn-success" @click="tourupdate">수정</button>
     <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
   </pre>
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "tourmanageItem",
@@ -15,14 +16,24 @@ export default {
   },
   methods:{
     removeItem(){
-      // axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}`).then(res => {
-      //   if (res.status == 200) {
-      //     alert("후기를 삭제했습니다.");
-      //     this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
-      //   }
-      // }).catch(err => {
-      //   console.log(err)
-      // })
+      axios.delete(`http://kosa3.iptime.org:50201/tour/deleteTour/${this.item.tourId}`).then(res => {
+        if (res.status == 200) {
+          alert("tour 삭제.");
+          location.reload();
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    tourupdate(){
+      axios.put(`http://kosa3.iptime.org:50201/tour/updateTour/${this.item.tourId}`).then(res => {
+        if (res.status == 200) {
+          this.$router.push('/adminpage/tourForm');
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+
     }
   }
 }

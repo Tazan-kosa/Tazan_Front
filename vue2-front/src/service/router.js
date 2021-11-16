@@ -46,11 +46,11 @@ const route = [
         component: Create
 
     },
-    {
-        path: '/modif/:region',
-        name: 'regionList',
-        component: Create
-    },
+    // {
+    //     path: '/modif/:region',
+    //     name: 'regionList',
+    //     component: Create
+    // },
 
     // 장소 클릭시 여행 계획 짜기
     {
@@ -145,6 +145,11 @@ const route = [
             {
                 path: 'review',
                 name:'reviewmanage',
+                component:reviewmanage
+            },
+            {
+                path: 'tourForm',
+                name:'tourForm',
                 component:reviewmanage
             },
         ]

@@ -21,7 +21,7 @@
             <div
                 placeholder="Select date range"
             >
-              {{ plan.startDate.slice(0, 10) + " - " + plan.endDate.slice(0, 10) }}
+              {{ startDate + " - " + endDate }}
             </div>
             <div>
             </div>
@@ -65,6 +65,7 @@ export default {
       text: '',
       mydate: '',
       nickname: '',
+      plan:'',
     }
   },
   created() {
@@ -75,26 +76,22 @@ export default {
     axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
-            console.log(res)
             this.plan = res.data
-
+            var sd = new Date(this.plan.startDate)
+            this.startDate=sd.getFullYear()+"-"+(sd.getMonth()+1)+"-"+sd.getDate();
+            var ed = new Date(this.plan.endDate)
+            this.endDate=ed.getFullYear()+"-"+(ed.getMonth()+1)+"-"+ed.getDate();
           }
         }).catch(err => {
       console.log("에러발생: " + err)
       //에러 처리 할 곳
       alert("에러발생");
     })
-    let m1 = this.plan.startDate;
-    console.log(m1)
-    let curr = new Date(m1);
-    let startDate = curr.toLocaleString("ko-KR", {timeZone: "Asia/Seoul"});
-    console.log(startDate)
   },
   methods: {
     reviewWrite() {
       axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res=> {
         if(res.status == 200){
-            console.log(res.data.reviewTitle)
             this.$router.push({
               name: 'Review',
               params: {
@@ -111,9 +108,6 @@ export default {
   components: {
     DayListV2,
   },
-  props: {
-    plan: Object
-  }
 }
 </script>
 
