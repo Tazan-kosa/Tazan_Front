@@ -27,13 +27,6 @@ import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
 
 Vue.use(VueRouter)
 
-/*const requireAuth = () => (to, from, next) => {
-    if (!localStorage.getItem("Authorization")) {
-        return next();
-    }
-    next('/login');
-};*/
-
 const route = [
     // 김제민
     {

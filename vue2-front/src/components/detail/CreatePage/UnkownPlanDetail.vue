@@ -17,6 +17,8 @@
               <div class="sub_title">
                 <b-form-input
                     v-model="text"
+                    size="sm"
+                    class="w-25 p-3 mb-1 text-light"
                     :placeholder="plan.planTitle"
                 ></b-form-input>
               </div>
@@ -29,7 +31,7 @@
 
       <div class="save_plan">
         <div class="sub_main">
-          <div class="left_container">
+          <v-card class="left_container">
             <div class="left">
               <div class=""
               >
@@ -58,10 +60,10 @@
               <div>
               </div>
             </div>
-          </div>
+          </v-card>
 
 
-          <div class="thr_main">
+          <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
                 <h6>
@@ -72,7 +74,7 @@
               <DayListV2 :daylist="plan" class="thr_main_list">
               </DayListV2>
             </v-col>
-          </div>
+          </v-card>
         </div>
       </div>
       <div class="save_plan_button">
@@ -159,6 +161,7 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
   justify-content: space-around;
+  flex: 1;
 }
 
 .thr_main_sub {
@@ -208,7 +211,7 @@ export default {
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -220,7 +223,7 @@ export default {
   width: 75%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -230,7 +233,7 @@ export default {
   width: 20%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -253,7 +256,7 @@ export default {
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
 }
 
 .thr_main_list {
@@ -265,11 +268,11 @@ export default {
   text-align: left;
   height: inherit;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
-
+  box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 14%);
 }
 
 .DayList {

@@ -17,6 +17,8 @@
               <div class="sub_title">
                 <b-form-input
                     v-model="text"
+                    size="sm"
+                    class="w-25 p-3 mb-1 text-light"
                     placeholder="여행 제목을 적어 주세요."
                 ></b-form-input>
               </div>
@@ -29,7 +31,7 @@
 
       <div class="save_plan">
         <div class="sub_main">
-          <div class="left_container">
+          <v-card class="left_container">
             <div class="left">
               <div class=""
               >
@@ -57,8 +59,8 @@
             <div>
               확인하는중입니다.
             </div>
-          </div>
-          <div class="thr_main">
+          </v-card>
+          <v-card class="thr_main">
             <!--            -->
             <v-col
                 class="thr_main_sub"
@@ -86,9 +88,9 @@
               &nbsp;
               <b-button pill variant="outline-danger" type="submit" @click="dayList_delete">일정 삭제</b-button>
             </div>
-          </div>
+          </v-card>
 
-          <div class="right">
+          <v-card class="right">
             <div>추천 장소</div>
             <div>
               <RecomPlace
@@ -96,7 +98,7 @@
                   @recived="planList_add"
                   class="right_list"/>
             </div>
-          </div>
+          </v-card>
         </div>
       </div>
       <div class="save_plan_button">
@@ -142,9 +144,14 @@ export default {
     }
   },
   methods: {
+
     planList_add(result) {
-      this.totalPlan[this.cnt].push(result) // object
-      this.totalPlan_tour[this.cnt].push(result.tourId)
+      if (this.mydate == '') {
+        alert('날짜를 먼저 선택해주세요')
+      } else {
+        this.totalPlan[this.cnt].push(result) // object
+        this.totalPlan_tour[this.cnt].push(result.tourId)
+      }
     },
     dayList_add() {
       if (this.mydate == '') {
@@ -267,17 +274,14 @@ export default {
 .thr_main_day {
   font-size: 1rem;
   font-weight: 700;
-  color: #5dc9dd;
+  color: #237380;
   display: flex;
   position: relative;
 
 }
 
-.thr_main .sub_main {
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
+.thr_main {
+  /*box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);*/
 }
 
 .sub_title {
@@ -294,24 +298,26 @@ export default {
   width: 95%;
   height: 100%;
 }
+
 .left_container {
   display: flex;
   width: 25%;
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
 }
+
 .left {
   display: flex;
   width: 100%;
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -323,7 +329,7 @@ export default {
   width: 65%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -333,7 +339,7 @@ export default {
   width: 20%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -356,7 +362,7 @@ export default {
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
 }
 
 .thr_main_list {
@@ -370,6 +376,7 @@ export default {
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
+  /*box-shadow: #9cafb4;*/
 
 }
 
