@@ -8,15 +8,7 @@
           <div>제목을 정하라우
           </div>
         </div>
-        <!--        <h4> 20xx.xx.xx - 20xx.xx.xx</h4>-->
-<!--        <div class="daycount-main2">
-          <input type="hidden" value="3" id="travelDay">
-          &lt;!&ndash; blur()는 모바일 input포커스가 될때 키보드가 뜨는 것을 안뜨게 해줌 &ndash;&gt;
-          <input type="text" id="calander" name="daterange" class="center" value="" onfocus="blur()">
-        </div>-->
-<!--        -->
 
-<!--        -->
       </div>
       <div class="save_plan">
         <div class="sub_main">

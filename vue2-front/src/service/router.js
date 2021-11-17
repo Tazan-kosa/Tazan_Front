@@ -16,7 +16,6 @@ import MyPageList from "../components/mypage/MyPageList";
 import AdminPage from "../components/common/admin/AdminPage";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
-import MyPageListTest from "../components/mypage/MyPageListTest";
 import tourmanage from "../components/common/admin/tour/tourmanage";
 import usermanage from "../components/common/admin/user/usermanage";
 import planmanage from "../components/common/admin/plan/planmanage";
@@ -109,12 +108,6 @@ const route = [
         path: '/register',
         name: 'Register',
         component: Register
-    },
-    //mypage 테스트
-    {
-        path: '/TT',
-        name: 'TT',
-        component: MyPageListTest
     },
     // 어드민
     {
