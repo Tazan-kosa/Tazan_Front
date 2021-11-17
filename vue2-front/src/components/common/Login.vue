@@ -121,7 +121,7 @@ export default {
                 this.auth = localStorage.getItem('auth');
 
                 if (this.auth === "ROLE_ADMIN") {
-                  this.$router.push('/adminpage')
+                  this.$router.push('/adminpage/tour')
                   location.reload();
                 } else if (this.auth === "ROLE_USER") {
                   // 로그인 성공시 홈페이지로 리다이렉트
