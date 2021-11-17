@@ -29,7 +29,7 @@
 
       <div class="save_plan">
         <div class="sub_main">
-          <div class="left_container">
+          <v-card class="left_container">
             <div class="left">
               <div class=""
               >
@@ -57,8 +57,8 @@
             <div>
               확인하는중입니다.
             </div>
-          </div>
-          <div class="thr_main">
+          </v-card>
+          <v-card class="thr_main">
             <!--            -->
             <v-col
                 class="thr_main_sub"
@@ -86,7 +86,7 @@
               &nbsp;
               <b-button pill variant="outline-danger" type="submit" @click="dayList_delete">일정 삭제</b-button>
             </div>
-          </div>
+          </v-card>
 
           <div class="right">
             <div>추천 장소</div>
@@ -267,17 +267,14 @@ export default {
 .thr_main_day {
   font-size: 1rem;
   font-weight: 700;
-  color: #5dc9dd;
+  color: #237380;
   display: flex;
   position: relative;
 
 }
 
-.thr_main .sub_main {
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
+.thr_main {
+  /*box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);*/
 }
 
 .sub_title {
@@ -300,7 +297,7 @@ export default {
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -311,7 +308,7 @@ export default {
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -323,7 +320,7 @@ export default {
   width: 65%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -333,7 +330,7 @@ export default {
   width: 20%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
