@@ -55,9 +55,10 @@ div {
 }
 
 .thr_main_sub {
-  display: flex;
+  box-shadow: #888888;
+  /*display: flex;*/
   width: 100%;
-  justify-content: space-around;
+  justify-content: left;
 }
 
 
