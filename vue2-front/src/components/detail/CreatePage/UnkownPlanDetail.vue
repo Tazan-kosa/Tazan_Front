@@ -1,41 +1,77 @@
 <template>
   <div>
     <div class="main">
-      <div>
-        <h1>
-          <!--          <span id="userName">{{ plan.userID }}</span>님의 여행 계획표-->
-          <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
+        <div class="container px-4 px-lg-5">
+          <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">
+              <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+            </h1>
+            <br>
 
-        </h1>
-        <div class="sub_title">
-          <h1
-          >
-            {{ plan.planTitle }}
-          </h1>
+            <div class="wrap">
+              <div class="sub_title">
+                <b-form-input
+                    v-model="text"
+                    :placeholder="plan.planTitle"
+                ></b-form-input>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <h1 class="uk-heading-line"><span></span></h1>
+
       <div class="save_plan">
         <div class="sub_main">
-          <div class="left">
-            <!--            <div>{{ plan.region }}</div>-->
-            <div
-                placeholder="Select date range"
-            >
-              {{ startDate + " - " + endDate }}
-            </div>
-            <div>
+          <div class="left_container">
+            <div class="left">
+              <div class=""
+              >
+                <h2 class="">
+                  {{ plan.region }}
+                </h2>
+
+              </div>
+              <date-picker
+                  class="datepicpick"
+                  v-model="mydate"
+                  type="date"
+                  :lang="lang"
+                  range
+                  confirm
+                  format="YYYY-MM-DD"
+                  placeholder="Select date range"
+              >
+                여행일자
+              </date-picker>
+              <div
+                  placeholder="Select date range"
+              >
+                {{ startDate + " - " + endDate }}
+              </div>
+              <div>
+              </div>
             </div>
           </div>
 
 
           <div class="thr_main">
-            <div class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
-              <div>
-                {{ index + 1 }} 일차
+            <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
+              <div class="thr_main_day">
+                <h6>
+                  {{ index + 1 }} 일차
+                </h6>
               </div>
-              <DayListV2 :daylist="plan" class="thr_main_sub">
+
+              <DayListV2 :daylist="plan" class="thr_main_list">
               </DayListV2>
-            </div>
+            </v-col>
           </div>
         </div>
       </div>
@@ -65,7 +101,7 @@ export default {
       text: '',
       mydate: '',
       nickname: '',
-      plan:'',
+      plan: '',
     }
   },
   created() {
@@ -78,9 +114,9 @@ export default {
           if (res.status == 200) {
             this.plan = res.data
             var sd = new Date(this.plan.startDate)
-            this.startDate=sd.getFullYear()+"-"+(sd.getMonth()+1)+"-"+sd.getDate();
+            this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
             var ed = new Date(this.plan.endDate)
-            this.endDate=ed.getFullYear()+"-"+(ed.getMonth()+1)+"-"+ed.getDate();
+            this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
           }
         }).catch(err => {
       console.log("에러발생: " + err)
@@ -90,17 +126,17 @@ export default {
   },
   methods: {
     reviewWrite() {
-      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res=> {
-        if(res.status == 200){
-            this.$router.push({
-              name: 'Review',
-              params: {
-                reviewData: res.data,
-                planData: this.plan
-              }
-            }).then((() => window.scrollTo(0, 0)))
+      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res => {
+        if (res.status == 200) {
+          this.$router.push({
+            name: 'Review',
+            params: {
+              reviewData: res.data,
+              planData: this.plan
+            }
+          }).then((() => window.scrollTo(0, 0)))
         }
-      }).catch(err=> {
+      }).catch(err => {
         console.log("에러 발생: " + err)
       });
     }
@@ -112,7 +148,29 @@ export default {
 </script>
 
 <style scoped>
-div {
+.sub_main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*  */
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+  justify-content: space-around;
+}
+
+.thr_main_sub {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5dc9dd;
+  display: flex;
+  position: relative;
+
+}
+
+.thr_main .sub_main {
   border: 1px solid black;
   padding: 0.25em;
   margin: 0.25em;
@@ -125,74 +183,125 @@ div {
 
 }
 
-.datePicker {
-  display: flex;
-}
-
 .main {
   text-align: center;
 }
 
-.sub_main {
+.datepicpick {
+  width: 95%;
+  height: 100%;
+}
+.left_container {
   display: flex;
-  position: relative;
-  width: 100%;
-  /*height: 700px;*/
+  width: 25%;
   height: 100%;
-  /*float: left;*/
+  flex-direction: column;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
-
 .left {
-  width: 10%;
+  display: flex;
+  width: 100%;
   height: 100%;
+  flex-direction: column;
+  /**/
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
-
 
 .thr_main {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 75%;
+  height: 100%;
+  /**/
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+}
+
+.right {
+  width: 20%;
+  height: 100%;
+  /**/
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+}
+
+.right_list {
+  width: 100%;
   height: 100%;
 }
 
+
+/*리스트*/
 .thr_main_sub {
   display: flex;
   width: 100%;
-  text-align: left;
-  height:inherit;
-  overflow-x: auto;
 }
 
-.thr_main_sub::-webkit-scrollbar {
+.thr_main_day {
+  display: flex;
+  width: 100px;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.thr_main_list {
+  /*height: 5px;*/
+  overflow-x: auto;
+  /*overflow-x: scroll;*/
+  display: flex;
+  width: 100%;
+  text-align: left;
+  height: inherit;
+  /**/
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+
+}
+
+.DayList {
+  overflow: hidden;
+}
+
+.thr_main_list::-webkit-scrollbar {
   height: 5px;
 }
-.thr_main_sub::-webkit-scrollbar-track {
+
+.thr_main_list::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-.thr_main_sub::-webkit-scrollbar-thumb {
+
+.thr_main_list::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px;
 }
-.thr_main_sub::-webkit-scrollbar-thumb:hover {
+
+.thr_main_list::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 .save_plan {
   display: flex;
   /*width: 1000px;*/
   justify-content: space-between;
-}
-.save_plan {
-  /*display: flex;*/
-  /*width: 1000px;*/
-}
-
-/*.save_plan_button {
-  flex-direction: column;
-}*/
-
-.right {
-  width: 300px;
-  height: 100%;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
 
 

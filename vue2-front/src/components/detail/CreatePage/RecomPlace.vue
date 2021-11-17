@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="ul-style" v-for="(spot, i) in recomList" :key="i">
+    <div class="spot-card" v-for="(spot, i) in recomList" :key="i">
       <SpotCard :spot="spot" @PutList="PutLists"/>
     </div>
   </div>
@@ -27,26 +27,11 @@ export default {
 <style scoped>
 /**/
 div {
-  border: 1px solid black;
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
 }
 
-/**/
-
-
-ul {
-  list-style: none;
-  border: 0;
-  vertical-align: baseline;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
-  display: block;
-}
 
 div {
   margin: 0;
@@ -54,26 +39,24 @@ div {
   border: 0;
   vertical-align: baseline;
 }
-
-.ul-style {
-  padding: 0;
-  margin: 0;
-}
-
-/**/
 .spot-card {
-  box-shadow: 0px 8px 32px 0px;
-  backdrop-filter: blur(4px);
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-  border-width: initial !important;
-  border-style: none !important;
-  border-color: initial !important;
-  border-image: initial !important;
-  margin: 16px 8px !important;
-  display: flex;
-  position: relative;
+  width: 100%;
 }
+/**/
+/*.spot-card {*/
+/*  box-shadow: 0px 8px 32px 0px;*/
+/*  backdrop-filter: blur(4px);*/
+/*  background: rgba(255, 255, 255, 0.25);*/
+/*  border-radius: 4px;*/
+/*  border-width: initial !important;*/
+/*  border-style: none !important;*/
+/*  border-color: initial !important;*/
+/*  border-image: initial !important;*/
+/*  margin: 16px 8px !important;*/
+/*  display: flex;*/
+/*  position: relative;*/
+/*  width: 100%;*/
+/*}*/
 
 img {
   border-style: none;
@@ -81,9 +64,10 @@ img {
   max-width: 100%;
   height: auto;
   box-sizing: border-box;
+
 }
 
-#spotsList img {
+.spot-card img {
   width: 80px !important;
   height: 80px !important;
   max-width: none !important;

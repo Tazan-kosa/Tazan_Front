@@ -10,7 +10,8 @@
         </div>
       </div>
     </div>
-    <div class="placelistndwrap">
+    <div class="placelistndwrap ">
+<!--      uk-hidden-->
         <span class="placelistnd2" title="">
           <h6>{{ this.spot.title }}</h6>
         </span>
@@ -55,6 +56,10 @@ ul {
   padding-inline-start: 40px;
   display: block;
 }
+ul-style {
+  padding: 0;
+  margin: 0;
+}
 
 div {
   margin: 0;
@@ -63,10 +68,6 @@ div {
   vertical-align: baseline;
 }
 
-.ul-style {
-  padding: 0;
-  margin: 0;
-}
 
 /**/
 .spot-card {
@@ -78,11 +79,15 @@ div {
   border-style: none !important;
   border-color: initial !important;
   border-image: initial !important;
-  margin: 16px 8px !important;
+  margin: 16px 1px !important;
   display: flex;
   position: relative;
+  width: 100%;
+  /*overflow: hidden;*/
 }
-
+.placelistndwrap {
+  width: 100%;
+}
 img {
   border-style: none;
   vertical-align: middle;
@@ -90,6 +95,15 @@ img {
   height: auto;
   box-sizing: border-box;
 }
+
+img {
+  width: 80px !important;
+  height: 80px !important;
+  max-width: none !important;
+  object-fit: cover;
+  /*overflow: hidden;*/
+}
+
 
 #spotsList img {
   width: 80px !important;
@@ -148,12 +162,6 @@ span {
   display: flex;
 }
 
-.spotbtncss {
-  padding: 0 8px !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
-
 @media (max-width: 1600px) and (min-width: 600px) {
   .spotbtncss {
     width: 40px !important;
@@ -166,23 +174,5 @@ span {
   }
 }
 
-.btn {
-  border: none;
-  border-radius: 2px;
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 16px;
-  text-transform: uppercase;
-  vertical-align: center;
-  -webkit-tap-highlight-color: transparent;
-  font-size: 14px;
-  outline: 0;
-  text-decoration: none;
-  /*color: #fff;*/
-  text-align: center;
-  letter-spacing: 0.5px;
-  /*transition: background-color 0.2s ease-out;*/
-  /*cursor: pointer;*/
-}
+
 </style>

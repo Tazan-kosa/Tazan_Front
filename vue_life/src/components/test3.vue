@@ -2,7 +2,7 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+           data-src=region.img
            data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
                   https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
@@ -19,19 +19,26 @@
                     v-model="text"
                     placeholder="여행 제목을 적어 주세요."
                 ></b-form-input>
-                <div class="mt-2">Value: {{ text }}</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="save_plan">
+      <h1 class="uk-heading-line"><span></span></h1>
+
+      <div class="save_plan container-fluid">
         <div class="sub_main">
+
           <div class="left">
-            <div>{{ this.region }}</div>
+
+              <h2 class="">
+                {{ this.region }}
+              </h2>
+
+
             <date-picker
-                class="datepicpick"
+                class="datepicpick uk-card"
                 v-model="mydate"
                 type="date"
                 :lang="lang"
@@ -44,13 +51,14 @@
             </date-picker>
             <div>
               <div>
-
+                확인하는중입니다.
               </div>
             </div>
           </div>
+
           <div class="thr_main">
             <!--            -->
-            <div
+            <v-col
                 class="thr_main_sub"
                 v-for="(plan,index) in totalPlan"
                 :key="index"
@@ -67,27 +75,25 @@
                   @tourListDelete="DeleteList"
               >
               </DayList>
-            </div>
+            </v-col>
 
-            <div>
-              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
-              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
+            <div class="">
+              <b-button pill variant="outline-primary" type="submit" @click="dayList_add">일정 추가</b-button>
+              &nbsp;
+              <b-button pill variant="outline-danger" type="submit" @click="dayList_delete">일정 삭제</b-button>
             </div>
           </div>
 
           <div class="right">
             <div>추천 장소</div>
             <div>
-              <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
+              <RecomPlace
+                  :recomList="recomList"
+                  @recived="planList_add"
+                  class="right_list"/>
             </div>
           </div>
         </div>
-        <!--        <div class="right">
-                  <div>추천 장소</div>
-                  <div>
-                    <RecomPlace :recomList="recomList" @recived="planList_add"/>
-                  </div>
-                </div>-->
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
@@ -96,36 +102,12 @@
   </div>
 </template>
 
-
 <script>
-import data from '../../../assets/test/spot-card'
 export default {
-  name: "UnkownList",
-  el: 'spotcard',
-  data() {
-      datas: data
-  }
+  name: "test3"
 }
 </script>
 
 <style scoped>
-.spot-card {
-  box-shadow: 0px 8px 32px 0px;
-  backdrop-filter: blur(4px);
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
-  border-width: initial !important;
-  border-style: none !important;
-  border-color: initial !important;
-  border-image: initial !important;
-  margin: 16px 8px !important;
-  display: flex;
-  position: relative;
-}
-#spotsList img {
-  width: 80px !important;
-  height: 80px !important;
-  max-width: none !important;
-  object-fit: cover;
-}
+
 </style>
