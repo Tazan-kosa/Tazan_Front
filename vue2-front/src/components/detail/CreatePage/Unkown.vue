@@ -17,6 +17,8 @@
               <div class="sub_title">
                 <b-form-input
                     v-model="text"
+                    size="sm"
+                    class="w-25 p-3 mb-1 text-light"
                     placeholder="여행 제목을 적어 주세요."
                 ></b-form-input>
               </div>
@@ -88,7 +90,7 @@
             </div>
           </v-card>
 
-          <div class="right">
+          <v-card class="right">
             <div>추천 장소</div>
             <div>
               <RecomPlace
@@ -96,7 +98,7 @@
                   @recived="planList_add"
                   class="right_list"/>
             </div>
-          </div>
+          </v-card>
         </div>
       </div>
       <div class="save_plan_button">
@@ -142,9 +144,14 @@ export default {
     }
   },
   methods: {
+
     planList_add(result) {
-      this.totalPlan[this.cnt].push(result) // object
-      this.totalPlan_tour[this.cnt].push(result.tourId)
+      if (this.mydate == '') {
+        alert('날짜를 먼저 선택해주세요')
+      } else {
+        this.totalPlan[this.cnt].push(result) // object
+        this.totalPlan_tour[this.cnt].push(result.tourId)
+      }
     },
     dayList_add() {
       if (this.mydate == '') {
@@ -291,6 +298,7 @@ export default {
   width: 95%;
   height: 100%;
 }
+
 .left_container {
   display: flex;
   width: 25%;
@@ -302,6 +310,7 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
 }
+
 .left {
   display: flex;
   width: 100%;
@@ -353,7 +362,7 @@ export default {
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
 }
 
 .thr_main_list {
@@ -367,6 +376,7 @@ export default {
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
+  /*box-shadow: #9cafb4;*/
 
 }
 

@@ -17,6 +17,8 @@
               <div class="sub_title">
                 <b-form-input
                     v-model="text"
+                    size="sm"
+                    class="w-25 p-3 mb-1 text-light"
                     :placeholder="plan.planTitle"
                 ></b-form-input>
               </div>
@@ -24,14 +26,14 @@
           </div>
         </div>
       </div>
-
       <h1 class="uk-heading-line"><span></span></h1>
-
       <div class="save_plan">
         <div class="sub_main">
-          <div class="left_container">
+          <v-card class="left_container">
             <div class="left">
-              <div>{{ plan.region }}</div>
+              <div>
+                <h2>{{ plan.region }}</h2>
+              </div>
               <!--            <div
                               placeholder="Select date range"
                           >
@@ -45,7 +47,6 @@
                   range
                   confirm
                   format="YYYY-MM-DD"
-
               >
                 <!--                :placeholder= startDate + " - " + endDate-->
                 {{ startDate + " - " + endDate }}
@@ -53,10 +54,8 @@
               <div>
               </div>
             </div>
-          </div>
-
-
-          <div class="thr_main">
+          </v-card>
+          <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
                 <h6>
@@ -80,13 +79,13 @@
               &nbsp;
               <b-button pill variant="outline-danger" type="submit" @click="dayList_delete">일정 삭제</b-button>
             </div>
-          </div>
-          <div class="right">
+          </v-card>
+          <v-card class="right">
             <div>추천 장소</div>
             <div>
               <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
             </div>
-          </div>
+          </v-card>
         </div>
       </div>
       <div class="save_plan_button">
@@ -247,12 +246,29 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*  padding: 0.25em;*/
-/*  margin: 0.25em;*/
-/*  border-radius: 0.25em;*/
-/*}*/
+.sub_main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*  */
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.thr_main_sub {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5dc9dd;
+  display: flex;
+  position: relative;
+
+}
+
 .thr_main .sub_main {
   border: 1px solid black;
   padding: 0.25em;
@@ -292,11 +308,11 @@ export default {
 
 .left_container {
   display: flex;
-  width: 20%;
+  width: 25%;
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -308,7 +324,7 @@ export default {
   height: 100%;
   flex-direction: column;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -317,10 +333,10 @@ export default {
 .thr_main {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 75%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -330,7 +346,7 @@ export default {
   width: 20%;
   height: 100%;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -374,10 +390,11 @@ export default {
   text-align: left;
   height: inherit;
   /**/
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
+  box-shadow: 0px 2px 2px 0px rgb(0 0 0 / 14%);
 }
 
 .thr_main_list::-webkit-scrollbar {
