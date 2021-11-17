@@ -26,7 +26,7 @@
               <div class="comment-content" contenteditable="true"></div>
               <Button class="comment-btn" @click="commentSave">저장하기</Button>
             </div>
-            <ReviewComment v-for="(item,i) in CommentsData" :key="i" :comment-data="item"></ReviewComment>
+            <ReviewComment v-for="(item,i) in CommentsData" :key="i" :comment-data="item" @editComment="editComment" @deleteComment="deleteComment" contenteditable="{{this.commentEdit}}"></ReviewComment>
           </div>
         </div>
       </div>
@@ -49,6 +49,7 @@ export default {
       reviewID: '',
       reviewUserID: '',
       CommentsData:[],
+      commentEdit: false,
     }
   },
   created() {
@@ -59,7 +60,12 @@ export default {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
-        this.CommentsData = res.data.commentVO
+        console.log("comment" + res.data.commentVO)
+        if(res.data.commentVO != ''){
+          console.log('log')
+          this.CommentsData = res.data.commentVO
+        }
+
         axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
           if (res.status == 200) {
             this.TourItemData = res.data;
@@ -102,21 +108,6 @@ export default {
       commentVO.userID = this.userID;
       commentVO.reviewID = this.reviewID
 
-      var temp = new Date()
-      var year = temp.getFullYear();
-      var month = temp.getMonth() + 1;
-      var day = temp.getDate();
-
-      if (month < 10) {
-        month = '0' + month;
-      }
-      if (day < 10) {
-        day = '0' + day;
-      }
-      //yyyy-mm-dd로 오늘날짜 생성
-      var commentDate = year + '-' + month + '-' + day
-      commentVO.commentDate = commentDate
-      console.log(commentVO);
       commentVO.commentContent = document.getElementsByClassName("comment-content").item(0).textContent
       axios.post('http://localhost:80/comment/create', commentVO, {
         headers: {
@@ -124,12 +115,29 @@ export default {
         },
       }).then(res=> {
         if(res.status == 200){
-          console.log("성공")
-          this.CommentsData.push(commentVO)
+          console.log(res.data)
+          this.CommentsData.push(res.data)
           document.getElementsByClassName("comment-content").item(0).textContent = ''
         }
       })
-    }
+    },
+    editComment(comment){
+      console.log(comment[0], comment[1])
+    },
+    deleteComment(id){
+      if(confirm("정말 삭제하시겠습니까?")){
+        axios.delete(`http://localhost:80/comment/delete/${id}`).then(res=>{
+          if(res.status == 200){
+            alert("댓글을 삭제하였습니다.")
+            let list = this.CommentsData;
+            list.splice(id,1);
+            this.CommentsData = list
+          }
+        }).catch(err => {
+          alert("오류가 발생했습니다." + err)
+        })
+      }
+    },
   },
   components: {
     TravelList,

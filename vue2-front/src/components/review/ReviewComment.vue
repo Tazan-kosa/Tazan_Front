@@ -3,6 +3,8 @@
     <div class="userName">{{commentData.userName}}</div>
     <div class="userName">{{commentData.commentContent}}</div>
     <div class="userName">{{commentData.commentDate}}</div>
+    <div @click="editComment">수정</div>
+    <div @click="deleteComment">삭제</div>
   </div>
 </template>
 
@@ -16,6 +18,14 @@ export default {
   },
   props: {
     commentData:Object,
+  },
+  methods:{
+    editComment(){
+      this.$emit("editComment", [this.commentData.commentID, this.commentData.commentContent]);
+    },
+    deleteComment(){
+      this.$emit("deleteComment", this.commentData.commentID);
+    }
   }
 }
 </script>
