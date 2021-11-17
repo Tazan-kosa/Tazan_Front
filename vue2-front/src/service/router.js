@@ -21,16 +21,11 @@ import tourmanage from "../components/common/admin/tour/tourmanage";
 import usermanage from "../components/common/admin/user/usermanage";
 import planmanage from "../components/common/admin/plan/planmanage";
 import reviewmanage from "../components/common/admin/review/reviewmanage";
+import tourForm from "../components/common/admin/tour/tourForm";
+import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
 
 
 Vue.use(VueRouter)
-
-/*const requireAuth = () => (to, from, next) => {
-    if (!localStorage.getItem("Authorization")) {
-        return next();
-    }
-    next('/login');
-};*/
 
 const route = [
     // 김제민
@@ -47,9 +42,9 @@ const route = [
 
     },
     {
-        path: '/modif/:region',
-        name: 'regionList',
-        component: Create
+        path: '/modify/:planId',
+        name: 'planUpdate',
+        component: UnkownPlanUpdate
     },
 
     // 장소 클릭시 여행 계획 짜기
@@ -146,6 +141,11 @@ const route = [
                 path: 'review',
                 name:'reviewmanage',
                 component:reviewmanage
+            },
+            {
+                path: 'tourForm/:tourId',
+                name:'tourForm',
+                component:tourForm
             },
         ]
     },

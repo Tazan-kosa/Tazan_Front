@@ -94,6 +94,7 @@
                             v-model="phoneNumber"
                             required
                             :rules="phoneNumberRules"
+                            @keyup.enter="register"
                         >핸드폰
                         </v-text-field>
                       </div>

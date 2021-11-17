@@ -17,10 +17,20 @@
         <div class="review-content" v-html="Review.reviewContent">
         </div>
         <div class="review-bottom">
-          <div class="review-control">
-            <span class="review-modify rh p-1" v-if="userID == reviewUserID" @click="modifyReview">수정</span>
-            <span class="review-delete rh p-1 mr-3" v-if="userID == reviewUserID" @click="deleteReview">삭제</span>
+          <div class="review-control" v-if="userID == reviewUserID">
+            <span class="review-modify rh p-1" @click="modifyReview">수정</span>
+            <span class="review-delete rh p-1 mr-3" @click="deleteReview">삭제</span>
           </div>
+        </div>
+        <hr>
+        <div class="comment">
+          <h5 class="container-title"> 💌 댓글</h5>
+          <div class="comment-box">
+            <div class="comment-content" contenteditable="true"></div>
+            <div class="save"><Button class="comment-btn" @click="commentSave">저장하기</Button></div>
+          </div>
+          <ReviewComment v-for="(item,i) in CommentsData" :key="i" :comment-data="item" @editComment="editComment"
+                         @deleteComment="deleteComment"></ReviewComment>
         </div>
       </div>
     </div>
@@ -29,6 +39,7 @@
 
 <script>
 import TravelList from "./TravelList";
+import ReviewComment from "./ReviewComment"
 import axios from "axios";
 
 export default {
@@ -40,21 +51,28 @@ export default {
       userID: '',
       reviewID: '',
       reviewUserID: '',
+      CommentsData: [],
+      commentEdit: false,
     }
   },
   created() {
     this.userID = localStorage.getItem('id')
     this.reviewID = this.$route.params.reviewId
     console.log("id : " + this.userID)
-    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
+    axios.get(`http://localhost:80/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
+        console.log("comment" + res.data.commentVO)
+        if (res.data.commentVO != '') {
+          console.log('log')
+          this.CommentsData = res.data.commentVO
+        }
+
         axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
           if (res.status == 200) {
             this.TourItemData = res.data;
             this.reviewUserID = res.data.userID;
-            console.log("reviewid : " + this.reviewUserID)
           }
         }).catch(err => {
           console.log("에러발생: " + err)
@@ -87,22 +105,57 @@ export default {
           planData: this.TourItemData
         }
       }).then((() => window.scrollTo(0, 0)))
-    }
+    },
+    commentSave() {
+      var commentVO = {}
+      commentVO.userID = this.userID;
+      commentVO.reviewID = this.reviewID
+
+      commentVO.commentContent = document.getElementsByClassName("comment-content").item(0).innerHTML
+      axios.post('http://kosa3.iptime.org:50201/comment/create', commentVO, {
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+      }).then(res => {
+        if (res.status == 200) {
+          console.log(res.data)
+          this.CommentsData.push(res.data)
+          document.getElementsByClassName("comment-content").item(0).textContent = ''
+        }
+      })
+    },
+    editComment(comment) {
+      console.log(comment[0], comment[1])
+    },
+    deleteComment(id) {
+      if (confirm("정말 삭제하시겠습니까?")) {
+        axios.delete(`http://kosa3.iptime.org:50201/comment/delete/${id}`).then(res => {
+          if (res.status == 200) {
+            alert("댓글을 삭제하였습니다.")
+            let list = this.CommentsData;
+            list.splice(id, 1);
+            this.CommentsData = list
+          }
+        }).catch(err => {
+          alert("오류가 발생했습니다." + err)
+        })
+      }
+    },
   },
   components: {
-    TravelList
+    TravelList,
+    ReviewComment
   }
 }
 </script>
 
 <style scoped>
-
-
 .all {
   width: 100%;
   height: 100%;
   min-width: 800px;
 }
+
 .review {
   max-width: 1100px;
   margin: 100px auto;
@@ -157,4 +210,54 @@ export default {
   color: #008F7A;
 }
 
+.comment-content {
+  text-align: left;
+  outline: none;
+  white-space: nowrap;
+}
+
+.comment-content:empty:before {
+  content: '댓글을 작성해 주세요.';
+  cursor: text;
+  color: #ccc;
+  opacity: 0.6;
+  outline: none;
+}
+
+.comment-content {
+  border: 1px #ccc solid;
+  padding: 10px;
+  border-radius: 5px;
+  height: 120px;
+  max-height: 120px;
+  overflow-y: scroll;
+  white-space: normal;
+}
+
+.comment-content::-webkit-scrollbar {
+  width: 10px;
+  height: 3px;
+}
+.comment-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.comment-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.comment-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.container-title {
+  text-align: left;
+  padding: 10px 0;
+}
+.save {
+  text-align: right;
+}
+
+.comment-btn {
+  padding: 10px;
+}
 </style>
