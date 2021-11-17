@@ -37,7 +37,7 @@
         <span id="resultArea">
           <div style="margin:16px 0;">
           <div v-for="(mypage, index) in plan" :key="index">
-              <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack" style="padding:16px"
+              <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack uk-margin-top uk-margin-bottom" style="padding:16px"
                    uk-grid="">
                 <div class="uk-width-1-3@m uk-first-column">
                   <div class="uk-grid" uk-grid="" style="margin: 0; height: 60%">
@@ -107,12 +107,16 @@
                     </div>
                   </div>
                 </div>
+
+
                 <div class="uk-grid uk-grid-stack" uk-grid="" style="margin: 0; height: 40%">
                   <div class="uk-width-expand@m info-container uk-first-column">
                     <div class="uk-text-center uk-grid uk-width-1-1 uk-padding-small" uk-grid="">
+
                       <div class="uk-width-1-4 uk-first-column">
                         <div>
-                          <button class="uk-button uk-button-large uk-card-default" id="modifySavedRoute_idx_0">
+                          <button class="uk-button uk-button-large uk-card-default"
+                          @click="planUpdate(mypage.planID)">
                             일정 수정
                           </button>
                         </div>
@@ -127,7 +131,7 @@
                       </div>
                       <div class="uk-width-1-4">
                         <div>
-                          <button class="uk-button uk-button-large uk-card-default" id="deleteSavedBtn_0"
+                          <button class="uk-button uk-button-large uk-card-default"
                                   @click="deleteSavedRoute(mypage.planID)">
                             삭제
                           </button>
@@ -187,6 +191,7 @@ export default {
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
+            console.log(response)
             this.plan = response.data
           }
         }).catch(() => {
@@ -210,7 +215,9 @@ export default {
         })
       }
     },
-
+    planUpdate(id) {
+      this.$router.push(`/modify/${id}`)
+    }
   }
 }
 </script>
@@ -222,6 +229,7 @@ export default {
 /*  margin: 0.25em;*/
 /*  border-radius: 0.25em;*/
 /*}*/
+
 * {
   margin: 0;
   padding: 0;
@@ -235,7 +243,6 @@ body {
   background: #fff;
   color: #000;
 }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -294,12 +301,6 @@ body {
   /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
 }
 
-.section-divider {
-  height: 5px;
-  background-color: #fafafa;
-  width: 100%;
-}
-
 @media (max-width: 600px) {
   .container {
     width: 90vw;
@@ -328,14 +329,6 @@ body {
   padding: 0 !important;
 }
 
-.grid-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .container .text {
   font-family: 'Montserrat';
   font-size: 35px;
@@ -356,6 +349,7 @@ body {
   color: #616161;
   letter-spacing: 1px;
   padding: 8px;
+  font-family: 'Montserrat';
 }
 
 .btn-normal {
@@ -403,13 +397,6 @@ body {
   }
 }
 
-.favorite-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  overflow-x: auto;
-  padding: 16px 8px;
-}
 
 .index-circle {
   height: 120px;
@@ -422,19 +409,6 @@ body {
   flex-direction: column;
 }
 
-.flex-container-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70%;
-}
-
-.flex-container-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
-}
 
 @media (max-width: 600px) {
   .flex-container-top {
@@ -508,13 +482,13 @@ body {
   color: #5dc9dd;
 }
 
-.small-text {
-  font-size: 0.9rem;
-  color: #000;
-  font-family: 'Montserrat';
-}
+/*.small-text {*/
+/*  font-size: 0.9rem;*/
+/*  color: #000;*/
+/*  font-family: 'Montserrat';*/
+/*}*/
 
-.info-container-top {
+/*.info-container-top {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -524,7 +498,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+}*/
 
 .cm-toggle-container {
   display: flex;

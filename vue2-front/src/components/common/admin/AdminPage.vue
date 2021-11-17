@@ -90,7 +90,7 @@ export default {
         {title: '댓글관리', icon: 'mdi-message-reply-text', path: 'reply'},
         {title: 'About', icon: 'mdi-help-box', path: 'tour'},
       ],
-      path: 'main',
+      path: 'tour',
 
       right: null,
     }
