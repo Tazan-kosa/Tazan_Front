@@ -1,8 +1,12 @@
 <template>
-  <div>
+<div>
+  <div class="button_2">
     <button type="button" class="btn btn-light">Light</button>
+  </div>
+  <div>
     <tourmanageItem v-for="(item, i) in tourList" :key="i" :item="item"/>
   </div>
+</div>
 </template>
 
 <script>
@@ -32,5 +36,12 @@ export default {
 </script>
 
 <style scoped>
+.button_2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-left: 95%;
+  margin-right: 5%;
+}
 
 </style>

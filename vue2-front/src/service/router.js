@@ -21,6 +21,7 @@ import tourmanage from "../components/common/admin/tour/tourmanage";
 import usermanage from "../components/common/admin/user/usermanage";
 import planmanage from "../components/common/admin/plan/planmanage";
 import reviewmanage from "../components/common/admin/review/reviewmanage";
+import tourForm from "../components/common/admin/tour/tourForm";
 
 
 Vue.use(VueRouter)
@@ -148,9 +149,9 @@ const route = [
                 component:reviewmanage
             },
             {
-                path: 'tourForm',
+                path: 'tourForm/:tourId',
                 name:'tourForm',
-                component:reviewmanage
+                component:tourForm
             },
         ]
     },
