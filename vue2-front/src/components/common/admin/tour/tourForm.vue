@@ -58,7 +58,7 @@
           <div class="col-md-1">EndDate</div>
           <div class="col-5">
             <div class="input-group-icon">
-              <input class="form-control EndDate" type="date" :value="enddate"/>
+              <input class="form-control endDate" type="date" :value="enddate"/>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@
         </details>
 
         <div class="form-button mt-3">
-          <button id="submit" class="btn btn-primary" @click="submitTour">Register</button>
+          <div class="btn btn-primary" @click="submitTour">수정하기</div>
         </div>
       </form>
     </div>
@@ -167,14 +167,35 @@ export default {
   },
   methods:{
     submitTour(){
-      alert("!")
-      // axios.put(`http://kosa3.iptime.org:50201/tour/updateTour/${this.tourId}`).then(res => {
-      //   if (res.status == 200) {
-      //     console.log(res.data)
-      //   }
-      // }).catch(err => {
-      //   console.log(err)
-      // })
+      var tourVO={}
+
+      tourVO.tourId=document.getElementsByClassName("TourID")[0].value;
+      tourVO.address=document.getElementsByClassName("Address")[0].value;
+      tourVO.tourRegion=document.getElementsByClassName("Region")[0].value;
+      tourVO.tag1=document.getElementsByClassName("Tag1")[0].value;
+      tourVO.tag2=document.getElementsByClassName("Tag2")[0].value;
+
+      tourVO.startDate=document.getElementsByClassName("startDate")[0].value;
+      tourVO.endDate=document.getElementsByClassName("endDate")[0].value;
+      tourVO.img=document.getElementsByClassName("Img")[0].value;
+      tourVO.url=document.getElementsByClassName("URL")[0].value;
+      tourVO.title=document.getElementsByClassName("Title")[0].value;
+
+      tourVO.longitude=document.getElementsByClassName("Longitude")[0].value;
+      tourVO.latitude=document.getElementsByClassName("Latitude")[0].value;
+      tourVO.contact=document.getElementsByClassName("Contact")[0].value;
+
+      axios.put(`http://kosa3.iptime.org:50201/tour/updateTour`,tourVO, {
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },}).then(res => {
+        if (res.status == 200) {
+          alert("수정되었습니다.")
+          this.$router.push("/adminpage/tour")
+        }
+      }).catch(err => {
+        console.log(err)
+      })
     }
   }
 }
