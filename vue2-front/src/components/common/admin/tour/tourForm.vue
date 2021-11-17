@@ -153,49 +153,67 @@ export default {
     this.startdate = year + '-' + month + '-' + day
     this.enddate = year + '-' + month + '-' + day
     this.tourId = this.$route.params.tourId
-    if(this.tourId){
+    if (this.tourId) {
       axios.get(`http://kosa3.iptime.org:50201/tour/getTourId/${this.tourId}`)
           .then(result => {
             this.TourItem = result.data
-            this.startdate=this.TourItem.startDate.slice(0,10);
-            this.enddate=this.TourItem.endDate.slice(0,10);
+            this.startdate = this.TourItem.startDate.slice(0, 10);
+            this.enddate = this.TourItem.endDate.slice(0, 10);
           })
           .catch(function (err) {
             console.log("에러발생: " + err)
           })
     }
   },
-  methods:{
-    submitTour(){
-      var tourVO={}
+  methods: {
+    submitTour() {
+      var tourVO = {}
 
-      tourVO.tourId=document.getElementsByClassName("TourID")[0].value;
-      tourVO.address=document.getElementsByClassName("Address")[0].value;
-      tourVO.tourRegion=document.getElementsByClassName("Region")[0].value;
-      tourVO.tag1=document.getElementsByClassName("Tag1")[0].value;
-      tourVO.tag2=document.getElementsByClassName("Tag2")[0].value;
+      tourVO.tourId = document.getElementsByClassName("TourID")[0].value;
+      tourVO.address = document.getElementsByClassName("Address")[0].value;
+      tourVO.tourRegion = document.getElementsByClassName("Region")[0].value;
+      tourVO.tag1 = document.getElementsByClassName("Tag1")[0].value;
+      tourVO.tag2 = document.getElementsByClassName("Tag2")[0].value;
 
-      tourVO.startDate=document.getElementsByClassName("startDate")[0].value;
-      tourVO.endDate=document.getElementsByClassName("endDate")[0].value;
-      tourVO.img=document.getElementsByClassName("Img")[0].value;
-      tourVO.url=document.getElementsByClassName("URL")[0].value;
-      tourVO.title=document.getElementsByClassName("Title")[0].value;
+      tourVO.startDate = document.getElementsByClassName("startDate")[0].value;
+      tourVO.endDate = document.getElementsByClassName("endDate")[0].value;
+      tourVO.img = document.getElementsByClassName("Img")[0].value;
+      tourVO.url = document.getElementsByClassName("URL")[0].value;
+      tourVO.title = document.getElementsByClassName("Title")[0].value;
 
-      tourVO.longitude=document.getElementsByClassName("Longitude")[0].value;
-      tourVO.latitude=document.getElementsByClassName("Latitude")[0].value;
-      tourVO.contact=document.getElementsByClassName("Contact")[0].value;
-
-      axios.put(`http://kosa3.iptime.org:50201/tour/updateTour`,tourVO, {
-        headers: {
-          'Content-Type': 'application/json; charset=utf-8',
-        },}).then(res => {
-        if (res.status == 200) {
-          alert("수정되었습니다.")
-          this.$router.push("/adminpage/tour")
-        }
-      }).catch(err => {
-        console.log(err)
-      })
+      tourVO.longitude = document.getElementsByClassName("Longitude")[0].value;
+      tourVO.latitude = document.getElementsByClassName("Latitude")[0].value;
+      tourVO.contact = document.getElementsByClassName("Contact")[0].value;
+      if (this.tourId != 0) {
+        axios.put(`http://kosa3.iptime.org:50201/tour/updateTour`, tourVO, {
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }).then(res => {
+          if (res.status == 200) {
+            alert("수정되었습니다.")
+            this.$router.push("/adminpage/tour")
+          }
+        }).catch(err => {
+          console.log(err)
+          alert("ID 중복입니다.")
+        })
+      }
+      else{
+        axios.post(`http://kosa3.iptime.org:50201/tour/insertTour`, tourVO, {
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }).then(res => {
+          if (res.status == 200) {
+            alert("등록되었습니다.")
+            this.$router.push("/adminpage/tour");
+          }
+        }).catch(err => {
+          console.log(err)
+          alert("ID 중복입니다!")
+        })
+      }
     }
   }
 }
