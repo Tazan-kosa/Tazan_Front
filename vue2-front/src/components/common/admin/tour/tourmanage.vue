@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="button_2">
-    <button type="button" class="btn btn-light">추가</button>
+    <button type="button" class="btn btn-light" @click="tourupdate">추가</button>
   </div>
   <div>
     <tourmanageItem v-for="(item, i) in tourList" :key="i" :item="item"/>
@@ -31,6 +31,11 @@ export default {
         .catch(function (err) {
           console.log("에러발생: " + err)
         })
+  },
+  methods:{
+    tourupdate() {
+      this.$router.push(`/adminpage/tourForm/0`);
+    }
   }
 }
 </script>

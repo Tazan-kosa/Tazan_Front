@@ -1,6 +1,6 @@
 <template>
   <pre>
-    <p>{{this.item.nickName}}</p><p>{{this.item.email}}</p><p>{{this.item.auth}}</p>
+    <p>이름: {{this.item.name}}</p><p>닉네임: {{this.item.nickName}}</p><p>이메일: {{this.item.email}}</p><p>권한: {{this.item.auth}}</p>
     <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
   </pre>
 </template>
