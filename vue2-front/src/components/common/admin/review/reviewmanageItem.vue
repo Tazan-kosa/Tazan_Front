@@ -1,12 +1,38 @@
 <template>
-  <pre>
-    <p>제목: {{this.item.reviewTitle}}</p><p>작성자: {{this.user.name}}</p><p>작성일: {{this.item.reviewDate.slice(0,10)}}</p><p>권한: {{this.user.auth}}</p>
-    <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-  </pre>
+  <div>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="inner1">제목</div>
+        <div class="inner1">작성자</div>
+        <div class="inner1">작성날짜</div>
+        <div class="inner1">권한</div>
+      </div>
+      <div class="inner-container2">
+        <div class="inner"><p>{{this.item.reviewTitle}}</p></div>
+        <div class="inner"><p>{{this.user.name}}</p></div>
+        <div class="inner"><p>{{this.item.reviewDate.slice(0,10)}}</p></div>
+        <div class="inner"><p>{{this.user.auth}}</p></div>
+        <span>
+        &nbsp;
+        <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
+        <p></p>
+      </span>
+      </div>
+    </div>
+  </div>
+
+<!--  <pre>-->
+<!--    <p>제목: </p>-->
+<!--    <p>작성자: </p>-->
+<!--    <p>작성일: </p>-->
+<!--    <p>권한: </p>-->
+<!--    <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>-->
+<!--  </pre>-->
 </template>
 
 <script>
 import axios from "axios";
+import "../AdminPage.css";
 
 export default {
   name: "reviewmanageItem",
@@ -41,15 +67,14 @@ export default {
 </script>
 
 <style scoped>
-div {
-  border: 1px solid white;
-}
 button {
   position: static;
   float: right;
+}
 
-}
-pre{
+pre {
   background-color: grey;
+  border: 2px solid deepskyblue;
 }
+
 </style>
