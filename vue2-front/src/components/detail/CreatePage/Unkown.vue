@@ -1,48 +1,76 @@
 <template>
   <div>
     <div class="main">
-<!--      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="region.img" uk-img>-->
-      <div>
-        <h1>
-          <span id="userName">{{ userName }}</span>님의 여행 계획표
-        </h1>
-        <div class="sub_title">
-          <b-form-input
-              v-model="text"
-              placeholder="여행 제목을 적어 주세요."
-          ></b-form-input>
-<!--          <div class="mt-2">Value: {{ text }}</div>-->
-        </div>
-      </div>
-      <div class="save_plan">
-        <div class="sub_main">
-          <div class="left">
-            <div>{{ this.region }}</div>
-            <date-picker
-                class="datepicpick"
-                v-model="mydate"
-                type="date"
-                :lang="lang"
-                range
-                confirm
-                format="YYYY-MM-DD"
-                placeholder="Select date range"
-            >
-              여행일자
-            </date-picker>
-            <div>
-              {{ test }}
+      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+           data-src=region.img
+           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
+        <div class="container px-4 px-lg-5">
+          <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">
+              <span id="userName">{{ userName }}</span>님의 여행 계획표
+            </h1>
+            <br>
+
+            <div class="wrap">
+              <div class="sub_title">
+                <b-form-input
+                    v-model="text"
+                    size="sm"
+                    class="w-25 p-3 mb-1 text-light"
+                    placeholder="여행 제목을 적어 주세요."
+                ></b-form-input>
+              </div>
             </div>
           </div>
-          <div class="thr_main">
-<!--            -->
-            <div
+        </div>
+      </div>
+
+      <h1 class="uk-heading-line"><span></span></h1>
+
+      <div class="save_plan">
+        <div class="sub_main">
+          <v-card class="left_container">
+            <div class="left">
+              <div class=""
+              >
+                <h2 class="">
+                  {{ this.region }}
+                </h2>
+
+              </div>
+              <date-picker
+                  class="datepicpick"
+                  v-model="mydate"
+                  type="date"
+                  :lang="lang"
+                  range
+                  confirm
+                  format="YYYY-MM-DD"
+                  placeholder="Select date range"
+              >
+                여행일자
+              </date-picker>
+              <div>
+
+              </div>
+            </div>
+            <div>
+              확인하는중입니다.
+            </div>
+          </v-card>
+          <v-card class="thr_main">
+            <!--            -->
+            <v-col
                 class="thr_main_sub"
                 v-for="(plan,index) in totalPlan"
                 :key="index"
-                >
+            >
               <div class="thr_main_day">
-                {{ index + 1 }} 일차
+                <h6>
+                  {{ index + 1 }} 일차
+                </h6>
               </div>
 
               <DayList
@@ -53,27 +81,25 @@
                   @tourListDelete="DeleteList"
               >
               </DayList>
-            </div>
+            </v-col>
 
-            <div>
-              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
-              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
+            <div class="uk-margin">
+              <b-button pill variant="outline-primary" type="submit" @click="dayList_add">일정 추가</b-button>
+              &nbsp;
+              <b-button pill variant="outline-danger" type="submit" @click="dayList_delete">일정 삭제</b-button>
             </div>
-          </div>
+          </v-card>
 
-          <div class="right">
+          <v-card class="right">
             <div>추천 장소</div>
             <div>
-              <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
+              <RecomPlace
+                  :recomList="recomList"
+                  @recived="planList_add"
+                  class="right_list"/>
             </div>
-          </div>
+          </v-card>
         </div>
-<!--        <div class="right">
-          <div>추천 장소</div>
-          <div>
-            <RecomPlace :recomList="recomList" @recived="planList_add"/>
-          </div>
-        </div>-->
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="SavePlan">Save</b-button>
@@ -118,27 +144,37 @@ export default {
     }
   },
   methods: {
+
     planList_add(result) {
-      this.totalPlan[this.cnt].push(result) // object
-      this.totalPlan_tour[this.cnt].push(result.tourId)
+      if (this.mydate == '') {
+        alert('날짜를 먼저 선택해주세요')
+      } else {
+        this.totalPlan[this.cnt].push(result) // object
+        this.totalPlan_tour[this.cnt].push(result.tourId)
+      }
     },
     dayList_add() {
-      var test = new Date(this.mydate[0])
-      console.log(test)
-      test.setDate((test.getDate() + (this.cnt) + 1))
-      if (test > this.mydate[1]) {
-        alert('일정 길이를 초과합니다!')
+      if (this.mydate == '') {
+        alert('날짜를 먼저 선택해주세요')
       } else {
-        this.cnt += 1
-        this.totalPlan.push([])
-        this.totalPlan_tour.push([])
+        var test = new Date(this.mydate[0])
+
+        test.setDate((test.getDate() + (this.cnt) + 1))
+        if (test > this.mydate[1]) {
+          alert('일정 길이를 초과합니다!')
+        } else {
+          this.cnt += 1
+          this.totalPlan.push([])
+          this.totalPlan_tour.push([])
+        }
       }
+
     },
     dayList_delete() {
       var test = new Date(this.mydate[0])
-      console.log(test)
+
       test.setDate((test.getDate() + (this.cnt) + 1))
-      if (test < this.mydate[1]) {
+      if (test <= this.mydate[1]) {
         alert('일정은 1일차부터 시작입니다.!')
       } else {
         this.cnt -= 1
@@ -151,8 +187,8 @@ export default {
       }
     },
     DeleteList(listObject) {
-      this.totalPlan[listObject.index1].splice(listObject.index2,1)
-      this.totalPlan_tour[listObject.index1].splice(listObject.index2,1)
+      this.totalPlan[listObject.index1].splice(listObject.index2, 1)
+      this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)
 
     },
     SavePlan() {
@@ -169,7 +205,7 @@ export default {
       planVO.planTitle = this.text;
       planVO.planList = this.totalPlan_tour;
 
-      console.log(planVO)
+
       if (confirm("저장 하시겠습니까?")) {
         axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
           headers: {
@@ -177,13 +213,11 @@ export default {
           },
         }).then(request => {
           if (request.status === 200) {
-            console.log(request.data)
+
             this.$router.push(`/planDetail/${request.data}`)
           }
-        }).catch(function (err) {
-          console.log("에러발생: " + err)
-          //에러 처리 할 곳
-          alert("에러발생");
+        }).catch(function () {
+          alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
         })
       }
     },
@@ -208,7 +242,7 @@ export default {
 
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
         .then(response => {
-          console.log(response.data)
+
           this.recomList = response.data;
 
         })
@@ -218,17 +252,36 @@ export default {
 
   },
   mounted() {
-
   }
 }
 </script>
 
 <style scoped>
-div {
+.sub_main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*  */
   border: 1px solid black;
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.thr_main_day {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #237380;
+  display: flex;
+  position: relative;
+
+}
+
+.thr_main {
+  /*box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);*/
 }
 
 .sub_title {
@@ -237,49 +290,65 @@ div {
 
 }
 
-.datePicker {
-  display: flex;
-}
-
 .main {
   text-align: center;
 }
+
 .datepicpick {
   width: 95%;
   height: 100%;
 }
 
-.sub_main {
+.left_container {
   display: flex;
-  position: relative;
-  width: 100%;
-  /*height: 700px;*/
+  width: 25%;
   height: 100%;
-  /*float: left;*/
-  /*justify-content: space-between;*/
+  flex-direction: column;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
 
 .left {
   display: flex;
-  width: 20%;
+  width: 100%;
   height: 100%;
   flex-direction: column;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
+
 .thr_main {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 65%;
   height: 100%;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
+
 .right {
   width: 20%;
   height: 100%;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
+
 .right_list {
   width: 100%;
   height: 100%;
 }
-
 
 
 /*리스트*/
@@ -287,46 +356,60 @@ div {
   display: flex;
   width: 100%;
 }
+
 .thr_main_day {
   display: flex;
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
 }
+
 .thr_main_list {
-  /*height: 5px;*/
   overflow-x: auto;
-  /*overflow-x: scroll;*/
   display: flex;
-  width: 963px;
+  width: 100%;
   text-align: left;
-  height:inherit;
+  height: inherit;
+  /**/
+  /*border: 0px 0px 1px 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+  /*box-shadow: #9cafb4;*/
+
 }
+
+.DayList {
+  overflow: hidden;
+}
+
 .thr_main_list::-webkit-scrollbar {
   height: 5px;
 }
+
 .thr_main_list::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 .thr_main_list::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 5px;
 }
+
 .thr_main_list::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
 .save_plan {
   display: flex;
   /*width: 1000px;*/
   justify-content: space-between;
+  /**/
+  /*border: 1px solid black;*/
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
 }
-
-/*.save_plan_button {
-  flex-direction: column;
-}*/
-
-
-
 
 </style>

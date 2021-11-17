@@ -4,7 +4,7 @@
       <div class="top-background-div"></div>
       <div class="top-container">
         <div class="profilePhotoContainer">
-          <div class="profilePhoto-text" id="profilePhote">{{ initial }}</div>
+          <div class="profilePhoto-text" id="profilePhote">{{ this.initial }}</div>
         </div>
 
         <div class="text">{{ this.userName }}</div>
@@ -37,7 +37,7 @@
         <span id="resultArea">
           <div style="margin:16px 0;">
           <div v-for="(mypage, index) in plan" :key="index">
-              <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack" style="padding:16px"
+              <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack uk-margin-top uk-margin-bottom" style="padding:16px"
                    uk-grid="">
                 <div class="uk-width-1-3@m uk-first-column">
                   <div class="uk-grid" uk-grid="" style="margin: 0; height: 60%">
@@ -65,10 +65,12 @@
                         <div class="small-title">
                           여행이름
                           <div class="uk-inline">
-                            <input class="uk-input uk-form-blank uk-form-width-medium small-text" type="text"
-                                                               placeholder="mypage.planTitle"
-                                                               value=""
-                                                        >
+                            <input
+                                class="uk-input uk-form-blank uk-form-width-medium small-text"
+                                type="text"
+                                :placeholder="mypage.planTitle"
+                                value=""
+                            >
                           </div>
                         </div>
                       </div>
@@ -95,22 +97,26 @@
                       </div>
                       <div class="uk-width-1-2 info-container-bottom">
                         <div class="small-title">
-                          {{}}
+                          일정 개수
 
                           <span class="small-text">
-                                          {{}}
-                                          </span>
+                            {{mypage.planSize.replace(/\#/g,'').length}}
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+
                 <div class="uk-grid uk-grid-stack" uk-grid="" style="margin: 0; height: 40%">
                   <div class="uk-width-expand@m info-container uk-first-column">
                     <div class="uk-text-center uk-grid uk-width-1-1 uk-padding-small" uk-grid="">
+
                       <div class="uk-width-1-4 uk-first-column">
                         <div>
-                          <button class="uk-button uk-button-large uk-card-default" id="modifySavedRoute_idx_0">
+                          <button class="uk-button uk-button-large uk-card-default"
+                          @click="planUpdate(mypage.planID)">
                             일정 수정
                           </button>
                         </div>
@@ -119,23 +125,13 @@
                         <div class="uk-inline">
                           <button class="uk-button uk-button-large uk-card-default" type="button" aria-expanded="false"
                                   @click="planDetail(mypage.planID)">
-                            상세 보기
+                            상세 보기 및 리뷰 쓰기
                           </button>
                         </div>
                       </div>
                       <div class="uk-width-1-4">
                         <div>
                           <button class="uk-button uk-button-large uk-card-default"
-                                  uk-toggle="target:#modal-center_idx_0"
-                                  onclick="modalCenterBtn(0)"
-                                  aria-expanded="false">
-                            리뷰 쓰기
-                          </button>
-                        </div>
-                      </div>
-                      <div class="uk-width-1-4">
-                        <div>
-                          <button class="uk-button uk-button-large uk-card-default" id="deleteSavedBtn_0"
                                   @click="deleteSavedRoute(mypage.planID)">
                             삭제
                           </button>
@@ -149,15 +145,6 @@
             </div>
           </div>
         </span>
-
-        <!--        <div id="pageSectionDiv" class="pagination-container">
-                  <div class="pagination-container">
-                    <a id="travelListP" href="#" onclick="getTravelListNextPage('p')"><i class="material-icons">chevron_left</i></a>
-                    <span id="pageList"><a onclick="getTravelListPage(1)" id="pageButton1" class="s-button"> 1 </a></span>
-                    <a id="travelListN" href="#" onclick="getTravelListNextPage('n')"><i
-                        class="material-icons">chevron_right</i></a>
-                  </div>
-                </div>-->
       </div>
       <div class="info-container p-5">
         <button class="btn-normal" onclick="location.href='/' ">홈으로 가기</button>
@@ -182,24 +169,32 @@ export default {
       mydate: '',
       userName: '',
       plan: '',
+      initial: '',
     }
   },
   components: {
     // MyPageListTest
   },
+  beforeCreate() {
+    if (!localStorage.getItem('Authorization')) {
+      alert('접근 권한이 없습니다.');
+      this.$router.push('/login')
+    }
+  },
   created() {
-    this.userName = localStorage.getItem('nickname')
+    if(localStorage.getItem('id')){
+      this.userName = localStorage.getItem('nickname')
+      this.initial = localStorage.getItem('nickname').charAt(0).toUpperCase()
+      var id = localStorage.getItem('id');
+    }
 
-    var id = localStorage.getItem('id');
-    //"/plan/myPlan/{userID}"
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
             console.log(response)
             this.plan = response.data
           }
-        }).catch(err => {
-      console.log("에러발생: " + err)
+        }).catch(() => {
       alert("에러발생");
     })
   },
@@ -209,27 +204,19 @@ export default {
     },
     deleteSavedRoute(id) {
       if (confirm('정말 삭제하시겠습니까?')) {
-      axios.delete(`http://kosa3.iptime.org:50201/planDelete/${id}`)
-          .then(result => {
-            if (result.status == 200) {
-              alert("여행계획을 삭제했습니다.");
-              // location.reload();
-              // this.$router.go(this.$router.currentRoute).then((() => window.scrollTo(0, 0)))
-              this.$router.push(`/mypagelist`)
-              // if(this.$route.path!=='/mypagelist') this.$router.push('/mypagelist').then((() => window.scrollTo(0, 0)))
-            }
-          }).catch(err => {
-        console.log("에러발생: " + err)
-        //에러 처리 할 곳
-        alert("에러발생");
-      })
+        axios.delete(`http://kosa3.iptime.org:50201/planDelete/${id}`)
+            .then(result => {
+              if (result.status == 200) {
+                alert("여행계획을 삭제했습니다.");
+                location.reload();
+              }
+            }).catch(() => {
+          alert("삭제에 실패하였습니다.");
+        })
       }
-    }
-  },
-  beforeCreate() {
-    if(!localStorage.getItem('Authorization')){
-      alert('접근 권한이 없습니다.');
-      this.$router.push('/login')
+    },
+    planUpdate(id) {
+      this.$router.push(`/modify/${id}`)
     }
   }
 }
@@ -242,6 +229,7 @@ export default {
 /*  margin: 0.25em;*/
 /*  border-radius: 0.25em;*/
 /*}*/
+
 * {
   margin: 0;
   padding: 0;
@@ -255,7 +243,6 @@ body {
   background: #fff;
   color: #000;
 }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -314,12 +301,6 @@ body {
   /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
 }
 
-.section-divider {
-  height: 5px;
-  background-color: #fafafa;
-  width: 100%;
-}
-
 @media (max-width: 600px) {
   .container {
     width: 90vw;
@@ -348,14 +329,6 @@ body {
   padding: 0 !important;
 }
 
-.grid-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .container .text {
   font-family: 'Montserrat';
   font-size: 35px;
@@ -376,6 +349,7 @@ body {
   color: #616161;
   letter-spacing: 1px;
   padding: 8px;
+  font-family: 'Montserrat';
 }
 
 .btn-normal {
@@ -423,13 +397,6 @@ body {
   }
 }
 
-.favorite-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  overflow-x: auto;
-  padding: 16px 8px;
-}
 
 .index-circle {
   height: 120px;
@@ -442,19 +409,6 @@ body {
   flex-direction: column;
 }
 
-.flex-container-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70%;
-}
-
-.flex-container-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
-}
 
 @media (max-width: 600px) {
   .flex-container-top {
@@ -528,13 +482,13 @@ body {
   color: #5dc9dd;
 }
 
-.small-text {
-  font-size: 0.9rem;
-  color: #000;
-  font-family: 'Montserrat';
-}
+/*.small-text {*/
+/*  font-size: 0.9rem;*/
+/*  color: #000;*/
+/*  font-family: 'Montserrat';*/
+/*}*/
 
-.info-container-top {
+/*.info-container-top {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -544,7 +498,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+}*/
 
 .cm-toggle-container {
   display: flex;

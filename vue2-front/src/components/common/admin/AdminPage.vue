@@ -6,7 +6,7 @@
           dark
           permanent
       >
-        <v-col>
+        <v-col @click="movetopage(path)">
           <v-img
               class="align-self-stretch"
               src="../../../assets/tazan_title-rmb.png"
@@ -39,8 +39,6 @@
           dark
           app
       >
-        <v-text
-                  > 관리자 </v-text>
         <v-col sm="0" offset-sm="10">
           <v-btn
               depressed
@@ -89,8 +87,10 @@ export default {
         {title: '계획관리', icon: 'mdi-image', path: 'plan'},
         {title: '후기관리', icon: 'mdi-pencil', path: 'review'},
         {title: '계정관리', icon: 'mdi-account', path: 'user'},
+        {title: '댓글관리', icon: 'mdi-message-reply-text', path: 'reply'},
         {title: 'About', icon: 'mdi-help-box', path: 'tour'},
       ],
+      path: 'tour',
 
       right: null,
     }
@@ -104,7 +104,6 @@ export default {
       location.reload();
     },
     movetopage(path) {
-
       console.log(path)
       this.$router.push(`/adminpage/${path}`, () => {
       })

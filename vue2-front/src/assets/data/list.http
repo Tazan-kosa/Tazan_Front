@@ -1,4 +1,8 @@
-GET https://www.earthtory.com/api/city/get_ko_state
+GET https://www.earthtory.com/api/spot/get_spot_list_map2
+Accept: application/json
+
+###
+GET http://kosa3.iptime.org:50201/plan/myPlan/47
 Accept: application/json
 
 ###

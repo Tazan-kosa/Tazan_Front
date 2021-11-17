@@ -1,10 +1,12 @@
 <template>
-$END$
+  <div>
+    #childarea
+  </div>
 </template>
 
 <script>
 export default {
-name: "Child"
+  name: "Child"
 }
 </script>
 
