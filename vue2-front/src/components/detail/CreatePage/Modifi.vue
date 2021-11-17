@@ -1,23 +1,37 @@
 <template>
   <div>
     <div class="main">
-<!--      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="region.img" uk-img>-->
-      <div>
-        <h1>
-          <span id="userName">{{ userName }}</span>님의 여행 계획표
-        </h1>
-        <div class="sub_title">
-          <b-form-input
-              v-model="text"
-              placeholder="여행 제목을 적어 주세요."
-          ></b-form-input>
-<!--          <div class="mt-2">Value: {{ text }}</div>-->
+      <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
+        <div class="container px-4 px-lg-5">
+          <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">
+              <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+            </h1>
+            <br>
+
+            <div class="wrap">
+              <div class="sub_title">
+                <b-form-input
+                    v-model="text"
+                    :placeholder="plan.planTitle"
+                ></b-form-input>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="save_plan">
-        <div class="sub_main">
-          <div class="left">
-            <div>{{ this.region }}</div>
+      <h1 class="uk-heading-line"><span></span></h1>
+
+      <div class="save_plan uk-flex">
+        <div class="sub_main uk-margin-bottom uk-margin-top uk-margin-right">
+
+          <div class="left uk-margin uk-margin-top uk-margin-right">
+            <div class="uk-card uk-card-default uk-card-body">
+            <div>{{ plan.region }}</div>
             <date-picker
                 class="datepicpick"
                 v-model="mydate"
@@ -31,14 +45,13 @@
               여행일자
             </date-picker>
             <div>
-              {{ test }}
             </div>
           </div>
           <div class="thr_main">
 <!--            -->
             <div
                 class="thr_main_sub"
-                v-for="(plan,index) in totalPlan"
+                v-for="(plan,index) in plan.planList"
                 :key="index"
                 >
               <div class="thr_main_day">
@@ -48,16 +61,17 @@
               <DayList
                   id="scrollDiv"
                   :daylist="plan"
-                  class="thr_main_list"
+                  class="thr_main_list uk-flex uk-flex-center"
                   :index1="index"
                   @tourListDelete="DeleteList"
               >
               </DayList>
             </div>
 
-            <div>
-              <b-button variant="outline-primary" type="submit" @click="dayList_add">일정추가</b-button>
-              <b-button variant="outline-primary" type="submit" @click="dayList_delete">일정삭제</b-button>
+            <div class="uk-margin">
+              <button class="uk-button uk-button-primary" type="submit" @click="dayList_add">일정 추가</button>
+              &nbsp;
+              <button class="uk-button uk-button-danger" type="submit" @click="dayList_delete">일정 삭제</button>
             </div>
           </div>
 
@@ -76,7 +90,7 @@
         </div>-->
       </div>
       <div class="save_plan_button">
-        <b-button variant="primary" @click="SavePlan">Save</b-button>
+        <b-button variant="primary" @click="UpdatePlan">Update</b-button>
       </div>
     </div>
   </div>
@@ -107,14 +121,16 @@ export default {
       recomList: [],
       totalPlan: [[]],
       totalPlan_tour: [[]],
-      cnt: 0, //index
-      userName: '',
-      userID: '',
-      mydate: '',
-      datetime: '',
-      date: '',
-      range: '',
+      PlanDate: [],
+      planList: [],
+      userId: '',
+      planId: '',
+      startDate: '',
+      endDate: '',
       text: '',
+      mydate: '',
+      nickname: '',
+      plan:'',
     }
   },
   methods: {
@@ -155,7 +171,7 @@ export default {
       this.totalPlan_tour[listObject.index1].splice(listObject.index2,1)
 
     },
-    SavePlan() {
+    UpdatePlan() {
       let planVO = {};
       planVO.userID = localStorage.getItem("id");
       // reviewVO.userID = 1//localStorage.getItem("id")
@@ -170,22 +186,20 @@ export default {
       planVO.planList = this.totalPlan_tour;
 
       console.log(planVO)
-      if (confirm("저장 하시겠습니까?")) {
-        axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-          },
-        }).then(request => {
-          if (request.status === 200) {
-            console.log(request.data)
-            this.$router.push(`/planDetail/${request.data}`)
-          }
-        }).catch(function (err) {
-          console.log("에러발생: " + err)
-          //에러 처리 할 곳
-          alert("에러발생");
-        })
-      }
+      axios.put(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+          .then(res => {
+            if (res.status == 200) {
+              this.plan = res.data
+              var sd = new Date(this.plan.startDate)
+              this.startDate=sd.getFullYear()+"-"+(sd.getMonth()+1)+"-"+sd.getDate();
+              var ed = new Date(this.plan.endDate)
+              this.endDate=ed.getFullYear()+"-"+(ed.getMonth()+1)+"-"+ed.getDate();
+            }
+          }).catch(err => {
+        console.log("에러발생: " + err)
+        //에러 처리 할 곳
+        alert("에러발생");
+      })
     },
   },
   components: {
@@ -200,21 +214,34 @@ export default {
   }
   ,
   created() {
-    this.userName = localStorage.getItem('nickname')
-    this.userID = localStorage.getItem('id')
+    this.nickname = localStorage.getItem('nickname')
+    this.planId = this.$route.params.planId;
+    this.userId = localStorage.getItem('id');
 
+    axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+        .then(res => {
+          if (res.status == 200) {
+            this.plan = res.data
+            var sd = new Date(this.plan.startDate)
+            this.startDate=sd.getFullYear()+"-"+(sd.getMonth()+1)+"-"+sd.getDate();
+            var ed = new Date(this.plan.endDate)
+            this.endDate=ed.getFullYear()+"-"+(ed.getMonth()+1)+"-"+ed.getDate();
+          }
+        }).catch(err => {
+      console.log("에러발생: " + err)
+      //에러 처리 할 곳
+      alert("에러발생");
+    })
 
-    // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-
-    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
+    /*axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${userId}`)
         .then(response => {
-          console.log(response.data)
-          this.recomList = response.data;
-
-        })
-        .catch(err => {
-          console.log(err)
-        })
+          if (response.status == 200) {
+            console.log(response)
+            this.plan = response.data
+          }
+        }).catch(() => {
+      alert("에러발생");
+    })*/
 
   },
   mounted() {

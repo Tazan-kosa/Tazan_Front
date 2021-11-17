@@ -2,14 +2,14 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src=region.img
+           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
            data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
                   https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">
-              <span id="userName">{{ userName }}</span>님의 여행 계획표
+              <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
             </h1>
             <br>
 
@@ -17,7 +17,7 @@
               <div class="sub_title">
                 <b-form-input
                     v-model="text"
-                    placeholder="여행 제목을 적어 주세요."
+                    :placeholder="plan.planTitle"
                 ></b-form-input>
               </div>
             </div>
@@ -31,13 +31,12 @@
         <div class="sub_main">
           <div class="left_container">
             <div class="left">
-              <div class=""
-              >
-                <h2 class="">
-                  {{ this.region }}
-                </h2>
-
-              </div>
+              <div>{{ plan.region }}</div>
+              <!--            <div
+                              placeholder="Select date range"
+                          >
+                            {{ startDate + " - " + endDate }}
+                          </div>-->
               <date-picker
                   class="datepicpick"
                   v-model="mydate"
@@ -46,31 +45,24 @@
                   range
                   confirm
                   format="YYYY-MM-DD"
-                  placeholder="Select date range"
+
               >
-                여행일자
+                <!--                :placeholder= startDate + " - " + endDate-->
+                {{ startDate + " - " + endDate }}
               </date-picker>
               <div>
-
               </div>
             </div>
-            <div>
-              확인하는중입니다.
-            </div>
           </div>
+
+
           <div class="thr_main">
-            <!--            -->
-            <v-col
-                class="thr_main_sub"
-                v-for="(plan,index) in totalPlan"
-                :key="index"
-            >
+            <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
                 <h6>
                   {{ index + 1 }} 일차
                 </h6>
               </div>
-
               <DayList
                   id="scrollDiv"
                   :daylist="plan"
@@ -79,6 +71,8 @@
                   @tourListDelete="DeleteList"
               >
               </DayList>
+              <!--              <DayList :daylist="plan" class="thr_main_sub">-->
+              <!--              </DayList>-->
             </v-col>
 
             <div class="uk-margin">
@@ -87,59 +81,72 @@
               <b-button pill variant="outline-danger" type="submit" @click="dayList_delete">일정 삭제</b-button>
             </div>
           </div>
-
           <div class="right">
             <div>추천 장소</div>
             <div>
-              <RecomPlace
-                  :recomList="recomList"
-                  @recived="planList_add"
-                  class="right_list"/>
+              <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
             </div>
           </div>
         </div>
       </div>
       <div class="save_plan_button">
-        <b-button variant="primary" @click="SavePlan">Save</b-button>
+        <b-button variant="primary" @click="reviewWrite">Update</b-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import UnkownList from "./UnkownList";
-
-import RecomPlace from "./RecomPlace";
-// import RecomPlaceSave from "./RecomPlaceSave";
-// import DatePicker from "../DatePicker";
 import axios from "axios";
 import DayList from "./DayList";
-import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
+import RecomPlace from "./RecomPlace";
+import DatePicker from "vue2-datepicker";
 
 export default {
-  name: "Unkown",
+  name: "UnkownPlanDetail",
   data() {
     return {
-      lang: {
-        formatLocale: {
-          firstDayOfWeek: 1,
-        },
-        monthBeforeYear: false,
-      },
       recomList: [],
       totalPlan: [[]],
       totalPlan_tour: [[]],
+      PlanDate: [],
+      planList: [],
       cnt: 0, //index
       userName: '',
-      userID: '',
-      mydate: '',
-      datetime: '',
-      date: '',
-      range: '',
+      userId: '',
+      planId: '',
+      startDate: '',
+      endDate: '',
       text: '',
+      mydate: '',
+      nickname: '',
+      plan: '',
+      datetime: '',
+
     }
+  },
+  created() {
+    console.log(this.$route.params.planId);
+    this.nickname = localStorage.getItem('nickname')
+    this.planId = this.$route.params.planId;
+    this.userId = localStorage.getItem('id');
+
+    axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+        .then(res => {
+          if (res.status == 200) {
+            this.plan = res.data
+            var sd = new Date(this.plan.startDate)
+            this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+            var ed = new Date(this.plan.endDate)
+            this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+          }
+        }).catch(err => {
+      console.log("에러발생: " + err)
+      //에러 처리 할 곳
+      alert("에러발생");
+    })
   },
   methods: {
     planList_add(result) {
@@ -147,27 +154,22 @@ export default {
       this.totalPlan_tour[this.cnt].push(result.tourId)
     },
     dayList_add() {
-      if (this.mydate == '') {
-        alert('날짜를 먼저 선택해주세요')
+      var test = new Date(this.mydate[0])
+
+      test.setDate((test.getDate() + (this.cnt) + 1))
+      if (test > this.mydate[1]) {
+        alert('일정 길이를 초과합니다!')
       } else {
-        var test = new Date(this.mydate[0])
-
-        test.setDate((test.getDate() + (this.cnt) + 1))
-        if (test > this.mydate[1]) {
-          alert('일정 길이를 초과합니다!')
-        } else {
-          this.cnt += 1
-          this.totalPlan.push([])
-          this.totalPlan_tour.push([])
-        }
+        this.cnt += 1
+        this.totalPlan.push([])
+        this.totalPlan_tour.push([])
       }
-
     },
     dayList_delete() {
       var test = new Date(this.mydate[0])
 
       test.setDate((test.getDate() + (this.cnt) + 1))
-      if (test <= this.mydate[1]) {
+      if (test < this.mydate[1]) {
         alert('일정은 1일차부터 시작입니다.!')
       } else {
         this.cnt -= 1
@@ -184,7 +186,8 @@ export default {
       this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)
 
     },
-    SavePlan() {
+    //  ####################### 이 부분은 업데이트 관련 로직으로 사용할 예정 ##############################
+    /*SavePlan() {
       let planVO = {};
       planVO.userID = localStorage.getItem("id");
       // reviewVO.userID = 1//localStorage.getItem("id")
@@ -214,65 +217,42 @@ export default {
         })
       }
     },
+    //  ####################### 이 부분은 업데이트 관련 로직으로 사용할 예정 ##############################
+    reviewWrite() {
+      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res=> {
+        if(res.status == 200){
+            this.$router.push({
+              name: 'Review',
+              params: {
+                reviewData: res.data,
+                planData: this.plan
+              }
+            }).then((() => window.scrollTo(0, 0)))
+        }
+      }).catch(err => {
+        console.log("에러 발생: " + err)
+      });
+    }*/
+    //  ####################### 이 부분은 업데이트 관련 로직으로 사용할 예정 ##############################
   },
   components: {
-    // DatePicker,
     DayList,
     RecomPlace,
     DatePicker
-  }
-  ,
-  props: {
-    region: String,
-  }
-  ,
-  created() {
-    this.userName = localStorage.getItem('nickname')
-    this.userID = localStorage.getItem('id')
-
-
-    // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-
-    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
-        .then(response => {
-
-          this.recomList = response.data;
-
-        })
-        .catch(err => {
-          console.log(err)
-        })
-
   },
-  mounted() {
+  props: {
+    region: String
   }
 }
 </script>
 
 <style scoped>
-.sub_main {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /*  */
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
-  justify-content: space-around;
-  flex: 1;
-}
-
-.thr_main_day {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #5dc9dd;
-  display: flex;
-  position: relative;
-
-}
-
+/*div {*/
+/*  border: 1px solid black;*/
+/*  padding: 0.25em;*/
+/*  margin: 0.25em;*/
+/*  border-radius: 0.25em;*/
+/*}*/
 .thr_main .sub_main {
   border: 1px solid black;
   padding: 0.25em;
@@ -294,9 +274,25 @@ export default {
   width: 95%;
   height: 100%;
 }
+
+.sub_main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  /*height: 700px;*/
+  height: 100%;
+  /*float: left;*/
+  /*justify-content: space-between;*/
+  /*  */
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+}
+
 .left_container {
   display: flex;
-  width: 25%;
+  width: 20%;
   height: 100%;
   flex-direction: column;
   /**/
@@ -305,6 +301,7 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
 }
+
 .left {
   display: flex;
   width: 100%;
@@ -320,7 +317,7 @@ export default {
 .thr_main {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 60%;
   height: 100%;
   /**/
   border: 1px solid black;
@@ -351,30 +348,36 @@ export default {
   width: 100%;
 }
 
+/*
 .thr_main_day {
   display: flex;
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
   justify-content: space-around;
+}*/
+.thr_main_day {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5dc9dd;
+  display: flex;
+  position: relative;
+
 }
 
 .thr_main_list {
+  /*height: 5px;*/
   overflow-x: auto;
+  /*overflow-x: scroll;*/
   display: flex;
-  width: 100%;
+  width: 963px;
   text-align: left;
   height: inherit;
   /**/
-  /*border: 0px 0px 1px 1px solid black;*/
+  border: 1px solid black;
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
-
-}
-
-.DayList {
-  overflow: hidden;
 }
 
 .thr_main_list::-webkit-scrollbar {
@@ -399,10 +402,24 @@ export default {
   /*width: 1000px;*/
   justify-content: space-between;
   /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
 }
+
+.sub_main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*  */
+  border: 1px solid black;
+  padding: 0.25em;
+  margin: 0.25em;
+  border-radius: 0.25em;
+  justify-content: space-around;
+  flex: 1;
+}
+
 
 </style>

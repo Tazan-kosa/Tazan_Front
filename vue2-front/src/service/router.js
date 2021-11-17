@@ -21,7 +21,11 @@ import tourmanage from "../components/common/admin/tour/tourmanage";
 import usermanage from "../components/common/admin/user/usermanage";
 import planmanage from "../components/common/admin/plan/planmanage";
 import reviewmanage from "../components/common/admin/review/reviewmanage";
+<<<<<<< Updated upstream
 import tourForm from "../components/common/admin/tour/tourForm";
+=======
+import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
+>>>>>>> Stashed changes
 
 
 Vue.use(VueRouter)
@@ -48,9 +52,9 @@ const route = [
 
     },
     {
-        path: '/modif/:region',
-        name: 'regionList_modi',
-        component: Create
+        path: '/modify/:planId',
+        name: 'planUpdate',
+        component: UnkownPlanUpdate
     },
 
     // 장소 클릭시 여행 계획 짜기
