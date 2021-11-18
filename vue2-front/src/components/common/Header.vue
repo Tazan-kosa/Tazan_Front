@@ -22,13 +22,13 @@
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
               <div></div>
               <li class="nav-item">
-                <router-link to="/detail"><span>여행계획</span></router-link>
+                <router-link to="/detail"><span class="nav-item-detail">여행계획</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/tourlist"><span>여행지</span></router-link>
+                <router-link to="/tourlist"><span class="nav-item-detail">여행지</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/reviewList"><span>여행후기</span></router-link>
+                <router-link to="/reviewList"><span class="nav-item-detail">여행후기</span></router-link>
               </li>
             </ul>
           </div>
@@ -44,12 +44,12 @@
             <!-- 로그인시 사라지는곳-->
             <!-- Login-->
             <div id="login" v-if="!Authorization">
-              <router-link to="/login"><a><span>로그인</span></a></router-link>
+              <router-link to="/login"><a><span class="user-set">로그인</span></a></router-link>
             </div>
 
             <!-- Register-->
             <div id="Register" v-if="!Authorization">
-              <router-link to="/Register"><a><span>회원가입</span></a></router-link>
+              <router-link to="/Register"><a><span class="user-set">회원가입</span></a></router-link>
             </div>
 
             <!-- profile 버튼-->
@@ -104,6 +104,15 @@ export default {
   position: sticky;
   top: 0;
   background-color: white;
+}
+
+.nav-item-detail {
+  color: #333d4a;
+  font-size: 24px;
+}
+
+.user-set {
+  font-size: 20px;
 }
 
 /*nav underline 제거*/
