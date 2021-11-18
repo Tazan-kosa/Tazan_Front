@@ -120,7 +120,6 @@
 
 <script>
 // import UnkownList from "./UnkownList";
-
 import RecomPlace from "./RecomPlace";
 // import RecomPlaceSave from "./RecomPlaceSave";
 // import DatePicker from "../DatePicker";
@@ -129,7 +128,6 @@ import DayList from "./DayList";
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
-
 export default {
   name: "Unkown",
   data() {
@@ -154,7 +152,6 @@ export default {
     }
   },
   methods: {
-
     planList_add(result) {
       if (this.mydate == '') {
         alert('날짜를 먼저 선택해주세요')
@@ -168,7 +165,6 @@ export default {
         alert('날짜를 먼저 선택해주세요')
       } else {
         var test = new Date(this.mydate[0])
-
         test.setDate((test.getDate() + (this.cnt) + 1))
         if (test > this.mydate[1]) {
           alert('일정 길이를 초과합니다!')
@@ -178,7 +174,6 @@ export default {
           this.totalPlan_tour.push([])
         }
       }
-
     },
     dayList_delete() {
       if (this.totalPlan_tour.length<=1) {
@@ -187,8 +182,7 @@ export default {
         this.cnt -= 1
         this.totalPlan.pop()
         this.totalPlan_tour.pop()
-
-
+        // this.totalPlan_tour.push([])
         // this.cnt -= 1
         // this.totalPlan.splice([0], )
         // this.totalPlan_tour.pop([])
@@ -197,7 +191,6 @@ export default {
     DeleteList(listObject) {
       this.totalPlan[listObject.index1].splice(listObject.index2, 1)
       this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)
-
     },
     SavePlan() {
       var calc=(new Date(this.mydate[1])-new Date(this.mydate[0]))/86400000
@@ -218,39 +211,25 @@ export default {
         planVO.startDate = this.mydate[0];
         planVO.endDate = this.mydate[1];
         // PlanVO.date =;
-
         // planVO.planDate = plandate;
-
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
+        if (confirm("저장 하시겠습니까?")) {
+          axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8',
+            },
+          }).then(request => {
+            if (request.status === 200) {
 
-
-      if (confirm("저장 하시겠습니까?")) {
-        axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-          },
-        }).then(request => {
-          if (request.status === 200) {
-
-            if (confirm("저장 하시겠습니까?")) {
-              axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
-                headers: {
-                  'Content-Type': 'application/json; charset=utf-8',
-                },
-              }).then(request => {
-                if (request.status === 200) {
-
-                  this.$router.push(`/planDetail/${request.data}`)
-                }
-              }).catch(function () {
-                alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
-              })
+              this.$router.push(`/planDetail/${request.data}`)
             }
-          }
+          }).catch(function () {
+            alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
+          })
         }
       }
-    }
+    },
   },
   components: {
     // DatePicker,
@@ -266,26 +245,19 @@ export default {
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
-
-
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
         .then(response => {
-
           this.recomList = response.data;
-
         })
         .catch(err => {
           console.log(err)
         })
-
   },
   mounted() {
   }
 }
 </script>
-
 <style scoped>
 .sub_main {
   display: flex;
