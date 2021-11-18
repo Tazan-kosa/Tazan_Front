@@ -203,44 +203,32 @@ export default {
       if (this.mydate == '') {
         alert('날짜를 먼저 선택해주세요')
       } else {
-        var test = new Date(this.mydate[0])
+        var test = new Date(this.startDate)
 
         test.setDate((test.getDate() + (this.cnt) + 1))
-        if (test > this.mydate[1]) {
+        if (test < this.endDate) {
           alert('일정 길이를 초과합니다!')
-        } else if (mydate[0] != mydate_up[0]) {
+
+        } else {
           this.cnt += 1
           this.plan.planList.push([])
           this.plan.planList_tour.push([])
-
-          /*this.cnt += 1
-          this.totalPlan.push([])
-          this.totalPlan_tour.push([])*/
-
         }
       }
     },
     dayList_delete() {
 
-      if (this.plan.planList.size() <= 1) {
-        alert('일정은 1일차부터 시작입니다.!')
-        return;
-      }
-      var test = new Date(this.mydate_up[0])
-
-      test.setDate((test.getDate() + (this.cnt) + 1))
-      // Array. size() > cnt
-      // this.planList.length <= 1
-      if (test < this.mydate_up[1]) {
-        alert('일정은 1일차부터 시작입니다.!')
+      if (this.plan.planList.length <= 1) {
+        alert('일정은 1일차부터 시작입니다.')
       } else {
-        this.cnt -= 1
-        this.plan.planList.pop()
-        // this.totalPlan_tour.push([])
-
-        // this.cnt -= 1
-        // this.totalPlan.splice([0], )
-        // this.totalPlan_tour.pop([])
+        var test = new Date(this.startDate)
+        test.setDate((test.getDate() + (this.cnt) + 1))
+        if (test > this.endDate) {
+          alert('일정은 1일차부터 시작입니다.!')
+        } else {
+          this.cnt -= 1;
+          this.plan.planList.pop()
+        }
       }
     },
     DeleteList(listObject) {
