@@ -155,7 +155,7 @@ export default {
         }
       ],
       recomList: [],
-      planList_tour: [],
+      // planList_tour: [],
       planDate: [],
       planList: [],
       userId: '',
@@ -215,7 +215,7 @@ export default {
         /*        this.totalPlan[this.cnt].push(result) // object
                 this.totalPlan_tour[this.cnt].push(result.tourId)*/
         this.plan.planList[this.cnt].push(result) // object
-        this.plan.planList_tour[this.cnt].push(result.tourId)
+        // this.planList_tour[this.cnt].push(result.tourId)
       }
     },
     updateddate() {
@@ -240,7 +240,7 @@ export default {
         } else {
           this.cnt += 1
           this.plan.planList.push([])
-          this.plan.planList_tour.push([])
+          // this.planList_tour.push([])
         }
       }
     },
@@ -263,7 +263,7 @@ export default {
       /*this.totalPlan[listObject.index1].splice(listObject.index2, 1)
       this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)*/
       this.plan.planList[listObject.index1].splice(listObject.index2, 1)
-      this.plan.planList_tour[listObject.index1].splice(listObject.index2, 1)
+      // this.planList_tour[listObject.index1].splice(listObject.index2, 1)
 
     },
     UpdateWrite() {
