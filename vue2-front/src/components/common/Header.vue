@@ -22,13 +22,13 @@
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
               <div></div>
               <li class="nav-item">
-                <router-link to="/detail"><span class="nav-item-detail">여행계획</span></router-link>
+                <router-link to="/detail"><span class="nav-item-detail">📗여행계획</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/tourlist"><span class="nav-item-detail">여행지</span></router-link>
+                <router-link to="/tourlist"><span class="nav-item-detail">✈️여행지</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/reviewList"><span class="nav-item-detail">여행후기</span></router-link>
+                <router-link to="/reviewList"><span class="nav-item-detail">✍️여행후기</span></router-link>
               </li>
             </ul>
           </div>

@@ -137,8 +137,8 @@ export default {
         })
       } catch (error) {
         // 로그인 실패시
-        //   alert('아이디, 비밀번호 실패');
-        // console.error(error);
+          alert('로그인 에러');
+        console.error(error);
       }
     },
   },
