@@ -22,13 +22,13 @@
             <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
               <div></div>
               <li class="nav-item">
-                <router-link to="/detail"><span class="nav-item-detail">여행계획</span></router-link>
+                <router-link to="/detail"><span class="nav-item-detail">📗여행계획</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/tourlist"><span class="nav-item-detail">여행지</span></router-link>
+                <router-link to="/tourlist"><span class="nav-item-detail">✈️여행지</span></router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/reviewList"><span class="nav-item-detail">여행후기</span></router-link>
+                <router-link to="/reviewList"><span class="nav-item-detail">✍️여행후기</span></router-link>
               </li>
             </ul>
           </div>
@@ -109,6 +109,7 @@ export default {
 .nav-item-detail {
   color: #333d4a;
   font-size: 24px;
+  margin-right: 50px;
 }
 
 .user-set {
@@ -118,6 +119,7 @@ export default {
 /*nav underline 제거*/
 a {
   text-decoration: none;
+  font-family: 'Jua', Noto Sans KR, sans-serif;
 }
 
 span {

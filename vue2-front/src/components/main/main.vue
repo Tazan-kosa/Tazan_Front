@@ -39,21 +39,19 @@
         </div>
         <!-- 동영상 이동-->
         <a class="carousel-control-prev text-decoration-none w-10 ps-3" href="#tour-main"
-           role="button" data-bs-slide="prev" id="video-move-icon-1">
-          <i class="fas fa-chevron-left"></i>
-        </a>
-
+           role="button" data-bs-slide="prev">
+          <img src="../../assets/left-rbg.png" height="24" width="24" alt="prev-left-btn"/></a>
         <a class="carousel-control-next text-decoration-none w-10 pe-3" href="#tour-main"
-           role="button" data-bs-slide="next" id="video-move-icon-2">
-          <i class="fas fa-chevron-right"></i>
-        </a>
+           role="button" data-bs-slide="next">
+          <img src="../../assets/right-rbg.png" height="24" width="24" alt="next-right-btn"/></a>
       </div>
     </div>
+
     <!-- 여행지 리스트 -->
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-          <h1 class="h1">베스트 추천 여행지</h1>
+          <h1 class="h1">베스트 추천 여행지✈️</h1>
         </div>
       </div>
       <div class="row">
@@ -68,7 +66,7 @@
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-          <h1 class="h1">이달의 베스트 여행후기</h1>
+          <h1 class="h1">이달의 베스트 여행후기✍️</h1>
         </div>
       </div>
       <div class="row">
@@ -84,7 +82,6 @@
 </template>
 
 <script>
-// importing bootstrap 5 Modules, list component
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "./main.css";
@@ -129,11 +126,6 @@ export default {
 </script>
 
 <style scoped>
-/*.travel-container {*/
-/*  overflow-x: scroll;*/
-/*  display: flex;*/
-/*}*/
-
 #listbox {
   float: left;
 }
@@ -142,12 +134,7 @@ export default {
   width: 100%;
 }
 
-#video-move-icon-1:hover {
-  background-color: #E2E2E2;
+h1 {
+  font-family: 'Jua', Noto Sans KR, sans-serif;
 }
-
-#video-move-icon-2:hover {
-  background-color: #E2E2E2;
-}
-
 </style>

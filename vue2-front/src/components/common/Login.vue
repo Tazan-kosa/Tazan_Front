@@ -15,10 +15,10 @@
                         class="mx-auto"
                         style="width: 400px; height: 300px">
                       <div class="mx-3">
-                        <v-icon color="black" size="30px" @keyup.enter="loginSubmit">아이디</v-icon>
+                        <v-icon color="black" size="30px" @keyup.enter="loginSubmit">이메일</v-icon>
                         <div class="mx-1">
                           <v-text-field
-                              placeholder="아이디"
+                              placeholder="이메일"
                               v-model="email"
                               required
                           ></v-text-field>
@@ -122,6 +122,7 @@ export default {
 
                 if (this.auth === "ROLE_ADMIN") {
                   this.$router.push('/adminpage/tour')
+                  location.reload();
                 } else if (this.auth === "ROLE_USER") {
                   // 로그인 성공시 홈페이지로 리다이렉트
                   this.$router.push('/')
@@ -137,8 +138,8 @@ export default {
         })
       } catch (error) {
         // 로그인 실패시
-        //   alert('아이디, 비밀번호 실패');
-        // console.error(error);
+          alert('로그인 에러');
+        console.error(error);
       }
     },
   },

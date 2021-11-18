@@ -3,7 +3,7 @@
     <!--    -->
     <div class="thr_main_sub" v-for="(day, index2) in daylist" :key="index2">
       <v-card class="pa-20 ma-20" max-width="150">
-        <v-img :src=day.img height="150px">
+        <v-img class="planimg" :src=day.img height="150px" @click="viewURL(day.url)">
         </v-img>
         <v-card-title
             class="text-truncate display: inline-block"
@@ -15,7 +15,6 @@
         <v-card-subtitle>
           {{ day.tag1 + " , " + day.tag2}}
         </v-card-subtitle>
-        <button type="button" uk-close @click="tourListDelete(index2)"></button>
         <!--          <v-btn icon @click="tourListDelete(index2)">
                     <v-btn class="mx-2" fab dark small color="primary">
                       <v-icon dark>
@@ -60,5 +59,8 @@ div {
   justify-content: space-around;
 }
 
+.planimg:hover{
+  cursor: pointer;
+}
 
 </style>

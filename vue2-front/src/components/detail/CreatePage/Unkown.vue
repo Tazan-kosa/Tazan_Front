@@ -19,7 +19,7 @@
                     v-model="text"
                     size="sm"
                     class="w-25 p-3 mb-1 text-black"
-                    placeholder="여행 제목을 적어 주세요.(공백포함 1자이상 45자이하 입니다!)"
+                    placeholder="여행 제목(공백포함 1자이상 45자이하)"
                 ></b-form-input>
               </div>
             </div>
@@ -57,8 +57,18 @@
               </div>
             </div>
             <div>
-              확인하는중입니다.
             </div>
+            <br>
+            <br>
+            <v-card
+                class="left_container_img"
+            >
+              <img
+                  max-height="300"
+                  max-width="300"
+                  :src="require(`/src/assets/yacht_tazan_logo.png`)"
+              >
+            </v-card>
           </v-card>
           <v-card class="thr_main">
             <!--            -->
@@ -110,7 +120,6 @@
 
 <script>
 // import UnkownList from "./UnkownList";
-
 import RecomPlace from "./RecomPlace";
 // import RecomPlaceSave from "./RecomPlaceSave";
 // import DatePicker from "../DatePicker";
@@ -119,7 +128,6 @@ import DayList from "./DayList";
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
-
 export default {
   name: "Unkown",
   data() {
@@ -144,7 +152,6 @@ export default {
     }
   },
   methods: {
-
     planList_add(result) {
       if (this.mydate == '') {
         alert('날짜를 먼저 선택해주세요')
@@ -158,7 +165,6 @@ export default {
         alert('날짜를 먼저 선택해주세요')
       } else {
         var test = new Date(this.mydate[0])
-
         test.setDate((test.getDate() + (this.cnt) + 1))
         if (test > this.mydate[1]) {
           alert('일정 길이를 초과합니다!')
@@ -168,19 +174,15 @@ export default {
           this.totalPlan_tour.push([])
         }
       }
-
     },
     dayList_delete() {
-      var test = new Date(this.mydate[0])
-
-      test.setDate((test.getDate() + (this.cnt) + 1))
-      if (test <= this.mydate[1]) {
+      if (this.totalPlan_tour.length<=1) {
         alert('일정은 1일차부터 시작입니다.!')
       } else {
         this.cnt -= 1
         this.totalPlan.pop()
+        this.totalPlan_tour.pop()
         // this.totalPlan_tour.push([])
-
         // this.cnt -= 1
         // this.totalPlan.splice([0], )
         // this.totalPlan_tour.pop([])
@@ -189,36 +191,43 @@ export default {
     DeleteList(listObject) {
       this.totalPlan[listObject.index1].splice(listObject.index2, 1)
       this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)
-
     },
     SavePlan() {
-      let planVO = {};
-      planVO.userID = localStorage.getItem("id");
-      // reviewVO.userID = 1//localStorage.getItem("id")
-      planVO.region = this.region;
-      planVO.startDate = this.mydate[0];
-      planVO.endDate = this.mydate[1];
-      // PlanVO.date =;
+      var calc=(new Date(this.mydate[1])-new Date(this.mydate[0]))/86400000
+      if (calc+1<this.totalPlan_tour.length){
+        alert("일정의 길이가 총 일정 수 보다 많습니다!")
+      }
+      else if (calc+1>this.totalPlan_tour.length){
+        alert("일정의 길이가 총 일정 수 보다 적습니다!")
+      }
+      else if(this.totalPlan_tour.length<1){
+        alert("일정이 입력되지 않았습니다!")
+      }
+      else {
+        let planVO = {};
+        planVO.userID = localStorage.getItem("id");
+        // reviewVO.userID = 1//localStorage.getItem("id")
+        planVO.region = this.region;
+        planVO.startDate = this.mydate[0];
+        planVO.endDate = this.mydate[1];
+        // PlanVO.date =;
+        // planVO.planDate = plandate;
+        planVO.planTitle = this.text;
+        planVO.planList = this.totalPlan_tour;
+        if (confirm("저장 하시겠습니까?")) {
+          axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8',
+            },
+          }).then(request => {
+            if (request.status === 200) {
 
-      // planVO.planDate = plandate;
-
-      planVO.planTitle = this.text;
-      planVO.planList = this.totalPlan_tour;
-
-
-      if (confirm("저장 하시겠습니까?")) {
-        axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-          },
-        }).then(request => {
-          if (request.status === 200) {
-
-            this.$router.push(`/planDetail/${request.data}`)
-          }
-        }).catch(function () {
-          alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
-        })
+              this.$router.push(`/planDetail/${request.data}`)
+            }
+          }).catch(function () {
+            alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
+          })
+        }
       }
     },
   },
@@ -236,26 +245,19 @@ export default {
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
-
-
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-
     axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
         .then(response => {
-
           this.recomList = response.data;
-
         })
         .catch(err => {
           console.log(err)
         })
-
   },
   mounted() {
   }
 }
 </script>
-
 <style scoped>
 .sub_main {
   display: flex;
