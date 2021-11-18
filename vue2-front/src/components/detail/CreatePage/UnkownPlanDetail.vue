@@ -36,7 +36,7 @@
             <div class="left">
               <div class=""
               >
-                <h2 class="">
+                <h2 class="region_f">
                   {{ plan.region }}
                 </h2>
 
@@ -78,9 +78,14 @@
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
-                <h6>
+<!--                <h6>
                   {{ index + 1 }} 일차
-                </h6>
+                </h6>-->
+                <v-avatar
+                    class="thr_main_day_list"
+                >
+                  {{ index + 1 }} 일차
+                </v-avatar>
               </div>
 
               <DayListV2 :daylist="plan" class="thr_main_list">
@@ -170,6 +175,10 @@ export default {
 </script>
 
 <style scoped>
+.region_f {
+  font-size: 5em;
+  font-weight: 1000 !important;
+}
 .sub_main {
   display: flex;
   position: relative;
@@ -185,12 +194,16 @@ export default {
 }
 
 .thr_main_sub {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 18px !important;
+  font-weight: 900 !important;
   color: #5dc9dd;
   display: flex;
   position: relative;
-
+}
+.thr_main_day_list {
+  color: #5dc9dd;
+  font-size: 18px !important;
+  font-weight: 900 !important;
 }
 
 
