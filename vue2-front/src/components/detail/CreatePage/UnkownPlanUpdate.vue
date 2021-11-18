@@ -14,13 +14,26 @@
             <br>
 
             <div class="wrap">
-              <div class="sub_title">
+              <div class="sub_title" role="group">
                 <b-form-input
                     size="sm"
                     class="w-25 p-3 mb-1 text-black plantitle"
                     placeholder="제목은 비워둘 수 없습니다."
                     :value="plan.planTitle"
                 ></b-form-input>
+<!--                -->
+<!--                <b-form-input
+                    id="input-live"
+                    v-model="name"
+                    :state="nameState"
+                    aria-describedby="input-live-help input-live-feedback"
+                    placeholder="여행 타이틀 입력"
+                    trim
+                ></b-form-input>
+                <b-form-invalid-feedback id="input-live-feedback">
+                  여행 제목 입력 (1자 이상 45자 이하)
+                </b-form-invalid-feedback>-->
+
               </div>
             </div>
           </div>
@@ -32,7 +45,7 @@
           <v-card class="left_container">
             <div class="left">
               <div>
-                <h2>{{ plan.region }}</h2>
+                <h2 class="region_f">{{ plan.region }}</h2>
               </div>
               <div>
                 여행 일자
@@ -59,6 +72,7 @@
                 <div>
                   여행 시작 날짜 : {{ defaultstartDate }}
                 </div>
+                &nbsp;
                 <div>
                   여행 시작 날짜 : {{ defaultendDate }}
                 </div>
@@ -70,6 +84,7 @@
                 <div>
                   여행 수정 날짜 : {{ mydate_up[0] }}
                 </div>
+                &nbsp;
                 <div>
                   여행 수정 날짜 : {{ mydate_up[1] }}
                 </div>
@@ -89,9 +104,14 @@
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
-                <h6>
+<!--                <h6>
                   {{ index + 1 }} 일차
-                </h6>
+                </h6>-->
+                <v-avatar
+                    class="thr_main_day_list"
+                >
+                  {{ index + 1 }} 일차
+                </v-avatar>
 
               </div>
 
@@ -113,7 +133,7 @@
             </div>
           </v-card>
           <v-card class="right">
-            <div>추천 장소</div>
+            <div class="recom_f">추천 장소</div>
             <div>
               <RecomPlace :recomList="recomList" @recived="planList_add" class="right_list"/>
             </div>
@@ -137,8 +157,14 @@ import DatePicker from "vue2-datepicker";
 
 export default {
   name: "UnkownPlanUpdate",
+  /*computed: {
+    nameState() {
+      return this.name.length > 0 ? true : false
+    }
+  },*/
   data() {
     return {
+      // name: '',
       lang: {
         formatLocale: {
           firstDayOfWeek: 1,
@@ -323,6 +349,13 @@ export default {
 </script>
 
 <style scoped>
+.region_f {
+  font-size: 5em;
+  font-weight: 1000 !important;
+}
+.recom_f {
+  font-weight: 1000 !important;
+}
 .sub_main {
   display: flex;
   position: relative;
@@ -343,15 +376,19 @@ export default {
   color: #5dc9dd;
   display: flex;
   position: relative;
-
+}
+.thr_main_day_list {
+  color: #5dc9dd;
+  font-size: 18px !important;
+  font-weight: 900 !important;
 }
 
-.thr_main .sub_main {
+/*.thr_main .sub_main {
   border: 1px solid black;
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
-}
+}*/
 
 .sub_title {
   display: flex;
@@ -366,21 +403,6 @@ export default {
 .datepicpick {
   width: 95%;
   height: 100%;
-}
-
-.sub_main {
-  display: flex;
-  position: relative;
-  width: 100%;
-  /*height: 700px;*/
-  height: 100%;
-  /*float: left;*/
-  /*justify-content: space-between;*/
-  /*  */
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
 }
 
 .left_container {
@@ -410,7 +432,7 @@ export default {
 .thr_main {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 65%;
   height: 100%;
   /**/
   /*border: 1px solid black;*/
@@ -432,6 +454,9 @@ export default {
 .right_list {
   width: 100%;
   height: 100%;
+  /*justify-content: left;*/
+  /*display: flex;*/
+  /*flex-direction: row;*/
 }
 
 
@@ -441,21 +466,17 @@ export default {
   width: 100%;
 }
 
-/*
 .thr_main_day {
   display: flex;
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  justify-content: space-around;
-}*/
-.thr_main_day {
+  /*justify-content: space-around;*/
   font-size: 1rem;
   font-weight: 700;
   color: #5dc9dd;
   display: flex;
   position: relative;
-
 }
 
 .thr_main_list {
@@ -500,20 +521,4 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
 }
-
-.sub_main {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /*  */
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
-  justify-content: space-around;
-  flex: 1;
-}
-
-
 </style>

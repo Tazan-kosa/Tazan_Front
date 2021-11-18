@@ -35,7 +35,7 @@
             <div class="left">
               <div class=""
               >
-                <h2 class="">
+                <h2 class="region_f">
                   {{ this.region }}
                 </h2>
 
@@ -78,9 +78,11 @@
                 :key="index"
             >
               <div class="thr_main_day">
-                <h6>
+                <v-avatar
+                    class="thr_main_day_list"
+                >
                   {{ index + 1 }} 일차
-                </h6>
+                </v-avatar>
               </div>
 
               <DayList
@@ -101,7 +103,7 @@
           </v-card>
 
           <v-card class="right">
-            <div>추천 장소</div>
+            <div class="recom_f">추천 장소</div>
             <div>
               <RecomPlace
                   :recomList="recomList"
@@ -259,6 +261,13 @@ export default {
 }
 </script>
 <style scoped>
+.region_f {
+  font-size: 5em;
+  font-weight: 1000 !important;
+}
+.recom_f {
+  font-weight: 1000 !important;
+}
 .sub_main {
   display: flex;
   position: relative;
@@ -282,8 +291,10 @@ export default {
 
 }
 
-.thr_main {
-
+.thr_main_day_list {
+  color: #5dc9dd;
+  font-size: 18px !important;
+  font-weight: 900 !important;
 }
 
 .sub_title {
@@ -350,6 +361,8 @@ export default {
 .right_list {
   width: 100%;
   height: 100%;
+  /*justify-content: left;*/
+
 }
 
 
