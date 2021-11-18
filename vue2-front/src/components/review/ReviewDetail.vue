@@ -57,6 +57,7 @@ export default {
   },
   created() {
     this.userID = localStorage.getItem('id')
+    this.nickName = localStorage.getItem('nickname')
     this.reviewID = this.$route.params.reviewId
     console.log("id : " + this.userID)
     axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
@@ -119,6 +120,7 @@ export default {
       }).then(res => {
         if (res.status == 200) {
           console.log(res.data)
+          res.data.nickName = this.nickName
           this.CommentsData.push(res.data)
           document.getElementsByClassName("comment-content").item(0).textContent = ''
         }
