@@ -3,7 +3,6 @@
     <hr>
     <div class="comment display-fl">
       <div class="profile">
-        <!-- 여기에 이니셜 가져오기-->
         <span id="initialbox">
         {{ initial }}
         </span>
@@ -86,7 +85,6 @@ div {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  /*border: 1px solid red;*/
 }
 
 #initialbox {
