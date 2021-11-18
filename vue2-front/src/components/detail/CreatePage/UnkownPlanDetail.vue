@@ -31,7 +31,7 @@
       <h1 class="uk-heading-line"><span></span></h1>
 
       <div class="save_plan">
-        <div class="sub_main">
+        <v-card class="sub_main">
           <v-card class="left_container">
             <div class="left">
               <div class=""
@@ -60,6 +60,17 @@
               <div>
               </div>
             </div>
+            <br><br>
+
+          <v-card
+              class="left_container_img"
+          >
+            <img
+                max-height="300"
+                max-width="300"
+                :src="require(`/src/assets/yacht_tazan_logo.png`)"
+            >
+          </v-card>
           </v-card>
 
 
@@ -75,7 +86,7 @@
               </DayListV2>
             </v-col>
           </v-card>
-        </div>
+        </v-card>
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="reviewWrite">Review</b-button>
@@ -212,6 +223,12 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
 }
+.left_container_img {
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
 .left {
   display: flex;
   width: 100%;
