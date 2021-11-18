@@ -2,21 +2,21 @@
   <div>
     <div class="outer-container">
       <div class="inner-container">
+        <div class="inner1">신고횟수</div>
         <div class="inner1">닉네임</div>
         <div class="inner1">제목</div>
         <div class="inner1">내용</div>
         <div class="inner1">작성일자</div>
       </div>
       <div class="inner-container2">
+        <div class="inner"><p>{{ this.item.reportCount }}</p></div>
         <div class="inner"><p>{{ this.item.nickName }}</p></div>
         <div class="inner"><p>{{ this.item.reviewTitle }}</p></div>
         <div class="inner" id="commentContent" v-html="item.commentContent"><p></p></div>
         <div class="inner"><p>{{ this.item.commentDate }}</p></div>
-        <span>
-        &nbsp;
+      </div>
+      <div class="inner-container3">
         <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-        <p></p>
-      </span>
       </div>
     </div>
   </div>
@@ -67,9 +67,4 @@ export default {
 </script>
 
 <style scoped>
-
-button {
-  position: static;
-  float: right;
-}
 </style>

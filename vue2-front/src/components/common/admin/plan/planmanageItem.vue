@@ -12,11 +12,9 @@
         <div class="inner"><p>{{ this.item.startDate.slice(0, 10) }} ~ {{ this.item.endDate.slice(0, 10) }}</p></div>
         <div class="inner"><p>{{ this.user.name }}</p></div>
         <div class="inner"><p>{{ this.user.auth }}</p></div>
-        <span>
-        &nbsp;
+      </div>
+      <div class="inner-container3">
         <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-        <p></p>
-      </span>
       </div>
     </div>
   </div>
@@ -60,10 +58,6 @@ export default {
 </script>
 
 <style scoped>
-button {
-  position: static;
-  float: right;
-}
 
 p {
   color: white;
