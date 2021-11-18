@@ -1,6 +1,5 @@
 <template>
 
-<!--    <div class="col mb-2" v-if="checkedtag.filter(n => item.tag.includes(n)).length > 0" @click="viewURL(item.url)">-->
   <div class="itembox mb-2" v-if="checkedtag.includes(item.tag1) || checkedtag.includes(item.tag2)" @click="viewURL(item.url)">
       <TravelItem :item="item" />
     </div>
