@@ -109,6 +109,7 @@ export default {
 .nav-item-detail {
   color: #333d4a;
   font-size: 24px;
+  margin-right: 50px;
 }
 
 .user-set {
@@ -118,6 +119,7 @@ export default {
 /*nav underline 제거*/
 a {
   text-decoration: none;
+  font-family: 'Jua', Noto Sans KR, sans-serif;
 }
 
 span {

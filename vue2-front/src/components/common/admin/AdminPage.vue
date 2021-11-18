@@ -88,7 +88,7 @@ export default {
         {title: '후기관리', icon: 'mdi-pencil', path: 'review'},
         {title: '계정관리', icon: 'mdi-account', path: 'user'},
         {title: '댓글관리', icon: 'mdi-message-reply-text', path: 'reply'},
-        {title: 'About', icon: 'mdi-help-box', path: 'tour'},
+        {title: 'About', icon: 'mdi-help-box', path: 'about'},
       ],
       path: 'tour',
 
