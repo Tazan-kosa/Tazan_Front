@@ -57,7 +57,6 @@
               </div>
             </div>
             <div>
-              확인하는중입니다.
             </div>
             <br>
             <br>
@@ -188,7 +187,7 @@ export default {
         this.cnt -= 1
         this.totalPlan.pop()
         this.totalPlan_tour.pop()
-        // this.totalPlan_tour.push([])
+
 
         // this.cnt -= 1
         // this.totalPlan.splice([0], )
@@ -225,25 +224,33 @@ export default {
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
 
-        alert("빰")
 
+      if (confirm("저장 하시겠습니까?")) {
+        axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+          },
+        }).then(request => {
+          if (request.status === 200) {
 
-        // if (confirm("저장 하시겠습니까?")) {
-        //   axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
-        //     headers: {
-        //       'Content-Type': 'application/json; charset=utf-8',
-        //     },
-        //   }).then(request => {
-        //     if (request.status === 200) {
-        //
-        //       this.$router.push(`/planDetail/${request.data}`)
-        //     }
-        //   }).catch(function () {
-        //     alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
-        //   })
-        // }
+            if (confirm("저장 하시겠습니까?")) {
+              axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+                headers: {
+                  'Content-Type': 'application/json; charset=utf-8',
+                },
+              }).then(request => {
+                if (request.status === 200) {
+
+                  this.$router.push(`/planDetail/${request.data}`)
+                }
+              }).catch(function () {
+                alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
+              })
+            }
+          }
+        }
       }
-    },
+    }
   },
   components: {
     // DatePicker,

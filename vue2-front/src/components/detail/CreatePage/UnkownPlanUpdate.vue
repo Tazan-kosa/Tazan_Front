@@ -51,7 +51,6 @@
               >
                 여행일자
                 {{ mydate }}
-                <!--                :placeholder= startDate + " - " + endDate-->
               </date-picker>
             </div>
             <br>
@@ -93,11 +92,7 @@
                 <h6>
                   {{ index + 1 }} 일차
                 </h6>
-<!--                <div class="thr_main_day_list">-->
-<!--                  <h6>-->
-<!--                    {{ startDate }}-->
-<!--                  </h6>-->
-<!--                </div>-->
+
               </div>
 
               <DayList
@@ -108,8 +103,7 @@
                   @tourListDelete="DeleteList"
               >
               </DayList>
-              <!--              <DayList :daylist="plan" class="thr_main_sub">-->
-              <!--              </DayList>-->
+
             </v-col>
 
             <div class="uk-margin">
