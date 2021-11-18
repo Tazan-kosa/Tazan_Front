@@ -151,7 +151,8 @@ export default {
       text: '',
       nickname: '',
       plan: '',
-      mydate_up: ''
+      mydate_up: '',
+      cnt: 0
 
   }
   },
@@ -176,12 +177,24 @@ export default {
       //에러 처리 할 곳
       alert("에러발생");
     })
+
+    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
+        .then(response => {
+
+          this.recomList = response.data;
+
+        })
+        .catch(err => {
+          console.log(err)
+        })
   },
   methods: {
     planList_add(result) {
       if (this.mydate == '') {
         alert('날짜를 먼저 선택해주세요')
       }else {
+/*        this.totalPlan[this.cnt].push(result) // object
+        this.totalPlan_tour[this.cnt].push(result.tourId)*/
         this.plan.planList[this.cnt].push(result) // object
         this.plan.planList_tour[this.cnt].push(result.tourId)
       }
@@ -195,18 +208,30 @@ export default {
         test.setDate((test.getDate() + (this.cnt) + 1))
         if (test > this.mydate[1]) {
           alert('일정 길이를 초과합니다!')
-        } else {
+        } else if (mydate[0] != mydate_up[0]) {
           this.cnt += 1
           this.plan.planList.push([])
           this.plan.planList_tour.push([])
+
+          /*this.cnt += 1
+          this.totalPlan.push([])
+          this.totalPlan_tour.push([])*/
+
         }
       }
     },
     dayList_delete() {
-      var test = new Date(this.mydate[0])
+
+      if (this.plan.planList.size() <= 1) {
+        alert('일정은 1일차부터 시작입니다.!')
+        return;
+      }
+      var test = new Date(this.mydate_up[0])
 
       test.setDate((test.getDate() + (this.cnt) + 1))
-      if (test < this.mydate[1]) {
+      // Array. size() > cnt
+      // this.planList.length <= 1
+      if (test < this.mydate_up[1]) {
         alert('일정은 1일차부터 시작입니다.!')
       } else {
         this.cnt -= 1
@@ -282,7 +307,7 @@ export default {
   },
   props: {
     region: String
-  }
+  },
 }
 </script>
 
