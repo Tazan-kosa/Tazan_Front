@@ -178,7 +178,7 @@ export default {
           if (res.status === 200) {
             this.$router.push(`/reviewDetail/${res.data}`).then((() =>window.scrollTo(0,0) ))
           }
-        }).catch(() => {
+        }).catch((err) => {
           if(err.response.status == 500){
             alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
           }

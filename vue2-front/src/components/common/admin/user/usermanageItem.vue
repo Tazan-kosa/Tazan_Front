@@ -12,11 +12,9 @@
         <div class="inner"><p>{{this.item.nickName}}</p></div>
         <div class="inner"><p>{{this.item.email}}</p></div>
         <div class="inner"><p>{{this.item.auth}}</p></div>
-        <span>
-        &nbsp;
+      </div>
+      <div class="inner-container3">
         <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-        <p></p>
-      </span>
       </div>
     </div>
   </div>
@@ -47,9 +45,4 @@ export default {
 </script>
 
 <style scoped>
-button {
-  position: static;
-  float: right;
-
-}
 </style>
