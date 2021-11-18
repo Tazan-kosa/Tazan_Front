@@ -65,7 +65,7 @@
           <v-card
               class="left_container_img"
           >
-            <img
+            <img class="logo_img"
                 max-height="300"
                 max-width="300"
                 :src="require(`/src/assets/yacht_tazan_logo.png`)"
@@ -225,7 +225,7 @@ export default {
 }
 .left_container_img {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   position: relative;
 }
 
