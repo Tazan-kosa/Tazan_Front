@@ -49,13 +49,11 @@ export default {
     var id = localStorage.getItem('id');
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`).then(res => {
       if (res.status === 200) {
-        console.log(res.data)
         this.myplanList = res.data;
       }
     }).catch(function (err) {
-      console.log("에러발생: " + err)
       //에러 처리 할 곳
-      alert("에러발생");
+      alert("에러발생:" + err.response.message);
     })
   },
   data() {

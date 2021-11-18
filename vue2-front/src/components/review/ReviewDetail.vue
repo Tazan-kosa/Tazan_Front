@@ -30,7 +30,7 @@
             <div class="save"><Button class="comment-btn" @click="commentSave">저장하기</Button></div>
           </div>
           <ReviewComment v-for="(item,i) in CommentsData" :key="i" :index="i" :comment-data="item" @editComment="editComment"
-                         @deleteComment="deleteComment"></ReviewComment>
+                         @deleteComment="deleteComment" @reportComment="reportComment"></ReviewComment>
         </div>
       </div>
     </div>
@@ -59,14 +59,11 @@ export default {
     this.userID = localStorage.getItem('id')
     this.nickName = localStorage.getItem('nickname')
     this.reviewID = this.$route.params.reviewId
-    console.log("id : " + this.userID)
     axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
-        console.log("comment" + res.data.commentVO)
         if (res.data.commentVO != '') {
-          console.log('log')
           this.CommentsData = res.data.commentVO
         }
 
@@ -76,27 +73,27 @@ export default {
             this.reviewUserID = res.data.userID;
           }
         }).catch(err => {
-          console.log("에러발생: " + err)
           //에러 처리 할 곳
-          alert("에러발생");
+          alert("에러발생 : " + err.response.message);
         })
       }
     }).catch(function (err) {
-      console.log("에러발생: " + err)
       //에러 처리 할 곳
-      alert("에러발생");
+      alert("에러발생 : " + err.response.message);
     })
   },
   methods: {
     deleteReview() {
-      axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}/${this.Review.planID}`).then(res => {
-        if (res.status == 200) {
-          alert("후기를 삭제했습니다.");
-          this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
-        }
-      }).catch(err => {
-        console.log(err)
-      })
+      if(confirm("후기를 삭제하시겠습니까?")){
+        axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}/${this.Review.planID}`).then(res => {
+          if (res.status == 200) {
+            alert("후기를 삭제했습니다.");
+            this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
+          }
+        }).catch(err => {
+          alert("에러발생 : " + err.response.message);
+        })
+      }
     },
     modifyReview() {
       this.$router.push({
@@ -119,7 +116,6 @@ export default {
         },
       }).then(res => {
         if (res.status == 200) {
-          console.log(res.data)
           res.data.nickName = this.nickName
           this.CommentsData.push(res.data)
           document.getElementsByClassName("comment-content").item(0).textContent = ''
@@ -127,7 +123,6 @@ export default {
       })
     },
     editComment(comment) {
-      console.log(comment[0], comment[1])
       var commentVO = {}
       commentVO.commentID = comment[0]
       commentVO.commentContent = comment[1]
@@ -137,14 +132,12 @@ export default {
             alert("댓글을 수정했습니다.")
           }
         }).catch(err=> {
-          alert(err)
-          console.log(err.response)
+          alert(err.response.message)
         })
       }
     },
     deleteComment(arr) {
       if (confirm("정말 삭제하시겠습니까?")) {
-        console.log("id : " + arr[0], "i : " + arr[1])
         axios.delete(`http://kosa3.iptime.org:50201/comment/delete/${arr[0]}`).then(res => {
           if (res.status == 200) {
             alert("댓글을 삭제하였습니다.")
@@ -155,6 +148,20 @@ export default {
         })
       }
     },
+    reportComment(id){
+      axios.get(`http://kosa3.iptime.org:50201/comment/report/update/${id}/${this.userID}`).then(res=>{
+        if(res.status == 200){
+          alert("댓글을 신고하였습니다.")
+        }
+      }).catch(err => {
+        if(err.response.status == 500){
+          alert("이미 신고한 댓글입니다.")
+        }
+        else{
+          alert("오류가 발생하였습니다.\n" + err.response.message)
+        }
+      })
+    }
   },
   components: {
     TravelList,
@@ -218,6 +225,7 @@ export default {
   width: 100%;
   height: fit-content;
   text-align: right;
+  cursor: pointer;
 }
 
 .rh:hover {
