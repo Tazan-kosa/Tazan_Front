@@ -59,7 +59,7 @@ export default {
     this.userID = localStorage.getItem('id')
     this.reviewID = this.$route.params.reviewId
     console.log("id : " + this.userID)
-    axios.get(`http://localhost:80/review/${this.reviewID}`).then(res => {
+    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
