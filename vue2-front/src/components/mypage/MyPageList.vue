@@ -116,7 +116,7 @@
                       <div class="uk-width-1-4 uk-first-column">
                         <div>
                           <button class="uk-button uk-button-large uk-card-default"
-                          @click="planUpdate(mypage.planID)">
+                          @click="planUpdate(mypage)">
                             일정 수정
                           </button>
                         </div>
@@ -191,7 +191,6 @@ export default {
     axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
-            console.log(response)
             this.plan = response.data
           }
         }).catch(() => {
@@ -215,8 +214,14 @@ export default {
         })
       }
     },
-    planUpdate(id) {
-      this.$router.push(`/modify/${id}`)
+    planUpdate(mypage) {
+      console.log(mypage)
+      if(mypage.reviewFlag=="1"){
+        alert("리뷰가 작성된 계획은 수정할 수 없습니다.")
+      }
+      else{
+        this.$router.push(`/modify/${mypage.planID}`)
+      }
     }
   }
 }

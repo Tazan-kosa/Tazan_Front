@@ -1,10 +1,10 @@
-
 .inner-container {
     margin: auto;
 }
 
 .inner-container2 {
     margin: auto;
+    height: auto;
 }
 
 .inner1 {
@@ -20,6 +20,8 @@
     width: 25%;
     border: 1px solid dimgrey;
     padding: 10px;
+    min-height: 65px;
+    max-height: 65px;
 }
 
 .outer-container{
@@ -27,4 +29,9 @@
     background-color: grey;
     border: 2px solid deepskyblue;
     margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#commentContent {
+    overflow-y: scroll;
 }

@@ -1,5 +1,4 @@
 <template>
-  <!--  <div class="itembox mb-2" v-if="checkedtag.includes(item.tag1) || checkedtag.includes(item.tag2)" @click="viewURL(item.url)">-->
   <div class="itembox mb-2" @click="viewURL(item.reviewID)">
     <ReviewItem :item="item"/>
   </div>
@@ -38,7 +37,7 @@ div.itembox {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
-  transition: all 0.3s ease-in-out; /* 부드러운 모션을 위해 추가*/
+  transition: all 0.3s ease-in-out;
 }
 
 div.itembox:hover {

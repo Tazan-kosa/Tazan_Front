@@ -28,6 +28,7 @@
 <!--    <p>권한: </p>-->
 <!--    <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>-->
 <!--  </pre>-->
+
 </template>
 
 <script>
