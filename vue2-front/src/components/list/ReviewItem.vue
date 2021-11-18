@@ -27,7 +27,6 @@ export default {
     }
   },
   props: {
-    // item: JSON,
     item: Object,
   },
   updated() {
