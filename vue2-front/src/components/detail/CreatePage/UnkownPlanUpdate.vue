@@ -61,10 +61,10 @@
                   여행 시작 날짜 : {{ endDate }}
                 </div>
                 <div>
-                  여행 수정 날짜 : {{ mydate_up[0].slice(0, 10)}}
+                  여행 수정 날짜 : {{ mydate_up[0]}}
                 </div>
                 <div>
-                  여행 수정 날짜 : {{ mydate_up[1].slice(0, 10)}}
+                  여행 수정 날짜 : {{ mydate_up[1]}}
                 </div>
               </div>
             </div>
