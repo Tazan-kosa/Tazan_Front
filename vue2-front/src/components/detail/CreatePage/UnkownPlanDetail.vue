@@ -53,7 +53,6 @@
                 여행일자
               </date-picker>
               <div
-                  placeholder="Select date range"
               >
                 {{ startDate + " - " + endDate }}
               </div>
@@ -94,6 +93,12 @@ export default {
   name: "UnkownPlanDetail",
   data() {
     return {
+      lang: {
+        formatLocale: {
+          firstDayOfWeek: 1,
+        },
+        monthBeforeYear: false,
+      },
       PlanDate: [],
       planList: [],
       userId: '',
