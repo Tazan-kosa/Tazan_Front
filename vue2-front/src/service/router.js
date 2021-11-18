@@ -20,6 +20,7 @@ import tourmanage from "../components/common/admin/tour/tourmanage";
 import usermanage from "../components/common/admin/user/usermanage";
 import planmanage from "../components/common/admin/plan/planmanage";
 import reviewmanage from "../components/common/admin/review/reviewmanage";
+import replymanage from "../components/common/admin/reply/replymanage";
 import tourForm from "../components/common/admin/tour/tourForm";
 import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
 
@@ -143,6 +144,11 @@ const route = [
                 path: 'review',
                 name:'reviewmanage',
                 component:reviewmanage
+            },
+            {
+                path: 'reply',
+                name: 'replymanage',
+                component: replymanage
             },
             {
                 path: 'tourForm/:tourId',
