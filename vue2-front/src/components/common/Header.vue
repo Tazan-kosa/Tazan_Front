@@ -126,11 +126,12 @@ span {
   font-size: x-large;
   font-weight: bolder;
   color: gray;
-  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  /*border-bottom: 3px solid rgba(0, 0, 0, 0);*/
 }
 
 span:hover {
-  border-bottom: 3px solid royalblue;
+  width: 100%;
+  border-bottom: 3px solid #0e69ff;
 }
 
 #login, #logout {
