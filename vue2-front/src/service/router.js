@@ -26,6 +26,14 @@ import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
 
 Vue.use(VueRouter)
 
+const requireAuth = () => (to, from, next) => {
+    if (localStorage.getItem('auth')== 'ROLE_ADMIN') {
+        return next();
+    }
+    alert("관리자계정필요")
+    next('/');
+};
+
 const route = [
     // 김제민
     {
@@ -114,6 +122,7 @@ const route = [
         path: '/adminpage',
         name: 'AdminPage',
         component: AdminPage,
+        beforeEnter:requireAuth(),
         children: [
             {
                 path: 'tour',

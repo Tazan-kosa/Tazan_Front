@@ -53,7 +53,7 @@
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-          <h1 class="h1">여행지 리스트</h1>
+          <h1 class="h1">베스트 추천 여행지</h1>
         </div>
       </div>
       <div class="row">
@@ -68,7 +68,7 @@
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
-          <h1 class="h1">여행후기 리스트</h1>
+          <h1 class="h1">이달의 베스트 여행후기</h1>
         </div>
       </div>
       <div class="row">
