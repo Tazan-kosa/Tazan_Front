@@ -28,7 +28,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title @click="movetopage(item.path)">{{ item.title }}</v-list-item-title>
+              <v-list-item-title class="item-content" @click="movetopage(item.path)">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -114,8 +114,9 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: black solid 1px;*/
-/*}*/
+.item-content {
+  height: 20px;
+  margin: 0px auto;
+}
 
 </style>
