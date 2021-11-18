@@ -20,6 +20,7 @@
                     size="sm"
                     class="w-25 p-3 mb-1 text-black"
                     :placeholder="plan.planTitle"
+                    :disabled="true"
                 ></b-form-input>
               </div>
             </div>
