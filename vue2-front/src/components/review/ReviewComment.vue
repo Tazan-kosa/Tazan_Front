@@ -12,7 +12,7 @@
           <span class="user-name">{{ commentData.nickName }} &nbsp; &nbsp;</span>
           <span class="comment-date">{{ commentData.commentDate }}</span>
         </div>
-        <div v-if="!editFlag" class="comment-content text-left" v-html="commentData.commentContent"></div>
+        <div v-if="!editFlag" class="comment-content text-left" v-html="commentData.commentContent" contenteditable="false"></div>
         <div v-if="editFlag" class="comment-edit text-left" v-html="commentData.commentContent" contenteditable="true">fsdfasdfasd</div>
       </div>
     </div>
@@ -35,6 +35,7 @@ export default {
   },
   props: {
     commentData: Object,
+    index: Number,
   },
   methods: {
     editComment() {
@@ -49,7 +50,7 @@ export default {
       }
     },
     deleteComment() {
-      this.$emit("deleteComment", this.commentData.commentID);
+      this.$emit("deleteComment", [this.commentData.commentID, this.index]);
     }
   },
   created() {
