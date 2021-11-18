@@ -3,8 +3,8 @@
     <div class="outer-container">
       <div class="inner-container">
         <div class="inner1">이름</div>
-        <div class="inner1">이메일</div>
         <div class="inner1">닉네임</div>
+        <div class="inner1">아이디</div>
         <div class="inner1">권한</div>
       </div>
       <div class="inner-container2">
