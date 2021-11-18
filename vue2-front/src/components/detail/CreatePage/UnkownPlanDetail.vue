@@ -20,6 +20,7 @@
                     size="sm"
                     class="w-25 p-3 mb-1 text-black"
                     :placeholder="plan.planTitle"
+                    :disabled="true"
                 ></b-form-input>
               </div>
             </div>
@@ -30,7 +31,7 @@
       <h1 class="uk-heading-line"><span></span></h1>
 
       <div class="save_plan">
-        <div class="sub_main">
+        <v-card class="sub_main">
           <v-card class="left_container">
             <div class="left">
               <div class=""
@@ -59,6 +60,18 @@
               <div>
               </div>
             </div>
+            <br>
+            <br>
+
+          <v-card
+              class="left_container_img"
+          >
+            <img class="logo_img"
+                max-height="300"
+                max-width="300"
+                :src="require(`/src/assets/yacht_tazan_logo.png`)"
+            >
+          </v-card>
           </v-card>
 
 
@@ -74,7 +87,7 @@
               </DayListV2>
             </v-col>
           </v-card>
-        </div>
+        </v-card>
       </div>
       <div class="save_plan_button">
         <b-button variant="primary" @click="reviewWrite">Review</b-button>
@@ -88,6 +101,7 @@ import axios from "axios";
 import DayListV2 from "./DayListV2";
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
+import DatePicker from 'vue2-datepicker';
 
 export default {
   name: "UnkownPlanDetail",
@@ -150,6 +164,7 @@ export default {
   },
   components: {
     DayListV2,
+    DatePicker
   },
 }
 </script>
@@ -200,6 +215,7 @@ export default {
   width: 95%;
   height: 100%;
 }
+
 .left_container {
   display: flex;
   width: 25%;
@@ -211,6 +227,13 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
 }
+
+.left_container_img {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
 .left {
   display: flex;
   width: 100%;

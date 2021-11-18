@@ -72,5 +72,4 @@ button {
   position: static;
   float: right;
 }
-
 </style>

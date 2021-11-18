@@ -28,7 +28,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title @click="movetopage(item.path)">{{ item.title }}</v-list-item-title>
+              <v-list-item-title class="item-content" @click="movetopage(item.path)">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -88,7 +88,7 @@ export default {
         {title: '후기관리', icon: 'mdi-pencil', path: 'review'},
         {title: '계정관리', icon: 'mdi-account', path: 'user'},
         {title: '댓글관리', icon: 'mdi-message-reply-text', path: 'reply'},
-        {title: 'About', icon: 'mdi-help-box', path: 'tour'},
+        {title: 'About', icon: 'mdi-help-box', path: 'about'},
       ],
       path: 'tour',
 
@@ -114,8 +114,9 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: black solid 1px;*/
-/*}*/
+.item-content {
+  height: 20px;
+  margin: 0px auto;
+}
 
 </style>

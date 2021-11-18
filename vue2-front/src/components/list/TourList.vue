@@ -123,6 +123,7 @@ p {
   font-size: 1em;
   padding-bottom: 15px;
 }
+
 .listTitle{
   color:#12806d;
   font-size: 4em;
