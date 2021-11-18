@@ -1,9 +1,26 @@
 <template>
-  <pre>
-    <p>제목: {{ this.item.title }}</p><p>주소: {{this.item.address}}</p><p>기간: {{this.item.startDate.slice(0,10)}} ~ {{this.item.endDate.slice(0,10)}}</p><p>태그: {{this.item.tag1}}, {{this.item.tag2}}</p>
-      <button id="modify_btn" type="button" class="btn btn-success" @click="tourupdate">수정</button>
-      <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-  </pre>
+  <div>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="inner1">제목</div>
+        <div class="inner1">주소</div>
+        <div class="inner1">기간</div>
+        <div class="inner1">태그</div>
+      </div>
+      <div class="inner-container2">
+        <div class="inner"><p>{{ this.item.title }}</p></div>
+        <div class="inner"><p>{{this.item.address}}</p></div>
+        <div class="inner"><p>{{this.item.startDate.slice(0,10)}} ~ {{this.item.endDate.slice(0,10)}}</p></div>
+        <div class="inner"><p>{{this.item.tag1}}, {{this.item.tag2}}</p></div>
+        <span>
+        &nbsp;
+        <button id="modify_btn" type="button" class="btn btn-success" @click="tourupdate">수정</button>
+        <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
+        <p></p>
+      </span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -34,20 +51,11 @@ export default {
 </script>
 
 <style scoped>
-div {
-  border: 1px solid white;
-}
-
 button {
   position: static;
   float: right;
 }
-
-pre {
-  background-color: grey;
-}
 #modify_btn{
-  margin-top: 23px;
   margin-left: 5px;
 }
 </style>

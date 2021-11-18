@@ -4,7 +4,6 @@
       <input class="form-check-input" type="checkbox" value="" :id="tag" checked @click="checking(tag)">
       <label class="form-check-label" :for="tag">{{ tag }}</label>
     </div>
-<!--    <button type="button" class="btn btn-outline-success" @click="sendcheckedtag()">선택</button>-->
   </div>
 </template>
 
@@ -32,9 +31,6 @@ export default {
         this.returntag.push(tag)
       }
     },
-    sendcheckedtag(){
-      // this.$emit("checkedtag",this.returntag)
-    }
   }
 }
 </script>

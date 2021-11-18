@@ -1,13 +1,15 @@
 <template>
   <div>
-    <header class="py-5" id="headerstyle">
-      <div class="container px-4 px-lg-5">
+    <header class="py-3" id="headerstyle">
+      <div class="container px-4 px-lg-5 c1">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">후기 리스트</h1>
-          <p class="lead fw-normal text-white-50 mb-0">검색 키워드를 입력 해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
-          <div class="input-group mb-3">
-            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="후기 제목/지역 이름 등" @keyup.enter="searchTourList">
-            <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
+          <h1 class="display-4 fw-bolder listTitle">Tazan Review</h1>
+          <h6 class="listsubTitle">먼저 다녀온 사람들의 후기를 확인해보세요</h6>
+          <p class="lead fw-normal mb-0 searchnotion">검색 키워드를 입력 해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
+          <div class="input-group mb-3 mt-3">
+            <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="후기 제목/지역 이름 등"
+                   @keyup.enter="searchReviewList">
+            <button class="input-group-text btn-success" @click="searchReviewList"><i class="bi bi-search me-2"></i>
               Search
             </button>
           </div>
@@ -16,7 +18,7 @@
     </header>
 
     <section class="py-0">
-      <div class="container px-4 px-lg-5 mt-3">
+      <div class="container px-4 px-lg-5 mt-3 c2">
         <div class="box">
           <Select :enddate="enddate" :startdate="startdate"/>
           <b-button variant="primary" class="reviewBtn p-2" @click="goRiviewWrite">여행 후기 작성</b-button>
@@ -59,23 +61,22 @@ export default {
   methods: {
     goRiviewWrite() {
       console.log()
-      if(this.userID == null){
+      if (this.userID == null) {
         alert("로그인 후 이용 부탁드립니다.")
         this.$router.push('/login').then((() => window.scrollTo(0, 0)))
-      }
-      else {
+      } else {
         this.$router.push('/review');
       }
     },
-    searchTourList() {
+    searchReviewList() {
       var value = document.getElementById("searchbar").value
       var start = document.querySelector("#startdate").value
       var end = document.querySelector("#enddate").value
       this.startdate = start
       this.enddate = end
-      if(start<=end) {
-        if(!value){
-          value="noneKeyword"
+      if (start <= end) {
+        if (!value) {
+          value = "noneKeyword"
         }
         axios.get(`http://kosa3.iptime.org:50201/review/search/${value}/${this.startdate}/${this.enddate}`)
             .then(result => {
@@ -104,7 +105,7 @@ export default {
     this.enddate = year + '-' + month + '-' + day
     axios.get('http://kosa3.iptime.org:50201/review/reviewList')
         .then(result => {
-          this.ReviewItemList=result.data
+          this.ReviewItemList = result.data
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
@@ -122,12 +123,36 @@ export default {
   background-size: cover;
 
 }
-p{
+
+p {
   margin-bottom: 0px;
 }
+
+.c1 {
+  padding-bottom: 0px;
+}
+
+.listsubTitle {
+  color: #e0e0e0;
+  font-size: 1em;
+  padding-bottom: 15px;
+}
+
+.listTitle {
+  color: #0e69ff;
+  font-size: 4em;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white
+}
+
+.searchnotion {
+  color: #a2a0a6;
+}
+
 #searchbar {
   text-align: center;
 }
+
 .button2 {
   border-radius: 4px;
 }

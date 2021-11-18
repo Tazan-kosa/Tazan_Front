@@ -1,12 +1,30 @@
 <template>
-  <pre>
-    <p>이름: {{this.item.name}}</p><p>닉네임: {{this.item.nickName}}</p><p>이메일: {{this.item.email}}</p><p>권한: {{this.item.auth}}</p>
-    <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-  </pre>
+  <div>
+    <div class="outer-container">
+      <div class="inner-container">
+        <div class="inner1">이름</div>
+        <div class="inner1">이메일</div>
+        <div class="inner1">닉네임</div>
+        <div class="inner1">권한</div>
+      </div>
+      <div class="inner-container2">
+        <div class="inner"><p>{{this.item.name}}</p></div>
+        <div class="inner"><p>{{this.item.nickName}}</p></div>
+        <div class="inner"><p>{{this.item.email}}</p></div>
+        <div class="inner"><p>{{this.item.auth}}</p></div>
+        <span>
+        &nbsp;
+        <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
+        <p></p>
+      </span>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
+import "../AdminPage.css"
 
 export default {
   name: "usermanageItem",
@@ -29,15 +47,9 @@ export default {
 </script>
 
 <style scoped>
-div {
-  border: 1px solid white;
-}
 button {
   position: static;
   float: right;
 
-}
-pre{
-  background-color: grey;
 }
 </style>

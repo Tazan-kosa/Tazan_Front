@@ -24,6 +24,7 @@
 
 <script>
 import axios from "axios";
+import "../AdminPage.css"
 
 export default {
   name: "planmanageItem",
@@ -66,41 +67,6 @@ button {
 
 p {
   color: white;
-}
-
-pre {
-  background-color: grey;
-  border: 2px solid deepskyblue;
-}
-
-.inner-container {
-  margin: auto;
-}
-
-.inner-container2 {
-  margin: auto;
-}
-
-.inner1 {
-  float: left;
-  width: 25%;
-  border: 1px solid dimgrey;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.inner {
-  float: left;
-  width: 25%;
-  border: 1px solid dimgrey;
-  padding: 10px;
-}
-
-.outer-container{
-  padding: 5px;
-  background-color: grey;
-  border: 2px solid deepskyblue;
-  margin-bottom: 10px;
 }
 
 </style>
