@@ -81,7 +81,8 @@ div {
   border-image: initial !important;
   margin: 16px 1px !important;
   display: flex;
-  position: relative;
+  /*position: relative;*/
+  justify-content: left;
   width: 100%;
   /*overflow: hidden;*/
 }

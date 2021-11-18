@@ -60,7 +60,8 @@
               <div>
               </div>
             </div>
-            <br><br>
+            <br>
+            <br>
 
           <v-card
               class="left_container_img"
@@ -100,6 +101,7 @@ import axios from "axios";
 import DayListV2 from "./DayListV2";
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
+import DatePicker from 'vue2-datepicker';
 
 export default {
   name: "UnkownPlanDetail",
@@ -162,6 +164,7 @@ export default {
   },
   components: {
     DayListV2,
+    DatePicker
   },
 }
 </script>
@@ -212,6 +215,7 @@ export default {
   width: 95%;
   height: 100%;
 }
+
 .left_container {
   display: flex;
   width: 25%;
@@ -223,6 +227,7 @@ export default {
   margin: 0.25em;
   border-radius: 0.25em;
 }
+
 .left_container_img {
   display: flex;
   justify-content: center;
