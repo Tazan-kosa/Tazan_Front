@@ -34,11 +34,9 @@
               <div>
                 <h2>{{ plan.region }}</h2>
               </div>
-              <!--            <div
-                              placeholder="Select date range"
-                          >
-                            {{ startDate + " - " + endDate }}
-                          </div>-->
+              <div>
+                여행 일자
+              </div>
               <date-picker
                   class="datepicpick"
                   type="date"
@@ -55,21 +53,39 @@
                 {{ mydate }}
                 <!--                :placeholder= startDate + " - " + endDate-->
               </date-picker>
-              <div>
+            </div>
+            <br>
+            <v-card>
+              <v-card>
                 <div>
                   여행 시작 날짜 : {{ defaultstartDate }}
                 </div>
                 <div>
                   여행 시작 날짜 : {{ defaultendDate }}
                 </div>
+              </v-card>
+            </v-card>
+            <br>
+            <v-card>
+              <v-card>
                 <div>
                   여행 수정 날짜 : {{ mydate_up[0] }}
                 </div>
                 <div>
                   여행 수정 날짜 : {{ mydate_up[1] }}
                 </div>
-              </div>
-            </div>
+              </v-card>
+            </v-card>
+            <br><br>
+            <v-card
+                class="left_container_img"
+            >
+              <img
+                  max-height="300"
+                  max-width="300"
+                  :src="require(`/src/assets/yacht_tazan_logo.png`)"
+              >
+            </v-card>
           </v-card>
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">

@@ -19,7 +19,7 @@
                     v-model="text"
                     size="sm"
                     class="w-25 p-3 mb-1 text-black"
-                    placeholder="여행 제목을 적어 주세요.(공백포함 1자이상 45자이하 입니다!)"
+                    placeholder="여행 제목(공백포함 1자이상 45자이하)"
                 ></b-form-input>
               </div>
             </div>
@@ -59,6 +59,17 @@
             <div>
               확인하는중입니다.
             </div>
+            <br>
+            <br>
+            <v-card
+                class="left_container_img"
+            >
+              <img
+                  max-height="300"
+                  max-width="300"
+                  :src="require(`/src/assets/yacht_tazan_logo.png`)"
+              >
+            </v-card>
           </v-card>
           <v-card class="thr_main">
             <!--            -->
