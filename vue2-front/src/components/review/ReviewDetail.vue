@@ -128,6 +128,19 @@ export default {
     },
     editComment(comment) {
       console.log(comment[0], comment[1])
+      var commentVO = {}
+      commentVO.commentID = comment[0]
+      commentVO.commentContent = comment[1]
+      if(confirm("수정하시겠습니까?")){
+        axios.put(`http://kosa3.iptime.org:50201/comment/update`, commentVO).then(res => {
+          if(res.status == 200){
+            alert("댓글을 수정했습니다.")
+          }
+        }).catch(err=> {
+          alert(err)
+          console.log(err.response)
+        })
+      }
     },
     deleteComment(id) {
       if (confirm("정말 삭제하시겠습니까?")) {
