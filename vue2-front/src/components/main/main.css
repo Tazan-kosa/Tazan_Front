@@ -6,25 +6,25 @@ a,
 label,
 input,
 div {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
 }
 
 .h1 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 48px !important;
   font-weight: 200 !important;
 }
 
 .h2 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 30px !important;
   font-weight: 300;
 }
 
 .h3 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 22px !important;
 }
 

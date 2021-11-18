@@ -15,10 +15,10 @@
                         class="mx-auto"
                         style="width: 400px; height: 300px">
                       <div class="mx-3">
-                        <v-icon color="black" size="30px" @keyup.enter="loginSubmit">아이디</v-icon>
+                        <v-icon color="black" size="30px" @keyup.enter="loginSubmit">이메일</v-icon>
                         <div class="mx-1">
                           <v-text-field
-                              placeholder="아이디"
+                              placeholder="이메일"
                               v-model="email"
                               required
                           ></v-text-field>
