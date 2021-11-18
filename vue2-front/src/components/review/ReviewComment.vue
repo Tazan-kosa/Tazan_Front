@@ -10,7 +10,8 @@
       <div class="container">
         <div class="comment-user font-weight-light">
           <span class="user-name">{{ commentData.nickName }} &nbsp; &nbsp;</span>
-          <span class="comment-date">{{ commentData.commentDate }}</span>
+          <span class="comment-date">{{ commentData.commentDate }} &nbsp; &nbsp;</span>
+          <span class="comment-report" v-if="userID != commentData.userID" @click="clickedReport([commentData.nickName, commentData.commentID])">신고</span>
         </div>
         <div v-if="!editFlag" class="comment-content text-left" v-html="commentData.commentContent" contenteditable="false"></div>
         <div v-if="editFlag" class="comment-edit text-left" v-html="commentData.commentContent" contenteditable="true">fsdfasdfasd</div>
@@ -41,7 +42,6 @@ export default {
     editComment() {
       if(this.editFlag){
         this.editFlag = false
-        console.log(document.getElementsByClassName("comment-edit")[0].innerHTML)
         this.commentData.commentContent = document.getElementsByClassName("comment-edit")[0].innerHTML
         this.$emit("editComment", [this.commentData.commentID, this.commentData.commentContent]);
       }
@@ -51,6 +51,12 @@ export default {
     },
     deleteComment() {
       this.$emit("deleteComment", [this.commentData.commentID, this.index]);
+    },
+    clickedReport(data){
+      if(confirm("정말로 " + data[0] +"님의 댓글을 신고하시겠습니까?\n한 번한 신고는 취소가 안됩니다.")){
+        console.log(data[1]);
+        this.$emit("reportComment", this.commentData.commentID);
+      }
     }
   },
   created() {
@@ -74,6 +80,10 @@ div {
   font-size: 15px !important;
   text-align: left;
   padding: 10px;
+}
+
+.comment-report {
+  cursor: pointer;
 }
 
 .comment-content {
