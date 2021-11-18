@@ -17,8 +17,9 @@
               <div class="sub_title">
                 <b-form-input
                     size="sm"
-                    class="w-25 p-3 mb-1 text-black"
-                    :placeholder="plan.planTitle"
+                    class="w-25 p-3 mb-1 text-black plantitle"
+                    placeholder="제목은 비워둘 수 없습니다."
+                    :value="plan.planTitle"
                 ></b-form-input>
               </div>
             </div>
@@ -33,11 +34,9 @@
               <div>
                 <h2>{{ plan.region }}</h2>
               </div>
-              <!--            <div
-                              placeholder="Select date range"
-                          >
-                            {{ startDate + " - " + endDate }}
-                          </div>-->
+              <div>
+                여행 일자
+              </div>
               <date-picker
                   class="datepicpick"
                   type="date"
@@ -48,26 +47,44 @@
                   format="YYYY-MM-DD"
                   :placeholder="mydate"
                   :shortcuts="shortcuts"
+                  @change="updateddate"
               >
                 여행일자
                 {{ mydate }}
-                <!--                :placeholder= startDate + " - " + endDate-->
               </date-picker>
-              <div>
-                <div>
-                  여행 시작 날짜 : {{ startDate }}
-                </div>
-                <div>
-                  여행 시작 날짜 : {{ endDate }}
-                </div>
-                <div>
-                  여행 수정 날짜 : {{ mydate_up[0]}}
-                </div>
-                <div>
-                  여행 수정 날짜 : {{ mydate_up[1]}}
-                </div>
-              </div>
             </div>
+            <br>
+            <v-card>
+              <v-card>
+                <div>
+                  여행 시작 날짜 : {{ defaultstartDate }}
+                </div>
+                <div>
+                  여행 시작 날짜 : {{ defaultendDate }}
+                </div>
+              </v-card>
+            </v-card>
+            <br>
+            <v-card>
+              <v-card>
+                <div>
+                  여행 수정 날짜 : {{ mydate_up[0] }}
+                </div>
+                <div>
+                  여행 수정 날짜 : {{ mydate_up[1] }}
+                </div>
+              </v-card>
+            </v-card>
+            <br><br>
+            <v-card
+                class="left_container_img"
+            >
+              <img
+                  max-height="300"
+                  max-width="300"
+                  :src="require(`/src/assets/yacht_tazan_logo.png`)"
+              >
+            </v-card>
           </v-card>
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
@@ -75,11 +92,7 @@
                 <h6>
                   {{ index + 1 }} 일차
                 </h6>
-                <div class="thr_main_day_list">
-                  <h6>
-                    {{ startDate }}
-                  </h6>
-                </div>
+
               </div>
 
               <DayList
@@ -90,8 +103,7 @@
                   @tourListDelete="DeleteList"
               >
               </DayList>
-              <!--              <DayList :daylist="plan" class="thr_main_sub">-->
-              <!--              </DayList>-->
+
             </v-col>
 
             <div class="uk-margin">
@@ -152,9 +164,12 @@ export default {
       nickname: '',
       plan: '',
       mydate_up: '',
-      cnt: 0
-
-  }
+      cnt: 0,
+      startDate:'',
+      endDate:'',
+      defaultstartDate:'',
+      defaultendDate:''
+    }
   },
   created() {
     this.nickname = localStorage.getItem('nickname')
@@ -165,39 +180,52 @@ export default {
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
-            console.log(this.plan)
             var sd = new Date(this.plan.startDate)
             this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+            this.defaultstartDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
             var ed = new Date(this.plan.endDate)
             this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+            this.defaultendDate=ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
             this.mydate = this.startDate + " - " + this.endDate
+            this.cnt=this.plan.planList.length-1
+            axios.get(`http://kosa3.iptime.org:50201/search/${this.plan.region}`)
+                .then(response => {
+
+                  this.recomList = response.data;
+
+                })
+                .catch(err => {
+                  console.log(err)
+                })
+
           }
         }).catch(err => {
       console.log("에러발생: " + err)
-      //에러 처리 할 곳
       alert("에러발생");
     })
 
-    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
-        .then(response => {
 
-          this.recomList = response.data;
-
-        })
-        .catch(err => {
-          console.log(err)
-        })
   },
+
   methods: {
     planList_add(result) {
       if (this.mydate == '') {
         alert('날짜를 먼저 선택해주세요')
-      }else {
-/*        this.totalPlan[this.cnt].push(result) // object
-        this.totalPlan_tour[this.cnt].push(result.tourId)*/
+      } else {
+        /*        this.totalPlan[this.cnt].push(result) // object
+                this.totalPlan_tour[this.cnt].push(result.tourId)*/
         this.plan.planList[this.cnt].push(result) // object
         this.plan.planList_tour[this.cnt].push(result.tourId)
       }
+    },
+    updateddate() {
+      var sd = new Date(this.mydate_up[0])
+      this.mydate_up[0] = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+      this.startDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+      var ed = new Date(this.mydate_up[1])
+      this.mydate_up[1] = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+      this.endDate= ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+      this.mydate = this.startDate + " - " + this.endDate
     },
     dayList_add() {
       if (this.mydate == '') {
@@ -206,7 +234,7 @@ export default {
         var test = new Date(this.startDate)
 
         test.setDate((test.getDate() + (this.cnt) + 1))
-        if (test < this.endDate) {
+        if (test > new Date(this.endDate)) {
           alert('일정 길이를 초과합니다!')
 
         } else {
@@ -238,63 +266,58 @@ export default {
       this.plan.planList_tour[listObject.index1].splice(listObject.index2, 1)
 
     },
-    //  ####################### 이 부분은 업데이트 관련 로직으로 사용할 예정 ##############################
     UpdateWrite() {
-      let planVO = {};
-      planVO.userID = localStorage.getItem("id");
-      // reviewVO.userID = 1//localStorage.getItem("id")
-      planVO.region = this.region;
-      planVO.startDate = this.mydate[0];
-      planVO.endDate = this.mydate[1];
-      // PlanVO.date =;
 
-      // planVO.planDate = plandate;
+      var calc=(new Date(this.endDate)-new Date(this.startDate))/86400000
+      if (calc+1<this.plan.planList.length){
+        alert("일정의 길이가 총 일정 수 보다 많습니다!")
+      }
+      else if (calc+1>this.plan.planList.length){
+        alert("일정의 길이가 총 일정 수 보다 적습니다!")
+      }
+      else if(this.plan.planList.length<1){
+        alert("일정이 입력되지 않았습니다!")
+      }
+      else{
+        let planVO = {};
+        planVO.startDate = this.startDate;
+        planVO.endDate = this.endDate;
+        planVO.planTitle = document.querySelector(".plantitle").value
+        planVO.planID=this.plan.planID;
 
-      planVO.planTitle_update = this.text;
-      planVO.planList_update = this.totalPlan_tour;
-
-
-      if (confirm("저장 하시겠습니까?")) {
-        axios.post('http://kosa3.iptime.org:50201/plan/planUpdate', planVO, {
-          headers: {
-            'Content-Type': 'application/json; charset=utf-8',
-          },
-        }).then(request => {
-          if (request.status === 200) {
-
-            this.$router.push(`/planDetail/${request.data}`)
+        var i=0,j=0
+        var array=[]
+        for (i=0;i<this.plan.planList.length;i++){
+          var ary=[]
+          for (j=0;j<this.plan.planList[i].length;j++){
+            ary.push(this.plan.planList[i][j].tourId)
           }
-        }).catch(function () {
-          alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
-        })
+          array.push(ary)
+        }
+
+        planVO.planList = array
+
+
+        if (confirm("저장 하시겠습니까?")) {
+          axios.put('http://kosa3.iptime.org:50201/plan/planUpdate', planVO, {
+            headers: {
+              'Content-Type': 'application/json; charset=utf-8',
+            },
+          }).then(request => {
+            if (request.status === 200) {
+              this.$router.push(`/planDetail/${this.plan.planID}`)
+            }
+          }).catch(function () {
+            alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
+          })
+        }
       }
     },
-    //  ####################### 이 부분은 업데이트 관련 로직으로 사용할 예정 ##############################
-    /*reviewWrite() {
-      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res=> {
-        if(res.status == 200){
-            this.$router.push({
-              name: 'Review',
-              params: {
-                reviewData: res.data,
-                planData: this.plan
-              }
-            }).then((() => window.scrollTo(0, 0)))
-        }
-      }).catch(err => {
-        console.log("에러 발생: " + err)
-      });
-    }
-    //  ####################### 이 부분은 업데이트 관련 로직으로 사용할 예정 ##############################
-  },*/
   },
   components: {
     DayList,
     RecomPlace,
     DatePicker
-  },
-  props: {
-    region: String
   },
 }
 </script>
