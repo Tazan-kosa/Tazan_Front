@@ -18,7 +18,7 @@
                 <b-form-input
                     v-model="text"
                     size="sm"
-                    class="w-25 p-3 mb-1 text-light"
+                    class="w-25 p-3 mb-1 text-black"
                     placeholder="여행 제목을 적어 주세요."
                 ></b-form-input>
               </div>
@@ -281,7 +281,7 @@ export default {
 }
 
 .thr_main {
-  /*box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);*/
+
 }
 
 .sub_title {
@@ -363,6 +363,11 @@ export default {
   text-align: center;
   flex-wrap: nowrap;
   /*justify-content: space-around;*/
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5dc9dd;
+  display: flex;
+  position: relative;
 }
 
 .thr_main_list {
@@ -376,7 +381,7 @@ export default {
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
-  /*box-shadow: #9cafb4;*/
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
 
 }
 

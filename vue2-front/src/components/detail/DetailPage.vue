@@ -3,17 +3,19 @@
     <div class="container px-4 px-lg-5">
       <div class="text-center text-white">
         <h1 class="display-4 fw-bolder">국내 여행</h1>
-        <p class="lead fw-normal text-white-100 mb-0">국내만</p>
+        <p class="lead fw-normal text-white-100 mb-0">
+          국내 10개 지역 중 한 가지 지역을 <br> 선택해서 손쉽게 여행을 계획해 보세요.🦄
+        </p>
         <br>
 
         <div class="wrap">
           <div class="button">
-
-              <b-button variant="success" href="">
-                <b-link to="mypagelist">
+            <b-button variant="outline-primary" type="submit" @click="mypagelist"> 🧳 내 일정 보기</b-button>
+<!--              <b-button variant="success" href="">
+&lt;!&ndash;                <b-link to="mypagelist">
                   <span>내 일정 보기</span>
-                </b-link>
-              </b-button>
+                </b-link>&ndash;&gt;
+              </b-button>-->
           </div>
         </div>
       </div>
@@ -26,6 +28,11 @@ export default {
   name: "DetailPage",
   data () {
     return {
+    }
+  },
+  methods: {
+    mypagelist() {
+      this.$router.push('/mypagelist')
     }
   }
 }
