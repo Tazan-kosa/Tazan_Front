@@ -73,15 +73,13 @@ export default {
             this.reviewUserID = res.data.userID;
           }
         }).catch(err => {
-          console.log("에러발생: " + err)
           //에러 처리 할 곳
-          alert("에러발생");
+          alert("에러발생 : " + err.response.message);
         })
       }
     }).catch(function (err) {
-      console.log("에러발생: " + err)
       //에러 처리 할 곳
-      alert("에러발생");
+      alert("에러발생 : " + err.response.message);
     })
   },
   methods: {
@@ -93,7 +91,7 @@ export default {
             this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
           }
         }).catch(err => {
-          console.log(err.response.message)
+          alert("에러발생 : " + err.response.message);
         })
       }
     },

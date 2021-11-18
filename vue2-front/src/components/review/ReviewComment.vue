@@ -54,7 +54,6 @@ export default {
     },
     clickedReport(data){
       if(confirm("정말로 " + data[0] +"님의 댓글을 신고하시겠습니까?\n한 번한 신고는 취소가 안됩니다.")){
-        console.log(data[1]);
         this.$emit("reportComment", this.commentData.commentID);
       }
     }
