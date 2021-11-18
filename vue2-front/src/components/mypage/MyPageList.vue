@@ -215,7 +215,6 @@ export default {
       }
     },
     planUpdate(mypage) {
-      console.log(mypage)
       if(mypage.reviewFlag=="1"){
         alert("리뷰가 작성된 계획은 수정할 수 없습니다.")
       }

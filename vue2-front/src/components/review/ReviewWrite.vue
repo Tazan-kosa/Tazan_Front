@@ -79,7 +79,6 @@ export default {
       this.flag = true;
       axios.get(`http://kosa3.iptime.org:50201/planDetail/${id[0]}`).then(res => {
         if(res.status == 200) {
-          console.log("플랜데이터 세팅")
           this.TourItemData = res.data
           this.flag = true;
           this.ReviewData = ''
@@ -88,14 +87,12 @@ export default {
           this.summernoteInsert()
         }
       }).catch(err => {
-        console.log("에러발생: " + err)
         //에러 처리 할 곳
-        alert("에러발생");
+        alert("에러발생 : " + err.response.message);
       })
       if(id[1] == '1'){
         axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${id[0]}`).then(res=> {
           if(res.status == 200){
-            console.log(res.data)
             this.ReviewData = res.data;
             this.title = res.data.reviewTitle
             this.reviewContent = res.data.reviewContent
@@ -103,7 +100,7 @@ export default {
             this.summernoteInsert()
           }
         }).catch(err=> {
-          console.log("에러 발생: " + err)
+          alert("에러발생 : " + err.response.message);
         });
       }
       else {
@@ -137,7 +134,6 @@ export default {
       reviewVO.region = this.TourItemData.region
       reviewVO.startDate = this.TourItemData.startDate
       reviewVO.endDate = this.TourItemData.endDate
-      console.log("플랜데이터")
       //생성된 날짜 삽입
       reviewVO.reviewDate = reviewdate
 
@@ -165,8 +161,12 @@ export default {
             this.$router.push(`/reviewDetail/${this.ReviewData.reviewID}`).then((() =>window.scrollTo(0,0) ))
           }
         }).catch (err => {
-          console.log(err)
-          alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
+          if(err.response.status == 500){
+            alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
+          }
+          else{
+            alert("에러발생 : " + err.response.message);
+          }
         })
       }
       else{
@@ -178,9 +178,13 @@ export default {
           if (res.status === 200) {
             this.$router.push(`/reviewDetail/${res.data}`).then((() =>window.scrollTo(0,0) ))
           }
-        }).catch(function (err) {
-          console.log(err)
-          alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
+        }).catch(() => {
+          if(err.response.status == 500){
+            alert("제목과 내용 중 빠트린 부분이 없는지 확인해주세요.");
+          }
+          else{
+            alert("에러발생 : " + err.response.message);
+          }
         })
       }
     },

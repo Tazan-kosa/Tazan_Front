@@ -6,35 +6,31 @@ a,
 label,
 input,
 div {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
 }
 
 .h1 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 48px !important;
   font-weight: 200 !important;
 }
 
 .h2 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 30px !important;
   font-weight: 300;
 }
 
 .h3 {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', 'Jua', sans-serif;
   font-size: 22px !important;
 }
 
 /* General */
 .logo {
   font-weight: 500 !important;
-}
-
-.text-warning {
-  color: #ede861 !important;
 }
 
 .text-muted {
@@ -70,96 +66,9 @@ div {
   border-color: #56ae6c !important;
 }
 
-.pagination .page-link:hover {
-  color: #000;
-}
-
-.pagination .page-link:hover,
-.pagination .page-link.active {
-  background-color: #69bb7e;
-  color: #fff;
-}
-
-/* Nav */
-#templatemo_nav_top {
-  min-height: 40px;
-}
-
-#templatemo_nav_top * {
-  font-size: 12px !important;
-}
-
-#templatemo_main_nav a {
-  color: #212934;
-}
-
-#templatemo_main_nav a:hover {
-  color: #69bb7e;
-}
-
-#templatemo_main_nav .navbar .nav-icon {
-  margin-right: 20px;
-}
-
-/* Hero Carousel */
 #tour-main {
   background: #efefef !important;
 }
-
-/* Accordion */
-.templatemo-accordion a {
-  color: #000;
-}
-
-.templatemo-accordion a:hover {
-  color: #333d4a;
-}
-
-/* Shop */
-.shop-top-menu a:hover {
-  color: #69bb7e !important;
-}
-
-/* Product */
-.product-wap {
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.10);
-}
-
-/*.product-wap .product-color-dot.color-dot-red {*/
-/*  background: #f71515;*/
-/*}*/
-
-/*.product-wap .product-color-dot.color-dot-blue {*/
-/*  background: #6db4fe;*/
-/*}*/
-
-/*.product-wap .product-color-dot.color-dot-black {*/
-/*  background: #000000;*/
-/*}*/
-
-/*.product-wap .product-color-dot.color-dot-light {*/
-/*  background: #e0e0e0;*/
-/*}*/
-
-/*.product-wap .product-color-dot.color-dot-green {*/
-/*  background: #0bff7e;*/
-/*}*/
-
-/*.card.product-wap .card .product-overlay {*/
-/*  background: rgba(0, 0, 0, .2);*/
-/*  visibility: hidden;*/
-/*  opacity: 0;*/
-/*  transition: .3s;*/
-/*}*/
-
-/*.card.product-wap:hover .card .product-overlay {*/
-/*  visibility: visible;*/
-/*  opacity: 1;*/
-/*}*/
-
-/*.card.product-wap a {*/
-/*  color: #000;*/
-/*}*/
 
 #carousel-related-product .slick-slide:focus {
   outline: none !important;
@@ -169,18 +78,6 @@ div {
   font-size: 15px;
   margin-top: 20px;
 }
-
-/*!* Brand *!*/
-/*.brand-img {*/
-/*  filter: grayscale(100%);*/
-/*  opacity: 0.5;*/
-/*  transition: .5s;*/
-/*}*/
-
-/*.brand-img:hover {*/
-/*  filter: grayscale(0%);*/
-/*  opacity: 1;*/
-/*}*/
 
 /* Carousel Hero */
 #tour-main .carousel-indicators li {
@@ -225,42 +122,3 @@ div {
   width: 6px;
   height: 6px;
 }
-
-@media (min-width: 576px) {
-  .templatemo-carousel .h1 {
-    font-size: 1em !important;
-  }
-}
-
-/*// Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-  #templatemo_main_nav .navbar-nav {
-    max-width: 450px;
-  }
-}
-
-/* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {
-  #templatemo_main_nav .navbar-nav {
-    max-width: 550px;
-  }
-
-  #tour-main .carousel-item {
-    min-height: 30rem !important;
-  }
-
-  .product-wap .h3,
-  .product-wap li,
-  .product-wap i,
-  .product-wap p {
-    font-size: 18px !important;
-  }
-
-  .product-wap .product-color-dot {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {}

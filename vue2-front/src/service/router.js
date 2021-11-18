@@ -23,7 +23,7 @@ import reviewmanage from "../components/common/admin/review/reviewmanage";
 import replymanage from "../components/common/admin/reply/replymanage";
 import tourForm from "../components/common/admin/tour/tourForm";
 import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
-
+import about from "../components/common/admin/about";
 
 Vue.use(VueRouter)
 
@@ -149,6 +149,11 @@ const route = [
                 path: 'reply',
                 name: 'replymanage',
                 component: replymanage
+            },
+            {
+                path: 'about',
+                name: 'adminabout',
+                component: about
             },
             {
                 path: 'tourForm/:tourId',
