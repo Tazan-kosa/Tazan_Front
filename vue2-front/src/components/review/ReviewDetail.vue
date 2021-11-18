@@ -29,7 +29,7 @@
             <div class="comment-content" contenteditable="true"></div>
             <div class="save"><Button class="comment-btn" @click="commentSave">저장하기</Button></div>
           </div>
-          <ReviewComment v-for="(item,i) in CommentsData" :key="i" :comment-data="item" @editComment="editComment"
+          <ReviewComment v-for="(item,i) in CommentsData" :key="i" :index="i" :comment-data="item" @editComment="editComment"
                          @deleteComment="deleteComment"></ReviewComment>
         </div>
       </div>
@@ -142,14 +142,13 @@ export default {
         })
       }
     },
-    deleteComment(id) {
+    deleteComment(arr) {
       if (confirm("정말 삭제하시겠습니까?")) {
-        axios.delete(`http://kosa3.iptime.org:50201/comment/delete/${id}`).then(res => {
+        console.log("id : " + arr[0], "i : " + arr[1])
+        axios.delete(`http://kosa3.iptime.org:50201/comment/delete/${arr[0]}`).then(res => {
           if (res.status == 200) {
             alert("댓글을 삭제하였습니다.")
-            let list = this.CommentsData;
-            list.splice(id, 1);
-            this.CommentsData = list
+            this.CommentsData.splice(arr[1], 1);
           }
         }).catch(err => {
           alert("오류가 발생했습니다." + err)
