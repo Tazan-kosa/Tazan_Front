@@ -2,9 +2,8 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src=region.img
-           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
-                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           :data-src=region.ci_image
+
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -291,6 +290,9 @@ export default {
   color: #5dc9dd;
   font-size: 18px !important;
   font-weight: 900 !important;
+  margin-right: auto;
+  text-align: center;
+  width:100%
 }
 
 .sub_title {

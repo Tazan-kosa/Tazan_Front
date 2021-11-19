@@ -127,7 +127,7 @@ export default {
               } else {
                 alert('error');
               }
-            }).catch((err) => { // 로그인 실패시
+            }).catch((err) => { // 아이디, 비밀번호 에러
           console.log(err)
           alert('아이디 또는 비밀번호가 잘못 입력 되었습니다.\n' +
               '아이디와 비밀번호를 정확히 입력해 주세요.');

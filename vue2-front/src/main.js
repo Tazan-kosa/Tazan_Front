@@ -24,6 +24,10 @@ Vue.prototype.$axios=axios;
 import Profile from './components/common/Profile'
 Vue.component(Profile.name, Profile)
 
+var EventBus = new Vue();
+
+export default EventBus;
+
 new Vue({
   vuetify,
   router,
