@@ -18,7 +18,7 @@ export default {
     replymanageItem,
   },
   created() {
-    this.$axios.get('/admin/comment/selectAll', {
+    this.$axios.get('/api/admin/comment/selectAll', {
           headers: {
             'Auth': localStorage.getItem('auth'),
           },

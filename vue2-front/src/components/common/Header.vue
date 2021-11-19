@@ -19,8 +19,7 @@
 
           <!--Nav바-->
           <div class="flex-fill">
-            <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
-              <div></div>
+            <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto"><div></div>
               <li class="nav-item">
                 <router-link to="/detail"><span class="nav-item-detail">📗여행계획</span></router-link>
               </li>
@@ -105,7 +104,7 @@ export default {
 .nav-item-detail {
   color: #333d4a;
   font-size: 24px;
-  margin-right: 50px;
+  margin-right: 20px;
 }
 
 .user-set {
@@ -122,7 +121,6 @@ span {
   font-size: x-large;
   font-weight: bolder;
   color: gray;
-  /*border-bottom: 3px solid rgba(0, 0, 0, 0);*/
 }
 
 span:hover {
@@ -135,9 +133,7 @@ span:hover {
   padding: 10px;
   border-radius: 5px;
 }
-
 .user-login {
   display: flex;
 }
-
 </style>

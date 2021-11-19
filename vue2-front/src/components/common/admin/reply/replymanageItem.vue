@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     removeItem() {
-      this.$axios.delete(`/admin/comment/selectAll`).then(res => {
+      this.$axios.delete(`/api/user/comment/delete/${this.item.commentID}`).then(res => {
         if (res.status == 200) {
           alert("Reply삭제.");
 
@@ -42,25 +42,6 @@ export default {
         console.log(err)
       })
     },
-
-    created() {
-      this.$axios.get('/admin/comment/selectAll', {
-            headers: {
-              'Auth': localStorage.getItem('auth'),
-            },
-          }
-      )
-          .then(result => {
-            this.ReplyItemList = result.data
-            console.log(result.data)
-            console.log("replymanageItem")
-          })
-          .catch(function (err) {
-            console.log("에러발생: " + err)
-            console.log("에러 in replymanageItem")
-          })
-    }
-
   }
 }
 </script>

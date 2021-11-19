@@ -140,7 +140,7 @@ export default {
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
 
-    this.$axios.get(`/planDetail/${this.planId}`)
+    this.$axios.get(`/api/user/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
@@ -159,7 +159,7 @@ export default {
   },
   methods: {
     reviewWrite() {
-      this.$axios.get(`/review/reviewWrite/${this.planId}`).then(res => {
+      this.$axios.get(`/api/user/review/reviewWrite/${this.planId}`).then(res => {
         if (res.status == 200) {
           this.$router.push({
             name: 'Review',
@@ -350,10 +350,8 @@ export default {
 
 .save_plan {
   display: flex;
-  /*width: 1000px;*/
   justify-content: space-between;
   /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;

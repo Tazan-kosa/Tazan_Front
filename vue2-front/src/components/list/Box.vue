@@ -1,13 +1,13 @@
 <template>
 
-  <div class="itembox mb-2" v-if="checkedtag.includes(item.tag1) || checkedtag.includes(item.tag2)" @click="viewURL(item.url)">
+  <div class="itembox mb-2" v-if="checkedtag.includes(item.tag1) || checkedtag.includes(item.tag2)">
       <TravelItem :item="item" />
     </div>
 
 </template>
 
 <script>
-import TravelItem from '../review/TravelItem'
+import TravelItem from './TravelItem_Like'
 export default {
   name: 'Box',
   components:{
@@ -18,9 +18,7 @@ export default {
     checkedtag:Array
   },
   methods:{
-    viewURL(link){
-      window.open(link)
-    }
+
   }
 }
 </script>

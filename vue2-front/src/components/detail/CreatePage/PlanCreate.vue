@@ -2,8 +2,9 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           :data-src=region.ci_image
-
+           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
+           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -125,6 +126,7 @@ import DayList from "./DayList";
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
+
 export default {
   name: "Unkown",
   data() {
@@ -146,6 +148,7 @@ export default {
       date: '',
       range: '',
       text: '',
+      // region:'',
     }
   },
   methods: {
@@ -212,11 +215,7 @@ export default {
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
         if (confirm("저장 하시겠습니까?")) {
-          this.$axios.post('/plan/create', planVO, {
-            headers: {
-              'Content-Type': 'application/json; charset=utf-8',
-            },
-          }).then(request => {
+          this.$axios.post('/api/user/plan/create', planVO).then(request => {
             if (request.status === 200) {
 
               this.$router.push(`/planDetail/${request.data}`)
@@ -233,17 +232,15 @@ export default {
     DayList,
     RecomPlace,
     DatePicker
-  }
-  ,
+  },
   props: {
-    region: String,
-  }
-  ,
+    region: Object,
+  },
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-    this.$axios.get(`/search/${this.region}`)
+    this.$axios.get(`/api/user/search/${this.region}`)
         .then(response => {
           this.recomList = response.data;
         })

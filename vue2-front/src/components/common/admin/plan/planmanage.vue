@@ -18,7 +18,7 @@ export default {
     planmanageItem
   },
   created() {
-    this.$axios.get('/plan/myPlanList')
+    this.$axios.get('/api/user/plan/myPlanList')
         .then(result => {
           this.planList = result.data
         })

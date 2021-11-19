@@ -55,7 +55,7 @@ export default {
     }
   },
   created() {
-    this.$axios.get(`/user/getUser/${this.item.userID}`).then(res => {
+    this.$axios.get(`/api/admin/user/getUser/${this.item.userID}`).then(res => {
       this.user=res.data
     }).catch( err => {
       console.log(err)
