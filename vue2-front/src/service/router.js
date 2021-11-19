@@ -16,16 +16,24 @@ import MyPageList from "../components/mypage/MyPageList";
 import AdminPage from "../components/common/admin/AdminPage";
 
 import UnkownPlanDetail from "../components/detail/CreatePage/UnkownPlanDetail";
-import MyPageListTest from "../components/mypage/MyPageListTest";
 import tourmanage from "../components/common/admin/tour/tourmanage";
 import usermanage from "../components/common/admin/user/usermanage";
 import planmanage from "../components/common/admin/plan/planmanage";
 import reviewmanage from "../components/common/admin/review/reviewmanage";
+import replymanage from "../components/common/admin/reply/replymanage";
 import tourForm from "../components/common/admin/tour/tourForm";
 import UnkownPlanUpdate from "../components/detail/CreatePage/UnkownPlanUpdate";
-
+import about from "../components/common/admin/about";
 
 Vue.use(VueRouter)
+
+const requireAuth = () => (to, from, next) => {
+    if (localStorage.getItem('auth')== 'ROLE_ADMIN') {
+        return next();
+    }
+    alert("관리자계정필요")
+    next('/');
+};
 
 const route = [
     // 김제민
@@ -110,17 +118,12 @@ const route = [
         name: 'Register',
         component: Register
     },
-    //mypage 테스트
-    {
-        path: '/TT',
-        name: 'TT',
-        component: MyPageListTest
-    },
     // 어드민
     {
         path: '/adminpage',
         name: 'AdminPage',
         component: AdminPage,
+        beforeEnter:requireAuth(),
         children: [
             {
                 path: 'tour',
@@ -141,6 +144,16 @@ const route = [
                 path: 'review',
                 name:'reviewmanage',
                 component:reviewmanage
+            },
+            {
+                path: 'reply',
+                name: 'replymanage',
+                component: replymanage
+            },
+            {
+                path: 'about',
+                name: 'adminabout',
+                component: about
             },
             {
                 path: 'tourForm/:tourId',

@@ -1,15 +1,21 @@
-
 .inner-container {
     margin: auto;
+    display: flex;
 }
 
 .inner-container2 {
     margin: auto;
+    display: flex;
+}
+
+.inner-container3{
+    text-align: right;
+    margin-top: 10px;
 }
 
 .inner1 {
+    width: 100%;
     float: left;
-    width: 25%;
     border: 1px solid dimgrey;
     font-weight: bold;
     padding: 10px;
@@ -17,14 +23,26 @@
 
 .inner {
     float: left;
-    width: 25%;
+    width: 100%;
     border: 1px solid dimgrey;
     padding: 10px;
+    min-height: 65px;
+    max-height: 65px;
 }
 
 .outer-container{
+    height: fit-content;
     padding: 5px;
     background-color: grey;
     border: 2px solid deepskyblue;
     margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#commentContent {
+    overflow-y: scroll;
+}
+
+#modify_btn {
+    margin-right: 10px;
 }

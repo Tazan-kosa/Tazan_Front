@@ -12,11 +12,9 @@
         <div class="inner"><p>{{ this.item.startDate.slice(0, 10) }} ~ {{ this.item.endDate.slice(0, 10) }}</p></div>
         <div class="inner"><p>{{ this.user.name }}</p></div>
         <div class="inner"><p>{{ this.user.auth }}</p></div>
-        <span>
-        &nbsp;
+      </div>
+      <div class="inner-container3">
         <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-        <p></p>
-      </span>
       </div>
     </div>
   </div>
@@ -24,6 +22,7 @@
 
 <script>
 import axios from "axios";
+import "../AdminPage.css"
 
 export default {
   name: "planmanageItem",
@@ -59,48 +58,9 @@ export default {
 </script>
 
 <style scoped>
-button {
-  position: static;
-  float: right;
-}
 
 p {
   color: white;
-}
-
-pre {
-  background-color: grey;
-  border: 2px solid deepskyblue;
-}
-
-.inner-container {
-  margin: auto;
-}
-
-.inner-container2 {
-  margin: auto;
-}
-
-.inner1 {
-  float: left;
-  width: 25%;
-  border: 1px solid dimgrey;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.inner {
-  float: left;
-  width: 25%;
-  border: 1px solid dimgrey;
-  padding: 10px;
-}
-
-.outer-container{
-  padding: 5px;
-  background-color: grey;
-  border: 2px solid deepskyblue;
-  margin-bottom: 10px;
 }
 
 </style>

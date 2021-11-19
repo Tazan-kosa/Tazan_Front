@@ -1,11 +1,12 @@
 <template>
   <div>
-    <header class="py-5" id="headerstyle">
-      <div class="container px-4 px-lg-5">
+    <header class="py-3" id="headerstyle">
+      <div class="container px-4 px-lg-5 c1">
         <div class="text-center text-white">
-          <h1 class="display-4 fw-bolder">여행지 리스트</h1>
-          <p class="lead fw-normal text-white-100 mb-0">검색 키워드를 입력 해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
-          <div class="input-group mb-3">
+          <h1 class="display-4 fw-bolder listTitle">Tazan Place</h1>
+          <h6 class="listsubTitle">각각의 특색이 살아있는 지역 행사입니다</h6>
+          <p class="lead fw-normal mb-0 searchnotion">검색 키워드를 입력 해주세요!<br>원래대로 돌아오려면 새로고침을 하시거나 빈내용을 검색하세요</p>
+          <div class="input-group mb-3 mt-3">
             <input id="searchbar" type="text" class="form-control form-control-lg" placeholder="행사 지역/행사 이름 등"
                    @keyup.enter="searchTourList">
             <button class="input-group-text btn-success" @click="searchTourList"><i class="bi bi-search me-2"></i>
@@ -15,9 +16,8 @@
         </div>
       </div>
     </header>
-    <!--main page-->
     <section class="py-0">
-      <div class="container px-4 px-lg-5 mt-3">
+      <div class="container px-4 px-lg-5 mt-3 c2">
         <Select :enddate="enddate" :startdate="startdate"/>
         <p class="datewarning" v-if="startdate>enddate"><b>날짜입력 오류입니다. 다시 확인해주세요.</b></p>
         <CheckBox :tagname="Tagnames" :checkedtag="checkedtag"/>
@@ -108,13 +108,31 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
 }
 
 p {
   margin-bottom: 0px;
 }
 
+.c1{
+  padding-bottom: 0px;
+}
+
+.listsubTitle{
+  color:#13bea6;
+  font-size: 1em;
+  padding-bottom: 15px;
+}
+
+.listTitle{
+  color:#12806d;
+  font-size: 4em;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
+.searchnotion{
+  color:#bfbdb8;
+}
 #searchbar {
   text-align: center;
 }

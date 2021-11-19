@@ -12,11 +12,9 @@
         <div class="inner"><p>{{this.user.name}}</p></div>
         <div class="inner"><p>{{this.item.reviewDate.slice(0,10)}}</p></div>
         <div class="inner"><p>{{this.user.auth}}</p></div>
-        <span>
-        &nbsp;
+      </div>
+      <div class="inner-container3">
         <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>
-        <p></p>
-      </span>
       </div>
     </div>
   </div>
@@ -28,6 +26,7 @@
 <!--    <p>권한: </p>-->
 <!--    <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>-->
 <!--  </pre>-->
+
 </template>
 
 <script>
@@ -67,10 +66,6 @@ export default {
 </script>
 
 <style scoped>
-button {
-  position: static;
-  float: right;
-}
 
 pre {
   background-color: grey;
