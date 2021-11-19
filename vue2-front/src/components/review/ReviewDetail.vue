@@ -25,7 +25,7 @@
         <hr>
         <div class="comment">
           <h5 class="container-title"> 💌 댓글</h5>
-          <div class="comment-box">
+          <div class="comment-box" v-if="isLogined">
             <div class="comment-content" contenteditable="true"></div>
             <div class="save"><Button class="comment-btn" @click="commentSave">저장하기</Button></div>
           </div>
@@ -40,7 +40,6 @@
 <script>
 import TravelList from "./TravelList";
 import ReviewComment from "./ReviewComment"
-import axios from "axios";
 
 export default {
   name: 'ReviewDetail',
@@ -53,13 +52,16 @@ export default {
       reviewUserID: '',
       CommentsData: [],
       commentEdit: false,
+      isLogined: false,
     }
   },
   created() {
+    this.isLogined = localStorage.getItem('id')
     this.userID = localStorage.getItem('id')
     this.nickName = localStorage.getItem('nickname')
     this.reviewID = this.$route.params.reviewId
-    axios.get(`http://kosa3.iptime.org:50201/review/${this.reviewID}`).then(res => {
+    console.log(localStorage.getItem('Authorization'))
+    this.$axios.get(`/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
         this.Review = res.data
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
@@ -67,7 +69,7 @@ export default {
           this.CommentsData = res.data.commentVO
         }
 
-        axios.get(`http://kosa3.iptime.org:50201/planDetail/${res.data.planID}`).then(res => {
+        this.$axios.get(`/planDetail/${res.data.planID}`).then(res => {
           if (res.status == 200) {
             this.TourItemData = res.data;
             this.reviewUserID = res.data.userID;
@@ -85,7 +87,7 @@ export default {
   methods: {
     deleteReview() {
       if(confirm("후기를 삭제하시겠습니까?")){
-        axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.reviewID}/${this.Review.planID}`).then(res => {
+        this.$axios.delete(`/reviewDelete/${this.reviewID}/${this.Review.planID}`).then(res => {
           if (res.status == 200) {
             alert("후기를 삭제했습니다.");
             this.$router.push('/reviewList').then((() => window.scrollTo(0, 0)))
@@ -110,7 +112,7 @@ export default {
       commentVO.reviewID = this.reviewID
 
       commentVO.commentContent = document.getElementsByClassName("comment-content").item(0).innerHTML
-      axios.post('http://kosa3.iptime.org:50201/comment/create', commentVO, {
+      this.$axios.post('/comment/create', commentVO, {
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
         },
@@ -127,7 +129,7 @@ export default {
       commentVO.commentID = comment[0]
       commentVO.commentContent = comment[1]
       if(confirm("수정하시겠습니까?")){
-        axios.put(`http://kosa3.iptime.org:50201/comment/update`, commentVO).then(res => {
+        this.$axios.put(`/comment/update`, commentVO).then(res => {
           if(res.status == 200){
             alert("댓글을 수정했습니다.")
           }
@@ -138,7 +140,7 @@ export default {
     },
     deleteComment(arr) {
       if (confirm("정말 삭제하시겠습니까?")) {
-        axios.delete(`http://kosa3.iptime.org:50201/comment/delete/${arr[0]}`).then(res => {
+        this.$axios.delete(`/comment/delete/${arr[0]}`).then(res => {
           if (res.status == 200) {
             alert("댓글을 삭제하였습니다.")
             this.CommentsData.splice(arr[1], 1);
@@ -149,7 +151,7 @@ export default {
       }
     },
     reportComment(id){
-      axios.get(`http://kosa3.iptime.org:50201/comment/report/update/${id}/${this.userID}`).then(res=>{
+      this.$axios.get(`/comment/report/update/${id}/${this.userID}`).then(res=>{
         if(res.status == 200){
           alert("댓글을 신고하였습니다.")
         }

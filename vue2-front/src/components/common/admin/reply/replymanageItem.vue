@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import "../AdminPage.css"
 
 export default {
@@ -33,7 +32,7 @@ export default {
   },
   methods: {
     removeItem() {
-      axios.delete(`http://kosa3.iptime.org:50201/admin/comment/selectAll`).then(res => {
+      this.$axios.delete(`/admin/comment/selectAll`).then(res => {
         if (res.status == 200) {
           alert("Reply삭제.");
 
@@ -45,7 +44,7 @@ export default {
     },
 
     created() {
-      axios.get('http://kosa3.iptime.org:50201/admin/comment/selectAll', {
+      this.$axios.get('/admin/comment/selectAll', {
             headers: {
               'Auth': localStorage.getItem('auth'),
             },

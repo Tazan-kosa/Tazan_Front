@@ -31,8 +31,6 @@ div {
   margin: 0.25em;
   border-radius: 0.25em;
 }
-
-
 div {
   margin: 0;
   padding: 0;

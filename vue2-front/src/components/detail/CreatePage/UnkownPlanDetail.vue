@@ -9,7 +9,7 @@
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">
-              <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+              <span id="userName">{{ this.nickname }}</span>님의 여행 일정표
             </h1>
             <br>
 
@@ -36,7 +36,7 @@
             <div class="left">
               <div class=""
               >
-                <h2 class="">
+                <h2 class="region_f">
                   {{ plan.region }}
                 </h2>
 
@@ -49,10 +49,11 @@
                   range
                   confirm
                   format="YYYY-MM-DD"
-                  placeholder="Select date range"
+                  :placeholder="mydate"
               >
                 여행일자
               </date-picker>
+              <br>
               <div
               >
                 {{ startDate + " - " + endDate }}
@@ -78,9 +79,18 @@
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
-                <h6>
+                <h6 class="thr_main_day_list">
                   {{ index + 1 }} 일차
                 </h6>
+<!--                <v-avatar
+                    class="thr_main_day_list"
+                >
+                  {{ index + 1 }} 일차
+                </v-avatar>-->
+<!--                <v-text-field
+                    class="thr_main_day_list"
+                    readonly
+                >{{ index + 1 }} 일차</v-text-field>-->
               </div>
 
               <DayListV2 :daylist="plan" class="thr_main_list">
@@ -97,7 +107,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import DayListV2 from "./DayListV2";
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
@@ -123,6 +132,7 @@ export default {
       mydate: '',
       nickname: '',
       plan: '',
+      range: '',
     }
   },
   created() {
@@ -130,7 +140,7 @@ export default {
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
 
-    axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+    this.$axios.get(`/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
@@ -138,6 +148,8 @@ export default {
             this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
             var ed = new Date(this.plan.endDate)
             this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
+            this.mydate = this.startDate + " - " + this.endDate
           }
         }).catch(err => {
       console.log("에러발생: " + err)
@@ -147,7 +159,7 @@ export default {
   },
   methods: {
     reviewWrite() {
-      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res => {
+      this.$axios.get(`/review/reviewWrite/${this.planId}`).then(res => {
         if (res.status == 200) {
           this.$router.push({
             name: 'Review',
@@ -170,6 +182,10 @@ export default {
 </script>
 
 <style scoped>
+.region_f {
+  font-size: 5em;
+  font-weight: 1000 !important;
+}
 .sub_main {
   display: flex;
   position: relative;
@@ -185,12 +201,19 @@ export default {
 }
 
 .thr_main_sub {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 18px !important;
+  font-weight: 900 !important;
   color: #5dc9dd;
   display: flex;
   position: relative;
-
+}
+.thr_main_day_list {
+  color: #5dc9dd;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  margin-right: auto;
+  text-align: center;
+  width:100%
 }
 
 

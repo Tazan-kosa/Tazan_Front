@@ -60,7 +60,6 @@
 
 <script>
 import jwt from 'jsonwebtoken'
-import axios from 'axios'
 
 export default {
   name: 'login',
@@ -87,12 +86,8 @@ export default {
       saveData.passWord = this.passWord;
 
       try {
-        axios
-            .post("http://kosa3.iptime.org:50201/login", JSON.stringify(saveData), {
-              headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-              }
-            })
+        this.$axios
+            .post("/login", JSON.stringify(saveData))
             .then((res) => {
               console.log(res.status)
 
@@ -116,7 +111,7 @@ export default {
                 localStorage.setItem('id', decodedToken.payload.id);
                 localStorage.setItem('email', decodedToken.payload.email);
                 localStorage.setItem('auth', decodedToken.payload.auth);
-                axios.defaults.headers.common['Authorization'] = res.data.Authorization;
+                this.$axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization');
 
                 this.auth = localStorage.getItem('auth');
 
@@ -126,12 +121,13 @@ export default {
                 } else if (this.auth === "ROLE_USER") {
                   // 로그인 성공시 홈페이지로 리다이렉트
                   this.$router.push('/')
+                  // location.reload();
                   location.reload();
                 }
               } else {
                 alert('error');
               }
-            }).catch((err) => { // 로그인 실패시
+            }).catch((err) => { // 아이디, 비밀번호 에러
           console.log(err)
           alert('아이디 또는 비밀번호가 잘못 입력 되었습니다.\n' +
               '아이디와 비밀번호를 정확히 입력해 주세요.');

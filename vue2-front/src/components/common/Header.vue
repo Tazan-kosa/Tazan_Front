@@ -43,13 +43,15 @@
 
             <!-- 로그인시 사라지는곳-->
             <!-- Login-->
-            <div id="login" v-if="!Authorization">
-              <router-link to="/login"><a><span class="user-set">로그인</span></a></router-link>
-            </div>
+            <div class="user-login" v-if="!Authorization">
+              <div id="login">
+                <router-link to="/login"><a><span class="user-set">로그인</span></a></router-link>
+              </div>
 
-            <!-- Register-->
-            <div id="Register" v-if="!Authorization">
-              <router-link to="/Register"><a><span class="user-set">회원가입</span></a></router-link>
+              <!-- Register-->
+              <div id="register">
+                <router-link to="/Register"><a><span class="user-set">회원가입</span></a></router-link>
+              </div>
             </div>
 
             <!-- profile 버튼-->
@@ -94,18 +96,12 @@ export default {
         return true
       }
     }
-  }
+  },
 }
 
 </script>
 
 <style scoped>
-.nav-content {
-  position: sticky;
-  top: 0;
-  background-color: white;
-}
-
 .nav-item-detail {
   color: #333d4a;
   font-size: 24px;
@@ -126,17 +122,22 @@ span {
   font-size: x-large;
   font-weight: bolder;
   color: gray;
-  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  /*border-bottom: 3px solid rgba(0, 0, 0, 0);*/
 }
 
 span:hover {
-  border-bottom: 3px solid royalblue;
+  width: 100%;
+  border-bottom: 3px solid #0e69ff;
 }
 
-#login, #logout {
+#login, #register {
   background-color: white;
   padding: 10px;
   border-radius: 5px;
+}
+
+.user-login {
+  display: flex;
 }
 
 </style>

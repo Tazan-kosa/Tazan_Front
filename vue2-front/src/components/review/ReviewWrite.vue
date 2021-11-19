@@ -40,7 +40,6 @@
 import TravelList from "./TravelList";
 import MyPlanModal from "./MyPlanModal";
 import Sticky from "vue-sticky-directive";
-import axios from "axios";
 
 export default {
   name: 'reviewwrite',
@@ -77,7 +76,7 @@ export default {
     },
     selectedPlan(id) {
       this.flag = true;
-      axios.get(`http://kosa3.iptime.org:50201/planDetail/${id[0]}`).then(res => {
+      this.$axios.get(`/planDetail/${id[0]}`).then(res => {
         if(res.status == 200) {
           this.TourItemData = res.data
           this.flag = true;
@@ -91,7 +90,7 @@ export default {
         alert("에러발생 : " + err.response.message);
       })
       if(id[1] == '1'){
-        axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${id[0]}`).then(res=> {
+        this.$axios.get(`/review/reviewWrite/${id[0]}`).then(res=> {
           if(res.status == 200){
             this.ReviewData = res.data;
             this.title = res.data.reviewTitle
@@ -152,7 +151,7 @@ export default {
       }
       if(this.editFlag){
         reviewVO.reviewID = this.ReviewData.reviewID
-        axios.put(`http://kosa3.iptime.org:50201/review/update`, reviewVO, {
+        this.$axios.put(`/review/update`, reviewVO, {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
@@ -170,7 +169,7 @@ export default {
         })
       }
       else{
-        axios.post('http://kosa3.iptime.org:50201/review/upload', reviewVO, {
+        this.$axios.post('/api/user/review/upload', reviewVO, {
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
           },
@@ -220,7 +219,7 @@ export default {
 
 .reivew{
   max-width: 1100px;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 .container-top {
@@ -229,7 +228,7 @@ export default {
 }
 
 .head {
-  padding: 50px;
+  padding: 30px;
   text-align: center;
 }
 
