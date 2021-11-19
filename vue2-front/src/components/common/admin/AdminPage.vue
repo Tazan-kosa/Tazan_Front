@@ -70,7 +70,7 @@
       </v-card>
 
       <v-footer app dark>
-        <v-text class="grey--text">TAZAN 관리자 페이지</v-text>
+        <div class="grey--text">TAZAN 관리자 페이지</div>
       </v-footer>
     </v-app>
   </v-card>
@@ -104,7 +104,6 @@ export default {
       location.reload();
     },
     movetopage(path) {
-      console.log(path)
       this.$router.push(`/adminpage/${path}`, () => {
       })
     }

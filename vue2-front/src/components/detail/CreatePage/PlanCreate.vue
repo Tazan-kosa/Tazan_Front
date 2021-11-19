@@ -139,7 +139,7 @@ export default {
       recomList: [],
       totalPlan: [[]],
       totalPlan_tour: [[]],
-      cnt: 0, //index
+      cnt: 0,
       userName: '',
       userID: '',
       mydate: '',
@@ -147,7 +147,7 @@ export default {
       date: '',
       range: '',
       text: '',
-      // region:'',
+
     }
   },
   methods: {
@@ -202,12 +202,11 @@ export default {
       else {
         let planVO = {};
         planVO.userID = localStorage.getItem("id");
-        // reviewVO.userID = 1//localStorage.getItem("id")
+
         planVO.region = this.region;
         planVO.startDate = this.mydate[0];
         planVO.endDate = this.mydate[1];
-        // PlanVO.date =;
-        // planVO.planDate = plandate;
+
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
         if (confirm("저장 하시겠습니까?")) {
@@ -228,7 +227,7 @@ export default {
     },
   },
   components: {
-    // DatePicker,
+
     DayList,
     RecomPlace,
     DatePicker
@@ -239,13 +238,16 @@ export default {
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
-    // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+
     this.$axios.get(`/api/user/search/${this.region}`)
         .then(response => {
           this.recomList = response.data;
         })
         .catch(err => {
-          console.log(err)
+          if (err.response.status == 403) {
+            alert("로그인 후 이용해주시기 바랍니다.");
+            this.$router.push('/login')
+          }
         })
   },
   mounted() {

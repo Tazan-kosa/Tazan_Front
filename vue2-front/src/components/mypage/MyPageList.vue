@@ -8,7 +8,7 @@
         </div>
 
         <div class="text">{{ this.userName }}</div>
-        <!--        <button class="btn-normal" onclick="goToMyPage()">프로필 수정</button>-->
+
       </div>
       <div>
         <div class="row">
@@ -37,7 +37,8 @@
         <span id="resultArea">
           <div style="margin:16px 0;">
           <div v-for="(mypage, index) in plan" :key="index">
-              <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack uk-margin-top uk-margin-bottom" style="padding:16px"
+              <div class="uk-card uk-card-default uk-grid-collapse uk-grid uk-grid-stack uk-margin-top uk-margin-bottom"
+                   style="padding:16px"
                    uk-grid="">
                 <div class="uk-width-1-3@m uk-first-column">
                   <div class="uk-grid" uk-grid="" style="margin: 0; height: 60%">
@@ -50,9 +51,7 @@
                       <div class="uk-text-meta">
                         대한민국 {{ mypage.region }}
                       </div>
-                      <!--                <div class="uk-text-meta" style="font-size: 12px;margin-top: 8px;">-->
-                      <!--                  {{ this.userName }}-->
-                      <!--                </div>-->
+
                     </div>
                   </div>
                 </div>
@@ -90,7 +89,7 @@
                           여행일자
 
                           <span class="small-text">
-      <!--                                        2021.11.9-2021.11.18-->
+
                           {{ mypage.startDate.slice(0, 10) + " - " + mypage.endDate.slice(0, 10) }}
                                           </span>
                         </div>
@@ -100,7 +99,7 @@
                           일정 개수
 
                           <span class="small-text">
-                            {{mypage.planSize.replace(/\#/g,'').length}}
+                            {{ mypage.planSize.replace(/\#/g, '').length }}
                           </span>
                         </div>
                       </div>
@@ -116,7 +115,7 @@
                       <div class="uk-width-1-4 uk-first-column">
                         <div>
                           <button class="uk-button uk-button-large uk-card-default"
-                          @click="planUpdate(mypage)">
+                                  @click="planUpdate(mypage)">
                             일정 수정
                           </button>
                         </div>
@@ -172,16 +171,10 @@ export default {
     }
   },
   components: {
-    // MyPageListTest
-  },
-  beforeCreate() {
-    if (!localStorage.getItem('Authorization')) {
-      alert('접근 권한이 없습니다.');
-      this.$router.push('/login')
-    }
+
   },
   created() {
-    if(localStorage.getItem('id')){
+    if (localStorage.getItem('id')) {
       this.userName = localStorage.getItem('nickname')
       this.initial = localStorage.getItem('nickname').charAt(0).toUpperCase()
       var id = localStorage.getItem('id');
@@ -192,8 +185,11 @@ export default {
           if (response.status == 200) {
             this.plan = response.data
           }
-        }).catch(() => {
-      alert("에러발생");
+        }).catch((err) => {
+      if (err.response.status == 403) {
+        alert("로그인 후 이용해주시기 바랍니다.");
+        this.$router.push('/login')
+      }
     })
   },
   methods: {
@@ -214,10 +210,9 @@ export default {
       }
     },
     planUpdate(mypage) {
-      if(mypage.reviewFlag=="1"){
+      if (mypage.reviewFlag == "1") {
         alert("리뷰가 작성된 계획은 수정할 수 없습니다.")
-      }
-      else{
+      } else {
         this.$router.push(`/modify/${mypage.planID}`)
       }
     }
@@ -226,12 +221,6 @@ export default {
 </script>
 
 <style scoped>
-/*div {*/
-/*  border: 1px solid black;*/
-/*  padding: 0.25em;*/
-/*  margin: 0.25em;*/
-/*  border-radius: 0.25em;*/
-/*}*/
 
 * {
   margin: 0;
@@ -246,6 +235,7 @@ body {
   background: #fff;
   color: #000;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -300,8 +290,6 @@ body {
   display: block;
   background: #fff;
   max-width: 1400px;
-  /* padding: 40px 0; */
-  /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
 }
 
 @media (max-width: 600px) {
@@ -360,7 +348,7 @@ body {
   width: 140px;
   padding: 16px 24px;
   margin: 8px;
-  border-radius: 4;
+  border-radius: 4px;
   border: 1px solid #e0e0e0;
   font-size: 0.9rem;
   text-align: center;
@@ -376,7 +364,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* height: 120px; */
 }
 
 .index-section button {
@@ -405,7 +392,7 @@ body {
   height: 120px;
   width: 120px;
   border-radius: 50%;
-  /* border: 5px solid #cee4e9; */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -462,7 +449,6 @@ body {
 
 @media (max-width: 600px) {
   .date-section {
-    /* display: none; */
     position: absolute;
     top: 10px;
     background-color: transparent;
@@ -474,34 +460,12 @@ body {
   }
 }
 
-/* .section-title-container {
-    border-left: 5px solid #26dbe1;
-    padding-left: 8px;
-} */
 
 .small-title {
   font-size: 1rem;
   font-weight: 700;
   color: #5dc9dd;
 }
-
-/*.small-text {*/
-/*  font-size: 0.9rem;*/
-/*  color: #000;*/
-/*  font-family: 'Montserrat';*/
-/*}*/
-
-/*.info-container-top {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.info-container-bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}*/
 
 .cm-toggle-container {
   display: flex;
@@ -539,14 +503,14 @@ body {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Shift the handle to left on check event */
+
 
 .cm-toggle:checked:before {
   left: 24px;
   box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Transition for smoothness */
+
 
 .cm-toggle,
 .cm-toggle:before,
