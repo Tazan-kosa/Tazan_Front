@@ -2,9 +2,7 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
-           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
-                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-src="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -64,15 +62,15 @@
             <br>
             <br>
 
-          <v-card
-              class="left_container_img"
-          >
-            <img class="logo_img"
-                max-height="300"
-                max-width="300"
-                :src="require(`/src/assets/yacht_tazan_logo.png`)"
+            <v-card
+                class="left_container_img"
             >
-          </v-card>
+              <img class="logo_img"
+                   max-height="300"
+                   max-width="300"
+                   :src="require(`/src/assets/yacht_tazan_logo.png`)"
+              >
+            </v-card>
           </v-card>
 
 
@@ -82,15 +80,7 @@
                 <h6 class="thr_main_day_list">
                   {{ index + 1 }} 일차
                 </h6>
-<!--                <v-avatar
-                    class="thr_main_day_list"
-                >
-                  {{ index + 1 }} 일차
-                </v-avatar>-->
-<!--                <v-text-field
-                    class="thr_main_day_list"
-                    readonly
-                >{{ index + 1 }} 일차</v-text-field>-->
+
               </div>
 
               <DayListV2 :daylist="plan" class="thr_main_list">
@@ -152,9 +142,10 @@ export default {
             this.mydate = this.startDate + " - " + this.endDate
           }
         }).catch(err => {
-      console.log("에러발생: " + err)
-      //에러 처리 할 곳
-      alert("에러발생");
+      if (err.response.status == 403) {
+        alert("로그인 후 이용해주시기 바랍니다.");
+        this.$router.push('/login')
+      }
     })
   },
   methods: {
@@ -186,6 +177,7 @@ export default {
   font-size: 5em;
   font-weight: 1000 !important;
 }
+
 .sub_main {
   display: flex;
   position: relative;
@@ -207,13 +199,14 @@ export default {
   display: flex;
   position: relative;
 }
+
 .thr_main_day_list {
   color: #5dc9dd;
   font-size: 18px !important;
   font-weight: 900 !important;
   margin-right: auto;
   text-align: center;
-  width:100%
+  width: 100%
 }
 
 
