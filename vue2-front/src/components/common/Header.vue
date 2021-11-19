@@ -105,7 +105,7 @@ export default {
 .nav-item-detail {
   color: #333d4a;
   font-size: 24px;
-  margin-right: 50px;
+  margin-right: 0px;
 }
 
 .user-set {
