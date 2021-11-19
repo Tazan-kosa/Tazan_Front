@@ -17,6 +17,7 @@ Vue.config.productionTip = false;
 
 axios.defaults.baseURL = 'http://kosa3.iptime.org:50201'
 axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+axios.defaults.headers.put['Content-Type'] = 'application/json; charset=utf-8';
 axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization');
 Vue.prototype.$axios=axios;
 

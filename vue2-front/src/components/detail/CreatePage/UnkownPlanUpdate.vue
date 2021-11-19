@@ -201,7 +201,7 @@ export default {
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
 
-    this.$axios.get(`/planDetail/${this.planId}`)
+    this.$axios.get(`/api/user/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
@@ -324,11 +324,7 @@ export default {
 
 
         if (confirm("저장 하시겠습니까?")) {
-          this.$axios.put('/plan/planUpdate', planVO, {
-            headers: {
-              'Content-Type': 'application/json; charset=utf-8',
-            },
-          }).then(request => {
+          this.$axios.put('/api/user/plan/planUpdate', planVO).then(request => {
             if (request.status === 200) {
               this.$router.push(`/planDetail/${this.plan.planID}`)
             }

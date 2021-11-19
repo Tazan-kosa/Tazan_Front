@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     removeItem() {
-      this.$axios.delete(`/planDelete/${this.item.planID}`).then(res => {
+      this.$axios.delete(`/api/user/planDelete/${this.item.planID}`).then(res => {
         if (res.status == 200) {
           alert("Plan 삭제.");
           location.reload();
