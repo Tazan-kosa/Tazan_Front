@@ -154,7 +154,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "MyPageList",
@@ -188,7 +187,7 @@ export default {
       var id = localStorage.getItem('id');
     }
 
-    axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`)
+    this.$axios.get(`/plan/myPlan/${id}`)
         .then(response => {
           if (response.status == 200) {
             this.plan = response.data
@@ -203,7 +202,7 @@ export default {
     },
     deleteSavedRoute(id) {
       if (confirm('정말 삭제하시겠습니까?')) {
-        axios.delete(`http://kosa3.iptime.org:50201/planDelete/${id}`)
+        this.$axios.delete(`/planDelete/${id}`)
             .then(result => {
               if (result.status == 200) {
                 alert("여행계획을 삭제했습니다.");

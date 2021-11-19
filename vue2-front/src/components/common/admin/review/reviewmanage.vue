@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import reviewmanageItem from "./reviewmanageItem";
 
 export default {
@@ -19,7 +18,7 @@ export default {
     reviewmanageItem
   },
   created() {
-    axios.get('http://kosa3.iptime.org:50201/review/reviewmanageList')
+    this.$axios.get('/review/reviewmanageList')
         .then(result => {
           this.ReviewItemList=result.data
         })

@@ -2,9 +2,8 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src=region.img
-           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
-                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           :data-src=region.ci_image
+
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -121,11 +120,7 @@
 </template>
 
 <script>
-// import UnkownList from "./UnkownList";
 import RecomPlace from "./RecomPlace";
-// import RecomPlaceSave from "./RecomPlaceSave";
-// import DatePicker from "../DatePicker";
-import axios from "axios";
 import DayList from "./DayList";
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
@@ -217,7 +212,7 @@ export default {
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
         if (confirm("저장 하시겠습니까?")) {
-          axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+          this.$axios.post('/plan/create', planVO, {
             headers: {
               'Content-Type': 'application/json; charset=utf-8',
             },
@@ -248,7 +243,7 @@ export default {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
+    this.$axios.get(`/search/${this.region}`)
         .then(response => {
           this.recomList = response.data;
         })
@@ -295,6 +290,9 @@ export default {
   color: #5dc9dd;
   font-size: 18px !important;
   font-weight: 900 !important;
+  margin-right: auto;
+  text-align: center;
+  width:100%
 }
 
 .sub_title {

@@ -35,7 +35,6 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import CheckBox from "@/components/list/CheckBox";
 import Tagname from "@/components/list/tagnames";
 import Box from './Box.vue'
-import axios from 'axios'
 import Select from "@/components/list/Select";
 
 export default {
@@ -65,7 +64,7 @@ export default {
         if(!value){
           value="_"
         }
-        axios.get(`http://kosa3.iptime.org:50201/search/${value}/${this.startdate}/${this.enddate}`)
+        this.$axios.get(`/search/${value}/${this.startdate}/${this.enddate}`)
             .then(result => {
               this.TourItemList = result.data
             })
@@ -89,7 +88,7 @@ export default {
     }
     this.startdate = year + '-' + month + '-' + day
     this.enddate = year + '-' + month + '-' + day
-    axios.get('http://kosa3.iptime.org:50201/tourList')
+    this.$axios.get('/tourList')
         .then(result => {
           this.TourItemList = result.data
         })
