@@ -21,7 +21,6 @@
                     placeholder="제목은 비워둘 수 없습니다."
                     :value="plan.planTitle"
                 ></b-form-input>
-<!--                -->
 <!--                <b-form-input
                     id="input-live"
                     v-model="name"
@@ -29,7 +28,7 @@
                     aria-describedby="input-live-help input-live-feedback"
                     placeholder="여행 타이틀 입력"
                     trim
-                ></b-form-input>
+                ></b-form-input><br>
                 <b-form-invalid-feedback id="input-live-feedback">
                   여행 제목 입력 (1자 이상 45자 이하)
                 </b-form-invalid-feedback>-->
@@ -237,19 +236,22 @@ export default {
       if (this.mydate == '') {
         alert('날짜를 먼저 선택해주세요')
       } else {
-        /*        this.totalPlan[this.cnt].push(result) // object
-                this.totalPlan_tour[this.cnt].push(result.tourId)*/
         this.plan.planList[this.cnt].push(result) // object
-        // this.planList_tour[this.cnt].push(result.tourId)
       }
     },
     updateddate() {
       var sd = new Date(this.mydate_up[0])
+
       this.mydate_up[0] = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+
       this.startDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+
       var ed = new Date(this.mydate_up[1])
+
       this.mydate_up[1] = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
       this.endDate= ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
       this.mydate = this.startDate + " - " + this.endDate
     },
     dayList_add() {
@@ -265,7 +267,6 @@ export default {
         } else {
           this.cnt += 1
           this.plan.planList.push([])
-          // this.planList_tour.push([])
         }
       }
     },
@@ -285,11 +286,7 @@ export default {
       }
     },
     DeleteList(listObject) {
-      /*this.totalPlan[listObject.index1].splice(listObject.index2, 1)
-      this.totalPlan_tour[listObject.index1].splice(listObject.index2, 1)*/
       this.plan.planList[listObject.index1].splice(listObject.index2, 1)
-      // this.planList_tour[listObject.index1].splice(listObject.index2, 1)
-
     },
     UpdateWrite() {
 
@@ -381,13 +378,6 @@ export default {
   width:100%
 }
 
-/*.thr_main .sub_main {
-  border: 1px solid black;
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
-}*/
-
 .sub_title {
   display: flex;
   justify-content: center;
@@ -408,8 +398,6 @@ export default {
   width: 25%;
   height: 100%;
   flex-direction: column;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -420,8 +408,6 @@ export default {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -432,8 +418,6 @@ export default {
   flex-direction: column;
   width: 65%;
   height: 100%;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -442,8 +426,6 @@ export default {
 .right {
   width: 20%;
   height: 100%;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -452,9 +434,6 @@ export default {
 .right_list {
   width: 100%;
   height: 100%;
-  /*justify-content: left;*/
-  /*display: flex;*/
-  /*flex-direction: row;*/
 }
 
 
@@ -469,7 +448,6 @@ export default {
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  /*justify-content: space-around;*/
   font-size: 1rem;
   font-weight: 700;
   color: #5dc9dd;
@@ -478,15 +456,11 @@ export default {
 }
 
 .thr_main_list {
-  /*height: 5px;*/
   overflow-x: auto;
-  /*overflow-x: scroll;*/
   display: flex;
   width: 963px;
   text-align: left;
   height: inherit;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -512,9 +486,7 @@ export default {
 
 .save_plan {
   display: flex;
-  /*width: 1000px;*/
   justify-content: space-between;
-  /**/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;

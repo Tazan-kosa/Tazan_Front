@@ -350,10 +350,8 @@ export default {
 
 .save_plan {
   display: flex;
-  /*width: 1000px;*/
   justify-content: space-between;
   /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;

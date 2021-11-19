@@ -63,6 +63,7 @@ export default {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
     if(this.$route.params.planData){
+
       this.TourItemData = this.$route.params.planData;
       this.flag = true;
       this.ReviewData = this.$route.params.reviewData;
@@ -179,6 +180,7 @@ export default {
           }
           else{
             alert("에러발생 : " + err.response.message);
+            console.log(err)
           }
         })
       }
