@@ -92,13 +92,13 @@ export default {
     auth: String, // guest : ROLE_USER, admin : ROLE_ADMIN
   }
 }
-
 </script>
 
 <style>
- .v-application--wrap {
+/*header margin 조정*/
+.v-application--wrap {
    min-height: 0vh !important;
- }
+}
 #mypage-text, #logout-text, #admin-text{
   font-size: medium;
   font-weight: normal;
