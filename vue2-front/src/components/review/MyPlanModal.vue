@@ -46,7 +46,7 @@ export default {
   },
   created() {
     var id = localStorage.getItem('id');
-    this.$axios.get(`/plan/myPlan/${id}`).then(res => {
+    this.$axios.get(`/api/user/plan/myPlan/${id}`).then(res => {
       if (res.status === 200) {
         this.myplanList = res.data;
       }
