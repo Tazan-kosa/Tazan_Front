@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import replymanageItem from "./replymanageItem";
 
 export default {
@@ -19,7 +18,7 @@ export default {
     replymanageItem,
   },
   created() {
-    axios.get('http://kosa3.iptime.org:50201/admin/comment/selectAll', {
+    this.$axios.get('/admin/comment/selectAll', {
           headers: {
             'Auth': localStorage.getItem('auth'),
           },

@@ -148,7 +148,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import DayList from "./DayList";
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
@@ -202,7 +201,7 @@ export default {
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
 
-    axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+    this.$axios.get(`/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
@@ -214,7 +213,7 @@ export default {
             this.defaultendDate=ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
             this.mydate = this.startDate + " - " + this.endDate
             this.cnt=this.plan.planList.length-1
-            axios.get(`http://kosa3.iptime.org:50201/search/${this.plan.region}`)
+            this.$axios.get(`/search/${this.plan.region}`)
                 .then(response => {
 
                   this.recomList = response.data;
@@ -325,7 +324,7 @@ export default {
 
 
         if (confirm("저장 하시겠습니까?")) {
-          axios.put('http://kosa3.iptime.org:50201/plan/planUpdate', planVO, {
+          this.$axios.put('/plan/planUpdate', planVO, {
             headers: {
               'Content-Type': 'application/json; charset=utf-8',
             },

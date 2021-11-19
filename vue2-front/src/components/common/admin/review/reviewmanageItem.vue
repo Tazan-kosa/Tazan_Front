@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import "../AdminPage.css";
 
 export default {
@@ -45,7 +44,7 @@ export default {
   },
   methods:{
     removeItem(){
-      axios.delete(`http://kosa3.iptime.org:50201/reviewDelete/${this.item.reviewID}`).then(res => {
+      this.$axios.delete(`/reviewDelete/${this.item.reviewID}`).then(res => {
         if (res.status == 200) {
           alert("Review삭제.");
           location.reload();
@@ -56,7 +55,7 @@ export default {
     }
   },
   created() {
-    axios.get(`http://kosa3.iptime.org:50201/user/getUser/${this.item.userID}`).then(res => {
+    this.$axios.get(`/user/getUser/${this.item.userID}`).then(res => {
       this.user=res.data
     }).catch( err => {
       console.log(err)

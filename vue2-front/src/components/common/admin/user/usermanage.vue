@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import usermanageItem from "./usermanageItem";
 
 export default {
@@ -19,7 +18,7 @@ export default {
     usermanageItem
   },
   created() {
-    axios.get('http://kosa3.iptime.org:50201/user/userList')
+    this.$axios.get('/user/userList')
         .then(result => {
           this.userList = result.data
         })

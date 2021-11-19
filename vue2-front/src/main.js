@@ -14,6 +14,10 @@ Vue.use(BootstrapVue)
 // optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false;
+
+axios.defaults.baseURL = 'http://kosa3.iptime.org:50201'
+axios.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization');
 Vue.prototype.$axios=axios;
 
 // profile component화
@@ -28,7 +32,6 @@ new Vue({
   vuetify,
   router,
   render: h => h(App),
-
   el: '#app',
       data: {
   showModal: false

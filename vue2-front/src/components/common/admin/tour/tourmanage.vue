@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import tourmanageItem from "./tourmanageItem";
 
 export default {
@@ -24,7 +23,7 @@ export default {
     tourmanageItem
   },
   created() {
-    axios.get('http://kosa3.iptime.org:50201/tourList')
+    this.$axios.get('/tourList')
         .then(result => {
           this.tourList = result.data
         })
