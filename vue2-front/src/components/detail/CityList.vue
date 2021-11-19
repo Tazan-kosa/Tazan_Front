@@ -3,7 +3,7 @@
     <div style="text-align: center">
       <br>
       <br>
-      <h1>여행지</h1>
+      <h1 class="uk-heading-line uk-text-center"><span class="main_title">여행지</span></h1>
     </div>
     <br>
     <section class="py-0">
@@ -45,6 +45,10 @@ export default {
 </script>
 
 <style scoped>
+.main_title {
+  font-size: 3rem;
+  font-weight: 900 !important;
+}
 .container {
 }
 

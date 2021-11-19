@@ -9,7 +9,7 @@
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">
-              <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+              <span id="userName">{{ this.nickname }}</span>님의 여행 수정
             </h1>
             <br>
 
@@ -381,6 +381,9 @@ export default {
   color: #5dc9dd;
   font-size: 18px !important;
   font-weight: 900 !important;
+  margin-right: auto;
+  text-align: center;
+  width:100%
 }
 
 /*.thr_main .sub_main {
