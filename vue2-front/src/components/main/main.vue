@@ -107,7 +107,7 @@ export default {
 
   },
   created() {
-    this.$axios.get('/testdbTopFour')
+    this.$axios.get('/tourListTopFour')
         .then(result => {
           this.TourItemList = result.data
         })
