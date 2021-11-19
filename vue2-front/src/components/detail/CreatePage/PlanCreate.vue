@@ -215,7 +215,11 @@ export default {
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
         if (confirm("저장 하시겠습니까?")) {
-          this.$axios.post('/api/user/plan/create', planVO).then(request => {
+          this.$axios.post('/api/user/plan/create', planVO,{
+            headers : {
+              'Content-Type': 'application/json; charset=utf-8'
+            }
+          }).then(request => {
             if (request.status === 200) {
 
               this.$router.push(`/planDetail/${request.data}`)
