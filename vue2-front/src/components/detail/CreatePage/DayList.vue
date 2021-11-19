@@ -16,13 +16,7 @@
           {{ day.tag1 + " , " + day.tag2}}
         </v-card-subtitle>
         <button type="button" uk-close @click="tourListDelete(index2)"></button>
-<!--          <v-btn icon @click="tourListDelete(index2)">
-            <v-btn class="mx-2" fab dark small color="primary">
-              <v-icon dark>
-                mdi-minus
-              </v-icon>
-            </v-btn>-->
-<!--          </v-btn>-->
+
       </v-card>
     </div>
   </div>
@@ -58,7 +52,9 @@ div {
   box-shadow: #888888;
   /*display: flex;*/
   width: 100%;
+  /*justify-content: space-around;*/
   justify-content: left;
+  justify-items: left;
 }
 
 
