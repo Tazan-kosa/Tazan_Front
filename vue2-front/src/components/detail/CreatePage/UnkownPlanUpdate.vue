@@ -213,7 +213,7 @@ export default {
             this.defaultendDate=ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
             this.mydate = this.startDate + " - " + this.endDate
             this.cnt=this.plan.planList.length-1
-            this.$axios.get(`/search/${this.plan.region}`)
+            this.$axios.get(`/api/user/search/${this.plan.region}`)
                 .then(response => {
 
                   this.recomList = response.data;

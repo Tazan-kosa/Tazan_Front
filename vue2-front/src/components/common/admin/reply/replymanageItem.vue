@@ -42,21 +42,6 @@ export default {
         console.log(err)
       })
     },
-
-    created() {
-      this.$axios.get('/api/admin/comment/selectAll'
-      )
-          .then(result => {
-            this.ReplyItemList = result.data
-            console.log(result.data)
-            console.log("replymanageItem")
-          })
-          .catch(function (err) {
-            console.log("에러발생: " + err)
-            console.log("에러 in replymanageItem")
-          })
-    }
-
   }
 }
 </script>
