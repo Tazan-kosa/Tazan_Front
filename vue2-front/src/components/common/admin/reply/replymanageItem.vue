@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     removeItem() {
-      this.$axios.delete(`/admin/comment/selectAll`).then(res => {
+      this.$axios.delete(`/api/user/comment/delete/${this.item.commentID}`).then(res => {
         if (res.status == 200) {
           alert("Reply삭제.");
 
