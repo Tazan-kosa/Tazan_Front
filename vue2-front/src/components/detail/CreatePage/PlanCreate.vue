@@ -181,10 +181,7 @@ export default {
         this.cnt -= 1
         this.totalPlan.pop()
         this.totalPlan_tour.pop()
-        // this.totalPlan_tour.push([])
-        // this.cnt -= 1
-        // this.totalPlan.splice([0], )
-        // this.totalPlan_tour.pop([])
+
       }
     },
     DeleteList(listObject) {
