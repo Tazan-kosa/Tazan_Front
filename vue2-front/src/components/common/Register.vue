@@ -201,7 +201,6 @@ export default {
           console.error(error);
         }
       }
-
     },
   },
 };

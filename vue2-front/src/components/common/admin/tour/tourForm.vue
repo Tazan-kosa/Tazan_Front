@@ -153,7 +153,7 @@ export default {
     this.enddate = year + '-' + month + '-' + day
     this.tourId = this.$route.params.tourId
     if (this.tourId) {
-      this.$axios.get(`/tour/getTourId/${this.tourId}`)
+      this.$axios.get(`/api/admin/tour/getTourId/${this.tourId}`)
           .then(result => {
             this.TourItem = result.data
             this.startdate = this.TourItem.startDate.slice(0, 10);
@@ -184,7 +184,7 @@ export default {
       tourVO.latitude = document.getElementsByClassName("Latitude")[0].value;
       tourVO.contact = document.getElementsByClassName("Contact")[0].value;
       if (this.tourId != 0) {
-        this.$axios.put(`/tour/updateTour`, tourVO).then(res => {
+        this.$axios.put(`/api/admin/tour/updateTour`, tourVO).then(res => {
           if (res.status == 200) {
             alert("수정되었습니다.")
             this.$router.push("/adminpage/tour")
@@ -195,7 +195,7 @@ export default {
         })
       }
       else{
-        this.$axios.post(`/tour/insertTour`, tourVO).then(res => {
+        this.$axios.post(`/api/admin/tour/insertTour`, tourVO).then(res => {
           if (res.status == 200) {
             alert("등록되었습니다.")
             this.$router.push("/adminpage/tour");

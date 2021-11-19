@@ -18,7 +18,7 @@ export default {
     usermanageItem
   },
   created() {
-    this.$axios.get('/user/userList')
+    this.$axios.get('/api/admin/user/userList')
         .then(result => {
           this.userList = result.data
         })

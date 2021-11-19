@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     removeItem() {
-      this.$axios.delete(`/tour/deleteTour/${this.item.tourId}`).then(res => {
+      this.$axios.delete(`/api/admin/tour/deleteTour/${this.item.tourId}`).then(res => {
         if (res.status == 200) {
           alert("tour 삭제.");
           location.reload();

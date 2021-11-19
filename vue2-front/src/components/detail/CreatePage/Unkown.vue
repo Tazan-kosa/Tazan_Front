@@ -243,7 +243,7 @@ export default {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-    this.$axios.get(`/search/${this.region}`)
+    this.$axios.get(`/api/user/search/${this.region}`)
         .then(response => {
           this.recomList = response.data;
         })
