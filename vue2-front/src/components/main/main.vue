@@ -12,7 +12,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="container">
-              <!-- main-video page 1 -->
+              <!-- 메인비디오 - 1 -->
               <video class="main-video" muted autoplay loop>
                 <source src="../../assets/bg_v_jeonju_1080.mp4" type="video/mp4">
               </video>
@@ -21,7 +21,7 @@
 
           <div class="carousel-item">
             <div class="container">
-              <!-- main-video page 2 -->
+              <!-- 메인비디오 - 2 -->
               <video class="main-video" muted autoplay loop>
                 <source src="../../assets/bg_v_seoul_2_1080.mp4" type="video/mp4">
               </video>
@@ -30,14 +30,15 @@
 
           <div class="carousel-item">
             <div class="container">
-              <!-- main-video page 3 -->
+              <!-- 메인비디오 - 3 -->
               <video class="main-video" muted autoplay loop>
                 <source src="../../assets/bg_v_Incheon_3_1080.mp4" type="video/mp4">
               </video>
             </div>
           </div>
         </div>
-        <!-- 동영상 이동-->
+
+        <!-- 다음비디오 좌우 화살표 -->
         <a class="carousel-control-prev text-decoration-none w-10 ps-3" href="#tour-main"
            role="button" data-bs-slide="prev">
           <img src="../../assets/left-rbg.png" height="24" width="24" alt="prev-left-btn"/></a>
@@ -60,9 +61,9 @@
         </div>
       </div>
     </section>
-    <!-- 여행지 리스트 끝-->
+    <!-- 여행지 리스트 끝 -->
 
-    <!-- 여행후기 리스트 -->
+    <!-- 여행 후기 리스트 시작 -->
     <section class="container py-5">
       <div class="row text-center pt-3">
         <div class="col-lg-6 m-auto">
@@ -75,8 +76,8 @@
         </div>
       </div>
     </section>
-    <!-- 여행후기 리스트 끝-->
-    <!-- 메인페이지 끝-->
+    <!-- 여행 후기 리스트 끝 -->
+    <!-- 메인 페이지 끝 -->
   </div>
 
 </template>

@@ -15,6 +15,7 @@
                         class="mx-auto"
                         style="width: 400px; height: 300px">
                       <div class="mx-3">
+                        <!-- email-->
                         <v-icon color="black" size="30px" @keyup.enter="loginSubmit">이메일</v-icon>
                         <div class="mx-1">
                           <v-text-field
@@ -24,9 +25,9 @@
                           ></v-text-field>
                         </div>
                       </div>
+                      <!-- password-->
                       <div class="mx-3" @keyup.enter="loginSubmit">
                         <v-icon color="black" size="30px">비밀번호</v-icon>
-
                         <div class="mx-1">
                           <v-text-field
                               placeholder="비밀번호"
@@ -89,12 +90,8 @@ export default {
             .post("/login", JSON.stringify(saveData))
             .then((res) => {
 
-
               if (res.status === 200) { // 로그인 성공코드 : 200
                 alert('로그인되었습니다.');
-
-
-
                 // jwt
                 localStorage.setItem('Authorization', res.data.Authorization);
 
