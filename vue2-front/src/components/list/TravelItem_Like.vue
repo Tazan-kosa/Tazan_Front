@@ -43,10 +43,10 @@ export default {
         if (this.flag) {
 
 
-          this.$axios.delete(`http://kosa3.iptime.org:50201/tour/deleteTourLike/${this.likeID}`).then((res) => {
+          this.$axios.delete(`/tour/deleteTourLike/${this.likeID}`).then((res) => {
             if (res.status == 200) {
               this.flag = false;
-              this.$axios.put(`http://kosa3.iptime.org:50201/tour/deleteTourLikePoint/${this.item.tourId}`).then((res2) => {
+              this.$axios.put(`/tour/deleteTourLikePoint/${this.item.tourId}`).then((res2) => {
                 if (res2.status == 200) {
                   this.item.likes-=1;
                 }
@@ -62,10 +62,10 @@ export default {
           like.tourLikeID = this.likeID;
           like.userID = localStorage.getItem("id");
           like.tourID = this.item.tourId;
-          this.$axios.post("http://kosa3.iptime.org:50201/tour/insertTourLike", like).then((res) => {
+          this.$axios.post("/tour/insertTourLike", like).then((res) => {
             if (res.status == 200) {
               this.flag = true;
-              this.$axios.put(`http://kosa3.iptime.org:50201/tour/updateTourLikePoint/${this.item.tourId}`).then((res2) => {
+              this.$axios.put(`/tour/updateTourLikePoint/${this.item.tourId}`).then((res2) => {
                 if (res2.status == 200) {
                   this.item.likes+=1;
                   this.likeID=res.data
@@ -89,7 +89,7 @@ export default {
   },
   created() {
     if (localStorage.getItem("id")) {
-      this.$axios.get(`http://kosa3.iptime.org:50201/tour/like/${localStorage.getItem("id")}`).then((res) => {
+      this.$axios.get(`/tour/like/${localStorage.getItem("id")}`).then((res) => {
         if (res.status == 200) {
           this.likeList=res.data
           if (res.data.findIndex(i=>i.tourID == this.item.tourId)>=0) {
