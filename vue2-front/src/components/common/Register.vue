@@ -132,7 +132,6 @@ PhoneNumber VARCHAR(15), 휴대폰 phoneNumber
 -->
 
 <script>
-import axios from "axios";
 
 export default {
   name: 'Register',
@@ -185,12 +184,8 @@ export default {
       saveData.phoneNumber = this.phoneNumber;
 
       try {
-        axios
-            .post("http://kosa3.iptime.org:50201/userJoin", JSON.stringify(saveData), {
-              headers: {
-                'Content-Type': 'application/json; charset=utf-8',
-              }
-            })
+        this.$axios
+            .post("http://kosa3.iptime.org:50201/userJoin", JSON.stringify(saveData))
             .then((res) => {
               if (res.status === 201) { // 성공코드 : 201
                 console.log(res.data)
@@ -202,14 +197,6 @@ export default {
         console.error(error);
       }
     },
-
-    // passwordCheckValid() {
-    //   if (this.signup.password === this.passwordCheck) {
-    //     this.passwordCheckFlag = true
-    //   } else {
-    //     this.passwordCheckFlag = false
-    //   },
-  //   },
   },
 };
 </script>

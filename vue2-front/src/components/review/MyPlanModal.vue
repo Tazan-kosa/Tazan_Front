@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: 'MyPlanModal',
@@ -47,7 +46,7 @@ export default {
   },
   created() {
     var id = localStorage.getItem('id');
-    axios.get(`http://kosa3.iptime.org:50201/plan/myPlan/${id}`).then(res => {
+    this.$axios.get(`/plan/myPlan/${id}`).then(res => {
       if (res.status === 200) {
         this.myplanList = res.data;
       }

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import planmanageItem from "./planmanageItem";
 
 export default {
@@ -19,7 +18,7 @@ export default {
     planmanageItem
   },
   created() {
-    axios.get('http://kosa3.iptime.org:50201/plan/myPlanList')
+    this.$axios.get('/plan/myPlanList')
         .then(result => {
           this.planList = result.data
         })

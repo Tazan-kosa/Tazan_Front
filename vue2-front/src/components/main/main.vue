@@ -107,14 +107,14 @@ export default {
 
   },
   created() {
-    this.$axios.get('http://kosa3.iptime.org:50201/testdbTopFour')
+    this.$axios.get('/testdbTopFour')
         .then(result => {
           this.TourItemList = result.data
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
         })
-    this.$axios.get('http://kosa3.iptime.org:50201/review/recent')
+    this.$axios.get('/review/recent')
         .then(result => {
           this.ReviewItemList = result.data
         })

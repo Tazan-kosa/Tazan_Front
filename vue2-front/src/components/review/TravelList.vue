@@ -28,7 +28,7 @@ export default {
 }
 
 .travel-container::-webkit-scrollbar {
-  height: 5px;
+  height: 10px;
 }
 .travel-container::-webkit-scrollbar-track {
   background: #f1f1f1;

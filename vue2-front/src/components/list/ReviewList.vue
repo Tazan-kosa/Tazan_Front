@@ -37,7 +37,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import Tagname from "@/components/list/tagnames";
 import ReviewBox from './ReviewBox'
-import axios from 'axios'
 import Select from "@/components/list/Select";
 
 export default {
@@ -78,7 +77,7 @@ export default {
         if (!value) {
           value = "noneKeyword"
         }
-        axios.get(`http://kosa3.iptime.org:50201/review/search/${value}/${this.startdate}/${this.enddate}`)
+        this.$axios.get(`/review/search/${value}/${this.startdate}/${this.enddate}`)
             .then(result => {
               this.ReviewItemList = result.data
             })
@@ -103,7 +102,7 @@ export default {
     }
     this.startdate = year + '-' + month + '-' + day
     this.enddate = year + '-' + month + '-' + day
-    axios.get('http://kosa3.iptime.org:50201/review/reviewList')
+    this.$axios.get('/review/reviewList')
         .then(result => {
           this.ReviewItemList = result.data
         })
