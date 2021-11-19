@@ -3,6 +3,8 @@
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
            data-src="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png"
+           data-srcset="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png 650w,
+                  https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png 1300w"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -54,7 +56,7 @@
               <br>
               <div
               >
-                {{ startDate + " - " + endDate }}
+<!--                {{ startDate + " - " + endDate }}-->
               </div>
               <div>
               </div>
@@ -237,8 +239,6 @@ export default {
   width: 25%;
   height: 100%;
   flex-direction: column;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -255,8 +255,6 @@ export default {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
@@ -267,33 +265,9 @@ export default {
   flex-direction: column;
   width: 75%;
   height: 100%;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
-}
-
-.right {
-  width: 20%;
-  height: 100%;
-  /**/
-  /*border: 1px solid black;*/
-  padding: 0.25em;
-  margin: 0.25em;
-  border-radius: 0.25em;
-}
-
-.right_list {
-  width: 100%;
-  height: 100%;
-}
-
-
-/*리스트*/
-.thr_main_sub {
-  display: flex;
-  width: 100%;
 }
 
 .thr_main_day {
@@ -301,27 +275,18 @@ export default {
   width: 100px;
   text-align: center;
   flex-wrap: nowrap;
-  /*justify-content: space-around;*/
 }
 
 .thr_main_list {
-  /*height: 5px;*/
   overflow-x: auto;
-  /*overflow-x: scroll;*/
   display: flex;
   width: 100%;
   text-align: left;
   height: inherit;
-  /**/
-  /*border: 1px solid black;*/
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-}
-
-.DayList {
-  overflow: hidden;
 }
 
 .thr_main_list::-webkit-scrollbar {
