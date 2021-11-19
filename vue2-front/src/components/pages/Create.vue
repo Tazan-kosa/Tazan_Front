@@ -11,7 +11,7 @@
 // import PlaceAndDate from "../detail/CreatePage/PlaceAndDate";
 // import Plann from "../detail/CreatePage/Plann";
 // import region from "../../assets/data/get_ko.js";
-import Unkown from "../detail/CreatePage/Unkown";
+import Unkown from "../detail/CreatePage/PlanCreate";
 export default {
   name: "Create",
   data () {
