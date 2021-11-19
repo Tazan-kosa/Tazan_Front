@@ -185,7 +185,7 @@ export default {
 
       try {
         this.$axios
-            .post("http://kosa3.iptime.org:50201/userJoin", JSON.stringify(saveData))
+            .post("/userJoin", JSON.stringify(saveData))
             .then((res) => {
               if (res.status === 201) { // 성공코드 : 201
                 console.log(res.data)

@@ -30,7 +30,7 @@ export default {
   },
   methods:{
     removeItem(){
-      this.$axios.delete(`/user/deleteUser/${this.item.userID}`).then(res => {
+      this.$axios.delete(`/api/admin/user/deleteUser/${this.item.userID}`).then(res => {
         if (res.status == 200) {
           alert("User 삭제."+this.item.userID);
           location.reload();
