@@ -9,7 +9,7 @@
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">
-              <span id="userName">{{ this.nickname }}</span>님의 여행 계획표
+              <span id="userName">{{ this.nickname }}</span>님의 여행 일정표
             </h1>
             <br>
 
@@ -49,10 +49,11 @@
                   range
                   confirm
                   format="YYYY-MM-DD"
-                  placeholder="Select date range"
+                  :placeholder="mydate"
               >
                 여행일자
               </date-picker>
+              <br>
               <div
               >
                 {{ startDate + " - " + endDate }}
@@ -78,14 +79,18 @@
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
-<!--                <h6>
+                <h6 class="thr_main_day_list">
                   {{ index + 1 }} 일차
-                </h6>-->
-                <v-avatar
+                </h6>
+<!--                <v-avatar
                     class="thr_main_day_list"
                 >
                   {{ index + 1 }} 일차
-                </v-avatar>
+                </v-avatar>-->
+<!--                <v-text-field
+                    class="thr_main_day_list"
+                    readonly
+                >{{ index + 1 }} 일차</v-text-field>-->
               </div>
 
               <DayListV2 :daylist="plan" class="thr_main_list">
@@ -128,6 +133,7 @@ export default {
       mydate: '',
       nickname: '',
       plan: '',
+      range: '',
     }
   },
   created() {
@@ -143,6 +149,8 @@ export default {
             this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
             var ed = new Date(this.plan.endDate)
             this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
+            this.mydate = this.startDate + " - " + this.endDate
           }
         }).catch(err => {
       console.log("에러발생: " + err)
@@ -204,6 +212,9 @@ export default {
   color: #5dc9dd;
   font-size: 18px !important;
   font-weight: 900 !important;
+  margin-right: auto;
+  text-align: center;
+  width:100%
 }
 
 

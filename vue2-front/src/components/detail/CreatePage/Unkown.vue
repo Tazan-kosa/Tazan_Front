@@ -295,6 +295,9 @@ export default {
   color: #5dc9dd;
   font-size: 18px !important;
   font-weight: 900 !important;
+  margin-right: auto;
+  text-align: center;
+  width:100%
 }
 
 .sub_title {
