@@ -113,7 +113,7 @@ import 'vue2-datepicker/locale/ko';
 import DatePicker from 'vue2-datepicker';
 
 export default {
-  name: "UnkownPlanDetail",
+  name: "PlanDetail",
   data() {
     return {
       lang: {
