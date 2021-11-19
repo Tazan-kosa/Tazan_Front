@@ -94,15 +94,11 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
-// import UnkownList from "./UnkownList";
-
 import RecomPlace from "./RecomPlace";
-// import RecomPlaceSave from "./RecomPlaceSave";
-// import DatePicker from "../DatePicker";
-import axios from "axios";
 import DayList from "./DayList";
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
@@ -186,7 +182,7 @@ export default {
       planVO.planList = this.totalPlan_tour;
 
       console.log(planVO)
-      axios.put(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+      this.$axios.put(`/planDetail/${this.planId}`)
           .then(res => {
             if (res.status == 200) {
               this.plan = res.data
@@ -218,7 +214,7 @@ export default {
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
 
-    axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+    this.$axios.get(`/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data

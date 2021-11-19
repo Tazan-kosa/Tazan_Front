@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import "../AdminPage.css"
 
 export default {
@@ -31,7 +30,7 @@ export default {
   },
   methods:{
     removeItem(){
-      axios.delete(`http://kosa3.iptime.org:50201/user/deleteUser/${this.item.userID}`).then(res => {
+      this.$axios.delete(`/user/deleteUser/${this.item.userID}`).then(res => {
         if (res.status == 200) {
           alert("User 삭제."+this.item.userID);
           location.reload();

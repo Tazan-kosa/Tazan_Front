@@ -102,7 +102,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import DayListV2 from "./DayListV2";
 import 'vue2-datepicker/index.css';
 import 'vue2-datepicker/locale/ko';
@@ -135,7 +134,7 @@ export default {
     this.planId = this.$route.params.planId;
     this.userId = localStorage.getItem('id');
 
-    axios.get(`http://kosa3.iptime.org:50201/planDetail/${this.planId}`)
+    this.$axios.get(`/planDetail/${this.planId}`)
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
@@ -152,7 +151,7 @@ export default {
   },
   methods: {
     reviewWrite() {
-      axios.get(`http://kosa3.iptime.org:50201/review/reviewWrite/${this.planId}`).then(res => {
+      this.$axios.get(`/review/reviewWrite/${this.planId}`).then(res => {
         if (res.status == 200) {
           this.$router.push({
             name: 'Review',

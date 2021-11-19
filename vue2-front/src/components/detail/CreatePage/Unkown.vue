@@ -121,11 +121,7 @@
 </template>
 
 <script>
-// import UnkownList from "./UnkownList";
 import RecomPlace from "./RecomPlace";
-// import RecomPlaceSave from "./RecomPlaceSave";
-// import DatePicker from "../DatePicker";
-import axios from "axios";
 import DayList from "./DayList";
 import DatePicker from 'vue2-datepicker';
 import 'vue2-datepicker/index.css';
@@ -217,7 +213,7 @@ export default {
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
         if (confirm("저장 하시겠습니까?")) {
-          axios.post('http://kosa3.iptime.org:50201/plan/create', planVO, {
+          this.$axios.post('/plan/create', planVO, {
             headers: {
               'Content-Type': 'application/json; charset=utf-8',
             },
@@ -248,7 +244,7 @@ export default {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
     // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
-    axios.get(`http://kosa3.iptime.org:50201/search/${this.region}`)
+    this.$axios.get(`/search/${this.region}`)
         .then(response => {
           this.recomList = response.data;
         })
