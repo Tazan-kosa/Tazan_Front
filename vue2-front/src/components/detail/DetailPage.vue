@@ -12,11 +12,6 @@
         <div class="wrap">
           <div class="button">
             <b-button variant="outline-primary" type="submit" @click="mypagelist"> 🧳 내 일정 보기</b-button>
-            <!--              <b-button variant="success" href="">
-            &lt;!&ndash;                <b-link to="mypagelist">
-                              <span>내 일정 보기</span>
-                            </b-link>&ndash;&gt;
-                          </b-button>-->
           </div>
         </div>
       </div>
