@@ -72,7 +72,6 @@ export default {
   },
 
   beforeCreate() {
-    console.log("beforeCreate check login")
     if (localStorage.getItem('auth') !== null) {
       alert('이미 로그인 되었습니다.')
       this.$router.push('/')
@@ -89,12 +88,12 @@ export default {
         this.$axios
             .post("/login", JSON.stringify(saveData))
             .then((res) => {
-              console.log(res.status)
+
 
               if (res.status === 200) { // 로그인 성공코드 : 200
                 alert('로그인되었습니다.');
 
-                console.log(res.data)
+
 
                 // jwt
                 localStorage.setItem('Authorization', res.data.Authorization);
