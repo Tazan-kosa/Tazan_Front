@@ -50,7 +50,6 @@
                             v-model="passwordCheck"
                             required
                             :rules="passWordRules"
-                            @blur="passwordCheckValid"
                         ></v-text-field>
                       </div>
                     </div>
