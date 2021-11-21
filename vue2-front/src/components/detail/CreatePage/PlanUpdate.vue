@@ -2,9 +2,7 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
-           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
-                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-src="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -18,21 +16,9 @@
                 <b-form-input
                     size="sm"
                     class="w-25 p-3 mb-1 text-black plantitle"
-                    placeholder="제목은 비워둘 수 없습니다."
+                    placeholder="제목작성"
                     :value="plan.planTitle"
                 ></b-form-input>
-<!--                <b-form-input
-                    id="input-live"
-                    v-model="name"
-                    :state="nameState"
-                    aria-describedby="input-live-help input-live-feedback"
-                    placeholder="여행 타이틀 입력"
-                    trim
-                ></b-form-input><br>
-                <b-form-invalid-feedback id="input-live-feedback">
-                  여행 제목 입력 (1자 이상 45자 이하)
-                </b-form-invalid-feedback>-->
-
               </div>
             </div>
           </div>
@@ -58,7 +44,6 @@
                   confirm
                   format="YYYY-MM-DD"
                   :placeholder="mydate"
-                  :shortcuts="shortcuts"
                   @change="updateddate"
               >
                 여행일자
@@ -103,9 +88,7 @@
           <v-card class="thr_main">
             <v-col class="thr_main_sub" v-for="(plan,index) in plan.planList" :key="index">
               <div class="thr_main_day">
-<!--                <h6>
-                  {{ index + 1 }} 일차
-                </h6>-->
+
                 <v-avatar
                     class="thr_main_day_list"
                 >
@@ -155,14 +138,9 @@ import DatePicker from "vue2-datepicker";
 
 export default {
   name: "UnkownPlanUpdate",
-  /*computed: {
-    nameState() {
-      return this.name.length > 0 ? true : false
-    }
-  },*/
+
   data() {
     return {
-      // name: '',
       lang: {
         formatLocale: {
           firstDayOfWeek: 1,
@@ -170,16 +148,7 @@ export default {
         monthBeforeYear: false,
       },
       mydate: '',
-      shortcuts: [
-        {
-          text: 'mydate',
-          onClick: () => {
-            this.range = [new Date(), new Date()]
-          }
-        }
-      ],
       recomList: [],
-      // planList_tour: [],
       planDate: [],
       planList: [],
       userId: '',
@@ -204,12 +173,13 @@ export default {
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
-            var sd = new Date(this.plan.startDate)
-            this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
-            this.defaultstartDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
-            var ed = new Date(this.plan.endDate)
-            this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
-            this.defaultendDate=ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
+            this.startDate = this.dateFormmatter(this.plan.startDate);
+            this.defaultstartDate= this.dateFormmatter(this.plan.startDate);
+
+
+            this.endDate = this.dateFormmatter(this.plan.endDate);
+            this.defaultendDate=this.dateFormmatter(this.plan.endDate);
             this.mydate = this.startDate + " - " + this.endDate
             this.cnt=this.plan.planList.length-1
             this.$axios.get(`/api/user/search/${this.plan.region}`)
@@ -240,17 +210,14 @@ export default {
       }
     },
     updateddate() {
-      var sd = new Date(this.mydate_up[0])
 
-      this.mydate_up[0] = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+      this.mydate_up[0] = this.dateFormmatter(this.mydate_up[0]);
 
-      this.startDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+      this.startDate= this.dateFormmatter(this.mydate_up[0]);
 
-      var ed = new Date(this.mydate_up[1])
+      this.mydate_up[1] = this.dateFormmatter(this.mydate_up[1]);
 
-      this.mydate_up[1] = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
-
-      this.endDate= ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+      this.endDate= this.dateFormmatter(this.mydate_up[1]);
 
       this.mydate = this.startDate + " - " + this.endDate
     },
@@ -331,6 +298,21 @@ export default {
         }
       }
     },
+    dateFormmatter(date){
+      var temp = new Date(date)
+      var year = temp.getFullYear();
+      var month = temp.getMonth() + 1;
+      var day = temp.getDate();
+
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
+      return(year + '-' + month + '-' + day);
+
+    }
   },
   components: {
     DayList,
@@ -347,6 +329,15 @@ export default {
 }
 .recom_f {
   font-weight: 1000 !important;
+}
+.text-black {
+  text-align: left;
+}
+.w-25 {
+  width: 35% !important;
+}
+.p-3 {
+  padding: 1rem !important;
 }
 .sub_main {
   display: flex;

@@ -47,4 +47,20 @@ export default {
 </script>
 
 <style scoped>
+.inner1:nth-child(1), .inner:nth-child(1) {
+  width: 30%;
+}
+
+.inner1:nth-child(2), .inner:nth-child(2){
+  width: 30%;
+}
+
+.inner1:nth-child(3), .inner:nth-child(3){
+  width: 50%;
+}
+
+.inner1:nth-child(5), .inner:nth-child(5){
+  width: 40%;
+}
+
 </style>

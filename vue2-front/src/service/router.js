@@ -54,13 +54,6 @@ const route = [
         name: 'planUpdate',
         component: UnkownPlanUpdate
     },
-
-    // 장소 클릭시 여행 계획 짜기
-    {
-        path: '/plan/:region',
-        name: 'regionCreate',
-        component: Create
-    },
     // 여행 계획 상세 보기
     {
         path: '/planDetail/:planId',

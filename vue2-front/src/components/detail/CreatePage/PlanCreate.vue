@@ -2,9 +2,9 @@
   <div>
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
-           data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80"
-           data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=650&h=433&q=80 650w,
-                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&w=1300&h=866&q=80 1300w"
+           data-src="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png"
+           data-srcset="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png 650w,
+                  https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png 1300w"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">
@@ -19,7 +19,7 @@
                     v-model="text"
                     size="sm"
                     class="w-25 p-3 mb-1 text-black"
-                    placeholder="여행 제목(공백포함 1자이상 45자이하)"
+                    placeholder="여행 제목 ( 공백 포함 1자 이상 45자 이하)"
                 ></b-form-input>
               </div>
             </div>
@@ -140,7 +140,7 @@ export default {
       recomList: [],
       totalPlan: [[]],
       totalPlan_tour: [[]],
-      cnt: 0, //index
+      cnt: 0,
       userName: '',
       userID: '',
       mydate: '',
@@ -148,7 +148,7 @@ export default {
       date: '',
       range: '',
       text: '',
-      // region:'',
+
     }
   },
   methods: {
@@ -158,6 +158,7 @@ export default {
       } else {
         this.totalPlan[this.cnt].push(result) // object
         this.totalPlan_tour[this.cnt].push(result.tourId)
+
       }
     },
     dayList_add() {
@@ -182,10 +183,7 @@ export default {
         this.cnt -= 1
         this.totalPlan.pop()
         this.totalPlan_tour.pop()
-        // this.totalPlan_tour.push([])
-        // this.cnt -= 1
-        // this.totalPlan.splice([0], )
-        // this.totalPlan_tour.pop([])
+
       }
     },
     DeleteList(listObject) {
@@ -206,12 +204,11 @@ export default {
       else {
         let planVO = {};
         planVO.userID = localStorage.getItem("id");
-        // reviewVO.userID = 1//localStorage.getItem("id")
+
         planVO.region = this.region;
         planVO.startDate = this.mydate[0];
         planVO.endDate = this.mydate[1];
-        // PlanVO.date =;
-        // planVO.planDate = plandate;
+
         planVO.planTitle = this.text;
         planVO.planList = this.totalPlan_tour;
         if (confirm("저장 하시겠습니까?")) {
@@ -226,30 +223,34 @@ export default {
             }
           }).catch(function () {
             alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
+            // alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
           })
         }
       }
     },
   },
   components: {
-    // DatePicker,
+
     DayList,
     RecomPlace,
     DatePicker
   },
   props: {
-    region: Object,
+    region: String,
   },
   created() {
     this.userName = localStorage.getItem('nickname')
     this.userID = localStorage.getItem('id')
-    // this.utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+
     this.$axios.get(`/api/user/search/${this.region}`)
         .then(response => {
           this.recomList = response.data;
         })
         .catch(err => {
-          console.log(err)
+          if (err.response.status == 403) {
+            alert("로그인 후 이용해주시기 바랍니다.");
+            this.$router.push('/login')
+          }
         })
   },
   mounted() {
@@ -263,6 +264,15 @@ export default {
 }
 .recom_f {
   font-weight: 1000 !important;
+}
+.text-black {
+  text-align: left;
+}
+.w-25 {
+  width: 35% !important;
+}
+.p-3 {
+  padding: 1rem !important;
 }
 .sub_main {
   display: flex;
