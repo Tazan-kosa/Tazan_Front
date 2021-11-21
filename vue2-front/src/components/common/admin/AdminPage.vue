@@ -6,13 +6,14 @@
           dark
           permanent
       >
+        <!-- 타잔 로고-->
         <v-col @click="movetopage(path)">
           <v-img
               class="align-self-stretch"
               src="../../../assets/tazan_title-rmb.png"
           ></v-img>
         </v-col>
-
+        <!-- 메뉴바-->
         <v-list
             dense
             nav
@@ -28,7 +29,7 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title class="item-content" @click="movetopage(item.path)">{{ item.title }}</v-list-item-title>
+              <v-list-item-title class="item-content" @click="movetopage(item.path, item.title)">{{ item.title }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -39,6 +40,11 @@
           dark
           app
       >
+        <!-- 현재페이지-->
+        <v-col>
+          {{ this.nowpage }}
+        </v-col>
+
         <v-col sm="0" offset-sm="10">
           <v-btn
               depressed
@@ -47,7 +53,6 @@
               @click.p.prevent="logout"
           >로그아웃
           </v-btn>
-
         </v-col>
       </v-app-bar>
 
@@ -91,6 +96,7 @@ export default {
         {title: 'About', icon: 'mdi-help-box', path: 'about'},
       ],
       path: 'tour',
+      nowpage: '',
 
       right: null,
     }
@@ -103,13 +109,13 @@ export default {
       this.$router.push('/')
       location.reload();
     },
-    movetopage(path) {
+    movetopage(path, title) {
       this.$router.push(`/adminpage/${path}`, () => {
       })
+      this.nowpage = title;
     }
   }
 }
-
 </script>
 
 <style scoped>

@@ -50,9 +50,7 @@ div {
 
 .thr_main_sub {
   box-shadow: #888888;
-  /*display: flex;*/
   width: 100%;
-  /*justify-content: space-around;*/
   justify-content: left;
   justify-items: left;
 }

@@ -3,7 +3,8 @@
     <div class="main">
       <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
            data-src="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png"
-
+           data-srcset="https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png 650w,
+                  https://photo.coolenjoy.net/data/editor/1707/Bimg_20170718024901_dhqkcnyb.png 1300w"
            data-sizes="(min-width: 650px) 650px, 100vw" uk-img>
         <div class="container px-4 px-lg-5">
           <div class="text-center text-white">

@@ -9,9 +9,7 @@
           <v-flex>
             <v-card flat class="mx-auto" max-width="800">
               <v-row style="margin-top: 60px">
-                <v-col
-
-                >
+                <v-col>
                   <v-form
                       class="mx-auto"
                       style="width: 400px; height: 700px">
@@ -52,7 +50,6 @@
                             v-model="passwordCheck"
                             required
                             :rules="passWordRules"
-                            @blur="passwordCheckValid"
                         ></v-text-field>
                       </div>
                     </div>

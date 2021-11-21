@@ -32,14 +32,10 @@
 </template>
 
 <script>
-// import axios from "axios";
-
 export default {
-
   data() {
     return {}
   },
-
 }
 </script>
 
@@ -47,26 +43,18 @@ export default {
 h3 {
   color: white;
 }
-
-.outer-box {
-}
-
 .left-box {
   margin-left: -15%;
   float: left;
   width: 65%;
 }
-
 .right-box {
   padding: 15px;
   float: right;
   width: 50%;
 }
-
 .github-link {
   display: flex;
   justify-content: center;
-
 }
-
 </style>
