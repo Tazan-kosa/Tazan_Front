@@ -182,12 +182,13 @@ export default {
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
-            var sd = new Date(this.plan.startDate)
-            this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
-            this.defaultstartDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
-            var ed = new Date(this.plan.endDate)
-            this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
-            this.defaultendDate=ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
+            this.startDate = this.dateFormmatter(this.plan.startDate);
+            this.defaultstartDate= this.dateFormmatter(this.plan.startDate);
+
+
+            this.endDate = this.dateFormmatter(this.plan.endDate);
+            this.defaultendDate=this.dateFormmatter(this.plan.endDate);
             this.mydate = this.startDate + " - " + this.endDate
             this.cnt=this.plan.planList.length-1
             this.$axios.get(`/api/user/search/${this.plan.region}`)
@@ -218,17 +219,14 @@ export default {
       }
     },
     updateddate() {
-      var sd = new Date(this.mydate_up[0])
 
-      this.mydate_up[0] = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+      this.mydate_up[0] = this.dateFormmatter(this.mydate_up[0]);
 
-      this.startDate= sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
+      this.startDate= this.dateFormmatter(this.mydate_up[0]);
 
-      var ed = new Date(this.mydate_up[1])
+      this.mydate_up[1] = this.dateFormmatter(this.mydate_up[1]);
 
-      this.mydate_up[1] = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
-
-      this.endDate= ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+      this.endDate= this.dateFormmatter(this.mydate_up[1]);
 
       this.mydate = this.startDate + " - " + this.endDate
     },
@@ -309,6 +307,21 @@ export default {
         }
       }
     },
+    dateFormmatter(date){
+      var temp = new Date(date)
+      var year = temp.getFullYear();
+      var month = temp.getMonth() + 1;
+      var day = temp.getDate();
+
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
+      return(year + '-' + month + '-' + day);
+
+    }
   },
   components: {
     DayList,
