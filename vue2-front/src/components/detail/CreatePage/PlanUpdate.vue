@@ -16,7 +16,7 @@
                 <b-form-input
                     size="sm"
                     class="w-25 p-3 mb-1 text-black plantitle"
-                    placeholder="plan.planTitle"
+                    placeholder="제목작성"
                     :value="plan.planTitle"
                 ></b-form-input>
               </div>
@@ -44,7 +44,6 @@
                   confirm
                   format="YYYY-MM-DD"
                   :placeholder="mydate"
-                  :shortcuts="shortcuts"
                   @change="updateddate"
               >
                 여행일자
@@ -149,14 +148,6 @@ export default {
         monthBeforeYear: false,
       },
       mydate: '',
-      shortcuts: [
-        {
-          text: 'mydate',
-          onClick: () => {
-            this.range = [new Date(), new Date()]
-          }
-        }
-      ],
       recomList: [],
       planDate: [],
       planList: [],
@@ -338,6 +329,15 @@ export default {
 }
 .recom_f {
   font-weight: 1000 !important;
+}
+.text-black {
+  text-align: left;
+}
+.w-25 {
+  width: 35% !important;
+}
+.p-3 {
+  padding: 1rem !important;
 }
 .sub_main {
   display: flex;
