@@ -188,11 +188,13 @@ export default {
               .post("/userJoin", JSON.stringify(saveData))
               .then((res) => {
                 if (res.status === 201) { // 성공코드 : 201
-                  console.log(res.data)
+                  alert('회원가입 되었습니다!')
                 }
-              });
+              }).catch( err => {
+                console.log("에러:" + err)
+                alert("닉네임 혹은 이메일 중복입니다!")
+          })
           this.$router.push('/login')
-          alert('회원가입 되었습니다!')
         } catch (error) {
           console.error(error);
         }
