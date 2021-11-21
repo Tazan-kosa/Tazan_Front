@@ -213,7 +213,7 @@ export default {
       if (mypage.reviewFlag == "1") {
         alert("리뷰가 작성된 계획은 수정할 수 없습니다.")
       } else {
-        this.$router.push(`/modify/${mypage.planID}`)
+        this.$router.push({name:'planUpdate',params:{"planId":mypage.planID}})
       }
     }
   }
