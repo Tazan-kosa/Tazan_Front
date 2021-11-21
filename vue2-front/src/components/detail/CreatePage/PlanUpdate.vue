@@ -16,7 +16,7 @@
                 <b-form-input
                     size="sm"
                     class="w-25 p-3 mb-1 text-black plantitle"
-                    placeholder="제목은 비워둘 수 없습니다."
+                    placeholder="plan.planTitle"
                     :value="plan.planTitle"
                 ></b-form-input>
               </div>
