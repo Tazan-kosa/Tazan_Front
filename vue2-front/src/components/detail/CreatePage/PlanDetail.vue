@@ -31,7 +31,7 @@
       <h1 class="uk-heading-line"><span></span></h1>
 
       <div class="review_button">
-        <v-btn color="cyan" elevation="13" @click="reviewWrite">후기 작성</v-btn>
+        <v-btn class="white--text" @click="reviewWrite">후기 작성</v-btn>
       </div>
 
       <div class="save_plan">
@@ -205,8 +205,13 @@ export default {
 .p-3 {
   padding: 1rem !important;
 }
+.theme--light.v-btn {
+  color: #ffffff;
+}
 .theme--light.v-btn.v-btn--has-bg {
-  background-color: skyblue;
+  background-color: #00BF72;
+  font-size: 18px !important;
+  font-weight: bolder;
 }
 .sub_main {
   display: flex;
@@ -346,6 +351,7 @@ export default {
 .review_button{
   text-align: right;
   padding: 0 20px;
+
 }
 
 

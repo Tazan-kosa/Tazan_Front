@@ -339,8 +339,13 @@ export default {
 .p-3 {
   padding: 1rem !important;
 }
+.theme--light.v-btn {
+  color: #ffffff;
+}
 .theme--light.v-btn.v-btn--has-bg {
   background-color: #00BF72;
+  font-size: 18px !important;
+  font-weight: bolder;
 }
 .sub_main {
   display: flex;
