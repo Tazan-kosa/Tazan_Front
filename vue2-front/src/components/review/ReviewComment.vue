@@ -11,7 +11,7 @@
         <div class="comment-user font-weight-light">
           <span class="user-name">{{ commentData.nickName }} &nbsp; &nbsp;</span>
           <span class="comment-date">{{ commentData.commentDate }} &nbsp; &nbsp;</span>
-          <span class="comment-report" v-if="userID != commentData.userID" @click="clickedReport([commentData.nickName, commentData.commentID])">신고</span>
+          <span class="comment-report" v-if="userID != commentData.userID && userID" @click="clickedReport([commentData.nickName, commentData.commentID])">신고</span>
         </div>
         <div v-if="!editFlag" class="comment-content text-left" v-html="commentData.commentContent" contenteditable="false"></div>
         <div v-if="editFlag" class="comment-edit text-left" v-html="commentData.commentContent" contenteditable="true">fsdfasdfasd</div>
