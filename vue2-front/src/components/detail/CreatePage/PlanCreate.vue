@@ -19,7 +19,7 @@
                     v-model="text"
                     size="sm"
                     class="w-25 p-3 mb-1 text-black"
-                    placeholder="여행 제목(공백포함 1자이상 45자이하)"
+                    placeholder="여행 제목 ( 공백 포함 1자 이상 45자 이하)"
                 ></b-form-input>
               </div>
             </div>
@@ -158,6 +158,7 @@ export default {
       } else {
         this.totalPlan[this.cnt].push(result) // object
         this.totalPlan_tour[this.cnt].push(result.tourId)
+
       }
     },
     dayList_add() {
@@ -222,6 +223,7 @@ export default {
             }
           }).catch(function () {
             alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
+            // alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
           })
         }
       }
@@ -262,6 +264,15 @@ export default {
 }
 .recom_f {
   font-weight: 1000 !important;
+}
+.text-black {
+  text-align: left;
+}
+.w-25 {
+  width: 35% !important;
+}
+.p-3 {
+  padding: 1rem !important;
 }
 .sub_main {
   display: flex;

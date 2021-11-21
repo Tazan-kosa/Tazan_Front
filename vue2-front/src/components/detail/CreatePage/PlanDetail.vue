@@ -179,6 +179,15 @@ export default {
   font-size: 5em;
   font-weight: 1000 !important;
 }
+.text-black {
+  text-align: left;
+}
+.w-25 {
+  width: 35% !important;
+}
+.p-3 {
+  padding: 1rem !important;
+}
 
 .sub_main {
   display: flex;
