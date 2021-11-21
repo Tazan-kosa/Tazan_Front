@@ -114,7 +114,7 @@
         </div>
       </div>
       <div class="save_plan_button">
-        <b-button variant="primary" @click="SavePlan">Save</b-button>
+        <v-btn color="secondary" @click="SavePlan">일정 저장</v-btn>
       </div>
     </div>
   </div>
@@ -273,6 +273,9 @@ export default {
 }
 .p-3 {
   padding: 1rem !important;
+}
+.theme--light.v-btn.v-btn--has-bg {
+  background-color: #00BF72;
 }
 .sub_main {
   display: flex;
