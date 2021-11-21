@@ -136,10 +136,11 @@ export default {
         .then(res => {
           if (res.status == 200) {
             this.plan = res.data
-            var sd = new Date(this.plan.startDate)
-            this.startDate = sd.getFullYear() + "-" + (sd.getMonth() + 1) + "-" + sd.getDate();
-            var ed = new Date(this.plan.endDate)
-            this.endDate = ed.getFullYear() + "-" + (ed.getMonth() + 1) + "-" + ed.getDate();
+
+
+            this.startDate = this.dateFormmatter(this.plan.startDate)
+
+            this.endDate = this.dateFormmatter(this.plan.endDate)
 
             this.mydate = this.startDate + " - " + this.endDate
           }
@@ -165,6 +166,21 @@ export default {
       }).catch(err => {
         console.log("에러 발생: " + err)
       });
+    },
+    dateFormmatter(date){
+      var temp = new Date(date)
+      var year = temp.getFullYear();
+      var month = temp.getMonth() + 1;
+      var day = temp.getDate();
+
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
+      return(year + '-' + month + '-' + day);
+
     }
   },
   components: {
