@@ -192,7 +192,7 @@ export default {
                   console.log(res.data)
                 }
               });
-          this.$router.push('/')
+          this.$router.push('/login')
           alert('회원가입 되었습니다!')
         } catch (error) {
           console.error(error);
