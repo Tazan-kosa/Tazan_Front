@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JavaScript-modules-diagram</ID>
+  <OriginalElement>C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src</OriginalElement>
+  <nodes>
+    <node x="3929.828947368421" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.css</node>
+    <node x="6927.5" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.vue</node>
+    <node x="1028.7452153110044" y="536.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Footer#260;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Header#211;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#axios#309;</node>
+    <node x="2962.9952153110044" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/Box.vue#TravelItem#188;</node>
+    <node x="7642.3337320574165" y="1356.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#Region#544;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#regionData#581;</node>
+    <node x="4874.995215311004" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Create.vue#Unkown#382;</node>
+    <node x="4835.828947368421" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/DayList.vue</node>
+    <node x="5739.3337320574165" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/DayListV2.vue</node>
+    <node x="7566.245215311004" y="970.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#CityList#216;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#DetailPage#169;</node>
+    <node x="7439.3337320574165" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/DetailPage.vue</node>
+    <node x="1301.9724880382773" y="970.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.css#1999;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.js#2046;</node>
+    <node x="1420.5" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/GitHub-Mark-Footer.png</node>
+    <node x="961.0" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Header.vue#profile#2413;</node>
+    <node x="5497.578947368421" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Login.vue#jwt#2168;</node>
+    <node x="6020.25" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/mypage/MyPageList.vue</node>
+    <node x="6672.0" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/MyPlanModal.vue</node>
+    <node x="4840.995215311004" y="1322.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;</node>
+    <node x="5738.6064593301435" y="947.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DatePicker#3179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DayListV2#3070;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#index.css#3100;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#ko.js#3136;</node>
+    <node x="5167.578947368421" y="1322.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;</node>
+    <node x="194.0" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Profile.vue</node>
+    <node x="4578.828947368421" y="1605.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/RecomPlace.vue#SpotCard#187;</node>
+    <node x="7732.3337320574165" y="1605.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Region.vue#RegionItem#114;</node>
+    <node x="7702.3337320574165" y="1714.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/DetailPlan/RegionItem.vue</node>
+    <node x="5292.578947368421" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Register.vue</node>
+    <node x="3203.9952153110044" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewBox.vue#ReviewItem#141;</node>
+    <node x="6086.578947368421" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewComment.vue</node>
+    <node x="6253.722488038277" y="970.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#ReviewComment#1715;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#TravelList#1676;</node>
+    <node x="2970.9724880382773" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewItem.vue</node>
+    <node x="2788.9724880382773" y="935.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#ReviewBox#1630;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Select#1666;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Tagname#1580;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.css#1481;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.js#1528;</node>
+    <node x="6678.0" y="958.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#MyPlanModal#1269;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#Sticky#1310;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#TravelList#1230;</node>
+    <node x="4588.328947368421" y="1714.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/SpotCard.vue</node>
+    <node x="2573.9724880382773" y="924.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;</node>
+    <node x="6393.3337320574165" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/TravelItem.vue</node>
+    <node x="2693.4724880382773" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TravelItem_Like.vue</node>
+    <node x="6397.3337320574165" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/TravelList.vue#TravelItem#271;</node>
+    <node x="1495.9724880382773" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/about.vue</node>
+    <node x="0.0" y="572.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap-vue/dist/bootstrap-vue.css</node>
+    <node x="5392.25" y="572.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.css</node>
+    <node x="2253.5" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.min.css</node>
+    <node x="2627.4952153110044" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/js/bootstrap.min.js</node>
+    <node x="5881.995215311004" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.css</node>
+    <node x="791.7452153110044" y="559.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap-vue/src/index.d.ts#BootstrapVue#1536;</node>
+    <node x="434.0" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue/types/index.d.ts</node>
+    <node x="4406.995215311004" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue-router/types/index.d.ts</node>
+    <node x="517.5" y="559.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap-vue/src/icons/index.d.ts#IconsPlugin#113;</node>
+    <node x="674.5" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/axios/index.d.ts</node>
+    <node x="6901.0" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue-sticky-directive/index.d.ts</node>
+    <node x="5628.995215311004" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.esm.js</node>
+    <node x="5487.578947368421" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/jsonwebtoken/index.js</node>
+    <node x="5216.3564593301435" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/locale/ko.js</node>
+    <node x="3385.9952153110044" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/left-rbg.png</node>
+    <node x="3569.9952153110044" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.css</node>
+    <node x="610.5" y="0.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;</node>
+    <node x="3179.75" y="924.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;</node>
+    <node x="4619.995215311004" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/plan/planmanage.vue#planmanageItem#131;</node>
+    <node x="4604.995215311004" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/plan/planmanageItem.vue#AdminPage.css#784;</node>
+    <node x="4194.995215311004" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/reply/replymanage.vue#replymanageItem#137;</node>
+    <node x="4179.995215311004" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/reply/replymanageItem.vue#AdminPage.css#878;</node>
+    <node x="3932.9952153110044" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/review/reviewmanage.vue#reviewmanageItem#139;</node>
+    <node x="3917.9952153110044" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/review/reviewmanageItem.vue#AdminPage.css#956;</node>
+    <node x="3723.9952153110044" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/right-rbg.png</node>
+    <node x="5211.25" y="318.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;</node>
+    <node x="7547.3337320574165" y="1618.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_City.js</node>
+    <node x="1692.5" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_jungle.jpeg</node>
+    <node x="1185.5" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_title-rmb.png</node>
+    <node x="6479.75" y="994.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourForm.vue</node>
+    <node x="7183.3337320574165" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourmanage.vue#tourmanageItem#258;</node>
+    <node x="7168.3337320574165" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourmanageItem.vue</node>
+    <node x="2035.2452153110046" y="981.5">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/user/usermanage.vue#usermanageItem#131;</node>
+    <node x="1914.5" y="1368.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/user/usermanageItem.vue#AdminPage.css#720;</node>
+    <node x="292.0" y="548.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vuetify#30;</node>
+    <node x="936.5" y="1381.0">C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/yacht_tazan_logo.png</node>
+    <node x="2146.5" y="1381.0">@/components/list/CheckBox</node>
+    <node x="7457.245215311004" y="994.5">@/components/list/ReviewList</node>
+    <node x="2882.9952153110044" y="1381.0">@/components/list/Select</node>
+    <node x="3097.9952153110044" y="1381.0">@/components/list/tagnames</node>
+    <node x="322.0" y="994.5">vuetify/lib/framework</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vuetify#30;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue/types/index.d.ts" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="368.0" y="882.0" />
+      <point x="507.0" y="882.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#Region#544;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#regionData#581;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_City.js" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="7720.8337320574165" y="1494.0" />
+      <point x="7629.8337320574165" y="1494.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#MyPlanModal#1269;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#Sticky#1310;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#TravelList#1230;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue-sticky-directive/index.d.ts" relationship="">
+      <point x="0.0" y="52.5" />
+      <point x="6776.5" y="1120.0" />
+      <point x="7019.5" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Header.vue#profile#2413;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/yacht_tazan_logo.png" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/about.vue" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_jungle.jpeg" relationship="">
+      <point x="0.0" y="16.5" />
+      <point x="1572.9724880382773" y="1120.0" />
+      <point x="1434.8289473684208" y="1120.0" />
+      <point x="1434.8289473684208" y="1140.0" />
+      <point x="1793.5" y="1140.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" target="@/components/list/tagnames" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="2648.9724880382773" y="1160.0" />
+      <point x="3140.9952153110044" y="1160.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Region.vue#RegionItem#114;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/DetailPlan/RegionItem.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#CityList#216;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#DetailPage#169;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#Region#544;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#regionData#581;" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="7641.745215311004" y="1120.0" />
+      <point x="7720.8337320574165" y="1120.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/TravelList.vue#TravelItem#271;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/TravelItem.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DatePicker#3179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DayListV2#3070;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#index.css#3100;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#ko.js#3136;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/DayListV2.vue" relationship="">
+      <point x="0.0" y="64.0" />
+      <point x="5848.1064593301435" y="1120.0" />
+      <point x="5846.8337320574165" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourmanage.vue#tourmanageItem#258;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="7274.3337320574165" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/about.vue" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="1572.9724880382773" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#MyPlanModal#1269;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#Sticky#1310;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#TravelList#1230;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="6776.5" y="902.0" />
+      <point x="0.0" y="-52.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourmanage.vue#tourmanageItem#258;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourmanageItem.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Login.vue#jwt#2168;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/jsonwebtoken/index.js" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap-vue/src/icons/index.d.ts#IconsPlugin#113;" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="626.0" y="292.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Footer#260;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Header#211;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#axios#309;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/axios/index.d.ts" relationship="">
+      <point x="0.0" y="52.5" />
+      <point x="1087.2452153110044" y="882.0" />
+      <point x="745.0" y="882.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vuetify#30;" target="vuetify/lib/framework" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/locale/ko.js" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="4952.495215311004" y="1544.0" />
+      <point x="5315.3564593301435" y="1544.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/RecomPlace.vue#SpotCard#187;" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="5282.078947368421" y="1574.0" />
+      <point x="4694.328947368421" y="1574.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.esm.js" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="5282.078947368421" y="1514.0" />
+      <point x="5745.495215311004" y="1514.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#ReviewBox#1630;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Select#1666;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Tagname#1580;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.css#1481;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.js#1528;" target="@/components/list/tagnames" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="2868.4724880382773" y="1150.0" />
+      <point x="3140.9952153110044" y="1150.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.min.css" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1270.0" />
+      <point x="2373.5" y="1270.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/reply/replymanage.vue#replymanageItem#137;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="4290.995215311004" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/js/bootstrap.min.js" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="2648.9724880382773" y="1200.0" />
+      <point x="2742.9952153110044" y="1200.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/user/usermanage.vue#usermanageItem#131;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/user/usermanageItem.vue#AdminPage.css#720;" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="2126.2452153110044" y="1230.0" />
+      <point x="2020.5" y="1230.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Header.vue#profile#2413;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Profile.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="1051.0" y="1130.0" />
+      <point x="281.5" y="1130.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/Box.vue#TravelItem#188;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TravelItem_Like.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="3020.4952153110044" y="1504.0" />
+      <point x="2789.9724880382773" y="1504.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="2648.9724880382773" y="902.0" />
+      <point x="0.0" y="-87.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#CityList#216;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#DetailPage#169;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="7641.745215311004" y="902.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/Box.vue#TravelItem#188;" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="2648.9724880382773" y="1170.0" />
+      <point x="3020.4952153110044" y="1170.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#ReviewComment#1715;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#TravelList#1676;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewComment.vue" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="6354.222488038277" y="1130.0" />
+      <point x="6200.578947368421" y="1130.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/tour/tourForm.vue" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="6560.25" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.vue" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="7024.0" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#MyPlanModal#1269;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#Sticky#1310;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#TravelList#1230;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/TravelList.vue#TravelItem#271;" relationship="">
+      <point x="0.0" y="52.5" />
+      <point x="6776.5" y="1130.0" />
+      <point x="6485.3337320574165" y="1130.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/plan/planmanage.vue#planmanageItem#131;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="4712.995215311004" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Profile.vue" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="281.5" y="292.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.css" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="4952.495215311004" y="1504.0" />
+      <point x="5987.995215311004" y="1504.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Login.vue#jwt#2168;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="5582.078947368421" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap-vue/src/index.d.ts#BootstrapVue#1536;" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="900.2452153110044" y="292.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DatePicker#3179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DayListV2#3070;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#index.css#3100;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#ko.js#3136;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/locale/ko.js" relationship="">
+      <point x="0.0" y="64.0" />
+      <point x="5848.1064593301435" y="1120.0" />
+      <point x="5728.8337320574165" y="1120.0" />
+      <point x="5728.8337320574165" y="1554.0" />
+      <point x="5315.3564593301435" y="1554.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#ReviewComment#1715;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#TravelList#1676;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="6354.222488038277" y="902.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="@/components/list/ReviewList" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="7501.745215311004" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#ReviewBox#1630;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Select#1666;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Tagname#1580;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.css#1481;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.js#1528;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/js/bootstrap.min.js" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="2868.4724880382773" y="1260.0" />
+      <point x="2742.9952153110044" y="1260.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Create.vue#Unkown#382;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="4952.495215311004" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.css#1999;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.js#2046;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/GitHub-Mark-Footer.png" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="1388.9724880382773" y="1130.0" />
+      <point x="1884.2452153110044" y="1130.0" />
+      <point x="1884.2452153110044" y="1230.0" />
+      <point x="1546.5" y="1230.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#ReviewBox#1630;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Select#1666;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Tagname#1580;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.css#1481;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.js#1528;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewBox.vue#ReviewItem#141;" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="2868.4724880382773" y="1140.0" />
+      <point x="3284.9952153110044" y="1140.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue/types/index.d.ts" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="892.0" />
+      <point x="507.0" y="892.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="@/components/list/tagnames" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1300.0" />
+      <point x="3140.9952153110044" y="1300.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Header.vue#profile#2413;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_title-rmb.png" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="1051.0" y="1120.0" />
+      <point x="1293.0" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.esm.js" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="4952.495215311004" y="1524.0" />
+      <point x="5745.495215311004" y="1524.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/locale/ko.js" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="5282.078947368421" y="1534.0" />
+      <point x="5315.3564593301435" y="1534.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="5291.75" y="292.0" />
+      <point x="0.0" y="-271.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DatePicker#3179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DayListV2#3070;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#index.css#3100;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#ko.js#3136;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="5848.1064593301435" y="902.0" />
+      <point x="0.0" y="-64.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Register.vue" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="5385.078947368421" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/left-rbg.png" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1120.0" />
+      <point x="3467.9952153110044" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#ReviewBox#1630;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Select#1666;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Tagname#1580;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.css#1481;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.js#1528;" target="@/components/list/Select" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="2868.4724880382773" y="1180.0" />
+      <point x="2912.9952153110044" y="1180.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/plan/planmanageItem.vue#AdminPage.css#784;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.css" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="4712.995215311004" y="1494.0" />
+      <point x="4023.828947368421" y="1494.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Create.vue#Unkown#382;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-75.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/about.vue" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/tazan_title-rmb.png" relationship="">
+      <point x="0.0" y="16.5" />
+      <point x="1572.9724880382773" y="1120.0" />
+      <point x="1434.8289473684208" y="1120.0" />
+      <point x="1434.8289473684208" y="1170.0" />
+      <point x="1293.0" y="1170.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#Region#544;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CityList.vue#regionData#581;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Region.vue#RegionItem#114;" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="7720.8337320574165" y="1494.0" />
+      <point x="7811.8337320574165" y="1494.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/mypage/MyPageList.vue" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="6121.25" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#ReviewComment#1715;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewDetail.vue#TravelList#1676;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/TravelList.vue#TravelItem#271;" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="6354.222488038277" y="1120.0" />
+      <point x="6485.3337320574165" y="1120.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.css" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="5497.75" y="292.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/RecomPlace.vue#SpotCard#187;" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="4952.495215311004" y="1554.0" />
+      <point x="4694.328947368421" y="1554.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue-router/types/index.d.ts" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="4503.495215311004" y="902.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.css#1999;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.js#2046;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.min.css" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="1388.9724880382773" y="1130.0" />
+      <point x="1884.2452153110044" y="1130.0" />
+      <point x="1884.2452153110044" y="1220.0" />
+      <point x="2373.5" y="1220.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/user/usermanageItem.vue#AdminPage.css#720;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.css" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="2020.5" y="1494.0" />
+      <point x="4023.828947368421" y="1494.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/plugins/vuetify.js#Vuetify#30;" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="368.0" y="292.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" target="@/components/list/CheckBox" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="2648.9724880382773" y="1230.0" />
+      <point x="2190.0" y="1230.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue/types/index.d.ts" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="507.0" y="292.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/user/usermanage.vue#usermanageItem#131;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="2126.2452153110044" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Footer#260;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Header#211;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#axios#309;" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="1087.2452153110044" y="292.0" />
+      <point x="0.0" y="-52.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#MyPlanModal#1269;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#Sticky#1310;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/ReviewWrite.vue#TravelList#1230;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/review/MyPlanModal.vue" relationship="">
+      <point x="0.0" y="52.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.css" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="5282.078947368421" y="1494.0" />
+      <point x="5987.995215311004" y="1494.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#ReviewBox#1630;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Select#1666;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#Tagname#1580;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.css#1481;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewList.vue#bootstrap.min.js#1528;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.min.css" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="2868.4724880382773" y="1250.0" />
+      <point x="2373.5" y="1250.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/plan/planmanage.vue#planmanageItem#131;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/plan/planmanageItem.vue#AdminPage.css#784;" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.css" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1120.0" />
+      <point x="3636.9952153110044" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/reply/replymanage.vue#replymanageItem#137;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/reply/replymanageItem.vue#AdminPage.css#878;" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/right-rbg.png" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1120.0" />
+      <point x="3810.9952153110044" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.css#1999;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.js#2046;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/js/bootstrap.min.js" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="1388.9724880382773" y="1130.0" />
+      <point x="1884.2452153110044" y="1130.0" />
+      <point x="1884.2452153110044" y="1210.0" />
+      <point x="2742.9952153110044" y="1210.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/about.vue" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/yacht_tazan_logo.png" relationship="">
+      <point x="0.0" y="16.5" />
+      <point x="1572.9724880382773" y="1120.0" />
+      <point x="1434.8289473684208" y="1120.0" />
+      <point x="1434.8289473684208" y="1160.0" />
+      <point x="1051.0" y="1160.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Footer#260;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Header#211;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#axios#309;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.css#1999;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Footer.vue#bootstrap.min.js#2046;" relationship="">
+      <point x="0.0" y="52.5" />
+      <point x="1087.2452153110044" y="902.0" />
+      <point x="1388.9724880382773" y="902.0" />
+      <point x="0.0" y="-41.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="5282.078947368421" y="902.0" />
+      <point x="0.0" y="-75.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DatePicker#3864;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#DayList#3831;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#RecomPlace#3792;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#index.css#3899;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanCreate.vue#ko.js#3935;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/DayList.vue" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="4952.495215311004" y="1564.0" />
+      <point x="4934.328947368421" y="1564.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#CityList#216;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/pages/Detail.vue#DetailPage#169;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/DetailPage.vue" relationship="">
+      <point x="0.0" y="41.0" />
+      <point x="7641.745215311004" y="1120.0" />
+      <point x="7530.8337320574165" y="1120.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/js/bootstrap.min.js" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1280.0" />
+      <point x="2742.9952153110044" y="1280.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap-vue/dist/bootstrap-vue.css" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="135.5" y="292.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewBox.vue#ReviewItem#141;" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1130.0" />
+      <point x="3284.9952153110044" y="1130.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/bootstrap/dist/css/bootstrap.min.css" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="2648.9724880382773" y="1240.0" />
+      <point x="2373.5" y="1240.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DatePicker#3179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DayListV2#3070;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#index.css#3100;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#ko.js#3136;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.css" relationship="">
+      <point x="0.0" y="64.0" />
+      <point x="5848.1064593301435" y="1120.0" />
+      <point x="6015.245215311004" y="1120.0" />
+      <point x="6015.245215311004" y="1514.0" />
+      <point x="5987.995215311004" y="1514.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/review/reviewmanage.vue#reviewmanageItem#139;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/review/reviewmanageItem.vue#AdminPage.css#956;" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Box#1585;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#CheckBox#1484;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Select#1613;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#Tagname#1535;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.css#1385;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/TourList.vue#bootstrap.min.js#1432;" target="@/components/list/Select" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="2648.9724880382773" y="1190.0" />
+      <point x="2912.9952153110044" y="1190.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/axios/index.d.ts" relationship="">
+      <point x="0.0" y="133.0" />
+      <point x="685.5" y="292.0" />
+      <point x="745.0" y="292.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/Box.vue#TravelItem#188;" relationship="">
+      <point x="0.0" y="87.0" />
+      <point x="3254.75" y="1290.0" />
+      <point x="3020.4952153110044" y="1290.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/RecomPlace.vue#SpotCard#187;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/SpotCard.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/review/reviewmanageItem.vue#AdminPage.css#956;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.css" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="4038.9952153110044" y="1494.0" />
+      <point x="4023.828947368421" y="1494.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/review/reviewmanage.vue#reviewmanageItem#139;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="4038.9952153110044" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Footer#260;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#Header#211;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/App.vue#axios#309;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/Header.vue#profile#2413;" relationship="">
+      <point x="0.0" y="52.5" />
+      <point x="1087.2452153110044" y="902.0" />
+      <point x="1051.0" y="902.0" />
+      <point x="0.0" y="-29.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/reply/replymanageItem.vue#AdminPage.css#878;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/AdminPage.css" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="4290.995215311004" y="1494.0" />
+      <point x="4023.828947368421" y="1494.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DatePicker#4267;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#DayList#4123;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#RecomPlace#4228;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#index.css#4149;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanUpdate.vue#ko.js#4185;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/DayList.vue" relationship="">
+      <point x="0.0" y="75.5" />
+      <point x="5282.078947368421" y="1584.0" />
+      <point x="4934.328947368421" y="1584.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewBox.vue#ReviewItem#141;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/list/ReviewItem.vue" relationship="">
+      <point x="0.0" y="29.5" />
+      <point x="3284.9952153110044" y="1504.0" />
+      <point x="3054.4724880382773" y="1504.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#AdminPage#687;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Create#526;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Detail#157;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Login#478;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Main#206;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#MyPageList#629;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Register#575;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Review#361;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewDetail#416;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#ReviewList#306;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#TourList#254;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanDetail#750;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#UnkownPlanUpdate#1244;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#Vue#99;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#VueRouter#121;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#about#1319;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#planmanage#963;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#replymanage#1107;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#reviewmanage#1032;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourForm#1179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#tourmanage#825;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/service/router.js#usermanage#894;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Box#3183;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#ReviewBox#3213;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#Tagname#3133;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.css#3013;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#bootstrap.min.js#3060;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/main/main.vue#main.css#3105;" relationship="">
+      <point x="0.0" y="271.0" />
+      <point x="5291.75" y="902.0" />
+      <point x="3254.75" y="902.0" />
+      <point x="0.0" y="-87.0" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DatePicker#3179;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#DayListV2#3070;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#index.css#3100;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/detail/CreatePage/PlanDetail.vue#ko.js#3136;" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/node_modules/vue2-datepicker/index.esm.js" relationship="">
+      <point x="0.0" y="64.0" />
+      <point x="5848.1064593301435" y="1120.0" />
+      <point x="5964.8337320574165" y="1120.0" />
+      <point x="5964.8337320574165" y="1534.0" />
+      <point x="5745.495215311004" y="1534.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+    <edge source="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/components/common/admin/about.vue" target="C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/assets/GitHub-Mark-Footer.png" relationship="">
+      <point x="0.0" y="16.5" />
+      <point x="1572.9724880382773" y="1120.0" />
+      <point x="1434.8289473684208" y="1120.0" />
+      <point x="1434.8289473684208" y="1150.0" />
+      <point x="1546.5" y="1150.0" />
+      <point x="0.0" y="-16.5" />
+    </edge>
+  </edges>
+  <settings layout="계층" zoom="0.20662301687232434" showDependencies="false" x="3961.0" y="873.5" />
+  <SelectedNodes>
+    <node>C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#App#29;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#BootstrapVue#137;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#IconsPlugin#151;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Profile#905;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#Vue#7;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#axios#193;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap-vue.css#323;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#bootstrap.css#281;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#router#97;C:/Users/kimmjen/Documents/Tazan_Project/Tazan_Front/vue2-front/src/main.js#vuetify#57;</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>모두</Category>
+  </Categories>
+  <VISIBILITY>Details</VISIBILITY>
+</Diagram>
+
