@@ -114,7 +114,7 @@
         </div>
       </div>
       <div class="save_plan_button">
-        <v-btn color="secondary" @click="SavePlan">일정 저장</v-btn>
+        <v-btn class="white--text" color="secondary" @click="SavePlan">일정 저장</v-btn>
       </div>
     </div>
   </div>
@@ -223,7 +223,6 @@ export default {
             }
           }).catch(function () {
             alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
-            // alert("제목 길이는 공백포함 1자이상 45자이하 입니다!");
           })
         }
       }
@@ -274,8 +273,13 @@ export default {
 .p-3 {
   padding: 1rem !important;
 }
+.theme--light.v-btn {
+  color: #ffffff;
+}
 .theme--light.v-btn.v-btn--has-bg {
   background-color: #00BF72;
+  font-size: 18px !important;
+  font-weight: bolder;
 }
 .sub_main {
   display: flex;
