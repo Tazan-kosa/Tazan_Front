@@ -22,8 +22,8 @@
         </div>
       </div>
       <div class="container-bottom mt-16">
-        <div sticky-container class="review-content">
-          <div v-sticky=true class="sticky mb-2">
+        <div class="review-content">
+          <div class="sticky mb-2">
             <h5 id="text">📗나의 여행 일기</h5>
           </div>
           <textarea class="form-control summernote reviewsummer" id="sm" rows="5"></textarea>
@@ -39,7 +39,6 @@
 <script>
 import TravelList from "./TravelList";
 import MyPlanModal from "./MyPlanModal";
-import Sticky from "vue-sticky-directive";
 
 export default {
   name: 'reviewwrite',
@@ -74,7 +73,6 @@ export default {
       }
     }
   },
-  directives: {Sticky},
   methods: {
     summernoteInsert() {
       window.$('.summernote').summernote('code',this.reviewContent);
