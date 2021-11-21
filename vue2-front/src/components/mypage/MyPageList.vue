@@ -90,7 +90,7 @@
 
                           <span class="small-text">
 
-                          {{ mypage.startDate.slice(0, 10) + " - " + mypage.endDate.slice(0, 10) }}
+                          {{ dateFormmatter(mypage.startDate) + " - " + dateFormmatter(mypage.endDate)}}
                                           </span>
                         </div>
                       </div>
@@ -213,8 +213,23 @@ export default {
       if (mypage.reviewFlag == "1") {
         alert("리뷰가 작성된 계획은 수정할 수 없습니다.")
       } else {
-        this.$router.push(`/modify/${mypage.planID}`)
+        this.$router.push({name:'planUpdate',params:{"planId":mypage.planID}})
       }
+    },
+    dateFormmatter(date){
+      var temp = new Date(date)
+      var year = temp.getFullYear();
+      var month = temp.getMonth() + 1;
+      var day = temp.getDate();
+
+      if (month < 10) {
+        month = '0' + month;
+      }
+      if (day < 10) {
+        day = '0' + day;
+      }
+      return(year + '-' + month + '-' + day);
+
     }
   }
 }

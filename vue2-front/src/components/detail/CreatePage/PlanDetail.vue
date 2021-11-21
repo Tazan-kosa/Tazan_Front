@@ -30,6 +30,10 @@
 
       <h1 class="uk-heading-line"><span></span></h1>
 
+      <div class="review_button">
+        <b-button variant="btn btn-outline-success" @click="reviewWrite">후기 작성</b-button>
+      </div>
+
       <div class="save_plan">
         <v-card class="sub_main">
           <v-card class="left_container">
@@ -90,9 +94,6 @@
             </v-col>
           </v-card>
         </v-card>
-      </div>
-      <div class="save_plan_button">
-        <b-button variant="primary" @click="reviewWrite">Review</b-button>
       </div>
     </div>
   </div>
@@ -338,6 +339,11 @@ export default {
   padding: 0.25em;
   margin: 0.25em;
   border-radius: 0.25em;
+}
+
+.review_button{
+  text-align: right;
+  padding: 0 20px;
 }
 
 

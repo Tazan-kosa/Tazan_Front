@@ -50,7 +50,7 @@ const route = [
 
     },
     {
-        path: '/modify/:planId',
+        path: '/modify',
         name: 'planUpdate',
         component: UnkownPlanUpdate
     },
