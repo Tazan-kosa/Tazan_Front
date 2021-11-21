@@ -161,7 +161,6 @@ export default {
   }),
 
   beforeCreate() {
-    console.log("beforeCreate check login")
     if (localStorage.getItem('auth') !== null) {
       alert('이미 로그인 되었습니다.')
       this.$router.push('/')
