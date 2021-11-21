@@ -62,21 +62,13 @@ export default {
     this.reviewID = this.$route.params.reviewId
     this.$axios.get(`/review/${this.reviewID}`).then(res => {
       if (res.status === 200) {
-        this.Review = res.data
+        this.Review = res.data.reviewVO
         this.Review.reviewDate = this.Review.reviewDate.substr(0, 10)
+        this.reviewUserID = this.Review.userID
         if (res.data.commentVO != '') {
-          this.CommentsData = res.data.commentVO
+          this.CommentsData = this.Review.commentVO
         }
-
-        this.$axios.get(`/api/user/planDetail/${res.data.planID}`).then(res => {
-          if (res.status == 200) {
-            this.TourItemData = res.data;
-            this.reviewUserID = res.data.userID;
-          }
-        }).catch(err => {
-          //에러 처리 할 곳
-          alert("에러발생 : " + err.response.message);
-        })
+        this.TourItemData = res.data.planVO;
       }
     }).catch(function (err) {
       //에러 처리 할 곳
