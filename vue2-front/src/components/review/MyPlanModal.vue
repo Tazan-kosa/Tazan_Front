@@ -45,15 +45,17 @@ export default {
     }
   },
   created() {
-    var id = localStorage.getItem('id');
-    this.$axios.get(`/api/user/plan/myPlan/${id}`).then(res => {
-      if (res.status === 200) {
-        this.myplanList = res.data;
-      }
-    }).catch(function (err) {
-      //에러 처리 할 곳
-      alert("에러발생:" + err.response.message);
-    })
+    if(localStorage.getItem('auth')){
+      var id = localStorage.getItem('id');
+      this.$axios.get(`/api/user/plan/myPlan/${id}`).then(res => {
+        if (res.status === 200) {
+          this.myplanList = res.data;
+        }
+      }).catch(function (err) {
+        //에러 처리 할 곳
+        alert("에러발생:" + err.response.message);
+      })
+    }
   },
   data() {
     return {
