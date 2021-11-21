@@ -18,7 +18,7 @@ export default {
     reviewmanageItem
   },
   created() {
-    this.$axios.get('/review/reviewmanageList')
+    this.$axios.get('/api/admin/review/reviewmanageList')
         .then(result => {
           this.ReviewItemList=result.data
         })
