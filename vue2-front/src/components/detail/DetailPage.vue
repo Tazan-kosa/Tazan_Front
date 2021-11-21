@@ -58,14 +58,6 @@ export default {
   color:white;
 }
 
-#searchbar {
-  text-align: center;
-}
-
-.button2 {
-  border-radius: 4px;
-}
-
 header {
   background: #b49605;
 }
