@@ -24,11 +24,25 @@ vue와 spring boot를 이용한 여행사 웹사이트입니다. <br>
 │   │   └── review
 │   ├── plugins
 │   ├── sevice
+│   │   └── router
 │   └── test
 ├── App.vue
 └── main.js
 ``` 
 ----
+
+## src
+
+![0](./vue%20구성/src.png)
+
+## router.js
+
+![1](./vue%20구성/routerjs.png)
+
+## components
+
+![2](./vue%20구성/components.png)
+
 https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
 <br>
 vue router 참고
