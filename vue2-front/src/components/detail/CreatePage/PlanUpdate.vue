@@ -58,7 +58,7 @@
                 </div>
                 &nbsp;
                 <div>
-                  여행 시작 날짜 : {{ defaultendDate }}
+                  여행 마지막 날짜 : {{ defaultendDate }}
                 </div>
               </v-card>
             </v-card>
@@ -123,7 +123,7 @@
         </div>
       </div>
       <div class="save_plan_button">
-        <b-button variant="primary" @click="UpdateWrite">Update</b-button>
+        <v-btn color="secondary" @click="UpdateWrite">일정 수정</v-btn>
       </div>
     </div>
   </div>
@@ -338,6 +338,14 @@ export default {
 }
 .p-3 {
   padding: 1rem !important;
+}
+.theme--light.v-btn {
+  color: #ffffff;
+}
+.theme--light.v-btn.v-btn--has-bg {
+  background-color: #00BF72;
+  font-size: 18px !important;
+  font-weight: bolder;
 }
 .sub_main {
   display: flex;

@@ -19,14 +19,6 @@
     </div>
   </div>
 
-<!--  <pre>-->
-<!--    <p>제목: </p>-->
-<!--    <p>작성자: </p>-->
-<!--    <p>작성일: </p>-->
-<!--    <p>권한: </p>-->
-<!--    <button type="button" class="btn btn-danger" @click="removeItem">삭제</button>-->
-<!--  </pre>-->
-
 </template>
 
 <script>
