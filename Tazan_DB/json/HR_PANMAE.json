@@ -1,0 +1,149 @@
+[
+  {
+    "P_DATE": "20110101",
+    "P_CODE": 100,
+    "P_QTY": 3,
+    "P_TOTAL": 2400,
+    "P_STORE": "1000"
+  },
+  {
+    "P_DATE": "20110101",
+    "P_CODE": 101,
+    "P_QTY": 5,
+    "P_TOTAL": 4500,
+    "P_STORE": "1001"
+  },
+  {
+    "P_DATE": "20110101",
+    "P_CODE": 102,
+    "P_QTY": 2,
+    "P_TOTAL": 2000,
+    "P_STORE": "1003"
+  },
+  {
+    "P_DATE": "20110101",
+    "P_CODE": 103,
+    "P_QTY": 6,
+    "P_TOTAL": 5400,
+    "P_STORE": "1004"
+  },
+  {
+    "P_DATE": "20110102",
+    "P_CODE": 102,
+    "P_QTY": 2,
+    "P_TOTAL": 2000,
+    "P_STORE": "1000"
+  },
+  {
+    "P_DATE": "20110102",
+    "P_CODE": 103,
+    "P_QTY": 5,
+    "P_TOTAL": 4500,
+    "P_STORE": "1002"
+  },
+  {
+    "P_DATE": "20110102",
+    "P_CODE": 104,
+    "P_QTY": 3,
+    "P_TOTAL": 2400,
+    "P_STORE": "1002"
+  },
+  {
+    "P_DATE": "20110102",
+    "P_CODE": 105,
+    "P_QTY": 2,
+    "P_TOTAL": 3000,
+    "P_STORE": "1000"
+  },
+  {
+    "P_DATE": "20110103",
+    "P_CODE": 100,
+    "P_QTY": 10,
+    "P_TOTAL": 8000,
+    "P_STORE": "1004"
+  },
+  {
+    "P_DATE": "20110103",
+    "P_CODE": 100,
+    "P_QTY": 2,
+    "P_TOTAL": 1600,
+    "P_STORE": "1000"
+  },
+  {
+    "P_DATE": "20110103",
+    "P_CODE": 100,
+    "P_QTY": 3,
+    "P_TOTAL": 2400,
+    "P_STORE": "1001"
+  },
+  {
+    "P_DATE": "20110103",
+    "P_CODE": 101,
+    "P_QTY": 4,
+    "P_TOTAL": 3600,
+    "P_STORE": "1003"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 100,
+    "P_QTY": 2,
+    "P_TOTAL": 1600,
+    "P_STORE": "1002"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 100,
+    "P_QTY": 4,
+    "P_TOTAL": 3200,
+    "P_STORE": "1003"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 100,
+    "P_QTY": 5,
+    "P_TOTAL": 4000,
+    "P_STORE": "1004"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 101,
+    "P_QTY": 3,
+    "P_TOTAL": 2700,
+    "P_STORE": "1001"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 101,
+    "P_QTY": 4,
+    "P_TOTAL": 3600,
+    "P_STORE": "1002"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 101,
+    "P_QTY": 3,
+    "P_TOTAL": 2700,
+    "P_STORE": "1003"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 102,
+    "P_QTY": 4,
+    "P_TOTAL": 4000,
+    "P_STORE": "1001"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 102,
+    "P_QTY": 2,
+    "P_TOTAL": 2000,
+    "P_STORE": "1002"
+  },
+  {
+    "P_DATE": "20110104",
+    "P_CODE": 103,
+    "P_QTY": 2,
+    "P_TOTAL": 1800,
+    "P_STORE": "1003"
+  }
+]

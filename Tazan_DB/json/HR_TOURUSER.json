@@ -1,0 +1,146 @@
+[
+  {
+    "USERID": 49,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "gotqlc147@naver.com",
+    "NAME": "윤현조",
+    "NICKNAME": "hyun",
+    "PASSWORD": "$2a$10$/.Jv1VQ4XQ2flk/hPcmdIucmHjly3ieatk5jNA1gfU8OwndyJRIDe",
+    "PHONENUMBER": "01012345678"
+  },
+  {
+    "USERID": 62,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "Soo@gamil.com",
+    "NAME": "박수오",
+    "NICKNAME": "수오",
+    "PASSWORD": "$2a$10$GSXB/hr7yryrmTCqOPPi2OnSniTu7kBPmdHYFefkUBE1o4HnF6IEe",
+    "PHONENUMBER": "010-0000-0000"
+  },
+  {
+    "USERID": 51,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "regtest1@gmail.com",
+    "NAME": "regtest1",
+    "NICKNAME": "regtest1",
+    "PASSWORD": "$2a$10$KLJOoAWeZ2UU6Zk1f4BmT.R2gXudtHurbzfqsPf7XgKIejatHQMSG",
+    "PHONENUMBER": "01011112222"
+  },
+  {
+    "USERID": 52,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "regtest2@gmail.com",
+    "NAME": "regtest2",
+    "NICKNAME": "regtest2",
+    "PASSWORD": "$2a$10$zQk/O21zWXeY1vWptZfCX.lUUTwfdt2IL0una1L.BQ3qBI2FJi5Qe",
+    "PHONENUMBER": "01012341234"
+  },
+  {
+    "USERID": 102,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "test999@gmail.com",
+    "NAME": "길동홍",
+    "NICKNAME": "test999",
+    "PASSWORD": "$2a$10$nj27SuO9PO0feBdSCNpYf.W2vKXIEiZdwlaGQu1rAScQj4kEw0Lzu",
+    "PHONENUMBER": "01034563456"
+  },
+  {
+    "USERID": 106,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "test01@gmail.com",
+    "NAME": "이름",
+    "NICKNAME": "닉네임",
+    "PASSWORD": "$2a$10$uL5zUYZlzCSLy.uWxgKl0e91TNpaFBhHTKvJizDzFbM4UlkvkaMG2",
+    "PHONENUMBER": "01034563456"
+  },
+  {
+    "USERID": 108,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "test22@gmail.com",
+    "NAME": "홍길동",
+    "NICKNAME": "홍길동",
+    "PASSWORD": "$2a$10$VZA/OJmD5.EpLzI.CmXBYe2rXXgQSotE82L4zcmMyYcgr7nVeWFNy",
+    "PHONENUMBER": "01045674567"
+  },
+  {
+    "USERID": 82,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "mafia@gmail.com",
+    "NAME": "마피아",
+    "NICKNAME": "MAFIA",
+    "PASSWORD": "$2a$10$eE09wC4CZ0B2m9hJ2sNW9.zbIj8ZYEf6z9ZZZOiLRr.03q/Afs9Xm",
+    "PHONENUMBER": "01030212356"
+  },
+  {
+    "USERID": 83,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "ori@gmail.com",
+    "NAME": "김오리",
+    "NICKNAME": "ori",
+    "PASSWORD": "$2a$10$YVm1aWyKBi/uR.5Dp/4MKOswjkEaG1Oy6YaPivlG8IcF/HvXmafee",
+    "PHONENUMBER": "01030212356"
+  },
+  {
+    "USERID": 63,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "jaehyeok@gmail.com",
+    "NAME": "임재혁",
+    "NICKNAME": "임재혁",
+    "PASSWORD": "$2a$10$ZgdkNczy/B8GPB3voUQg8.Ir.q8EUnoN0CKcDytZu4.cByPcsKD9.",
+    "PHONENUMBER": "01029556341"
+  },
+  {
+    "USERID": 64,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "wpals814@gmail.com",
+    "NAME": "김제민",
+    "NICKNAME": "kimmjen",
+    "PASSWORD": "$2a$10$k3GBDLqXY7Vc4PplF7nAwedAJYyLdNAqVnN50ej7kUAH/kxNfR5ne",
+    "PHONENUMBER": "01030212356"
+  },
+  {
+    "USERID": 109,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "kosa@gmail.com",
+    "NAME": "kosa",
+    "NICKNAME": "kosa",
+    "PASSWORD": "$2a$10$LJT1y/W5gKTXwy6hh3VSNua9RCo0pIu1OmbrXs9Y5JaOCpJM7TdnC",
+    "PHONENUMBER": "01011114444"
+  },
+  {
+    "USERID": 111,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "test99@gmail.com",
+    "NAME": "test99",
+    "NICKNAME": "test99",
+    "PASSWORD": "$2a$10$grXlYZN2BJTRgYpUet3FJ.GvDNZVLaBXiWWO2wCDryL8d0tu2vvsy",
+    "PHONENUMBER": "01011111111"
+  },
+  {
+    "USERID": 1,
+    "AUTH": "ROLE_ADMIN",
+    "EMAIL": "admin",
+    "NAME": "관리자",
+    "NICKNAME": "admin",
+    "PASSWORD": "$2a$10$harMQEhddoe4gzJKmHjcB.XBC05Y0eu7z7BzSrkP4xUPZNBI5JUOC",
+    "PHONENUMBER": "010-0000-0000"
+  },
+  {
+    "USERID": 2,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "guest@gmail.com",
+    "NAME": "제인포터",
+    "NICKNAME": "제인포터",
+    "PASSWORD": "$2a$10$uI1UDVMJcsa55B8wcsGuZufRWyXfOeo14lR46ATJfozzBs4VjboWu",
+    "PHONENUMBER": "010-1111-1111"
+  },
+  {
+    "USERID": 110,
+    "AUTH": "ROLE_USER",
+    "EMAIL": "soo@gmail.com",
+    "NAME": "박수오",
+    "NICKNAME": "수오수수오",
+    "PASSWORD": "$2a$10$DlsrXqmamHIILs7cdMM3jupK6r8ojQ.dfle.8LxeqNOI5EBgqT1Vi",
+    "PHONENUMBER": "01063570495"
+  }
+]

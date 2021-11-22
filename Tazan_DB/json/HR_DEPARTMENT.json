@@ -1,0 +1,74 @@
+[
+  {
+    "DEPTNO": 101,
+    "DNAME": "컴퓨터공학과",
+    "PART": 100,
+    "BUILD": "정보관"
+  },
+  {
+    "DEPTNO": 102,
+    "DNAME": "멀티미디어공학과",
+    "PART": 100,
+    "BUILD": "멀티미디어관"
+  },
+  {
+    "DEPTNO": 103,
+    "DNAME": "소프트웨어공학과",
+    "PART": 100,
+    "BUILD": "소프트웨어관"
+  },
+  {
+    "DEPTNO": 201,
+    "DNAME": "전자공학과",
+    "PART": 200,
+    "BUILD": "전자제어관"
+  },
+  {
+    "DEPTNO": 202,
+    "DNAME": "기계공학과",
+    "PART": 200,
+    "BUILD": "기계실험관"
+  },
+  {
+    "DEPTNO": 203,
+    "DNAME": "화학공학과",
+    "PART": 200,
+    "BUILD": "화학실습관"
+  },
+  {
+    "DEPTNO": 301,
+    "DNAME": "문헌정보학과",
+    "PART": 300,
+    "BUILD": "인문관"
+  },
+  {
+    "DEPTNO": 100,
+    "DNAME": "컴퓨터정보학부",
+    "PART": 10,
+    "BUILD": null
+  },
+  {
+    "DEPTNO": 200,
+    "DNAME": "메카트로닉스학부",
+    "PART": 10,
+    "BUILD": null
+  },
+  {
+    "DEPTNO": 300,
+    "DNAME": "인문사회학부",
+    "PART": 20,
+    "BUILD": null
+  },
+  {
+    "DEPTNO": 10,
+    "DNAME": "공과대학",
+    "PART": null,
+    "BUILD": null
+  },
+  {
+    "DEPTNO": 20,
+    "DNAME": "인문대학",
+    "PART": null,
+    "BUILD": null
+  }
+]

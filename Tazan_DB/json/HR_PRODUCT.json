@@ -1,0 +1,32 @@
+[
+  {
+    "P_CODE": 100,
+    "P_NAME": "새우짱",
+    "P_PRICE": 800
+  },
+  {
+    "P_CODE": 101,
+    "P_NAME": "감자짱",
+    "P_PRICE": 900
+  },
+  {
+    "P_CODE": 102,
+    "P_NAME": "맛큰산",
+    "P_PRICE": 1000
+  },
+  {
+    "P_CODE": 103,
+    "P_NAME": "에이서",
+    "P_PRICE": 900
+  },
+  {
+    "P_CODE": 104,
+    "P_NAME": "맛짱구",
+    "P_PRICE": 800
+  },
+  {
+    "P_CODE": 105,
+    "P_NAME": "샤보레",
+    "P_PRICE": 1500
+  }
+]
