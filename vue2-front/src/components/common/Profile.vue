@@ -73,7 +73,6 @@ export default {
   }),
   methods: {
     adminCheck() {
-      console.log(this.admin_check);
       this.admin_check = true;
     },
 

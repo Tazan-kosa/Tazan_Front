@@ -59,7 +59,6 @@ export default {
   },
   methods: {
     goRiviewWrite() {
-      console.log()
       if (this.userID == null) {
         alert("로그인 후 이용 부탁드립니다.")
         this.$router.push('/login').then((() => window.scrollTo(0, 0)))

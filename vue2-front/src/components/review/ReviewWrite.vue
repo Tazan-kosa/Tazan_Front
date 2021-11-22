@@ -146,8 +146,13 @@ export default {
 
       var div = document.createElement("div");
       div.innerHTML = reviewVO.reviewContent
+      
       for (var i = 0; i < div.children.length; i++){
-        if(div.children.item(i).children.length > 0){
+        if(div.children.item(i).tagName == "IMG"){
+          reviewVO.reviewThumbnail = div.children.item(i).getAttribute("src")
+          break
+        }
+        if(div.children.item(i).children.length > 0 && div.children.item(i).children.item(0).tagName == "IMG"){
           reviewVO.reviewThumbnail = div.children.item(i).children.item(0).getAttribute("src")
           break
         }
