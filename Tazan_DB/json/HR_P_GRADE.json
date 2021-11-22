@@ -1,0 +1,56 @@
+[
+  {
+    "POSITION": "주임",
+    "S_AGE": 0,
+    "E_AGE": 24,
+    "S_YEAR": 1,
+    "E_YEAR": 2,
+    "S_PAY": 12000000,
+    "E_PAY": 29990000
+  },
+  {
+    "POSITION": "대리",
+    "S_AGE": 25,
+    "E_AGE": 28,
+    "S_YEAR": 3,
+    "E_YEAR": 5,
+    "S_PAY": 30000000,
+    "E_PAY": 45000000
+  },
+  {
+    "POSITION": "과장",
+    "S_AGE": 29,
+    "E_AGE": 32,
+    "S_YEAR": 6,
+    "E_YEAR": 8,
+    "S_PAY": 45010000,
+    "E_PAY": 51000000
+  },
+  {
+    "POSITION": "차장",
+    "S_AGE": 33,
+    "E_AGE": 36,
+    "S_YEAR": 9,
+    "E_YEAR": 10,
+    "S_PAY": 51010000,
+    "E_PAY": 60000000
+  },
+  {
+    "POSITION": "부장",
+    "S_AGE": 37,
+    "E_AGE": 40,
+    "S_YEAR": 11,
+    "E_YEAR": 13,
+    "S_PAY": 60010000,
+    "E_PAY": 75000000
+  },
+  {
+    "POSITION": "이사",
+    "S_AGE": 41,
+    "E_AGE": 55,
+    "S_YEAR": 14,
+    "E_YEAR": 99,
+    "S_PAY": 75010000,
+    "E_PAY": 100000000
+  }
+]

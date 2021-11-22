@@ -1,0 +1,37 @@
+[
+  {
+    "GRADE": "A+ ",
+    "MIN_POINT": 96,
+    "MAX_POINT": 100
+  },
+  {
+    "GRADE": "A0 ",
+    "MIN_POINT": 90,
+    "MAX_POINT": 95
+  },
+  {
+    "GRADE": "B+ ",
+    "MIN_POINT": 86,
+    "MAX_POINT": 89
+  },
+  {
+    "GRADE": "B0 ",
+    "MIN_POINT": 80,
+    "MAX_POINT": 85
+  },
+  {
+    "GRADE": "C+ ",
+    "MIN_POINT": 76,
+    "MAX_POINT": 79
+  },
+  {
+    "GRADE": "C0 ",
+    "MIN_POINT": 70,
+    "MAX_POINT": 75
+  },
+  {
+    "GRADE": "D  ",
+    "MIN_POINT": 0,
+    "MAX_POINT": 69
+  }
+]

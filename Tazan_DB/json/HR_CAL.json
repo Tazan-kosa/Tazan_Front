@@ -1,0 +1,157 @@
+[
+  {
+    "WEEK": "1",
+    "DAY": "일",
+    "NUM_DAY": "1"
+  },
+  {
+    "WEEK": "1",
+    "DAY": "월",
+    "NUM_DAY": "2"
+  },
+  {
+    "WEEK": "1",
+    "DAY": "화",
+    "NUM_DAY": "3"
+  },
+  {
+    "WEEK": "1",
+    "DAY": "수",
+    "NUM_DAY": "4"
+  },
+  {
+    "WEEK": "1",
+    "DAY": "목",
+    "NUM_DAY": "5"
+  },
+  {
+    "WEEK": "1",
+    "DAY": "금",
+    "NUM_DAY": "6"
+  },
+  {
+    "WEEK": "1",
+    "DAY": "토",
+    "NUM_DAY": "7"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "일",
+    "NUM_DAY": "8"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "월",
+    "NUM_DAY": "9"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "화",
+    "NUM_DAY": "10"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "수",
+    "NUM_DAY": "11"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "목",
+    "NUM_DAY": "12"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "금",
+    "NUM_DAY": "13"
+  },
+  {
+    "WEEK": "2",
+    "DAY": "토",
+    "NUM_DAY": "14"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "일",
+    "NUM_DAY": "15"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "월",
+    "NUM_DAY": "16"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "화",
+    "NUM_DAY": "17"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "수",
+    "NUM_DAY": "18"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "목",
+    "NUM_DAY": "19"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "금",
+    "NUM_DAY": "20"
+  },
+  {
+    "WEEK": "3",
+    "DAY": "토",
+    "NUM_DAY": "21"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "일",
+    "NUM_DAY": "22"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "월",
+    "NUM_DAY": "23"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "화",
+    "NUM_DAY": "24"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "수",
+    "NUM_DAY": "25"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "목",
+    "NUM_DAY": "26"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "금",
+    "NUM_DAY": "27"
+  },
+  {
+    "WEEK": "4",
+    "DAY": "토",
+    "NUM_DAY": "28"
+  },
+  {
+    "WEEK": "5",
+    "DAY": "일",
+    "NUM_DAY": "29"
+  },
+  {
+    "WEEK": "5",
+    "DAY": "월",
+    "NUM_DAY": "30"
+  },
+  {
+    "WEEK": "5",
+    "DAY": "화",
+    "NUM_DAY": "31"
+  }
+]
