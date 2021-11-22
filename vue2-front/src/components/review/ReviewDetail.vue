@@ -173,7 +173,6 @@ export default {
 .review {
   max-width: 1100px;
   margin: 100px auto;
-  text-align: center;
 }
 
 .review-top {
@@ -187,10 +186,6 @@ export default {
 
 .review-user {
   margin-top: 50px;
-}
-
-.review-middle {
-  text-align: center;
 }
 
 .mytravel-title {

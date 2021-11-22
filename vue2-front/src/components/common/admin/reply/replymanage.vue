@@ -26,13 +26,10 @@ export default {
     )
         .then(result => {
           this.ReplyItemList = result.data
-          // console.log(result.data)
-          // console.log(result.data.nickName)
         })
         .catch(function (err) {
           console.log("에러발생: " + err)
           console.log("에러 in replymanage")
-          // console.log(userRole)
         })
   }
 }
